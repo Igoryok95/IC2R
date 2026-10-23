@@ -21,6 +21,10 @@ public abstract class InvSlotProcessable<RI, RO, I> extends InvSlotConsumable {
 
   @Override
   public boolean accepts(ItemStack stack) {
+    if (StackUtil.isEmpty(stack)) {
+      return false;
+    }
+
     ItemStack tmp = StackUtil.copyWithSize(stack, Integer.MAX_VALUE);
     return this.getOutputFor(this.getInput(tmp), true) != null;
   }

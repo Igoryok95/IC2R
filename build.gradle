@@ -30,6 +30,16 @@ base {
     archivesName = "${mod_id}-neoforge"
 }
 
+if (providers.gradleProperty('fixedBuild').isPresent()) {
+    tasks.named('jar', Jar) {
+        archiveFileName = "${base.archivesName.get()}-${project.version}_fixed.jar"
+        manifest.attributes(
+                'Implementation-Version': "${project.version}_fixed",
+                'IC2R-Patch': 'empty-input-stack-guard-and-russian-localization'
+        )
+    }
+}
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 spotless {

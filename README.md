@@ -1,6 +1,9 @@
 
 # IndustrialCraft 2: Refactored
 
+This fork's `fix/empty-machine-input-slot` branch adds an empty-input crash fix and complete Russian
+localization to release 21.1.66. See [fixed build instructions and validation](FIXED_BUILD.md).
+
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234-orange" alt="NeoForge 21.1.234">
 <img src="https://img.shields.io/badge/Version-21.1.0-blue" alt="Version 21.1.0">
