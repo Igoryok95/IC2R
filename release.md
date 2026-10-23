@@ -1,45 +1,34 @@
-# 2.10.32-ex120
+# 21.1.67
 
-欢迎来到制作和反馈清单。这里记录了下版本的计划和已知问题。
+Minecraft **1.21.1** · NeoForge **21.1.234+** · Java **21**
 
-## 已知问题
+This is the Igoryok95 fork release, based on upstream IC2R 21.1.66.
 
-### 紧急
+## Fixed
 
-- 注册键 `ingot_*` 和 `*_ingot` 到底哪个才是正确的？这导致 **暂时** 和机械动力不兼容。
-- 创造模式物品栏目前是按照注册键A-Z排序，后续会调整为分类顺序
-- 拟态板物品模型不显示。功能似乎正常。
-- 声音系统隐藏式字幕
-- 待添加：太阳能头盔（3/2 韧性）、静电靴（3/2 韧性）
+- Reject empty and zero-count stacks in machine processing input slots before copying them.
+  This fixes crashes when Smooth Swapping or another inventory extension inspects a source
+  slot after its contents have been shift-clicked into the player inventory.
+- Keep the original validation of non-empty machine inputs and restrictions on output slots.
 
-### 不急
+## Added
 
-- 自动弹出升级、自动抽入升级、撬棍：原版还没有配方
-- 尚未添加：管道系统
+- Russian translations for all 1291 English locale keys.
+- Nine regression game tests for machine input inspection and slot behavior.
+- Localization tests for key coverage, format arguments and UTF-8 text.
 
-### 要做
+## Version and installation
 
-- 燃料棒（锂）和燃料棒（氚）：原版无功能
-- （可能）改写电网。你能想象吗？MFSU 接 64 个打粉机正常工作而不爆炸。
+- The default branch and standard Gradle build now use **21.1.67**.
+- The mod advertises `ic2` version `21.1.67`; the JAR is `ic2-neoforge-21.1.67.jar`.
+- Replace the previous IC2R JAR; keep only one IC2R JAR in `mods`.
+- Install on the client and server and keep their versions aligned.
+- Smooth Swapping can remain enabled. Recipes, world generation, balance and packet formats
+  are unchanged by this fork's patch.
 
-### 准备迁移的联动 Mod
+## Validation
 
-- [Iridium Source](https://www.mcmod.cn/class/2588.html)
-- [METS](https://www.mcmod.cn/class/2217.html)
-- [Gravitation Suite](https://www.mcmod.cn/class/255.html)
-- [ASP](https://www.mcmod.cn/class/23.html)
-
-## 与原版的区别
-
-### 小巧思
-
-- 充电座：现在的无线充电机制不受电压等级限制，但充电速率仍然受限于充电座的规格；充电的顺序为：主手、副手、头盔、胸甲、护腿、靴子、快捷栏0~8、物品栏从左上到右下。
-- 删除：旧版粉色粘球形态的 UU 物质、精炼铁锭、脚手架
-- 翻译：以中文为基准, 重做翻译。全部扁平化
-- 矿脉生成，请使用 [JustEnoughResources](https://github.com/way2muchnoise/JustEnoughResources) 查看。
-
-### 大特性
-
-- IC2 电网目前支持 [Applied Energetics 2](https://modrinth.com/mod/ae2) 的能源接收器！
-- 您可以安装 [Configured](https://modrinth.com/mod/configured) 来使用 GUI 调整 IC2 的配置文件！
-- 高级采矿机现在支持采矿过滤卡来自定义更多的矿石名单！
+Run `./gradlew build runGameTestServer` with Java 21. The suite contains 434 game tests and
+11 JUnit tests, including the empty-input and Russian-localization checks.
+Local release validation passed all 434 game tests and all 11 JUnit tests. The packaged JAR's
+version, Russian locale coverage and ZIP integrity were also verified.

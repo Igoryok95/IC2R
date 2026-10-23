@@ -138,8 +138,7 @@ public class ElectricWrenchGameTests {
     helper.setBlock(MACHINE_POS, Ic2Blocks.PERSONAL_CHEST);
     TileEntityPersonalChest safe = helper.getBlockEntity(MACHINE_POS);
     safe.setOwner(
-        new GameProfile(
-            UUID.fromString("5de649d8-78d4-4d55-a34d-135d3f89a01f"), "SafeOwner"));
+        new GameProfile(UUID.fromString("5de649d8-78d4-4d55-a34d-135d3f89a01f"), "SafeOwner"));
     ServerPlayer stranger = makePlayer(helper);
     ItemStack stack =
         ElectricItemManager.getCharged(Ic2Items.ELECTRIC_WRENCH, Double.POSITIVE_INFINITY);

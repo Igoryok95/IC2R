@@ -1,4 +1,4 @@
-# IC2R 21.1.66 fixed build
+# IC2R empty-input fix and Russian localization
 
 This fork starts at upstream release `21.1.66` (commit `417fddb1fd23b926accc02b380cd658121f5c9e1`)
 for Minecraft 1.21.1 and NeoForge. It contains two changes:
@@ -9,6 +9,13 @@ for Minecraft 1.21.1 and NeoForge. It contains two changes:
   checks for non-empty inputs and the output-slot restrictions are preserved.
 - `assets/ic2/lang/ru_ru.json` supplies Russian translations for all 1291 keys in `en_us.json`,
   including machines, items, interfaces, tooltips, crops, advancements, subtitles and death messages.
+
+## Version 21.1.67
+
+The patch and Russian translations are included on this fork's `main` branch as the standard
+**21.1.67** release. Build it with `./gradlew build runGameTestServer`; the output is
+`build/libs/ic2-neoforge-21.1.67.jar`, with mod ID `ic2` and advertised version `21.1.67`.
+The instructions below describe the earlier `21.1.66_fixed` compatibility build.
 
 ## Translation provenance
 
@@ -21,7 +28,7 @@ IC2 Dev Team.
 
 Reference JAR SHA-256: `f96b1886b6d060b308fb811029d5c5cc76deb17b835aa368dcb6071f2de290d4`.
 
-## Build and validation
+## Historical 21.1.66_fixed build and validation
 
 Use Java 21 and the checked-in Gradle wrapper:
 

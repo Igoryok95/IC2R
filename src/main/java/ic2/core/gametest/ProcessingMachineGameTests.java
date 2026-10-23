@@ -332,8 +332,7 @@ public class ProcessingMachineGameTests {
 
     te.canInputSlot.put(0, new ItemStack(Ic2Items.TIN_CAN));
     helper.assertTrue(
-        te.inputSlot.process() == null,
-        "solid canner must not process with only one of five cans");
+        te.inputSlot.process() == null, "solid canner must not process with only one of five cans");
 
     te.canInputSlot.put(0, new ItemStack(Ic2Items.TIN_CAN, 5));
     helper.assertTrue(

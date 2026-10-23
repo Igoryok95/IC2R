@@ -30,6 +30,14 @@ base {
     archivesName = "${mod_id}-neoforge"
 }
 
+tasks.named('jar', Jar) {
+    manifest.attributes(
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'Igoryok95 IC2R fork',
+            'IC2R-Patch': 'empty-input-stack-guard-and-russian-localization'
+    )
+}
+
 if (providers.gradleProperty('fixedBuild').isPresent()) {
     tasks.named('jar', Jar) {
         archiveFileName = "${base.archivesName.get()}-${project.version}_fixed.jar"

@@ -1,29 +1,44 @@
+# IndustrialCraft 2: Refactored — Igoryok95 fork
 
-# IndustrialCraft 2: Refactored
-
-This fork's `fix/empty-machine-input-slot` branch adds an empty-input crash fix and complete Russian
-localization to release 21.1.66. See [fixed build instructions and validation](FIXED_BUILD.md).
+IndustrialCraft 2 for **Minecraft 1.21.1 NeoForge**, with Russian localization and a fix for
+empty machine-input inspection by inventory extensions such as Smooth Swapping.
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
-<img src="https://img.shields.io/badge/NeoForge-21.1.234-orange" alt="NeoForge 21.1.234">
-<img src="https://img.shields.io/badge/Version-21.1.0-blue" alt="Version 21.1.0">
+<img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
+<img src="https://img.shields.io/badge/Version-21.1.67-blue" alt="Version 21.1.67">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
-This project's code was obtained by decompiling the official build `2.9.40-ex119`, with missing and broken functionality migrated over from `2.8.222-ex112`.
+## This fork
 
-## Foreword
+Version **21.1.67** builds on upstream **21.1.66** and includes:
 
-IC2 is probably dead. No official word on open-sourcing it, and the successor developers remain absent.
+- A guard against empty processing inputs before `StackUtil.copyWithSize`. Shift-clicking
+  unprocessed items out of machines no longer triggers `IllegalArgumentException: empty stack:
+  0 minecraft:air` when an inventory extension inspects the emptied input slot.
+- Complete Russian localization of all **1291** English locale keys, including machines,
+  equipment, interfaces, tooltips, crops, advancements, subtitles and death messages.
+- Regression tests for empty / zero-count stacks, slot inspection, non-empty recipe validation
+  and output extraction, plus localization coverage and format-argument checks.
 
-But the community's call never went quiet. Players have waited too long — waited for an authentic IC2 that runs on modern versions.
+The normal release now advertises **21.1.67** in its mod metadata; the previous
+`21.1.66_fixed` build kept the original version for compatibility. The fixes do not modify
+recipes, ore generation, machine balance, saved data or network packets.
+Smooth Swapping can remain enabled.
 
-So people stepped up. [IC2CR](https://github.com/yu1745/ic2-fabric) open-sourced first, targeting 1.20.1 Fabric, with considerable fanfare. But open it up and look: the mechanics changed, the values changed, the UI changed — much of the migration was even delegated to AI. The level of completeness may be acceptable, but it is no longer IC2. It is something else wearing IC2's name.
+The default development branch is [`main`](https://github.com/Igoryok95/IC2R/tree/main).
+For fix details and translation provenance, see [FIXED_BUILD.md](FIXED_BUILD.md).
 
-We are different, even with the sword of copyright hanging over our heads. From the very beginning we have had exactly one goal: **bring IC2 to modern Minecraft in its entirety, while changing the original functionality and values as little as possible.**
+## Installation
 
-In the end, we did it. What reached players' hands was a complete, playable IC2 — originally on 1.20.1 Forge, now tracking NeoForge 1.21.1 — and it is still the IC2 you remember.
+1. Install Minecraft **1.21.1**, NeoForge **21.1.234 or newer**, and Java **21**.
+2. Download `ic2-neoforge-21.1.67.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases).
+3. Replace the previous IC2R JAR in `mods`; keep only one IC2R JAR.
+4. Install IC2R on both the client and server. Keep their versions aligned.
 
-Yet we never intended to upstage the original. The public discourse around this has been very hostile; I have received malicious attacks and threats. To stress it once more: **we are not IC2's official successors.** We are simply players who love IC2 and want to keep playing it on modern versions.
+This is a community fork, not an official release from the IC2 Dev Team.
+The upstream modern port is [neo-industrial-mc/IC2R](https://github.com/neo-industrial-mc/IC2R).
+Its code originates from decompiled IC2 Experimental `2.9.40-ex119`, with missing functionality
+ported from `2.8.222-ex112`. Original authorship and copyright notices are preserved below.
 
 ## Differences from the original
 
@@ -62,14 +77,34 @@ From a copyright standpoint, the **original authors** could in theory demand tha
 
 In addition to the above, you must credit the mod's origin, include the English description and descriptions in other languages, and the links designated by the original dev team: `https://industrial-craft.net/` or `https://forum.industrial-craft.net/`.
 
-## Quick start
+## Build and validation
 
-Build this branch with Java 21.
-
-For more information, see [Release](./release.md).
+Use Java 21 and the checked-in Gradle wrapper:
 
 ```shell
-gradlew build
-gradlew runClient
-gradlew runServer
+./gradlew build runGameTestServer
 ```
+
+PowerShell:
+
+```powershell
+.\gradlew.bat build runGameTestServer
+```
+
+The standard build reads `21.1.67` from `gradle.properties` and produces
+`build/libs/ic2-neoforge-21.1.67.jar`; no version override or `_fixed` suffix is required.
+The regression suite contains 434 NeoForge game tests and 11 JUnit tests.
+These checks do not replace testing a particular modpack in a running client / server.
+
+Development runs:
+
+```shell
+./gradlew runClient
+./gradlew runServer
+```
+
+## Release notes
+
+See [release.md](release.md). The older patch build and translation provenance are documented in
+[FIXED_BUILD.md](FIXED_BUILD.md).
+The original upstream roadmap is preserved in [UPSTREAM_ROADMAP.md](UPSTREAM_ROADMAP.md).
