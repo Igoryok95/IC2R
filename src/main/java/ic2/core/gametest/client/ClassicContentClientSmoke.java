@@ -185,11 +185,19 @@ public final class ClassicContentClientSmoke {
     }
     if (ticks >= 169 + 4 * 140 && ticks <= 175 + 4 * 140 && mc.screen instanceof Ic2Gui<?> gui) {
       try {
-        var move = net.minecraft.client.MouseHandler.class.getDeclaredMethod("onMove", long.class, double.class, double.class);
+        var move =
+            net.minecraft.client.MouseHandler.class.getDeclaredMethod(
+                "onMove", long.class, double.class, double.class);
         move.setAccessible(true);
-        move.invoke(mc.mouseHandler, mc.getWindow().getWindow(),
-            (gui.getGuiLeft() + 90D) * mc.getWindow().getScreenWidth() / mc.getWindow().getGuiScaledWidth(),
-            (gui.getGuiTop() + 42D) * mc.getWindow().getScreenHeight() / mc.getWindow().getGuiScaledHeight());
+        move.invoke(
+            mc.mouseHandler,
+            mc.getWindow().getWindow(),
+            (gui.getGuiLeft() + 90D)
+                * mc.getWindow().getScreenWidth()
+                / mc.getWindow().getGuiScaledWidth(),
+            (gui.getGuiTop() + 42D)
+                * mc.getWindow().getScreenHeight()
+                / mc.getWindow().getGuiScaledHeight());
       } catch (ReflectiveOperationException error) {
         throw new IllegalStateException("Cannot hover storage gauge in the client check", error);
       }

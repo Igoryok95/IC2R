@@ -4,6 +4,11 @@ This is the implementation checklist for the requested Classic content restorati
 Unchecked entries are not implemented or released. The installed release remains
 21.1.69 until the complete update has passed validation.
 
+The user requested saving the current foundation on a separate branch and
+continuing the remaining features later. See the
+[deferred-work handoff](CLASSIC_RESTORATION_BACKLOG.md), including unfinished recipe
+dependencies that still block survival progression.
+
 ## Agreed behavior
 
 - Restore all six Classic villager professions and complete barrel brewing.
@@ -66,6 +71,11 @@ Original author copyrights and asset rights remain with their respective owners;
 the fork's license does not relicense imported assets.
 
 ## Implemented foundation (not a release)
+
+The saved foundation passes 27 unit tests and 465 standalone server GameTests.
+Actual Russian / English clients check the six new or extended machine / storage
+menus, slot bounds, title widths and exact storage readings. See the
+[development validation receipt](validation/classic-foundation-21.1.70.json).
 
 The current development branch contains the ore/material foundation, basic charging
 armor, Rare Earth Extractor, Centrifugal Rare Earth Extractor and Alloy Smelter,

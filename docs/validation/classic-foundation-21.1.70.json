@@ -1,0 +1,36 @@
+{
+  "status": "development-foundation-not-released",
+  "validated_at": "2026-10-25T00:42:44+03:00",
+  "branch": "classic-restoration-21.1.70",
+  "artifact": {
+    "name": "ic2-neoforge-21.1.70.jar",
+    "bytes": 8768121,
+    "sha256": "a34ae86358704f8b7c24245e97c900b2a766bb7e657191806dcb57306d1124d9"
+  },
+  "build": "passed",
+  "junit_tests": 27,
+  "standalone_required_gametests": 465,
+  "client_checks": {
+    "languages": [
+      "ru_ru",
+      "en_us"
+    ],
+    "screens_per_language": 6,
+    "storage_charge_samples": [
+      0,
+      1,
+      999,
+      999999,
+      99999999,
+      100000000,
+      1250000000,
+      3999999999,
+      4000000000
+    ],
+    "storage_tooltip": "exact grouped EU, single line",
+    "slot_bounds_and_title_widths": "passed"
+  },
+  "release_blockers": "docs/CLASSIC_RESTORATION_BACKLOG.md",
+  "installed": false,
+  "published": false
+}
