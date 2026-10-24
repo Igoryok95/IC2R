@@ -38,6 +38,24 @@ simulation and machine logic were not modified by this text update.
 The standard 21.1.68 build produces `build/libs/ic2-neoforge-21.1.68.jar` with mod ID `ic2`.
 Release artifacts are available from the repository's GitHub Releases page.
 
+## Version 21.1.69: processed-ore and induction-furnace XP
+
+Twenty processed-metal smelting recipes had experience 0.0. Their dust / crushed / purified
+forms now grant half the corresponding direct raw-material reward (iron / copper 0.35,
+gold 0.5, IC2 metals 0.25). Bronze alloy and non-ore recipes keep their existing behavior.
+The recipe manager still supplies the reward; no tag / output fallback overrides datapacks.
+
+The Induction Furnace now persists XP, accumulates each completed channel independently and
+handles the same localized Collect XP button as the Iron / Electric Furnaces. Heat labels
+move above the button so they do not overlap it or the player inventory. Every collection
+marks the machine dirty and retains fractional XP. A shared decimal accumulator normalizes
+float recipe rewards before summing, preventing 20 x 0.35 from becoming just under 7.
+
+The new regressions cover real Macerator -> Electric Furnace processing, both induction
+channels / blocked outputs, iron-furnace smelting, persistent collection, duplicate clicks
+and integer payout after fractional recipes. The optional `-PxpSmoke` developer client uses
+only `run/saves/FurnaceXpSmoke`; normal clients never execute the hook.
+
 ## Translation provenance
 
 928 translations were matched against the English and Russian locale files shipped in the original
@@ -71,3 +89,28 @@ all 434 game tests pass. Locale unit tests check key coverage, formatting argume
 Install the fixed JAR in place of the original IC2R JAR. Keep only one IC2R JAR in `mods`.
 Smooth Swapping does not need modification or disabling. This fork does not change recipes,
 world generation, machine balance, saved data or network packets.
+
+## Shutdown regression discovered during 21.1.69 validation
+
+The first full run passed all 449 then-registered GameTests but stalled during world saving.
+A thread dump located `TileEntityCrop.getStoredCrossingBase -> Level.getBlockState` inside
+chunk unloading / serialization. Asking the world for that same chunk re-entered the chunk
+loader after the chunk had begun unloading. The getter now reads the block entity's cached
+BlockState and falls back to its stored crossing flag, without a world lookup. An additional
+GameTest serializes a detached crop with a different world state to verify this invariant.
+The unfinished developer world is retained locally; final validation uses a fresh test world.
+
+## GUI overlay validation
+
+An initial Russian client smoke exited with Windows access violation 0xC0000005 while opening
+the induction screen; no Java crash stack was produced. Source inspection also found a
+redundant raw OpenGL allocation in GlTexture: Image then rendered the original resource via
+Minecraft's texture manager, but used power-of-two padded dimensions for UV coordinates.
+The metadata helper no longer allocates / frees a second GPU texture. Minecraft owns texture
+upload / release, and dimensions match the original PNG, including non-power-of-two and 1x1
+images. Unit checks exercise both without an OpenGL context. Actual EN/RU screen checks and
+server-owned XP collection are repeated after this change; the crash is not treated as a
+proven driver diagnosis.
+
+Final 21.1.69 local results: 450 server GameTests, 20 JUnit tests, and successful English /
+Russian native-menu XP collection. The final server saved all dimensions and shut down.

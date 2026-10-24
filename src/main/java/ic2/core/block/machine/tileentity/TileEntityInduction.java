@@ -1,5 +1,6 @@
 package ic2.core.block.machine.tileentity;
 
+import ic2.api.network.INetworkClientTileEntityEventListener;
 import ic2.api.recipe.MachineRecipeResult;
 import ic2.api.upgrade.IUpgradableBlock;
 import ic2.api.upgrade.UpgradableProperty;
@@ -27,7 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class TileEntityInduction extends TileEntityElectricMachine
-    implements IHasGui, IUpgradableBlock, IGuiValueProvider {
+    implements IHasGui, IUpgradableBlock, IGuiValueProvider, INetworkClientTileEntityEventListener {
   private static final short maxHeat = 10000;
   public final InvSlotProcessableSmelting inputSlotA;
   public final InvSlotProcessableSmelting inputSlotB;
@@ -37,6 +38,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
   protected final Redstone redstone;
   @GuiSynced public short heat = 0;
   @GuiSynced public short progress = 0;
+  protected double xp = 0.0;
 
   public TileEntityInduction(BlockPos pos, BlockState state) {
     super(Ic2BlockEntities.INDUCTION_FURNACE, pos, state, 10000, 2);
@@ -55,6 +57,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
     super.loadAdditional(nbt, registries);
     this.heat = nbt.getShort("heat");
     this.progress = nbt.getShort("progress");
+    this.xp = nbt.getDouble("xp");
   }
 
   @Override
@@ -62,6 +65,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
     super.saveAdditional(nbt, registries);
     nbt.putShort("heat", this.heat);
     nbt.putShort("progress", this.progress);
+    nbt.putDouble("xp", this.xp);
   }
 
   @Override
@@ -145,6 +149,18 @@ public class TileEntityInduction extends TileEntityElectricMachine
       MachineRecipeResult<ItemStack, ItemStack, ItemStack> result = inputSlot.process();
       outputSlot.add(result.getOutput());
       inputSlot.consume(result);
+      this.xp =
+          TileEntityIronFurnace.addXP(
+              this.xp, result.recipe().getMetaData().getFloat("experience"));
+    }
+  }
+
+  @Override
+  public void onNetworkEvent(Player player, int event) {
+    if (event == 0) {
+      assert !this.getLevel().isClientSide;
+      this.xp = TileEntityIronFurnace.spawnXP(player, this.xp);
+      this.setChanged();
     }
   }
 

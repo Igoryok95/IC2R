@@ -1,6 +1,5 @@
 package ic2.core.gui;
 
-import com.mojang.blaze3d.platform.TextureUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
 import ic2.core.IC2;
 import ic2.core.util.LogCategory;
@@ -8,8 +7,6 @@ import java.awt.image.BufferedImage;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -19,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
-import org.lwjgl.opengl.GL11;
 
 public class GlTexture implements Closeable {
   private static final Map<ResourceLocation, GlTexture> textures = new HashMap<>();
@@ -88,39 +84,20 @@ public class GlTexture implements Closeable {
   protected void load(BufferedImage img) {
     this.width = img.getWidth();
     this.height = img.getHeight();
-    this.canvasWidth = Integer.highestOneBit((this.width - 1) * 2);
-    this.canvasHeight = Integer.highestOneBit((this.height - 1) * 2);
-    this.textureId = TextureUtil.generateTextureId();
-    IntBuffer buffer =
-        ByteBuffer.allocateDirect(this.canvasWidth * this.canvasHeight * 4).asIntBuffer();
-    int[] tmp = new int[this.canvasWidth * this.canvasHeight];
-    img.getRGB(0, 0, this.width, this.height, tmp, 0, this.canvasWidth);
-    buffer.put(tmp);
-    buffer.flip();
-    this.bind();
-    GL11.glTexParameteri(3553, 33085, 0);
-    GL11.glTexParameterf(3553, 33082, 0.0F);
-    GL11.glTexParameterf(3553, 33083, 0.0F);
-    GL11.glTexParameteri(3553, 10242, 10496);
-    GL11.glTexParameteri(3553, 10243, 10496);
-    GL11.glTexParameteri(3553, 10241, 9728);
-    GL11.glTexParameteri(3553, 10240, 9728);
-    GL11.glTexImage2D(3553, 0, 6408, this.canvasWidth, this.canvasHeight, 0, 32993, 33639, buffer);
+    // Image renders the original resource through Minecraft's texture manager. Its UVs
+    // must use that resource's actual dimensions, without a second padded GL allocation.
+    this.canvasWidth = this.width;
+    this.canvasHeight = this.height;
   }
 
   @Override
   public void close() {
-    if (this.textureId != 0) {
-      TextureUtil.releaseTextureId(this.textureId);
-      this.textureId = 0;
-    }
+    // Minecraft owns and releases the texture, including during resource reloads.
+    this.textureId = 0;
   }
 
   public void bind() {
-    if (this.textureId == 0) {
-      throw new IllegalStateException("uninitialized texture");
-    }
-
+    this.textureId = Minecraft.getInstance().getTextureManager().getTexture(this.loc).getId();
     RenderSystem.bindTexture(this.textureId);
   }
 

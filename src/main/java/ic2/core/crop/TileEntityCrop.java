@@ -1090,11 +1090,9 @@ public class TileEntityCrop extends Ic2TileEntity implements ICropTile {
   }
 
   private boolean getStoredCrossingBase() {
-    if (this.level != null) {
-      BlockState state = this.level.getBlockState(this.worldPosition);
-      if (state.hasProperty(Ic2TileEntityBlock.CROSSING_BASE)) {
-        return state.getValue(Ic2TileEntityBlock.CROSSING_BASE);
-      }
+    BlockState state = this.getBlockState();
+    if (state.hasProperty(Ic2TileEntityBlock.CROSSING_BASE)) {
+      return state.getValue(Ic2TileEntityBlock.CROSSING_BASE);
     }
 
     return this.crossingBase;

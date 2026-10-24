@@ -34,7 +34,7 @@ tasks.named('jar', Jar) {
     manifest.attributes(
             'Implementation-Version': project.version,
             'Implementation-Vendor': 'Igoryok95 IC2R fork',
-            'IC2R-Patch': 'empty-input-stack-guard-and-russian-localization'
+            'IC2R-Patch': 'empty-input-russian-localization-furnace-xp-crop-save'
     )
 }
 
@@ -75,6 +75,11 @@ neoForge {
         client {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            if (providers.gradleProperty('xpSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/xp-client')
+                systemProperty 'ic2.furnaceXpSmoke', 'true'
+                programArguments.addAll '--quickPlaySingleplayer', 'FurnaceXpSmoke'
+            }
         }
 
         server {

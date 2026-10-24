@@ -1,3 +1,38 @@
+# 21.1.69
+
+Minecraft **1.21.1** · NeoForge **21.1.234+** · Java **21**
+
+Fixes lost smelting XP after IC2R ore processing and adds XP collection to the Induction Furnace.
+
+## Fixed
+
+- Give the 20 smeltable dust / crushed / purified ore recipes positive XP: iron / copper 0.35,
+  gold 0.5, lead / silver / tin / uranium 0.25 per item. A normal doubled ore route retains
+  the raw material's total smelting reward. Alloy / non-ore recipe XP is unchanged.
+- Accumulate and persist XP from both successful induction-furnace channels. Add the same
+  localized Collect XP button as the Iron / Electric Furnaces; keep heat text clear of it.
+- Preserve decimal rewards without float accumulation drift. Twenty iron-dust smelts now
+  produce exactly 7 collectable XP rather than 6 with an almost-integer remainder.
+- Mark all three furnaces dirty after collection; retain fractional XP without duplicating
+  already collected rewards after saving / reloading.
+
+- Render GUI overlays with Minecraft-owned textures and real PNG dimensions. Remove the
+  redundant raw OpenGL upload and incorrect power-of-two UV padding; restore slot frames.
+- Avoid loading a world chunk while serializing crop crossing state. The old path could
+  deadlock chunk unloading / server shutdown; serialize the block entity state directly.
+
+Existing positive recipe rewards and unification remain data driven. No mod integration,
+world-generation change, energy rebalance or saved-item-ID migration is added. Previously
+unrecorded zero-XP smelts cannot be recovered retroactively.
+
+## Validation
+
+450 server GameTests, 20 JUnit tests and actual EN/RU client checks of all three furnace
+menus / XP buttons. The final server also saves and shuts down normally. Detailed evidence
+is recorded in docs/validation/21.1.69.json.
+
+---
+
 # 21.1.68
 
 Minecraft **1.21.1** · NeoForge **21.1.234+** · Java **21**

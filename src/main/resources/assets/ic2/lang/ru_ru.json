@@ -1304,7 +1304,7 @@
   "ic2.debug.mode.energy_net": "Энергосеть",
   "ic2.debug.mode.accelerate": "Ускорение",
   "ic2.debug.mode.accelerate_x100": "Ускорение x100",
-  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored для Minecraft 1.21.1 NeoForge. Форк Igoryok95 с русским переводом, сообщениями инструментов и машин на языке клиента и исправлением вылета при извлечении исходных предметов из машин.",
+  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored для Minecraft 1.21.1 NeoForge. Форк Igoryok95 с русским переводом, сообщениями на языке клиента, исправлением вылета при извлечении исходных предметов, опытом за переплавку обработанной руды и сбором опыта во всех трёх печах.",
   "ic2.debug.acceleration.start": "Выполняется %s тактов для %s.",
   "ic2.debug.acceleration.interrupted": "Данные блока изменились %s раз. Выполнение прервано после %s обновлений.",
   "ic2.debug.acceleration.changed": "Данные блока изменились %s раз.",
@@ -1333,5 +1333,6 @@
   "ic2.coke_kiln.structure.title": "Многоблочная конструкция:",
   "ic2.coke_kiln.structure.bottom": " Нижний слой: огнеупорные блоки 3x3 с решёткой коксовой печи в центре",
   "ic2.coke_kiln.structure.middle": " Средний слой: огнеупорные блоки 3x3, пустой центр, коксовая печь в середине одной из сторон",
-  "ic2.coke_kiln.structure.top": " Верхний слой: огнеупорные блоки 3x3 с люком коксовой печи в центре"
+  "ic2.coke_kiln.structure.top": " Верхний слой: огнеупорные блоки 3x3 с люком коксовой печи в центре",
+  "ic2.Induction.gui.heat": "Нагрев"
 }

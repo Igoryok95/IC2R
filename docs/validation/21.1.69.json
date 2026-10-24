@@ -1,0 +1,92 @@
+{
+  "version": "21.1.69",
+  "verified_at_utc": "2026-10-24T18:16:39.728255+00:00",
+  "minecraft": "1.21.1",
+  "neoforge_core_tests": "21.1.234",
+  "junit": {
+    "tests": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "server_gametests": 450,
+  "server_saved_and_exited": true,
+  "processed_smelting_recipes": 20,
+  "xp_per_processed_item": {
+    "copper": 0.35,
+    "iron": 0.35,
+    "gold": 0.5,
+    "lead": 0.25,
+    "silver": 0.25,
+    "tin": 0.25,
+    "uranium": 0.25
+  },
+  "locale_keys": 1336,
+  "clients": {
+    "en": [
+      {
+        "furnace": "electric",
+        "before_xp": 7.0,
+        "remaining_xp": 0.0,
+        "player_award": 7
+      },
+      {
+        "furnace": "induction",
+        "before_xp": 2.55,
+        "remaining_xp": 0.55,
+        "player_award": 2
+      },
+      {
+        "furnace": "iron",
+        "before_xp": 1.05,
+        "remaining_xp": 0.05,
+        "player_award": 1
+      }
+    ],
+    "ru": [
+      {
+        "furnace": "electric",
+        "before_xp": 7.0,
+        "remaining_xp": 0.0,
+        "player_award": 7
+      },
+      {
+        "furnace": "induction",
+        "before_xp": 2.55,
+        "remaining_xp": 0.55,
+        "player_award": 2
+      },
+      {
+        "furnace": "iron",
+        "before_xp": 1.05,
+        "remaining_xp": 0.05,
+        "player_award": 1
+      }
+    ]
+  },
+  "addon_compatibility": {
+    "version": "1.4.0",
+    "core_jar": "21.1.69",
+    "neoforge": "21.1.264",
+    "buildcraft": "8.0.25",
+    "jade": "15.10.6",
+    "gametests": 83,
+    "passed": true
+  },
+  "additional_fixes": [
+    "Serialize crop crossing state without world/chunk lookup",
+    "Use Minecraft-owned GUI textures and actual PNG UV dimensions"
+  ],
+  "initial_validation_issues": [
+    "First full run passed 449 tests but stalled on crop serialization during chunk unloading; fixed and final run saved/exited normally",
+    "Initial Russian GUI run exited with 0xC0000005 opening induction screen, without Java crash stack; removed redundant raw GL upload; subsequent RU, EN and RU runs passed"
+  ],
+  "artifact": {
+    "file": "ic2-neoforge-21.1.69.jar",
+    "bytes": 8011419,
+    "local_sha256": "ae1ff36aa9b1d12cc5f25e0fcbff787c49be3e952bdafdeb129068cada24fc2b"
+  },
+  "installed_client_changed": false,
+  "distributable_modpack_zip_changed": false,
+  "multiplayer_server_changed": false
+}

@@ -1,32 +1,73 @@
 # IndustrialCraft 2: Refactored — Igoryok95 fork
 
-IndustrialCraft 2 for **Minecraft 1.21.1 NeoForge**, with Russian localization, client-language chat messages and a fix for
-empty machine-input inspection by inventory extensions such as Smooth Swapping.
+IndustrialCraft 2 for **Minecraft 1.21.1 NeoForge**, with Russian localization, client-language chat messages, safe machine-input inspection,
+and experience rewards for processed ore in iron, electric and induction furnaces.
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.68-blue" alt="Version 21.1.68">
+<img src="https://img.shields.io/badge/Version-21.1.69-blue" alt="Version 21.1.69">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
 ## This fork
 
-Version **21.1.68** builds on upstream **21.1.66** and includes:
+Version **21.1.69** builds on upstream **21.1.66** and includes:
 
 - A guard against empty processing inputs before `StackUtil.copyWithSize`. Shift-clicking
   unprocessed items out of machines no longer triggers `IllegalArgumentException: empty stack:
   0 minecraft:air` when an inventory extension inspects the emptied input slot.
-- Russian translations for all **1335** English locale keys, including machines,
+- Russian translations for all **1336** English locale keys, including machines,
   equipment, interfaces, tooltips, crops, advancements, subtitles and death messages.
 - Regression tests for empty / zero-count stacks, slot inspection, non-empty recipe validation
   and output extraction, plus localization coverage and format-argument checks.
 
-The normal release now advertises **21.1.68** in its mod metadata; the previous
-`21.1.66_fixed` build kept the original version for compatibility. The fixes do not modify
-recipes, ore generation, machine balance, saved data or network packets.
+The normal release now advertises **21.1.69** in its mod metadata; the previous
+`21.1.66_fixed` build kept the original version for compatibility. The empty-input / text fixes preserve recipes and machine balance; the 21.1.69 smelting
+experience changes are documented below. Ore generation, energy costs and saved item IDs are unchanged.
 Smooth Swapping can remain enabled.
 
 The default development branch is [`main`](https://github.com/Igoryok95/IC2R/tree/main).
 For fix details and translation provenance, see [FIXED_BUILD.md](FIXED_BUILD.md).
+
+## Smelting experience in 21.1.69
+
+The original processed-metal smelting recipes granted zero XP. The Induction Furnace also
+had no XP storage or collection button. Version 21.1.69 fixes both paths:
+
+- All 20 smeltable dust / crushed / purified ore recipes grant XP: copper / iron **0.35**,
+  gold **0.5**, and lead / silver / tin / uranium **0.25** per processed item.
+- These rates preserve the direct-smelting reward for a raw material after its usual
+  doubling in the Macerator; e.g. one raw iron (**0.7 XP**) becomes two crushed iron
+  (**2 x 0.35 XP**). The iron-dust rate also matches Mekanism's standard recipe when a pack unifies those inputs.
+- Iron, Electric and Induction Furnaces retain their XP internally until the localized
+  **Collect XP** button is pressed. The Induction Furnace counts both successful channels;
+  a blocked channel grants nothing. Its button uses the same location as the other furnaces.
+- Decimal recipe rewards accumulate without float drift. Only whole XP is paid out; the
+  fractional remainder survives collection and saving. Collecting marks the chunk dirty,
+  so reopening / reloading cannot restore already collected XP.
+- Recipe XP remains data driven: no generic output-based override or dependency on another
+  mod is added. Non-ore / alloy recipes retain their original rewards. Existing custom
+  positive rewards continue through the same recipe metadata path.
+
+The same validation exposed two pre-existing defects: crop serialization could deadlock a
+chunk unload / server shutdown, and GUI image overlays used a redundant raw OpenGL upload
+with padded UV dimensions. Crops now serialize their own cached block state; GUI images use
+Minecraft-managed textures and the actual PNG dimensions, restoring complete slot borders.
+
+Only new smelts receive the corrected rewards; past zero-XP operations were not recorded
+and cannot be reconstructed. Almost Unified may replace matching dust / ingot identities;
+this fix changes recipe XP rather than overriding unification or world generation.
+
+### Validation
+
+The final local suite passes **450 GameTests** and **20 JUnit tests**. Actual English and
+Russian development clients open all three native furnace menus, click their XP buttons,
+verify the player's XP gain and persist the fractional remainder. See
+[the validation manifest](docs/validation/21.1.69.json) for exact scope and artifact details.
+IC2R Addons **1.4.0** also passes its **83** server GameTests with this JAR, BuildCraft 8.0.25
+and Jade 15.10.6 on NeoForge 21.1.264.
+
+![Induction Furnace with experience collection](docs/images/furnace-xp-induction-en-21.1.69.png)
+![Electric Furnace experience collection](docs/images/furnace-xp-electric-en-21.1.69.png)
 
 ## Client-language messages in 21.1.68
 
@@ -52,7 +93,7 @@ recipes, world generation, energy costs, machine processing or saved-item identi
 ## Installation
 
 1. Install Minecraft **1.21.1**, NeoForge **21.1.234 or newer**, and Java **21**.
-2. Download `ic2-neoforge-21.1.68.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases/tag/21.1.68).
+2. Download `ic2-neoforge-21.1.69.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases/tag/21.1.69).
 3. Replace the previous IC2R JAR in `mods`; keep only one IC2R JAR.
 4. Install IC2R on both the client and server. Keep their versions aligned.
 
@@ -113,7 +154,7 @@ PowerShell:
 ```
 
 The standard build reads `21.1.68` from `gradle.properties` and produces
-`build/libs/ic2-neoforge-21.1.68.jar`. No version override or
+`build/libs/ic2-neoforge-21.1.69.jar`. No version override or
 `_fixed` suffix is required. The regression suite contains 442 NeoForge game tests and
 14 JUnit tests.
 These checks do not replace testing a particular modpack in a running client / server.

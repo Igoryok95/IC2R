@@ -56,6 +56,20 @@ public class CropGameTests {
   // a single crop on farmland in the middle of the template
   private static final BlockPos CROP_POS = new BlockPos(1, 2, 1);
 
+  @GameTest(template = EMPTY)
+  public static void savingCropUsesItsOwnStateWithoutReloadingTheWorldChunk(GameTestHelper helper) {
+    helper.setBlock(CROP_POS, Ic2Blocks.CROP_STICK);
+    var storedState =
+        Ic2Blocks.CROP_STICK.defaultBlockState().setValue(Ic2TileEntityBlock.CROSSING_BASE, true);
+    var crop = new TileEntityCrop(helper.absolutePos(CROP_POS), storedState);
+    crop.setLevel(helper.getLevel());
+    var saved = crop.saveWithFullMetadata(helper.getLevel().registryAccess());
+    helper.assertTrue(
+        saved.getBoolean("crossingBase"),
+        "Saving a detached / unloading crop must serialize its own state, not query the world");
+    helper.succeed();
+  }
+
   // crossing/spreading logic and weeds are RNG-driven; the loops below call performTick()/
   // performWeedWork() until the (high-probability) event occurs. The counts are chosen so the
   // chance of a spurious failure is far below 1e-10 per test.

@@ -1304,7 +1304,7 @@
   "ic2.debug.mode.energy_net": "Energy Net",
   "ic2.debug.mode.accelerate": "Accelerate",
   "ic2.debug.mode.accelerate_x100": "Accelerate x100",
-  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored for Minecraft 1.21.1 NeoForge. Igoryok95 fork with Russian localization, client-localized tool and machine messages, and an empty machine-input crash fix.",
+  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored for Minecraft 1.21.1 NeoForge. Igoryok95 fork with Russian localization, client-language messages, an empty-input crash fix, processed-ore smelting experience and XP collection in all three furnaces.",
   "ic2.debug.acceleration.start": "Running %s ticks on %s.",
   "ic2.debug.acceleration.interrupted": "The block entity changed %s time(s), interrupted after %s updates.",
   "ic2.debug.acceleration.changed": "The block entity changed %s time(s).",
@@ -1333,5 +1333,6 @@
   "ic2.coke_kiln.structure.title": "Multiblock structure:",
   "ic2.coke_kiln.structure.bottom": " Bottom layer: 3x3 Refractory Blocks with a Coke Kiln Grate in the centre",
   "ic2.coke_kiln.structure.middle": " Middle layer: 3x3 Refractory Blocks, hollow centre, Coke Kiln on one side",
-  "ic2.coke_kiln.structure.top": " Top layer: 3x3 Refractory Blocks with a Coke Kiln Hatch in the centre"
+  "ic2.coke_kiln.structure.top": " Top layer: 3x3 Refractory Blocks with a Coke Kiln Hatch in the centre",
+  "ic2.Induction.gui.heat": "Heat"
 }

@@ -17,6 +17,8 @@
     <button type="recipe" x="81" y="35" width="22" height="15" event="minecraft.smelting"></button>
     <playerInventory x="7" y="83"/>
 
-    <text x="10" y="36">{ic2.generic.text.heat}</text>
-    <text x="10" y="46">%base.getHeat()%</text>
+    <text x="6" y="24">{ic2.Induction.gui.heat}</text>
+    <text x="10" y="34">%base.getHeat()%</text>
+    <button x="6" y="50" width="20" height="20" icon="minecraft:experience_bottle" event="0">{ic2.IronFurnace.gui.xp}
+    </button>
 </gui>

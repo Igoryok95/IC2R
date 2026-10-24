@@ -15,6 +15,7 @@ import ic2.core.network.GuiSynced;
 import ic2.core.ref.Ic2BlockEntities;
 import ic2.core.ref.Ic2SoundEvents;
 import ic2.core.util.ParticleUtil;
+import java.math.BigDecimal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
@@ -66,7 +67,16 @@ public class TileEntityIronFurnace extends TileEntityBase
               world, player.getX(), player.getY() + 0.5, player.getZ() + 0.5, amount));
     }
 
-    return xp - Math.floor(xp);
+    return fractionalXP(xp);
+  }
+
+  static double fractionalXP(double xp) {
+    return BigDecimal.valueOf(xp).remainder(BigDecimal.ONE).doubleValue();
+  }
+
+  static double addXP(double stored, float earned) {
+    if (earned <= 0 || !Float.isFinite(earned)) return stored;
+    return BigDecimal.valueOf(stored).add(new BigDecimal(Float.toString(earned))).doubleValue();
   }
 
   @Override
@@ -149,7 +159,7 @@ public class TileEntityIronFurnace extends TileEntityBase
     ItemStack output = result.getOutput();
     this.outputSlot.add(output);
     this.inputSlot.consume(result);
-    this.xp = this.xp + result.recipe().getMetaData().getFloat("experience");
+    this.xp = addXP(this.xp, result.recipe().getMetaData().getFloat("experience"));
   }
 
   private boolean canOperate() {
@@ -192,6 +202,7 @@ public class TileEntityIronFurnace extends TileEntityBase
     if (event == 0) {
       assert !this.getLevel().isClientSide;
       this.xp = spawnXP(player, this.xp);
+      this.setChanged();
     }
   }
 

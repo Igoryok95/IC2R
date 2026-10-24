@@ -49,7 +49,8 @@ public class TileEntityElectricFurnace
       MachineRecipeResult<ItemStack, ItemStack, ItemStack> result,
       Collection<ItemStack> processResult) {
     super.operateOnce(result, processResult);
-    this.xp = this.xp + result.recipe().getMetaData().getFloat("experience");
+    this.xp =
+        TileEntityIronFurnace.addXP(this.xp, result.recipe().getMetaData().getFloat("experience"));
   }
 
   @Override
@@ -57,6 +58,7 @@ public class TileEntityElectricFurnace
     if (event == 0) {
       assert !this.getLevel().isClientSide;
       this.xp = TileEntityIronFurnace.spawnXP(player, this.xp);
+      this.setChanged();
     }
   }
 
