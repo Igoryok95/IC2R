@@ -1,8 +1,9 @@
-# 21.1.68 (unreleased)
+# 21.1.68
 
 Minecraft **1.21.1** · NeoForge **21.1.234+** · Java **21**
 
-Publishing is on hold. The latest published release remains 21.1.67.
+This release fixes client-language notifications and completes English / Russian coverage
+for player-facing messages.
 
 ## Fixed
 

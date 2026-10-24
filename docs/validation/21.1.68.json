@@ -1,6 +1,8 @@
 {
   "version": "21.1.68",
-  "status": "unreleased",
+  "status": "validated",
+  "tested_commit": "f7f58324eb677474929973d66036b568faf76d27",
+  "github_game_tests": "https://github.com/Igoryok95/IC2R/actions/runs/40109181567",
   "verified_at_utc": "2026-10-24T15:53:12.357332+00:00",
   "junit": {
     "tests": 14,

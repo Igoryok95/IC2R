@@ -17,7 +17,7 @@ The patch and Russian translations are included on this fork's `main` branch as 
 `build/libs/ic2-neoforge-21.1.67.jar`, with mod ID `ic2` and advertised version `21.1.67`.
 The instructions below describe the earlier `21.1.66_fixed` compatibility build.
 
-## Preparing 21.1.68: client-language messages
+## Version 21.1.68: client-language messages
 
 Locale-file coverage did not catch server-side translation of nested chat components. The old
 Component overload called `getString()` on the server, then sent the resulting English sentence
@@ -35,7 +35,8 @@ the pre-existing wind-turbine spin persistence test with a random zero-speed fix
 chat tests passed in that run, and the subsequent complete run passed all 442 tests. Wind
 simulation and machine logic were not modified by this text update.
 
-The source is prepared for 21.1.68; publishing is explicitly on hold. No release tag is created.
+The standard 21.1.68 build produces `build/libs/ic2-neoforge-21.1.68.jar` with mod ID `ic2`.
+Release artifacts are available from the repository's GitHub Releases page.
 
 ## Translation provenance
 

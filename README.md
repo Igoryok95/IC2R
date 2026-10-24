@@ -5,22 +5,22 @@ empty machine-input inspection by inventory extensions such as Smooth Swapping.
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.67-blue" alt="Version 21.1.67">
+<img src="https://img.shields.io/badge/Version-21.1.68-blue" alt="Version 21.1.68">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
 ## This fork
 
-Version **21.1.67** builds on upstream **21.1.66** and includes:
+Version **21.1.68** builds on upstream **21.1.66** and includes:
 
 - A guard against empty processing inputs before `StackUtil.copyWithSize`. Shift-clicking
   unprocessed items out of machines no longer triggers `IllegalArgumentException: empty stack:
   0 minecraft:air` when an inventory extension inspects the emptied input slot.
-- Russian translations for all **1291** English locale keys in 21.1.67, including machines,
+- Russian translations for all **1335** English locale keys, including machines,
   equipment, interfaces, tooltips, crops, advancements, subtitles and death messages.
 - Regression tests for empty / zero-count stacks, slot inspection, non-empty recipe validation
   and output extraction, plus localization coverage and format-argument checks.
 
-The normal release now advertises **21.1.67** in its mod metadata; the previous
+The normal release now advertises **21.1.68** in its mod metadata; the previous
 `21.1.66_fixed` build kept the original version for compatibility. The fixes do not modify
 recipes, ore generation, machine balance, saved data or network packets.
 Smooth Swapping can remain enabled.
@@ -28,10 +28,10 @@ Smooth Swapping can remain enabled.
 The default development branch is [`main`](https://github.com/Igoryok95/IC2R/tree/main).
 For fix details and translation provenance, see [FIXED_BUILD.md](FIXED_BUILD.md).
 
-## Preparing 21.1.68 (unreleased)
+## Client-language messages in 21.1.68
 
-The latest published release remains **21.1.67**. The `main` branch prepares **21.1.68**;
-no 21.1.68 tag or release has been published.
+Version **21.1.68** fixes notifications that were translated on the server before reaching
+clients with a different language setting.
 
 - Tool and machine notifications retain translatable components until they reach each client.
   A dedicated English server no longer forces `Mode: Normal` / `Mode: No Shearing` on Russian
@@ -46,13 +46,13 @@ no 21.1.68 tag or release has been published.
 - Eight chat regression GameTests and three JUnit checks cover actual tool / machine actions,
   nested components, serialization between English and Russian, formatting and argument types.
 
-This pending update changes text and message delivery. It adds no machines and does not change
+This update changes text and message delivery. It adds no machines and does not change
 recipes, world generation, energy costs, machine processing or saved-item identities.
 
 ## Installation
 
 1. Install Minecraft **1.21.1**, NeoForge **21.1.234 or newer**, and Java **21**.
-2. Download `ic2-neoforge-21.1.67.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases).
+2. Download `ic2-neoforge-21.1.68.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases/tag/21.1.68).
 3. Replace the previous IC2R JAR in `mods`; keep only one IC2R JAR.
 4. Install IC2R on both the client and server. Keep their versions aligned.
 
@@ -112,8 +112,8 @@ PowerShell:
 .\gradlew.bat build runGameTestServer
 ```
 
-The current development build reads `21.1.68` from `gradle.properties` and produces
-`build/libs/ic2-neoforge-21.1.68.jar`; this build is pending release. No version override or
+The standard build reads `21.1.68` from `gradle.properties` and produces
+`build/libs/ic2-neoforge-21.1.68.jar`. No version override or
 `_fixed` suffix is required. The regression suite contains 442 NeoForge game tests and
 14 JUnit tests.
 These checks do not replace testing a particular modpack in a running client / server.
