@@ -361,17 +361,13 @@ public final class SideProxyClient implements SideProxy {
 
   @Override
   public void messagePlayer(Player player, String translatable, Object... args) {
-    if (player == null) player = mc.player;
-    if (player != null)
-      player.displayClientMessage(
-          Component.translatable(
-              translatable,
-              args.length > 0 ? SideProxyServer.getMessageComponents(args) : new Object[0]),
-          false);
+    messagePlayer(
+        player, Component.translatable(translatable, SideProxyServer.getMessageComponents(args)));
   }
 
   public void messagePlayer(Player player, Component translatable) {
-    messagePlayer(player, translatable.getString());
+    if (player == null) player = mc.player;
+    if (player != null) player.displayClientMessage(translatable, false);
   }
 
   @Override

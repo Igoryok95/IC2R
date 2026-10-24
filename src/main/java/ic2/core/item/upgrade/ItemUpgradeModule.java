@@ -327,16 +327,14 @@ public class ItemUpgradeModule extends Item
             IC2.sideProxy.messagePlayer(
                 context.getPlayer(),
                 Component.translatable(
-                        "ic2.tooltip.upgrade.ejector", Component.translatable(getSideName(stack)))
-                    .getString());
+                    "ic2.tooltip.upgrade.ejector", Component.translatable(getSideName(stack))));
             break;
           case pulling:
           case advanced_pulling, fluid_pulling:
             IC2.sideProxy.messagePlayer(
                 context.getPlayer(),
                 Component.translatable(
-                        "ic2.tooltip.upgrade.pulling", Component.translatable(getSideName(stack)))
-                    .getString());
+                    "ic2.tooltip.upgrade.pulling", Component.translatable(getSideName(stack))));
             break;
         }
       }

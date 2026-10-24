@@ -1,6 +1,6 @@
 # IndustrialCraft 2: Refactored — Igoryok95 fork
 
-IndustrialCraft 2 for **Minecraft 1.21.1 NeoForge**, with Russian localization and a fix for
+IndustrialCraft 2 for **Minecraft 1.21.1 NeoForge**, with Russian localization, client-language chat messages and a fix for
 empty machine-input inspection by inventory extensions such as Smooth Swapping.
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
@@ -15,7 +15,7 @@ Version **21.1.67** builds on upstream **21.1.66** and includes:
 - A guard against empty processing inputs before `StackUtil.copyWithSize`. Shift-clicking
   unprocessed items out of machines no longer triggers `IllegalArgumentException: empty stack:
   0 minecraft:air` when an inventory extension inspects the emptied input slot.
-- Complete Russian localization of all **1291** English locale keys, including machines,
+- Russian translations for all **1291** English locale keys in 21.1.67, including machines,
   equipment, interfaces, tooltips, crops, advancements, subtitles and death messages.
 - Regression tests for empty / zero-count stacks, slot inspection, non-empty recipe validation
   and output extraction, plus localization coverage and format-argument checks.
@@ -27,6 +27,27 @@ Smooth Swapping can remain enabled.
 
 The default development branch is [`main`](https://github.com/Igoryok95/IC2R/tree/main).
 For fix details and translation provenance, see [FIXED_BUILD.md](FIXED_BUILD.md).
+
+## Preparing 21.1.68 (unreleased)
+
+The latest published release remains **21.1.67**. The `main` branch prepares **21.1.68**;
+no 21.1.68 tag or release has been published.
+
+- Tool and machine notifications retain translatable components until they reach each client.
+  A dedicated English server no longer forces `Mode: Normal` / `Mode: No Shearing` on Russian
+  clients. Nested mode names, styling, player names and numeric arguments are preserved.
+- The same fix covers foam sprayers, Nano / Quantum HUD modes, miners, EU storage, chargepads,
+  wind meters and directional upgrades. Existing string-returning GUI helpers remain compatible.
+- Former literal-English warnings for safes, ownership, painters, the EU reader and mining
+  laser use English / Russian locale keys. Debug mode names, chat labels and values are localized;
+  internal field / graph diagnostics stay in the developer console with a localized chat notice.
+- Coke Kiln construction instructions, invalid-fluid warnings and the mod-list description are
+  localized. The English and Russian locales each contain **1335 keys**.
+- Eight chat regression GameTests and three JUnit checks cover actual tool / machine actions,
+  nested components, serialization between English and Russian, formatting and argument types.
+
+This pending update changes text and message delivery. It adds no machines and does not change
+recipes, world generation, energy costs, machine processing or saved-item identities.
 
 ## Installation
 
@@ -91,9 +112,10 @@ PowerShell:
 .\gradlew.bat build runGameTestServer
 ```
 
-The standard build reads `21.1.67` from `gradle.properties` and produces
-`build/libs/ic2-neoforge-21.1.67.jar`; no version override or `_fixed` suffix is required.
-The regression suite contains 434 NeoForge game tests and 11 JUnit tests.
+The current development build reads `21.1.68` from `gradle.properties` and produces
+`build/libs/ic2-neoforge-21.1.68.jar`; this build is pending release. No version override or
+`_fixed` suffix is required. The regression suite contains 442 NeoForge game tests and
+14 JUnit tests.
 These checks do not replace testing a particular modpack in a running client / server.
 
 Development runs:

@@ -530,16 +530,19 @@ public class TileEntityMiner extends TileEntityElectricMachine
   }
 
   public String getPumpModeTooltip() {
+    return getPumpModeComponent().getString();
+  }
+
+  private Component getPumpModeComponent() {
     return Component.translatable(
-            this.pumpMode ? "ic2.Miner.gui.pumpMode.on" : "ic2.Miner.gui.pumpMode.off")
-        .getString();
+        this.pumpMode ? "ic2.Miner.gui.pumpMode.on" : "ic2.Miner.gui.pumpMode.off");
   }
 
   @Override
   public void onNetworkEvent(Player player, int event) {
     if (event == 0) {
       this.pumpMode = !this.pumpMode;
-      IC2.sideProxy.messagePlayer(player, this.getPumpModeTooltip());
+      IC2.sideProxy.messagePlayer(player, this.getPumpModeComponent());
     }
   }
 

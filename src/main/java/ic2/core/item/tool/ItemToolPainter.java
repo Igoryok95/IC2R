@@ -262,9 +262,9 @@ public class ItemToolPainter extends ItemToolCrafting implements IBoxable {
       boolean newValue = !nbtData.getBoolean("autoRefill");
       nbtData.putBoolean("autoRefill", newValue);
       if (newValue) {
-        IC2.sideProxy.messagePlayer(player, "Painter automatic refill mode enabled");
+        IC2.sideProxy.messagePlayer(player, "ic2.painter.auto_refill.enabled");
       } else {
-        IC2.sideProxy.messagePlayer(player, "Painter automatic refill mode disabled");
+        IC2.sideProxy.messagePlayer(player, "ic2.painter.auto_refill.disabled");
       }
 
       return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);

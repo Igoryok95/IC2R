@@ -17,6 +17,26 @@ The patch and Russian translations are included on this fork's `main` branch as 
 `build/libs/ic2-neoforge-21.1.67.jar`, with mod ID `ic2` and advertised version `21.1.67`.
 The instructions below describe the earlier `21.1.66_fixed` compatibility build.
 
+## Preparing 21.1.68: client-language messages
+
+Locale-file coverage did not catch server-side translation of nested chat components. The old
+Component overload called `getString()` on the server, then sent the resulting English sentence
+as a translation key. Chainsaw `Mode: Normal` / `Mode: No Shearing` reproduced the problem.
+
+Both proxies now deliver the original component tree. Arguments keep nested translations,
+styles and numeric types. Existing tool / armor / machine call sites no longer flatten messages
+before sending them. Literal-English player warnings and debug chat labels use locale keys.
+The common EN / RU coverage is now 1335 keys, including Coke Kiln / fluid warnings and the
+localized mod-list description. Built-in technical class names, IDs and developer-console
+field / graph reports remain diagnostic data.
+
+The final local validation passed 442 GameTests and 14 JUnit tests. One earlier full run failed
+the pre-existing wind-turbine spin persistence test with a random zero-speed fixture; all new
+chat tests passed in that run, and the subsequent complete run passed all 442 tests. Wind
+simulation and machine logic were not modified by this text update.
+
+The source is prepared for 21.1.68; publishing is explicitly on hold. No release tag is created.
+
 ## Translation provenance
 
 928 translations were matched against the English and Russian locale files shipped in the original

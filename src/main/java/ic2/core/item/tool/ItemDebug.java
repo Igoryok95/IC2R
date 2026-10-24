@@ -36,6 +36,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -74,7 +75,7 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
         return false;
       }
 
-      output.chat("Running %s ticks on %s.", count, be);
+      output.chat("ic2.debug.acceleration.start", count, be);
       int changes = 0;
       int interruptCount = -1;
 
@@ -96,11 +97,9 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
 
       if (changes > 0) {
         if (interruptCount != -1) {
-          output.chat(
-              "The tile entity changed %d time(s), interrupted after %d updates.",
-              changes, interruptCount);
+          output.chat("ic2.debug.acceleration.interrupted", changes, interruptCount);
         } else {
-          output.chat("The tile entity changed %d time(s).", changes);
+          output.chat("ic2.debug.acceleration.changed", changes);
         }
       }
 
@@ -109,12 +108,12 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
         return false;
       }
 
-      output.chat("Running up to %d ticks on % (%s).", count, state.getBlock(), pos);
+      output.chat("ic2.debug.acceleration.random_start", count, state.getBlock(), pos);
 
       for (int i = 0; i < count && world.getBlockState(pos) == state; i++) {
         state.randomTick((ServerLevel) world, pos, IC2.random);
         if (world.getBlockState(pos) != state) {
-          output.chat("Ran %d ticks before a state change.", i);
+          output.chat("ic2.debug.acceleration.state_changed", i);
           break;
         }
       }
@@ -130,14 +129,18 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
 
     Level world = player.level();
     ItemDebug.Output output = new ItemDebug.Output();
-    String plat = getPlatform(world);
-    output.both("[%s] entity: %s", output, entity);
+    Component plat = getPlatform(world);
+    output.both(Component.translatable("ic2.debug.entity", plat, entity.toString()));
     if (entity instanceof ItemEntity) {
       ItemStack entStack = ((ItemEntity) entity).getItem();
       String name = Util.getName(entStack.getItem()).toString();
       output.both(
-          "[%s] item id: %s size: %s name: %s",
-          plat, name, StackUtil.getSize(entStack), entStack.getDescriptionId());
+          Component.translatable(
+              "ic2.debug.item",
+              plat,
+              name,
+              StackUtil.getSize(entStack),
+              Component.translatable(entStack.getDescriptionId())));
       output.console("NBT: %s", StackUtil.getTag(entStack));
     }
 
@@ -159,15 +162,18 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
     StackUtil.getOrCreateNbtData(stack).putInt("mode", mode.ordinal());
   }
 
-  private static String getPlatform(Level world) {
+  private static Component getPlatform(Level world) {
     if (IC2.envProxy.isClientEnv()) {
       if (!world.isClientSide) {
-        return "sp server";
+        return Component.translatable("ic2.debug.platform.sp_server");
       } else {
-        return world.getServer() == null ? "mp client" : "sp client";
+        return Component.translatable(
+            world.getServer() == null
+                ? "ic2.debug.platform.mp_client"
+                : "ic2.debug.platform.sp_client");
       }
     } else {
-      return "mp server";
+      return Component.translatable("ic2.debug.platform.mp_server");
     }
   }
 
@@ -373,7 +379,7 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
       if (!world.isClientSide) {
         mode = ItemDebug.Mode.modes[(mode.ordinal() + 1) % ItemDebug.Mode.modes.length];
         setMode(stack, mode);
-        IC2.sideProxy.messagePlayer(player, "Debug Item Mode: " + mode.getName());
+        IC2.sideProxy.messagePlayer(player, "ic2.debug.mode", mode.getName());
         return InteractionResult.SUCCESS;
       } else {
         return InteractionResult.PASS;
@@ -395,15 +401,20 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
           case InterfacesFields:
           case InterfacesFieldsRetrace:
             {
-              String plat = getPlatform(world);
+              Component plat = getPlatform(world);
               BlockState state = world.getBlockState(pos);
               Block block = state.getBlock();
               BlockEntity te = world.getBlockEntity(pos);
               output.both(
-                  "[%s] block state: %s%nname: %s%ncls: %s%nbe: %s",
-                  plat, state, block.getDescriptionId(), block.getClass().getName(), te);
+                  Component.translatable(
+                      "ic2.debug.block",
+                      plat,
+                      state.toString(),
+                      Component.translatable(block.getDescriptionId()),
+                      block.getClass().getName(),
+                      te == null ? Component.translatable("ic2.debug.none") : te.toString()));
               if (te != null) {
-                output.part("[%s] interfaces:", plat);
+                output.part("[%s] interfaces:", plat.getString());
                 Class<?> c = te.getClass();
 
                 do {
@@ -434,28 +445,28 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
 
               BlockEntity tileEntity = world.getBlockEntity(pos);
               if (tileEntity instanceof Ic2TileEntity te) {
-                output.chat("Block: Active=%b Facing=%s", te.getActive(), te.getFacing());
+                output.chat("ic2.debug.block_state", te.getActive(), te.getFacing());
 
                 for (TileEntityComponent comp : te.getComponents()) {
                   if (comp instanceof Energy energy) {
-                    output.chat("Energy: %.2f / %.2f", energy.getEnergy(), energy.getCapacity());
+                    output.chat("ic2.debug.energy", energy.getEnergy(), energy.getCapacity());
                   } else if (comp instanceof Redstone redstone) {
-                    output.chat("Redstone: %d", redstone.getRedstoneInput());
+                    output.chat("ic2.debug.redstone", redstone.getRedstoneInput());
                   }
                 }
               }
 
               if (tileEntity instanceof TileEntityBaseGenerator te) {
-                output.chat("BaseGen: Fuel=%d", te.fuel);
+                output.chat("ic2.debug.generator", te.fuel);
               }
 
               if (tileEntity instanceof IEnergyStorage te) {
-                output.chat("EnergyStorage: Stored=%d", te.getStored());
+                output.chat("ic2.debug.storage", te.getStored());
               }
 
               if (tileEntity instanceof IReactor te) {
                 output.chat(
-                    "Reactor: Heat=%d MaxHeat=%d HEM=%f Output=%f",
+                    "ic2.debug.reactor",
                     te.getHeat(),
                     te.getMaxHeat(),
                     te.getHeatEffectModifier(),
@@ -463,15 +474,17 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
               }
 
               if (tileEntity instanceof IPersonalBlock te) {
-                output.chat(
-                    "PersonalBlock: CanAccess=%b", te.permitsAccess(player.getGameProfile()));
+                output.chat("ic2.debug.personal_block", te.permitsAccess(player.getGameProfile()));
               }
 
               if (tileEntity instanceof TileEntityCrop te) {
                 CropCard crop = te.getCrop();
-                String id = crop != null ? crop.getOwner() + ":" + crop.getId() : "none";
+                Object id =
+                    crop != null
+                        ? crop.getOwner() + ":" + crop.getId()
+                        : Component.translatable("ic2.debug.none");
                 output.chat(
-                    "Crop: Crop=%s Size=%d Growth=%d Gain=%d Resistance=%d Nutrients=%d Water=%d GrowthPoints=%d%n Cross=%b",
+                    "ic2.debug.crop",
                     id,
                     te.getCurrentAge(),
                     te.getStatGrowth(),
@@ -493,23 +506,14 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
               ByteArrayOutputStream consoleBuffer = new ByteArrayOutputStream();
               PrintStream consoleStream =
                   new PrintStream(consoleBuffer, false, StandardCharsets.UTF_8);
-              ByteArrayOutputStream chatBuffer = new ByteArrayOutputStream();
-              PrintStream chatStream =
-                  new PrintStream(consoleBuffer, false, StandardCharsets.UTF_8);
+              // Internal class, field and graph data belong in the developer console.
               if (!((EnergyNetGlobal) EnergyNet.instance)
-                  .dumpDebugInfo(world, pos, consoleStream, chatStream)) {
+                  .dumpDebugInfo(world, pos, consoleStream, consoleStream))
                 return InteractionResult.PASS;
-              }
-
-              chatStream.flush();
               consoleStream.flush();
-              if (consoleBuffer.size() > 0) {
+              if (consoleBuffer.size() > 0)
                 output.console(consoleBuffer.toString(StandardCharsets.UTF_8).stripTrailing());
-              }
-
-              if (chatBuffer.size() > 0) {
-                output.chat(chatBuffer.toString(StandardCharsets.UTF_8).stripTrailing());
-              }
+              output.chat("ic2.debug.energy.console_report");
               break;
             }
           case Accelerate:
@@ -547,12 +551,12 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
   }
 
   private enum Mode {
-    InterfacesFields("Interfaces and Fields"),
-    InterfacesFieldsRetrace("Interfaces and Fields (liquid/entity)"),
-    TileData("Tile Data"),
-    EnergyNet("Energy Net"),
-    Accelerate("Accelerate"),
-    AccelerateX100("Accelerate x100");
+    InterfacesFields("ic2.debug.mode.interfaces_fields"),
+    InterfacesFieldsRetrace("ic2.debug.mode.interfaces_fields_retrace"),
+    TileData("ic2.debug.mode.tile_data"),
+    EnergyNet("ic2.debug.mode.energy_net"),
+    Accelerate("ic2.debug.mode.accelerate"),
+    AccelerateX100("ic2.debug.mode.accelerate_x100");
 
     static final ItemDebug.Mode[] modes = values();
     private final String name;
@@ -567,20 +571,31 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
   }
 
   private static class Output {
-    private final StringBuilder chatSb = new StringBuilder();
+    private final List<Component> messages = new ArrayList<>();
     private final StringBuilder consoleSb = new StringBuilder();
     private final StringBuilder partSb = new StringBuilder();
 
-    public void chat(CharSequence line) {
-      if (!this.chatSb.isEmpty()) {
-        this.chatSb.append('\n');
+    public void chat(String key, Object... args) {
+      Object[] values = args.clone();
+      for (int i = 0; i < values.length; i++) {
+        Object value = values[i];
+        if (value instanceof Boolean flag)
+          values[i] = Component.translatable(flag ? "ic2.debug.true" : "ic2.debug.false");
+        else if (value instanceof net.minecraft.core.Direction direction)
+          values[i] =
+              Component.translatable(
+                  "ic2.dir."
+                      + switch (direction) {
+                        case UP -> "top";
+                        case DOWN -> "bottom";
+                        default -> direction.getSerializedName();
+                      });
+        else if (value == null) values[i] = Component.translatable("ic2.debug.none");
+        else if (!(value instanceof Component
+            || value instanceof Number
+            || value instanceof String)) values[i] = value.toString();
       }
-
-      this.chatSb.append(line);
-    }
-
-    public void chat(String format, Object... args) {
-      this.chat(String.format(format, args));
+      messages.add(Component.translatable(key, values));
     }
 
     public void console(CharSequence line) {
@@ -595,13 +610,9 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
       this.console(String.format(format, args));
     }
 
-    public void both(CharSequence line) {
-      this.chat(line);
-      this.console(line);
-    }
-
-    public void both(String format, Object... args) {
-      this.both(String.format(format, args));
+    public void both(Component message) {
+      messages.add(message);
+      console(message.getString());
     }
 
     public ItemDebug.Output part(CharSequence line) {
@@ -618,35 +629,20 @@ public class ItemDebug extends Item implements PriorityUsableItem, ISpecialElect
       return this.part(String.format(format, args));
     }
 
-    public void partToChat() {
-      this.chat(this.partSb);
-      this.partSb.setLength(0);
-    }
-
     public void partToConsole() {
       this.console(this.partSb);
       this.partSb.setLength(0);
     }
 
-    public void partToBoth() {
-      this.both(this.partSb);
-      this.partSb.setLength(0);
-    }
-
     void flush(Player player) {
-      if (player.level().isClientSide) {
-        System.out.println(this.consoleSb);
-
-        for (String line : this.chatSb.toString().split("[\\r\\n]+")) {
-          IC2.sideProxy.messagePlayer(player, line);
-        }
-      } else if (player instanceof ServerPlayer) {
-        IC2.network.get(true).sendConsole((ServerPlayer) player, this.consoleSb.toString());
-        IC2.network.get(true).sendChat((ServerPlayer) player, this.chatSb.toString());
+      if (!consoleSb.isEmpty()) {
+        if (player.level().isClientSide) System.out.println(consoleSb);
+        else if (player instanceof ServerPlayer serverPlayer)
+          IC2.network.get(true).sendConsole(serverPlayer, consoleSb.toString());
       }
-
-      this.chatSb.setLength(0);
-      this.consoleSb.setLength(0);
+      for (Component message : messages) IC2.sideProxy.messagePlayer(player, message);
+      messages.clear();
+      consoleSb.setLength(0);
     }
   }
 }

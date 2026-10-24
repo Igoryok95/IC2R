@@ -76,7 +76,8 @@ public class GuiIndustrialWorkbench extends Ic2Gui<ContainerIndustrialWorkbench>
                                   GuiIndustrialWorkbench.this.menu.player.getGameProfile())) {
                         IC2.sideProxy.messagePlayer(
                             GuiIndustrialWorkbench.this.menu.player,
-                            "Owned by " + ((IPersonalBlock) neighbour).getOwner().getName());
+                            "ic2.personal.owned_by",
+                            ((IPersonalBlock) neighbour).getOwner().getName());
                       } else {
                         GuiIndustrialWorkbench.closeHandler = this::onScreenClose;
                         IC2.network.get(false).requestGUI((IHasGui) neighbour);

@@ -57,14 +57,15 @@ public final class SideProxyServer implements SideProxy {
     return writer.toString();
   }
 
-  static Component[] getMessageComponents(Object... args) {
-    Component[] encodedArgs = new Component[args.length];
+  static Object[] getMessageComponents(Object... args) {
+    Object[] encodedArgs = args.clone();
 
     for (int i = 0; i < args.length; i++) {
-      if (args[i] instanceof String && ((String) args[i]).contains("ic2.")) {
-        encodedArgs[i] = Component.translatable((String) args[i]);
-      } else {
-        encodedArgs[i] = Component.literal(args[i].toString());
+      if (args[i] instanceof String key
+          && (key.startsWith("ic2.")
+              || key.startsWith("item.ic2.")
+              || key.startsWith("block.ic2."))) {
+        encodedArgs[i] = Component.translatable(key);
       }
     }
 
@@ -178,21 +179,12 @@ public final class SideProxyServer implements SideProxy {
 
   @Override
   public void messagePlayer(Player player, String translatable, Object... args) {
-    if (player instanceof ServerPlayer) {
-      Component msg;
-      if (args.length > 0) {
-        msg = Component.translatable(translatable, (Object[]) getMessageComponents(args));
-      } else {
-        msg = Component.translatable(translatable);
-      }
-
-      player.displayClientMessage(msg, false);
-    }
+    messagePlayer(player, Component.translatable(translatable, getMessageComponents(args)));
   }
 
   @Override
   public void messagePlayer(Player player, Component translatable) {
-    messagePlayer(player, translatable.getString());
+    if (player instanceof ServerPlayer) player.displayClientMessage(translatable, false);
   }
 
   @Override

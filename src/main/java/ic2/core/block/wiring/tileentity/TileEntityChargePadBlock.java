@@ -187,15 +187,14 @@ public abstract class TileEntityChargePadBlock extends TileEntityElectricBlock {
       this.redstoneMode = 0;
     }
 
-    IC2.sideProxy.messagePlayer(player, this.getRedstoneMode());
+    IC2.sideProxy.messagePlayer(player, this.getRedstoneModeComponent());
   }
 
   @Override
-  public String getRedstoneMode() {
+  public Component getRedstoneModeComponent() {
     return this.redstoneMode <= 1 && this.redstoneMode >= 0
         ? Component.translatable("ic2.blockChargepad.gui.mod.redstone" + this.redstoneMode)
-            .getString()
-        : "";
+        : Component.empty();
   }
 
   protected boolean chargeItem(ItemStack stack, int chargeFactor) {

@@ -175,10 +175,10 @@ public class TileEntityPersonalChest extends TileEntityInventory
   @Override
   public boolean wrenchCanRemove(Player player) {
     if (!this.permitsAccess(player.getGameProfile())) {
-      IC2.sideProxy.messagePlayer(player, "This safe is owned by " + this.owner.getName());
+      IC2.sideProxy.messagePlayer(player, "ic2.personal_safe.owned_by", this.owner.getName());
       return false;
     } else if (!this.contentSlot.isEmpty()) {
-      IC2.sideProxy.messagePlayer(player, "Can't wrench non-empty safe");
+      IC2.sideProxy.messagePlayer(player, "ic2.personal_safe.not_empty");
       return false;
     } else {
       return true;
@@ -294,7 +294,7 @@ public class TileEntityPersonalChest extends TileEntityInventory
   protected InteractionResult onActivated(
       Player player, InteractionHand hand, Direction side, Vec3 hit) {
     if (!this.getLevel().isClientSide && !this.permitsAccess(player.getGameProfile())) {
-      IC2.sideProxy.messagePlayer(player, "This safe is owned by " + this.getOwner().getName());
+      IC2.sideProxy.messagePlayer(player, "ic2.personal_safe.owned_by", this.getOwner().getName());
       return InteractionResult.FAIL;
     } else {
       return super.onActivated(player, hand, side, hit);

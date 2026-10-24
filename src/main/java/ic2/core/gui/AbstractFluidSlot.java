@@ -60,7 +60,7 @@ public abstract class AbstractFluidSlot extends GuiElement<TankFluidSlot> {
         ret.add(
             Component.translatable("ic2.generic.text.state", Component.translatable(translateKey)));
       } else {
-        ret.add(Component.literal("Invalid FluidStack instance."));
+        ret.add(Component.translatable("ic2.generic.text.invalid_fluid"));
       }
     } else {
       ret.add(Component.translatable("ic2.generic.text.no_fluid"));

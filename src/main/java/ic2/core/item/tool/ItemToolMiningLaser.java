@@ -517,7 +517,7 @@ public class ItemToolMiningLaser extends ItemElectricTool
           }
         }
       } else {
-        IC2.sideProxy.messagePlayer(player, "Mining laser aiming angle too steep");
+        IC2.sideProxy.messagePlayer(player, "ic2.mining_laser.angle_too_steep");
       }
     }
 

@@ -45,7 +45,7 @@ public class ItemToolMeter extends Item
     if (!(tile instanceof IEnergySource)
         && !(tile instanceof IEnergyConductor)
         && !(tile instanceof IEnergySink)) {
-      IC2.sideProxy.messagePlayer(player, "Not an energy net tile");
+      IC2.sideProxy.messagePlayer(player, "ic2.eu_reader.not_energy_tile");
     } else if (this.getInventory(player, hand, StackUtil.get(player, hand))
         .openManagedItem(player, hand, null)) {
       ContainerMeter container = (ContainerMeter) player.containerMenu;

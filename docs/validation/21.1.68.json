@@ -1,0 +1,22 @@
+{
+  "version": "21.1.68",
+  "status": "unreleased",
+  "verified_at_utc": "2026-10-24T15:53:12.357332+00:00",
+  "junit": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0
+  },
+  "gametests": {
+    "passed": 442,
+    "required": 442
+  },
+  "locale_keys": 1335,
+  "validation": "EN-to-RU serialized component rendering and real tool/machine GameTests; no physical client claim",
+  "earlier_run": "Pre-existing wind turbine spin persistence fixture failed once; complete rerun passed. Wind logic unchanged.",
+  "local_artifact": {
+    "file": "ic2-neoforge-21.1.68.jar",
+    "bytes": 7997537,
+    "sha256": "d4e4adfc66242bf56ceccdc396ff4185c6b9e6f29842324a188ad0056c2ce53d"
+  }
+}

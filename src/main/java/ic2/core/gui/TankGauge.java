@@ -141,7 +141,7 @@ public class TankGauge extends GuiElement<TankGauge> {
                     + " "
                     + Component.translatable("ic2.generic.text.mb").getString()));
       } else {
-        ret.add(Component.literal("invalid fluid stack"));
+        ret.add(Component.translatable("ic2.generic.text.invalid_fluid"));
       }
     } else {
       ret.add(Component.translatable("ic2.generic.text.empty"));
