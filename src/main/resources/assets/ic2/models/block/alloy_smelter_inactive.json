@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "ic2:block/machine/lv/alloy_smelter/inactive_up",
+    "down": "ic2:block/machine/lv/alloy_smelter/inactive_down",
+    "north": "ic2:block/machine/lv/alloy_smelter/inactive_north",
+    "south": "ic2:block/machine/lv/alloy_smelter/inactive_south",
+    "east": "ic2:block/machine/lv/alloy_smelter/inactive_east",
+    "west": "ic2:block/machine/lv/alloy_smelter/inactive_west",
+    "particle": "ic2:block/machine/lv/alloy_smelter/inactive_north"
+  }
+}

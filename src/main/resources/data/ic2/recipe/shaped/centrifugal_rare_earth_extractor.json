@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XCX"
+  ],
+  "key": {
+    "X": {
+      "item": "ic2:electrolyzed_water_cell"
+    },
+    "C": {
+      "item": "ic2:advanced_machine"
+    },
+    "Y": {
+      "item": "ic2:rare_earth_extractor"
+    }
+  },
+  "result": {
+    "id": "ic2:centrifugal_rare_earth_extractor",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "ic2:electrolyzed_water_cell"
+    }
+  ]
+}

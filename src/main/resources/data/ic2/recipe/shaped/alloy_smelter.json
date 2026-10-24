@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XCX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:bricks"
+    },
+    "Y": {
+      "item": "ic2:advanced_circuit"
+    },
+    "C": {
+      "item": "ic2:electric_furnace"
+    }
+  },
+  "result": {
+    "id": "ic2:alloy_smelter",
+    "count": 1
+  }
+}

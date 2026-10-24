@@ -10,6 +10,11 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 ## This fork
 
+The `classic-restoration-21.1.70` development branch is work in progress. Its scope,
+implemented foundation and remaining release gates are tracked in
+[the Classic restoration checklist](docs/classic-restoration-21.1.70.md).
+It is not the installed 21.1.69 release. IC2R Addons remains optional for the core.
+
 Version **21.1.69** builds on upstream **21.1.66** and includes:
 
 - A guard against empty processing inputs before `StackUtil.copyWithSize`. Shift-clicking

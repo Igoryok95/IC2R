@@ -11,6 +11,15 @@ public interface IEnergyStorage {
 
   int getCapacity();
 
+  /** Exact readings for stores larger than the legacy integer API can represent. */
+  default long getStoredLong() {
+    return getStored();
+  }
+
+  default long getCapacityLong() {
+    return getCapacity();
+  }
+
   int getOutput();
 
   double getOutputEnergyUnitsPerTick();

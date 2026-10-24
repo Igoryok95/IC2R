@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "XYX",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "ic2:magnet"
+    },
+    "Y": {
+      "item": "ic2:advanced_machine"
+    },
+    "X": {
+      "tag": "c:ingots/silver"
+    }
+  },
+  "result": {
+    "id": "ic2:stabilized_machine_block",
+    "count": 1
+  }
+}

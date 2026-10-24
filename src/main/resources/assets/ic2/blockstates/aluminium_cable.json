@@ -1,0 +1,68 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_core"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/aluminium_cable_side",
+        "uvlock": true,
+        "x": 90
+      }
+    }
+  ]
+}

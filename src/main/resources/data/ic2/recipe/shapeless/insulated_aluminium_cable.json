@@ -1,0 +1,14 @@
+{
+  "type": "ic2:shapeless",
+  "ingredients": [
+    {
+      "item": "ic2:aluminium_cable"
+    },
+    {
+      "item": "ic2:rubber"
+    }
+  ],
+  "result": {
+    "item": "ic2:insulated_aluminium_cable"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ic2:block/misc/stabilized_machine_block/down",
+    "up": "ic2:block/misc/stabilized_machine_block/up",
+    "north": "ic2:block/misc/stabilized_machine_block/north",
+    "south": "ic2:block/misc/stabilized_machine_block/south",
+    "west": "ic2:block/misc/stabilized_machine_block/west",
+    "east": "ic2:block/misc/stabilized_machine_block/east",
+    "particle": "ic2:block/misc/stabilized_machine_block/north"
+  }
+}

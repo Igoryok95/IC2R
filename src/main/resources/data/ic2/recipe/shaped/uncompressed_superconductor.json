@@ -1,0 +1,23 @@
+{
+  "type": "ic2:shaped",
+  "pattern": [
+    " X ",
+    "YCY",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "ic2:carbon_plate"
+    },
+    "Y": {
+      "item": "ic2:pulsating_quartz"
+    },
+    "C": {
+      "item": "ic2:polished_gold_ingot"
+    }
+  },
+  "result": {
+    "item": "ic2:uncompressed_superconductor",
+    "count": 1
+  }
+}

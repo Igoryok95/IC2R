@@ -1,0 +1,25 @@
+{
+  "type": "ic2:classic_processing",
+  "machine": "alloy_smelter",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "minecraft:raw_copper"
+      },
+      "count": 3
+    },
+    {
+      "ingredient": {
+        "tag": "c:ores/tin"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "ic2:bronze_ingot",
+    "count": 8
+  },
+  "ticks": 250,
+  "eu_per_tick": 16,
+  "material_units": 16000
+}

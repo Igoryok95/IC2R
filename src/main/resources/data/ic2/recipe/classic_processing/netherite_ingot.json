@@ -1,0 +1,25 @@
+{
+  "type": "ic2:classic_processing",
+  "machine": "alloy_smelter",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "minecraft:netherite_scrap"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:gold_ingot"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "minecraft:netherite_ingot",
+    "count": 1
+  },
+  "ticks": 250,
+  "eu_per_tick": 16,
+  "material_units": 16000
+}

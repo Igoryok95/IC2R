@@ -103,6 +103,10 @@
     "ic2:steel_tank",
     "ic2:iridium_tank",
     "ic2:industrial_workbench",
-    "ic2:batch_crafter"
+    "ic2:batch_crafter",
+    "ic2:silver_ore",
+    "ic2:deepslate_silver_ore",
+    "ic2:silver_ore_nether",
+    "ic2:aluminium_ore_nether"
   ]
 }

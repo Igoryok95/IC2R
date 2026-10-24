@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_up",
+    "down": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_down",
+    "north": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_north",
+    "south": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_south",
+    "east": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_east",
+    "west": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_west",
+    "particle": "ic2:block/machine/mv/centrifugal_rare_earth_extractor/active_north"
+  }
+}

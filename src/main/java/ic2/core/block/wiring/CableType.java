@@ -7,7 +7,11 @@ public enum CableType {
   iron(3, 1, 0.375F, 0.8, 2048),
   tin(1, 1, 0.25F, 0.2, 32),
   detector(0, Integer.MAX_VALUE, 0.5F, 0.5, 8192),
-  splitter(0, Integer.MAX_VALUE, 0.5F, 0.5, 8192);
+  splitter(0, Integer.MAX_VALUE, 0.5F, 0.5, 8192),
+  bronze(2, 1, 0.25F, 0.7, 128),
+  aluminium(4, 1, 0.25F, 1.2, 8192),
+  superconductor(0, Integer.MAX_VALUE, 0.5F, 0.001, 8192),
+  plasma(0, 0, 0.5F, 1.2, 32768);
 
   public static final float insulationThickness = 0.0625F;
   public static final CableType[] values = values();
@@ -28,5 +32,9 @@ public enum CableType {
 
   public float getThickness(int insulation) {
     return 0.125F * insulation + this.thickness;
+  }
+
+  public double getLoss(int insulation) {
+    return this == aluminium || this == bronze ? this.loss - insulation * 0.05 : this.loss;
   }
 }

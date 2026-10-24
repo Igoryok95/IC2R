@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "tag": "c:ingots/refined_iron"
+    }
+  },
+  "result": {
+    "id": "ic2:refined_iron_block",
+    "count": 1
+  }
+}

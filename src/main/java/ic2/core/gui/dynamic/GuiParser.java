@@ -918,7 +918,10 @@ public class GuiParser {
 
     @Override
     void addElement(DynamicGui<?> gui, GuiElement<?> element) {
-      this.parent.addElement(gui, element.withTooltip(this.tooltip));
+      var base = gui.getContainer().base;
+      var provider = TextProvider.parse(this.tooltip, base.getClass());
+      this.parent.addElement(
+          gui, element.withTooltip(() -> provider.get(base, TextProvider.emptyTokens())));
     }
   }
 }

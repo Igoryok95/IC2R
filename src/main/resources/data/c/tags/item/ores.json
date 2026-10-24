@@ -3,6 +3,10 @@
     "#c:ores/lead",
     "#c:ores/silver",
     "#c:ores/tin",
-    "#c:ores/uranium"
+    "#c:ores/uranium",
+    "ic2:silver_ore",
+    "ic2:deepslate_silver_ore",
+    "ic2:silver_ore_nether",
+    "ic2:aluminium_ore_nether"
   ]
 }

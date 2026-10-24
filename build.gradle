@@ -80,6 +80,11 @@ neoForge {
                 systemProperty 'ic2.furnaceXpSmoke', 'true'
                 programArguments.addAll '--quickPlaySingleplayer', 'FurnaceXpSmoke'
             }
+            if (providers.gradleProperty('classicSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/classic-client')
+                systemProperty 'ic2.classicSmoke', 'true'
+                programArguments.addAll '--quickPlaySingleplayer', 'ClassicContentSmoke'
+            }
         }
 
         server {

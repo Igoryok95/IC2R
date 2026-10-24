@@ -492,7 +492,7 @@ public abstract class AbstractCableBlock extends PipeBlock
   }
 
   public double getLoss() {
-    return this.type.loss;
+    return this.type.getLoss(this.insulation);
   }
 
   public boolean hasColor() {
@@ -666,11 +666,19 @@ public abstract class AbstractCableBlock extends PipeBlock
 
     @Override
     public double getConductionLoss() {
-      return AbstractCableBlock.this.type.loss;
+      return AbstractCableBlock.this.getLoss();
     }
 
     @Override
     public double getInsulationEnergyAbsorption() {
+      if (AbstractCableBlock.this.type == CableType.plasma) return 32769;
+      if (AbstractCableBlock.this.type == CableType.superconductor) return 9001;
+      if (AbstractCableBlock.this.type == CableType.bronze) {
+        return new int[] {8, 32, 128}[AbstractCableBlock.this.insulation];
+      }
+      if (AbstractCableBlock.this.type == CableType.aluminium) {
+        return new int[] {8, 128, 512, 2048, 8192}[AbstractCableBlock.this.insulation];
+      }
       if (AbstractCableBlock.this.type.maxInsulation == 0) {
         return 2.147483647E9;
       } else {
@@ -682,7 +690,7 @@ public abstract class AbstractCableBlock extends PipeBlock
 
     @Override
     public double getInsulationBreakdownEnergy() {
-      return 9001.0;
+      return AbstractCableBlock.this.type == CableType.plasma ? 32769.0 : 9001.0;
     }
 
     @Override

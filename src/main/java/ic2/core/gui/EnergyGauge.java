@@ -59,6 +59,13 @@ public class EnergyGauge extends Gauge<EnergyGauge> {
                 116, 65, 7, 13, Gauge.GaugePropertyBuilder.GaugeOrientation.Up)
             .withBackground(-4, -1, 16, 16, 96, 64)
             .build()),
+    ClassicBolt(
+        new Gauge.GaugePropertyBuilder(
+                176, 0, 14, 14, Gauge.GaugePropertyBuilder.GaugeOrientation.Up)
+            .withTexture(
+                IC2.getIdentifier(
+                    "textures/gui_sprites/blocks/machines/lv/gui_rare_earth_extractor.png"))
+            .build()),
     StirlingBar(
         new Gauge.GaugePropertyBuilder(
                 176, 15, 58, 14, Gauge.GaugePropertyBuilder.GaugeOrientation.Right)

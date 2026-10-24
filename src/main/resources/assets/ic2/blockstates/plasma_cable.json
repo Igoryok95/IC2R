@@ -1,0 +1,1172 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_core"
+      },
+      "when": {
+        "color": "white"
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "white",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_white_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_core"
+      },
+      "when": {
+        "color": "orange"
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "orange",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_orange_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_core"
+      },
+      "when": {
+        "color": "magenta"
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "magenta",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_magenta_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_core"
+      },
+      "when": {
+        "color": "light_blue"
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "light_blue",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_blue_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_core"
+      },
+      "when": {
+        "color": "yellow"
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "yellow",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_yellow_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_core"
+      },
+      "when": {
+        "color": "lime"
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "lime",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_lime_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_core"
+      },
+      "when": {
+        "color": "pink"
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "pink",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_pink_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_core"
+      },
+      "when": {
+        "color": "gray"
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "gray",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_gray_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_core"
+      },
+      "when": {
+        "color": "light_gray"
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "light_gray",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_light_gray_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_core"
+      },
+      "when": {
+        "color": "cyan"
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "cyan",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_cyan_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_core"
+      },
+      "when": {
+        "color": "purple"
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "purple",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_purple_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_core"
+      },
+      "when": {
+        "color": "blue"
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "blue",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_blue_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_core"
+      },
+      "when": {
+        "color": "brown"
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "brown",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_brown_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_core"
+      },
+      "when": {
+        "color": "green"
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "green",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_green_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_core"
+      },
+      "when": {
+        "color": "red"
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "red",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_red_side",
+        "uvlock": true,
+        "x": 90
+      }
+    },
+    {
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_core"
+      },
+      "when": {
+        "color": "black"
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true,
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "color": "black",
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/cable/classic/plasma_cable_black_side",
+        "uvlock": true,
+        "x": 90
+      }
+    }
+  ]
+}

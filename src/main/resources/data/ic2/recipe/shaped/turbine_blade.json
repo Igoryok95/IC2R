@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    " X ",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "tag": "c:ingots/refined_iron"
+    }
+  },
+  "result": {
+    "id": "ic2:turbine_blade",
+    "count": 1
+  }
+}

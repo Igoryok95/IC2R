@@ -15,6 +15,10 @@ public class BlocksItems {
     Ic2Blocks.init();
     Ic2BlockEntities.init();
     Ic2Items.init();
+    ic2.core.classic.ClassicResources.init();
+    ic2.core.classic.ClassicMachines.init();
+    ic2.core.classic.ClassicEnergy.init();
+    ic2.core.classic.ClassicWiring.init();
     Ic2ScreenHandlers.init();
     initMigration();
   }

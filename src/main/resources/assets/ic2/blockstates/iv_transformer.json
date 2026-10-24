@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "active=false,facing=north": {
+      "model": "ic2:block/iv_transformer_inactive"
+    },
+    "active=false,facing=south": {
+      "model": "ic2:block/iv_transformer_inactive",
+      "y": 180
+    },
+    "active=false,facing=east": {
+      "model": "ic2:block/iv_transformer_inactive",
+      "y": 90
+    },
+    "active=false,facing=west": {
+      "model": "ic2:block/iv_transformer_inactive",
+      "y": 270
+    },
+    "active=false,facing=up": {
+      "model": "ic2:block/iv_transformer_inactive",
+      "x": 270
+    },
+    "active=false,facing=down": {
+      "model": "ic2:block/iv_transformer_inactive",
+      "x": 90
+    },
+    "active=true,facing=north": {
+      "model": "ic2:block/iv_transformer_active"
+    },
+    "active=true,facing=south": {
+      "model": "ic2:block/iv_transformer_active",
+      "y": 180
+    },
+    "active=true,facing=east": {
+      "model": "ic2:block/iv_transformer_active",
+      "y": 90
+    },
+    "active=true,facing=west": {
+      "model": "ic2:block/iv_transformer_active",
+      "y": 270
+    },
+    "active=true,facing=up": {
+      "model": "ic2:block/iv_transformer_active",
+      "x": 270
+    },
+    "active=true,facing=down": {
+      "model": "ic2:block/iv_transformer_active",
+      "x": 90
+    }
+  }
+}

@@ -229,6 +229,7 @@ public final class EventHandler {
   }
 
   public static void onPlayerTick(Player player) {
+    ic2.core.classic.ClassicChargingArmor.tickEquipped(player);
     JetpackHandler.onPlayerTick(player);
   }
 

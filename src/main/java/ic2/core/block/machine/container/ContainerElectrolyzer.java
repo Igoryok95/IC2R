@@ -9,7 +9,9 @@ import net.minecraft.world.entity.player.Inventory;
 public class ContainerElectrolyzer extends ContainerElectricMachine<TileEntityElectrolyzer> {
   public ContainerElectrolyzer(
       int syncId, Inventory playerInventory, TileEntityElectrolyzer tileEntity) {
-    super(Ic2ScreenHandlers.ELECTROLYZER, syncId, playerInventory, tileEntity, 166, 8, 62);
+    super(Ic2ScreenHandlers.ELECTROLYZER, syncId, playerInventory, tileEntity, 200, 8, 62);
+    this.addSlot(new SlotInvSlot(tileEntity.classicInput, 0, 56, 92));
+    this.addSlot(new SlotInvSlot(tileEntity.classicOutput, 0, 116, 92));
 
     for (int i = 0; i < 4; i++) {
       this.addSlot(new SlotInvSlot(tileEntity.upgradeSlot, i, 152, 8 + i * 18));
@@ -22,6 +24,8 @@ public class ContainerElectrolyzer extends ContainerElectricMachine<TileEntityEl
     ret.add("progress");
     ret.add("recipe");
     ret.add("input");
+    ret.add("classicCharge");
+    ret.add("classicReturn");
     return ret;
   }
 }

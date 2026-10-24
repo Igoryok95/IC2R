@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui width="176" height="166">
+  <image x="0" y="0" width="176" height="166" src="ic2:textures/gui_sprites/blocks/machines/lv/gui_rare_earth_extractor.png" u="0" v="0" u2="176" v2="166"/>
+  <text y="3" align="center">%name%</text>
+  <slot name="input" x="56" y="17" style="plain"/>
+  <slot name="output" x="116" y="35" style="plain"/>
+  <slot name="discharge" x="56" y="53" style="plain"/>
+  <energygauge x="56" y="36" style="classicbolt"/>
+  <gauge name="progress" x="79" y="34" style="classicprogress"/>
+  <tooltip text="{tooltip.ic2.classic.material_progress,%base.getMaterialPercent()%}"><gauge name="material" x="7" y="12" style="classicmaterial"/></tooltip>
+  <slot name="upgrade" index="0" x="153" y="19" style="plain"/>
+  <slot name="upgrade" index="1" x="153" y="37" style="plain"/>
+  <playerInventory x="8" y="84" spacing="2" style="plain"/>
+</gui>

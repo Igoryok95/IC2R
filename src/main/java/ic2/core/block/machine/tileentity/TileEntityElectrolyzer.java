@@ -7,8 +7,10 @@ import ic2.api.upgrade.UpgradableProperty;
 import ic2.core.ContainerBase;
 import ic2.core.IHasGui;
 import ic2.core.block.comp.Fluids;
+import ic2.core.block.invslot.InvSlot;
 import ic2.core.block.invslot.InvSlotUpgrade;
 import ic2.core.block.machine.container.ContainerElectrolyzer;
+import ic2.core.classic.ClassicResources;
 import ic2.core.fluid.Ic2FluidStack;
 import ic2.core.fluid.Ic2FluidTank;
 import ic2.core.gui.CustomGauge;
@@ -16,6 +18,7 @@ import ic2.core.network.GrowingBuffer;
 import ic2.core.recipe.ElectrolyzerRecipeManager;
 import ic2.core.ref.Ic2BlockEntities;
 import ic2.core.ref.Ic2Fluids;
+import ic2.core.ref.Ic2Items;
 import ic2.core.ref.Ic2SoundEvents;
 import ic2.core.util.LiquidUtil;
 import java.util.EnumSet;
@@ -26,12 +29,17 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class TileEntityElectrolyzer extends TileEntityElectricMachine
     implements IUpgradableBlock, IHasGui, CustomGauge.IGaugeRatioProvider {
   public final InvSlotUpgrade upgradeSlot;
+  public final InvSlot classicInput;
+  public final InvSlot classicOutput;
+  public int classicCharge;
+  public int classicReturn;
   protected final Fluids fluids = this.addComponent(new Fluids(this));
   protected int progress = 0;
   protected IElectrolyzerRecipeManager.ElectrolyzerRecipe recipe = null;
@@ -42,6 +50,20 @@ public class TileEntityElectrolyzer extends TileEntityElectricMachine
     this.input =
         this.fluids.addTankInsert("input", 8000, Fluids.fluidPredicate(Recipes.electrolyzer));
     this.upgradeSlot = new InvSlotUpgrade(this, "upgradeSlot", 4);
+    this.classicInput =
+        new InvSlot(this, "classicInput", InvSlot.Access.IO, 1) {
+          @Override
+          public boolean accepts(ItemStack stack) {
+            return stack.is(Ic2Items.WATER_CELL) || stack.is(ClassicResources.DEAD_MAGNET);
+          }
+        };
+    this.classicOutput =
+        new InvSlot(this, "classicOutput", InvSlot.Access.IO, 1) {
+          @Override
+          public boolean accepts(ItemStack stack) {
+            return stack.is(ClassicResources.ELECTROLYZED_WATER_CELL);
+          }
+        };
   }
 
   public static void init() {
@@ -61,17 +83,27 @@ public class TileEntityElectrolyzer extends TileEntityElectricMachine
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);
     this.progress = nbt.getInt("progress");
+    this.classicCharge = Math.clamp(nbt.getInt("classicCharge"), 0, 20000);
+    this.classicReturn = Math.clamp(nbt.getInt("classicReturn"), 0, 20000);
   }
 
   @Override
   public void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.saveAdditional(nbt, registries);
     nbt.putInt("progress", this.progress);
+    nbt.putInt("classicCharge", this.classicCharge);
+    nbt.putInt("classicReturn", this.classicReturn);
   }
 
   @Override
   public void updateEntityServer() {
     super.updateEntityServer();
+    if (this.tickClassicElectrochemistry()) {
+      this.setActive(true);
+      this.progress = 0;
+      if (this.getLevel().getGameTime() % 20 == 0) this.setChanged();
+      return;
+    }
     boolean needsInvUpdate = false;
     if (this.canOperate()) {
       assert this.recipe != null;
@@ -114,6 +146,67 @@ public class TileEntityElectrolyzer extends TileEntityElectricMachine
     } else {
       return false;
     }
+  }
+
+  private static boolean canMerge(ItemStack current, ItemStack result) {
+    return current.isEmpty()
+        || (ItemStack.isSameItemSameComponents(current, result)
+            && current.getCount() + result.getCount() <= current.getMaxStackSize());
+  }
+
+  private static void merge(InvSlot slot, ItemStack result) {
+    if (slot.isEmpty()) slot.put(result.copy());
+    else {
+      ItemStack combined = slot.get().copy();
+      combined.grow(result.getCount());
+      slot.put(combined);
+    }
+  }
+
+  /** Classic's 70% charging / 30% recovery thresholds, hosted by the existing EU buffer. */
+  private boolean tickClassicElectrochemistry() {
+    if (this.classicReturn > 0) {
+      int accepted = (int) this.energy.addEnergy(Math.min(128, this.classicReturn));
+      this.classicReturn -= accepted;
+      if (accepted > 0) this.setChanged();
+      return accepted > 0;
+    }
+    ItemStack item = this.classicInput.get();
+    ItemStack result =
+        item.is(ClassicResources.DEAD_MAGNET)
+            ? new ItemStack(ClassicResources.MAGNET)
+            : item.is(Ic2Items.WATER_CELL)
+                ? new ItemStack(ClassicResources.ELECTROLYZED_WATER_CELL)
+                : ItemStack.EMPTY;
+    if (!result.isEmpty()
+        && canMerge(this.classicOutput.get(), result)
+        && this.energy.getEnergy() >= this.energy.getCapacity() * 0.7) {
+      int moved =
+          (int) Math.min(128, Math.min(this.energy.getEnergy(), 20000 - this.classicCharge));
+      this.energy.useEnergy(moved);
+      this.classicCharge += moved;
+      if (this.classicCharge >= 20000) {
+        this.classicInput.get().shrink(1);
+        merge(this.classicOutput, result);
+        this.classicCharge = 0;
+      }
+      this.setChanged();
+      return true;
+    }
+    if (this.energy.getEnergy() < this.energy.getCapacity() * 0.3
+        && this.classicOutput.get().is(ClassicResources.ELECTROLYZED_WATER_CELL)
+        && canMerge(this.classicInput.get(), new ItemStack(Ic2Items.WATER_CELL))) {
+      this.classicOutput.get().shrink(1);
+      merge(this.classicInput, new ItemStack(Ic2Items.WATER_CELL));
+      this.classicReturn = Math.min(20000, 2000 * (6 + this.energy.getSinkTier()));
+      this.setChanged();
+      return true;
+    }
+    return false;
+  }
+
+  public double getClassicRatio() {
+    return this.classicReturn > 0 ? this.classicReturn / 20000D : this.classicCharge / 20000D;
   }
 
   protected void operate() {

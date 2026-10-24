@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XYX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "ic2:rare_earth_dust"
+    },
+    "Y": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "result": {
+    "id": "ic2:rare_earth_chunk",
+    "count": 1
+  }
+}

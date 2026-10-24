@@ -112,6 +112,7 @@ public final class ClientModEventHandlerForge {
 
   @SubscribeEvent
   public void onClientSetup(FMLClientSetupEvent event) {
+    ic2.core.classic.ClassicClient.init();
     EventHandlerClient.onClientSetup();
 
     for (ClientEnvProxyForge.BlockLayerRegistration reg :

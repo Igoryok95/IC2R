@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ic2:silver_ore",
+    "ic2:deepslate_silver_ore",
+    "ic2:silver_ore_nether"
+  ]
+}

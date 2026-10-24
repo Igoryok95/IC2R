@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "ic2:block/machine/lv/rare_earth_extractor/inactive_up",
+    "down": "ic2:block/machine/lv/rare_earth_extractor/inactive_down",
+    "north": "ic2:block/machine/lv/rare_earth_extractor/inactive_north",
+    "south": "ic2:block/machine/lv/rare_earth_extractor/inactive_south",
+    "east": "ic2:block/machine/lv/rare_earth_extractor/inactive_east",
+    "west": "ic2:block/machine/lv/rare_earth_extractor/inactive_west",
+    "particle": "ic2:block/machine/lv/rare_earth_extractor/inactive_north"
+  }
+}

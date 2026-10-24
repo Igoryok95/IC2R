@@ -1,0 +1,9 @@
+{
+  "type": "ic2:compressor",
+  "ingredient": {
+    "item": "ic2:uncompressed_superconductor"
+  },
+  "result": {
+    "item": "ic2:superconductor_cable"
+  }
+}

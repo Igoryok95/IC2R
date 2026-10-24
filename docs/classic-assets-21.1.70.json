@@ -1,0 +1,2207 @@
+{
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/blank.png",
+    "sha256": "d8cc04ee81c6c8164a126b68f9765284a879429ac5d514113e8770f661813d7a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/blue.png",
+    "sha256": "95b5ad4692a0562d33789b4614cbe330f887282c026d914bed81e3e81368a4c0",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/brown.png",
+    "sha256": "953d977a0e1108be36f776fcbff361e39f39b4364ecb3ce179528b3688bbc894",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/cyan.png",
+    "sha256": "21e5cbf2facc991926a931fddee78f41ec9aabf119bd2dc5f230ad000506041c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/gray.png",
+    "sha256": "794b74e0ab38d32f2b7e661497fa8a8592aa507e0f3d7f732412487625051828",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/green.png",
+    "sha256": "022e21dea9e2b1462be18e8b048bc65c6e34969eded6b9c9768da11a86500191",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/light_blue.png",
+    "sha256": "7a8c10cc47434777b470aed869b9cc1c4988c273b4a212b14823d761bd9a3b86",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/light_gray.png",
+    "sha256": "7b1d1e323bea93388a8977ea2ffe94149ec33160216fc8c54baaee0aa7ee0a42",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/lime.png",
+    "sha256": "defe588b3307ddc5a35ca199ad789b1fe19d821eeba88ecbf727f1eaea34d796",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/magenta.png",
+    "sha256": "ea08c5db907c2f134696abb0930d802b81b6e5a4e33bda570191842f7dcdf5bb",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/orange.png",
+    "sha256": "69b20398c40e16b5c4eaf7766d91c79b93e91cb9efa9962c5be5092f4b904845",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/pink.png",
+    "sha256": "5be7f10ff641c124051a9937167352fde9635ff063fde0fbf6fa1bddccb24058",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/purple.png",
+    "sha256": "5928fbb12eb8a0d0783ae26316455424eaf2a1fb79b077c4b1c946713390d81e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/red.png",
+    "sha256": "016e5de4bdd23e99c24b5559a710bf4724cd13b90d48eb0a7fbb5591fc8947ec",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/white.png",
+    "sha256": "c4b7dacc5368c6da7eafc558fd37f4c71b845906036d5e60bfb3102a50bad18c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_aluminium/yellow.png",
+    "sha256": "771e00ed6b392d91e3dde371fdd6df8b2b72239fc1070fc29d813dfcc4fbc094",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/blank.png",
+    "sha256": "9e9a18bcbc149422ce4d97adad4f074e496b1d21a9face822c36999fb1eea41d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/blue.png",
+    "sha256": "c87a5fd117e26b72be6d47ff2df1815f6065bb589c41d8992b6f90248187687b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/brown.png",
+    "sha256": "ec28874caffb2fc51b857354c2ee19c6802c29ec13ac66a3033b49b69426e6a3",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/cyan.png",
+    "sha256": "25437f25d82c86e9812dea9cee034f204a16160853bf8bdb9d477debc142fd11",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/gray.png",
+    "sha256": "42a6ac8622086d9ba58d11f0c04aecb0b9d1eb165ff2ff45bb74132650c7fc65",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/green.png",
+    "sha256": "bb61664168eeb0c7343d52625eb5782682da388c08fe601c03f4df41abbff17c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/light_blue.png",
+    "sha256": "a4957b8fda48160df4d2b8458aaf165372ffa82b475ec674bc2c8f621e783a3f",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/light_gray.png",
+    "sha256": "599711a0e0e0d596a8a09996d92081500ad96563f6d95ca67cb956b27a199135",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/lime.png",
+    "sha256": "22a0a11b02b4d44d338537e21fc972af5c439dedd87fb1531ef08afbb89d22e4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/magenta.png",
+    "sha256": "312d10f4aa0f55c57fb87548c459c853ed7fe134e161255aadfc2136e8d21dae",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/orange.png",
+    "sha256": "6efdc018f001419f7a5d995509b378be56e9950b6fe66acf4b5ef0ea208228b5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/pink.png",
+    "sha256": "6b7c6c03214326c48f094120c347637249e0f5cb4506471d603df058668cb016",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/purple.png",
+    "sha256": "30309f528f3a75d9848c2b10009004b45219e52200bc33ac98221b6a24aa8ba6",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/red.png",
+    "sha256": "2af95c8ed1cc4fc1814e8875253e83115905a585427af05f642af132b43096ba",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/white.png",
+    "sha256": "c82a6864e660112c121ef05e07b552479d6d82a84d318ef6b46c02c98ef7e2af",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/1x_insulated_bronze/yellow.png",
+    "sha256": "a66da5ef459bdf1fb94b019cd025507d5739ff28ec681a5fc965b8cabc97cce1",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/blank.png",
+    "sha256": "4c945a4113d4f1ce7004273e7db7c6d742c95d4adb6cc0aa7152cb044ed1b947",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/blue.png",
+    "sha256": "dc8b2e21a9fb44251e48b99da2597b467d3528d4cd0bd8ee46bd8f2f3472c0d1",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/brown.png",
+    "sha256": "5a56f36e5fb56865dd42548f76c12121bf24def0ec9ed6e0ae25c903c240f20f",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/cyan.png",
+    "sha256": "ddce18d60d78581f9bd5148310dc8072fe12eaeb2a5237a6d54acc67bb9caf26",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/gray.png",
+    "sha256": "99438638189807793e22c3951fc425861dc00d902d1e7a2fbf54476f01888bfa",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/green.png",
+    "sha256": "f5dd58388e5ead8b7e137a1448bfa3bd10bb4c4585590aee130744a5faa9af61",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/light_blue.png",
+    "sha256": "af174248f69da0d4a9faa8f2450ccb3b8d55c634c309b64177648f0e22314f61",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/light_gray.png",
+    "sha256": "7483512c413461ff47a391ec0eda49bb56c5329561ac88a42f6701d9b98a4503",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/lime.png",
+    "sha256": "46597449bddd3cdbe336309d268e1f39ad01aebf136585f7e60483ff6dcd38da",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/magenta.png",
+    "sha256": "559b73b82ec5e7537de2f3016ba57cd9e0d1d3e25fb0ff4d5c6741e7d3befcf3",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/orange.png",
+    "sha256": "f3c5f1b7b2895df7ae7050a8017f2d8171f8d5ed0106dec1cd24fcc1d84d09d3",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/pink.png",
+    "sha256": "1355f3d860febdfbbda8238433cede54befc2004cf85cf88e82f963663ba7010",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/purple.png",
+    "sha256": "4748f912de8b57dcadf25a56530c73761147284f1a44eac854477f5baa423111",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/red.png",
+    "sha256": "c377858d3b5ad170b6fd5d17257d046760d48856973e99b7ce5a1510f2d0fec5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/white.png",
+    "sha256": "823f94adfdb8ca5a94b5367a26a3a77e011ec59f140382bb7d80a0b0895bc8fb",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_aluminium/yellow.png",
+    "sha256": "33c17080191d16f2ee747f6b1c2954b57b3af6e17c2564ad4e011a93435e9049",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/blank.png",
+    "sha256": "779f23314c43fce54bc864ca8a0999f60e2844d5cf7ad837832a992e93d2837d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/blue.png",
+    "sha256": "b5bfc22e0f9d60e2c2ac250eac37d3f969c44251958ae43957801ca03da4a9c0",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/brown.png",
+    "sha256": "5f8d0634cb0d835da9c7a0fd0849bc9367c7730f05e6416f36af68437486930d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/cyan.png",
+    "sha256": "74cdb9e1b51d95210bb7c1badf7ded8990f882e25c4f5ae87d3f51dd0d4384cc",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/gray.png",
+    "sha256": "3ce859784783d1acad117affc63ad0ae61fac36130c8163d3250dabc46cd5ef5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/green.png",
+    "sha256": "838964dad70c1abee6cf2774102ab3be65ffc3edf46caadfda5f2e38dd86c014",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/light_blue.png",
+    "sha256": "3dba63786da3ebd10855d0339118098e2289b4d57bfe18843d25bfb9ef3e0f97",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/light_gray.png",
+    "sha256": "2fca586167b34a4759e602769556311ca7266bc0a3759f65713a458a1a18b247",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/lime.png",
+    "sha256": "9f584f87107e38737dbbab0f67693f6eae932741dd39e623ded1ff294b552abe",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/magenta.png",
+    "sha256": "dd0811051a2526a86f3c9bab6630ec594be0058ed7f0ccde47702fc331c7191e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/orange.png",
+    "sha256": "cfe2f5249223095bbc5dbbd52962ec54e2c956cbac9ce0fc4c0ef7a4d816970f",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/pink.png",
+    "sha256": "068314b45563d5bcfe28053add6b21ef46dd8051ef45871910d7d56e73956722",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/purple.png",
+    "sha256": "541f41432f2e54ff93b86ea90880d7227c39ad56eb80545820f63cde10c88e6b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/red.png",
+    "sha256": "6a2834ccfea87cde02303286e549163ac6dabe0b36db3a750108815d5bedc00e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/white.png",
+    "sha256": "01236cfc1aefeea19081bb266f457773cc4ab4d46ea74deacfdec7c17eac161d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/2x_insulated_bronze/yellow.png",
+    "sha256": "9bf094947f9e97627bf3a73a9c6bdf3a12b15b079463b06420c8859302a7519d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/blank.png",
+    "sha256": "c3e03db851f167d4b30ef0f9d33eecb4a9a62744343bbfbe0f1f19476e8fbfd5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/blue.png",
+    "sha256": "05221934c65be60f64e4cb2b2dde55f66eb0159e3ed6ea6825a5106346b4812c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/brown.png",
+    "sha256": "c4b82e3ec6b8a485425b35fb06fb61b06b6fb0a8fb35dd2732acb8ad436995a5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/cyan.png",
+    "sha256": "40247e739acfc43edd395ae982d56a90be11cdfa30f109d8fb83bbe4aaae33ac",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/gray.png",
+    "sha256": "1db328e860b66063beb7c6b7fd7c7ad6df2823ce4694f54eeab5214152c55454",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/green.png",
+    "sha256": "9203389297b85a70afd4c46390bdfdd132539dc038d3ce54abfaf0009c586415",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/light_blue.png",
+    "sha256": "a86d9993847fbf31f8ae0e5725ddf05b7475c915290c4e89f08a04472d701d72",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/light_gray.png",
+    "sha256": "15c7c5a691fc1b8d62ab557767e4821bd38788f58e866b04248f1d0130c6f4e5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/lime.png",
+    "sha256": "a3754740537d1fd633c733bbdbf7bdd624f9808d2cbd003c8240b91968c805b7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/magenta.png",
+    "sha256": "474a331bce2a7862827e7aea43a1ec613ebc0200a357413eb7d774c46d891ddd",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/orange.png",
+    "sha256": "9f6a6cb17de522b22eae812d5f6ea6d4a51bab2559a41ef427246ef54d3e3bda",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/pink.png",
+    "sha256": "298d51638ce84028ecc494e60deb67382defcf2bb5112ebd9d5f72fdb4725bb9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/purple.png",
+    "sha256": "913f354ffb5ef3f0b0a6c5b65fdf4881bc522643f0d935dbcae36da6216a681c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/red.png",
+    "sha256": "7c55fae0ac91a305c291e927f924a92ef73a8bcfa6342f05d6a9afbfaac9ccb4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/white.png",
+    "sha256": "8872d529fdc4abcde01736fc7243ca991a5b7a67ed4abd2e2ab28fc6a5c874f8",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/4x_insulated_aluminium/yellow.png",
+    "sha256": "6e605a25160c06faa219f860339cb7f7e4683424415e2510b84700d8102de2bd",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/blank.png",
+    "sha256": "ec39fa39bb6971dd3334d648ca2ceb4fdd71ddb8068f8fd3f467ff43fe1ddeb8",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/blue.png",
+    "sha256": "bc3538127ec1f4bb9114801e55eaf578be18e3f7334cf48dea4e5059c2753052",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/brown.png",
+    "sha256": "962c8da92608a493ac920aca3ef1a65793589d6cc9f51ab65aa72549040fe751",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/cyan.png",
+    "sha256": "1c65bea85f3fe4b4e909f9cfe55f145bd4aba97bd46ab87e33c7e4a79ec65137",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/gray.png",
+    "sha256": "85968a943594b3f2c3324d736364cf89d960d0a56ae1b2e04d2f1326651b2676",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/green.png",
+    "sha256": "69a397facdfe211e6ebe04f484f3bf995f5054e3d281a15c43914a53a86bf4fc",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/light_blue.png",
+    "sha256": "ac4e3971121be10d4c0b29d33cbece83f83c4d23b956a20d0f5f2adf28d88dea",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/light_gray.png",
+    "sha256": "b4217bf020ac053c69eb80c1a10625238b5f1bdb00d6d61c3039468ba7158d28",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/lime.png",
+    "sha256": "0c13079c97d2ff2aec672598985005f0430d1df1d38848611936ac9f0d073890",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/magenta.png",
+    "sha256": "25d6f423f9ea49758ac14f1c4821613b8f69d9e96e6b76089cf398be409a7274",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/orange.png",
+    "sha256": "e31dbbf3ded39b23e0c13b9d01adec7360675182bd0a874ea0dde73565032d4a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/pink.png",
+    "sha256": "54bf3512812df12b86e959d3da236db2acea17af5a8e300c30391fdd57c1acd0",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/purple.png",
+    "sha256": "65ab161b4cffbe77634942f391c0c4106c69e484708f236e4e75e5226d092130",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/red.png",
+    "sha256": "30c72ddc30dc102d953ae5f36abf82953ebf4ef9f570b5437c44af438c283aee",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/white.png",
+    "sha256": "098586d1084e0bee9d6465c6104bfdf672cb847541a5e6d4b8a68c0181bc1c01",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/8x_insulated_aluminium/yellow.png",
+    "sha256": "54b1a6e30d506bee6cd881b94a655cff62f473e0d3ca68e1119f65080aaa959b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/aluminium.png",
+    "sha256": "44bdf44c364872f4a74016910bef4b938e1e7df8101af6b65fca95487d7d4f20",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/bronze.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/bronze.png",
+    "sha256": "480d724719c3478d5271fd720743a2cdac39dcb1a41a571e4cccabca4ed7c382",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/blank.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/blank.png",
+    "sha256": "2eb03bcd8167d16b0a0336c1ebcfbea710ae2764f9dc15087803b4e695176b03",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/blue.png",
+    "sha256": "3f148fed1c90237293f3da39ea6793b0fec4e113c8c22371c74ead7ad389695a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/brown.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/brown.png",
+    "sha256": "38491de6e960eb2f5c9e12603f416dce2c9114c84bec82eca38c9fb0afdc120d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/cyan.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/cyan.png",
+    "sha256": "be84ad4ed6b1df7238095c2e5b9e3237b7d955fc61709af30065f7d5d736e8ab",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/gray.png",
+    "sha256": "5d94e834bb406f514446eea6ed6fffe6b38aafbef6080ef1ebff6004ec87e3d7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/green.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/green.png",
+    "sha256": "6776c2a8fb9a74688ad0747f5d0cf381750717aa84ee34ab20d7ef5445a81519",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/light_blue.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/light_blue.png",
+    "sha256": "de587e7464dd4f1cd1e4f2ca2937568d90c5bae7082cf560c2aeed2b1d11e4e7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/light_gray.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/light_gray.png",
+    "sha256": "5bc2d2db96cfafe3776dbb3bbc761a166f3ac502634db37d34b8b6b54bbbd403",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/lime.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/lime.png",
+    "sha256": "98b9cc85b4d120b17f855a421ea2f233ab8d9f2e3939236967371c071d4a8338",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/magenta.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/magenta.png",
+    "sha256": "9bdccaa95ba374cb8a0f3ac89cc81877cb34763bbd9fd9c4d17d693ed6092f66",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/orange.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/orange.png",
+    "sha256": "e2a108a337ee349887893c821ca95238eaf4f0f4b24729fd8e37e8f7c9432aed",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/pink.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/pink.png",
+    "sha256": "9bdccaa95ba374cb8a0f3ac89cc81877cb34763bbd9fd9c4d17d693ed6092f66",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/purple.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/purple.png",
+    "sha256": "20dca9e4e925d3ceb75d778c1796269789837918e4175a93d6d80060ccc8d87d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/red.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/red.png",
+    "sha256": "316eb62a1aa693e1efa8512504555dd8bebe4e2bca13ac06d3650a080b7c2103",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/white.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/white.png",
+    "sha256": "b55e2cd853a6218db285007a92429ad1c558e7543291a39e54e9f6961d245b39",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/plasma/yellow.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/plasma/yellow.png",
+    "sha256": "123a459566d6213ecaf8a4772dd3edf01779b9299aa9c547a91b52121a0c9c83",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/super/super_side.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/super/super_side.png",
+    "sha256": "47fa107074430d0fcc666b157fc7f73a5d7ca233659740442314017256adf810",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/cable/super/super_top.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/cable/super/super_top.png",
+    "sha256": "7d1669227f0219e0148494868e3455f4e732f6df1f15aa2018f71d6652626a77",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/down.png",
+    "sha256": "34b76d8ea95e5870835e9dcbfbeb30069d8f643c0a1731c5939973a363f6b2d5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/east.png",
+    "sha256": "34b76d8ea95e5870835e9dcbfbeb30069d8f643c0a1731c5939973a363f6b2d5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/north.png",
+    "sha256": "34b76d8ea95e5870835e9dcbfbeb30069d8f643c0a1731c5939973a363f6b2d5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/south.png",
+    "sha256": "805046bbf417ec777e6b280c63d6bec049ff312a54815314e548f304a4c2be57",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/up.png",
+    "sha256": "34b76d8ea95e5870835e9dcbfbeb30069d8f643c0a1731c5939973a363f6b2d5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/esu/west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/esu/west.png",
+    "sha256": "34b76d8ea95e5870835e9dcbfbeb30069d8f643c0a1731c5939973a363f6b2d5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/down.png",
+    "sha256": "e5315a651cda91d47932323ccd05071340735662e35078c08b585c5aa41f77c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/east.png",
+    "sha256": "e5315a651cda91d47932323ccd05071340735662e35078c08b585c5aa41f77c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/north.png",
+    "sha256": "e5315a651cda91d47932323ccd05071340735662e35078c08b585c5aa41f77c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/south.png",
+    "sha256": "38869a49c6a35631a7fd2d903c4820de52de71e292e1e3ba668d1d0430fa4e60",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/up.png",
+    "sha256": "e5315a651cda91d47932323ccd05071340735662e35078c08b585c5aa41f77c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/isu/west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/isu/west.png",
+    "sha256": "e5315a651cda91d47932323ccd05071340735662e35078c08b585c5aa41f77c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/down.png",
+    "sha256": "f24b95854c4f68eeb81a3bb0fa19d8a89098a761a54ee4a81396da9bfd698329",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/east.png",
+    "sha256": "f24b95854c4f68eeb81a3bb0fa19d8a89098a761a54ee4a81396da9bfd698329",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/north.png",
+    "sha256": "f24b95854c4f68eeb81a3bb0fa19d8a89098a761a54ee4a81396da9bfd698329",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/south.png",
+    "sha256": "41cc1be5e335d249fcc728477ab0ab2fa384db3cc400dde3806dfe00335ddd49",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/up.png",
+    "sha256": "f24b95854c4f68eeb81a3bb0fa19d8a89098a761a54ee4a81396da9bfd698329",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/energy_storage/pesu/west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/energy_storage/pesu/west.png",
+    "sha256": "f24b95854c4f68eeb81a3bb0fa19d8a89098a761a54ee4a81396da9bfd698329",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_down.png",
+    "sha256": "6450f3bd3f063e6b07e70902a4c93b78cc4c7f65d1c9413c1fca3b7c5ec99017",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_east.png",
+    "sha256": "38869a49c6a35631a7fd2d903c4820de52de71e292e1e3ba668d1d0430fa4e60",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_north.png",
+    "sha256": "8efade99b623f3ec921e187b8b13aeb6028b38e650ef244549fd735379c92c25",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_south.png",
+    "sha256": "443d6817e91f9f1990148772e64d375ac16fb3cf7769737789f8f2d33671e7df",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_up.png",
+    "sha256": "a826c55da313b2e27444c178902adf213e1b27935c65fc0a66f5b20a7e713b0b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/active_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/active_west.png",
+    "sha256": "bfd98afbc292572998bfe466c7e766d302c099efd8acebd352a849bf5badd045",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_down.png",
+    "sha256": "f60c6cccf70344ac90c1da5fed85653c6fb9f9aada2e058f0be981779df46bf4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_east.png",
+    "sha256": "1fd7cde96c99aaf6c156040174e235a309513645327a9ac9b7f0fbd08c0c75bd",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_north.png",
+    "sha256": "0536e874c42e69c951499527bf3c68696eaaf24c62a7935ca3c0be6adb68bc73",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_south.png",
+    "sha256": "bd74b0dd8af7750ceb0f939a2a03a5a8d44eb005ce362843917fe2c21bcc8dac",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_up.png",
+    "sha256": "cd2d8b7190465c01a48500f930b9a3fd236cc6a88c3c16856cbeb8e1310323b2",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/electric/transformer/iv/inactive_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/electric/transformer/iv/inactive_west.png",
+    "sha256": "c125d222abefdfe792b6e3d493f17dd2d4b20a8a348b60185c7e35a1185d83a1",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_east.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_north.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_south.png",
+    "sha256": "7b2b790aeac2a63fa0acae0c5eb9877f073b693c98af3d09ec04d4d7a08f7279",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_up.png",
+    "sha256": "c7ed90f824cedaf08b8cf3518a6301595ecbad074d7517cb053460b66877ad1d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/active_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/active_west.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_east.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_north.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_south.png",
+    "sha256": "dee435a25d9b56f579c059ecb4a1f3b3f23aa202c64f180777b27e4901f15fe0",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_up.png",
+    "sha256": "aa798b3c6030db3e56601826861db5da36810691b4ca9ecde0ca1f122dc40e6a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/alloy_smelter/inactive_west.png",
+    "sha256": "c24ce0d385fd07ed5520ea709925d6035e55f7514e4e97f3a392c33d14c6171b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_east.png",
+    "sha256": "7ec184a5709ca5e6cc42b70deec90be59356ea7d3512d4c18754fd235e18f708",
+    "size": [
+      16,
+      64
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_north.png",
+    "sha256": "6032fa44b39e38b1653c6bc01f424b371f4de64bcb3ad008ef728bb749fbe3ca",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_south.png",
+    "sha256": "738e4df978ce66a05738037098d50033246ca827868d642fbb3861b15de50ad2",
+    "size": [
+      16,
+      64
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_up.png",
+    "sha256": "1049dd90f8bad16b0517859fdd597e191746eb7c25b9c4777cbc427852f186a4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/active_west.png",
+    "sha256": "6032fa44b39e38b1653c6bc01f424b371f4de64bcb3ad008ef728bb749fbe3ca",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_east.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_north.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_south.png",
+    "sha256": "83e5145e4b6c19beb65b82e9b650ea821c50e0bf72d7fc55b88f93b87c1533ad",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_up.png",
+    "sha256": "1049dd90f8bad16b0517859fdd597e191746eb7c25b9c4777cbc427852f186a4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/lv/rare_earth_extractor/inactive_west.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_east.png",
+    "sha256": "7ec184a5709ca5e6cc42b70deec90be59356ea7d3512d4c18754fd235e18f708",
+    "size": [
+      16,
+      64
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_north.png",
+    "sha256": "6032fa44b39e38b1653c6bc01f424b371f4de64bcb3ad008ef728bb749fbe3ca",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_south.png",
+    "sha256": "a1d208f6076d37583fadc0c1f7642a691041f8a4db367006739a2e6823ca1055",
+    "size": [
+      16,
+      64
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_up.png",
+    "sha256": "c4a80c9eb065e5329eab4cff64796f724cb1975a3582b218bd12fa8ab8160867",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/active_west.png",
+    "sha256": "6032fa44b39e38b1653c6bc01f424b371f4de64bcb3ad008ef728bb749fbe3ca",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_down.png",
+    "sha256": "4d77b4e313182ba59b0cf0b1e5055568309c7abb8a03130f22239bb58bb5784e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_east.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_north.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_south.png",
+    "sha256": "756fe4f31604d45ce70d53c79cbb9038c5d016ce0a72d42c7cfccabb4d72be2f",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_up.png",
+    "sha256": "c4a80c9eb065e5329eab4cff64796f724cb1975a3582b218bd12fa8ab8160867",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/machine/mv/centrifugal_rare_earth_extractor/inactive_west.png",
+    "sha256": "583ee7ae4838b1eecda0869a1538fd6005af4452bf81ecdf6b77014c1d87113a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/colossal_base/all.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/colossal_base/all.png",
+    "sha256": "20382876e9f8e4b7f2ee555623e69ec523d653a6404fea88bb2f292b8542cfc9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/down.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/down.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/east.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/east.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/north.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/north.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/south.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/south.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/up.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/up.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/misc/stabilized_machine_block/west.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/misc/stabilized_machine_block/west.png",
+    "sha256": "661bd6d4d91532cf2ae5cfb532826cf6ad33b250d43c12ccc37156670cce9adf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/personal/iridium_stone.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/personal/iridium_stone.png",
+    "sha256": "7920055af8b225d8730a07cb5a6b9ae95a7dd3595d4a088fd584f4e1551d72c7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/ore/aluminium_ore_nether.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/ore/aluminium_ore_nether.png",
+    "sha256": "cc30b2b5290b60deea4e0ef4544068a3f23a72722d1c18bb7b71d0974ea52377",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/ore/deepslate_silver_ore.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/ore/deepslate_silver_ore.png",
+    "sha256": "fe868b7004fbf58c326ffc745161777cf578baa658bda9de2d35bd801a52176a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/ore/silver_ore.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/ore/silver_ore.png",
+    "sha256": "48cf61fe62902bf7312b321cd1cfea3e56d71c3b33001f66f8b810c840db00b8",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/ore/silver_ore_nether.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/ore/silver_ore_nether.png",
+    "sha256": "608b42818851f7dd66bad9d2578f558cc4f37b03708f4eea98b11751253d28cf",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/raw/raw_aluminium_block.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/raw/raw_aluminium_block.png",
+    "sha256": "b377cb070092254794d18a83241fbc0a2ed6eb95e9af582412bc08a7fce85ef5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/raw/raw_silver_block.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/raw/raw_silver_block.png",
+    "sha256": "d073e88592836259a32e76bf7a0f191e7e0299d08cc2967056f215285b1b2616",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/storage/aluminium_block.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/storage/aluminium_block.png",
+    "sha256": "715690fd5e004bacaee78fdaa35ac7f13feb9258d6414720f9dd4a6c6b65db22",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/block/resources/storage/refined_iron_block.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/block/resources/storage/refined_iron_block.png",
+    "sha256": "e55e5ffab7cb6dc55abdef199a65a63df461c084c737a9d9d7d5db583343c8b4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/gui_sprites/blocks/machines/lv/gui_alloy_smelter.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/gui_sprites/blocks/machines/lv/gui_alloy_smelter.png",
+    "sha256": "8095d4da1927033add31746e2f5d8c9634b94617f370d2aface0fd730d51f970",
+    "size": [
+      256,
+      256
+    ]
+  },
+  "assets/ic2/textures/gui_sprites/blocks/machines/lv/gui_rare_earth_extractor.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/gui_sprites/blocks/machines/lv/gui_rare_earth_extractor.png",
+    "sha256": "8b8ff4290bfdb22209c90af801824484785ba2e90613237ed64944670a45981e",
+    "size": [
+      256,
+      256
+    ]
+  },
+  "assets/ic2/textures/gui_sprites/blocks/machines/mv/gui_rare_earth_centrifuge.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/gui_sprites/blocks/machines/mv/gui_rare_earth_centrifuge.png",
+    "sha256": "8c3f5178c1e59827b40213771ad138d0584516678696a2575a2060c34ac2d0af",
+    "size": [
+      256,
+      256
+    ]
+  },
+  "assets/ic2/textures/item/armor/hazmat/rubber_boots.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/armor/hazmat/rubber_boots.png",
+    "sha256": "4eab18e5974d8b5cb375a1883c181a3ccd71cad94615872fa89e0faf487779b1",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/armor/solar_helmet/base.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/armor/solar_helmet/base.png",
+    "sha256": "ab50b0705721dadb681ed4608c8f95e0a88e479412f58a35dc2b39b079e5adda",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/glowtronic_crystal_0.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/glowtronic_crystal_0.png",
+    "sha256": "ed399702699322d75e61537bab019f74867c2b12802b2c301944c9cf19e4c250",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/glowtronic_crystal_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/glowtronic_crystal_1.png",
+    "sha256": "c23201ac149f60299040089565b7639dbcc108f679f546a5e83a4bcc9e5294b7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/glowtronic_crystal_2.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/glowtronic_crystal_2.png",
+    "sha256": "4913264ccf5e656920d21f01ef25c58f8d88c845485029c04d6bec5c25397cc2",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/glowtronic_crystal_3.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/glowtronic_crystal_3.png",
+    "sha256": "18ffd19bd9c3c72b24fa48b760c59c523f45f1e03b2cb67681917552a66369c3",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/glowtronic_crystal_4.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/glowtronic_crystal_4.png",
+    "sha256": "f063dae545ee3e7a3b99e289eafcf1e4e9f680c587f54e4299d0fa4c10a6809d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/pesd.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/pesd.png",
+    "sha256": "00c749c0214e7a64a2ddd39712149c041700937b7c9ae8cff35a93ac6f91128b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/uesc_0.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/uesc_0.png",
+    "sha256": "5f9b51262b4503e399f7c018429794cad4d4e65bcc933fff6f2258f4f8da3292",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/uesc_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/uesc_1.png",
+    "sha256": "128d824dd2902cbf18952a596c23681f02a84f9dae5ce301fbda844a8a33a0da",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/uesc_2.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/uesc_2.png",
+    "sha256": "911a73835a1e44edaba1051f0259ff7a095d9d1927cdb9c6cf68d6d9a1f11857",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/uesc_3.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/uesc_3.png",
+    "sha256": "e560b384012550cf49af0f356c7043644a79f63ab22faec0901645ec4e6319be",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/battery/uesc_4.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/battery/uesc_4.png",
+    "sha256": "8f3d0ad50b34d7598d00fdf7f97b263637b4c1eba72aa1861ee0342b12b0489a",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/blades/turbine_blade.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/blades/turbine_blade.png",
+    "sha256": "dc03c756616990650017df0518f47ae3379aaacfedea9d6a12f758843617811d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/aluminium.png",
+    "sha256": "a6876846d83672496cfccb8a86507e09598871c5654c7ce808950b08628b30f4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/bronze.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/bronze.png",
+    "sha256": "5f78ab0b19ded9562a7326ec911d5312d2f56836161ccdb73df654fdd5fd9f4e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/double_insulated_aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/double_insulated_aluminium.png",
+    "sha256": "f06dd61e1853fa947d7cf96f260a50eaa9cc749aa2666168d7b3a71838669e1e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/double_insulated_bronze.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/double_insulated_bronze.png",
+    "sha256": "cd5b254aaff87a553a0a6528998c741ca4adcf82f84e271acd7fc832036042ff",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/insulated_aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/insulated_aluminium.png",
+    "sha256": "842edc82de1cd99e84ee61a407d341b72229e6e45983a34edb8930d1635fd98b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/insulated_bronze.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/insulated_bronze.png",
+    "sha256": "3c357167c8225da6f0b686c2ec8be437cc4ebdae259f1f9f4bde2a7d432558a4",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/plasma.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/plasma.png",
+    "sha256": "6b05d8c24d56bfbf85989063228c861c2077c5e72700b98502fc1c25a99a4936",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/quadruple_insulated_aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/quadruple_insulated_aluminium.png",
+    "sha256": "94d98f937176794b75de88ea2d26fa8915bf1a0bb6fb74a8abc965304773a94b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/super.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/super.png",
+    "sha256": "80a17505fa0b685d613dba637ff976ffb71a7726aacdd5cc93473e16301afd8c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cable/triple_insulated_aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cable/triple_insulated_aluminium.png",
+    "sha256": "3cc5af52c922c430cb74a63df7c554254524e6264d8e521bed678ad77b9283bd",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/cells/electrolyzed_water.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/cells/electrolyzed_water.png",
+    "sha256": "c1834d3077da148c067fde87246130f4bdf7360f59be4ffa5d73d6e317bf91ff",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/dust/aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/dust/aluminium.png",
+    "sha256": "a8c4ed59f6a04e15cd241cef6149833f5c705c3cd88d1221419a06dbdfe2af6d",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/dust/rare_earth.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/dust/rare_earth.png",
+    "sha256": "696f3b81492331527f10f7b08557eca3403b6ecf90db470fdf68b75622124a31",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/ingots/advanced_alloy.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/ingots/advanced_alloy.png",
+    "sha256": "1e3c58d7a45710cb0872ad8f4577952f594803f68575209bbd779ab45cbf1b2c",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/ingots/aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/ingots/aluminium.png",
+    "sha256": "062fdffda094c4f5546b80926e585f90487c656dfd86e237676b5349f2ae22c9",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/ingots/polished_gold.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/ingots/polished_gold.png",
+    "sha256": "63b9852c791c2ed597cf6747f62b02376337161066f2049f89fd198ee71b5854",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/ingots/refined_iron.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/ingots/refined_iron.png",
+    "sha256": "70a45818c10b7278eb973bc37a563af9b8e09d0e24678c42fc613d5bdd8f131b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/complex_circuit.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/complex_circuit.png",
+    "sha256": "f84341dfbb7351a61bd2b96aac2fcab97af5946bcad8854e8cba8f1bdc85f92b",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/dead_magnet.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/dead_magnet.png",
+    "sha256": "e76d97b67295454a8949d87dfac4b01e0be1cd9dfb2c704c12f55f5bf64d37c6",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/magnet.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/magnet.png",
+    "sha256": "bb7dfc4ce0a63c3a4b0953f45bcb29752b18073ebf346c2d79f646c80ac670c0",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/plasma_core.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/plasma_core.png",
+    "sha256": "963dc8e95b944b6c2e5888532d3c682c014025ba55ab8121c9c515854dafd051",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/pulsating_quartz.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/pulsating_quartz.png",
+    "sha256": "31961d059f69a35747d6362a460b7160c67fc47cc2518c80e55f5c05e92bb40e",
+    "size": [
+      16,
+      32
+    ]
+  },
+  "assets/ic2/textures/item/misc/rare_earth_chunk.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/rare_earth_chunk.png",
+    "sha256": "734d1a89ed5418e39aef4f7a7cd62c0039ba573a4032baaa2873c6e135173428",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/misc/uncompressed_super_cable.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/misc/uncompressed_super_cable.png",
+    "sha256": "8c9e947bc2e9381c60b384197f0f9fe338b7b1490b7df9970e26a773ba40c5b5",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/raw/aluminium.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/raw/aluminium.png",
+    "sha256": "6e3ef1060a39c401588222581e14d8fcb98b9687787a992b4c41183611463aa7",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/item/raw/silver.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/item/raw/silver.png",
+    "sha256": "6fd65e52ce93b39245b0ae21bf04c1061876ad12835ab4a2fd6c0f99aaa4e60e",
+    "size": [
+      16,
+      16
+    ]
+  },
+  "assets/ic2/textures/models/armor/classic_solar_layer_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/models/armor/solar_1.png",
+    "sha256": "75d43f48e6a5d85a11c5cab38e22f6a1af8077842b0470ab4a3c8cd4eb0ebdb4",
+    "size": [
+      64,
+      32
+    ]
+  },
+  "assets/ic2/textures/models/armor/classic_static_layer_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/models/armor/rubber_1.png",
+    "sha256": "33adb3455c6774f6cff46a7cd5ab2b9b45ee76030700530e8c9760646057fe72",
+    "size": [
+      64,
+      32
+    ]
+  },
+  "assets/ic2/textures/models/armor/rubber_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/models/armor/rubber_1.png",
+    "sha256": "33adb3455c6774f6cff46a7cd5ab2b9b45ee76030700530e8c9760646057fe72",
+    "size": [
+      64,
+      32
+    ]
+  },
+  "assets/ic2/textures/models/armor/solar_1.png": {
+    "source": "IC2Classic-1.19.2-2.1.3.4.jar",
+    "source_path": "assets/ic2/textures/models/armor/solar_1.png",
+    "sha256": "75d43f48e6a5d85a11c5cab38e22f6a1af8077842b0470ab4a3c8cd4eb0ebdb4",
+    "size": [
+      64,
+      32
+    ]
+  }
+}

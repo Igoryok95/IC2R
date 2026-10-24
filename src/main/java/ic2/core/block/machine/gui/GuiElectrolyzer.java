@@ -9,7 +9,9 @@ import ic2.core.gui.EnergyGauge;
 import ic2.core.gui.Gauge;
 import ic2.core.gui.GuiElement;
 import ic2.core.gui.RecipeButton;
+import ic2.core.gui.SlotGrid;
 import ic2.core.gui.TankFluidSlot;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -20,7 +22,24 @@ public class GuiElectrolyzer extends Ic2Gui<ContainerElectrolyzer> {
 
   public GuiElectrolyzer(
       ContainerElectrolyzer container, Inventory playerInventory, Component title) {
-    super(container, playerInventory, title);
+    super(container, playerInventory, title, 200);
+    this.addElement(new SlotGrid(this, 55, 91, SlotGrid.SlotStyle.Normal));
+    this.addElement(new SlotGrid(this, 115, 91, SlotGrid.SlotStyle.Normal));
+    this.addElement(
+        new CustomGauge(
+                this,
+                80,
+                93,
+                container.base::getClassicRatio,
+                Gauge.GaugeStyle.ProgressArrow.getProperties())
+            .withTooltip(
+                () ->
+                    Component.translatable(
+                            "gui.ic2.electrolyzer.classic_progress",
+                            container.base.classicCharge,
+                            20000,
+                            container.base.classicReturn)
+                        .getString()));
     this.addElement(EnergyGauge.asBolt(this, 12, 44, container.base));
     int controllerX = 36;
     int controllerY = 16;
@@ -51,6 +70,24 @@ public class GuiElectrolyzer extends Ic2Gui<ContainerElectrolyzer> {
   @Override
   protected ResourceLocation getTextureLocation() {
     return background;
+  }
+
+  @Override
+  protected void drawBackgroundAndTitle(
+      GuiGraphics graphics, float partialTicks, int mouseX, int mouseY) {
+    graphics.blit(background, this.leftPos, this.topPos, 0, 0, 176, 82, 256, 256);
+    for (int y = 82; y < 116; y++) {
+      graphics.blit(background, this.leftPos, this.topPos + y, 0, 80, 176, 1, 256, 256);
+    }
+    graphics.blit(background, this.leftPos, this.topPos + 116, 0, 82, 176, 84, 256, 256);
+    this.drawXCenteredString(graphics, this.imageWidth / 2, 6, this.title, 4210752, false);
+    this.drawXCenteredString(
+        graphics,
+        this.imageWidth / 2,
+        81,
+        Component.translatable("gui.ic2.electrolyzer.classic"),
+        4210752,
+        false);
   }
 
   public enum ElectrolyzerGauges {

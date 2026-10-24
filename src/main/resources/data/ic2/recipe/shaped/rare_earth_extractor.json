@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XCX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "Y": {
+      "item": "ic2:extractor"
+    },
+    "C": {
+      "item": "ic2:recycler"
+    }
+  },
+  "result": {
+    "id": "ic2:rare_earth_extractor",
+    "count": 1
+  }
+}

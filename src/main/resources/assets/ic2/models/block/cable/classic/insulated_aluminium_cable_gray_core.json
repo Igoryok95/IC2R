@@ -1,0 +1,87 @@
+{
+  "textures": {
+    "texture": "ic2:block/electric/cable/1x_insulated_aluminium/gray",
+    "particle": "ic2:block/electric/cable/1x_insulated_aluminium/gray",
+    "cap": "ic2:block/electric/cable/1x_insulated_aluminium/gray"
+  },
+  "elements": [
+    {
+      "name": "core",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        11,
+        11,
+        11
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          8,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#texture"
+        },
+        "east": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#texture"
+        },
+        "south": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#texture"
+        },
+        "west": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#texture"
+        },
+        "up": {
+          "uv": [
+            11,
+            11,
+            5,
+            5
+          ],
+          "texture": "#texture"
+        },
+        "down": {
+          "uv": [
+            11,
+            5,
+            5,
+            11
+          ],
+          "texture": "#texture"
+        }
+      }
+    }
+  ]
+}

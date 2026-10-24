@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "ic2:block/electric/energy_storage/esu/up",
+    "down": "ic2:block/electric/energy_storage/esu/down",
+    "north": "ic2:block/electric/energy_storage/esu/north",
+    "south": "ic2:block/electric/energy_storage/esu/south",
+    "east": "ic2:block/electric/energy_storage/esu/east",
+    "west": "ic2:block/electric/energy_storage/esu/west",
+    "particle": "ic2:block/electric/energy_storage/esu/north"
+  }
+}

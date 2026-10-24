@@ -1,0 +1,23 @@
+{
+  "type": "ic2:shaped",
+  "pattern": [
+    "LCL",
+    "LDL",
+    "LCL"
+  ],
+  "key": {
+    "D": {
+      "item": "ic2:lapotron_crystal"
+    },
+    "C": {
+      "item": "ic2:complex_circuit"
+    },
+    "L": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "ic2:glowtronic_crystal",
+    "count": 1
+  }
+}

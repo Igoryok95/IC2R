@@ -1,0 +1,23 @@
+{
+  "type": "ic2:shaped",
+  "pattern": [
+    "III",
+    "BBB",
+    "AAA"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/refined_iron"
+    },
+    "B": {
+      "tag": "c:ingots/bronze"
+    },
+    "A": {
+      "tag": "c:ingots/aluminium"
+    }
+  },
+  "result": {
+    "item": "ic2:advanced_alloy_ingot",
+    "count": 2
+  }
+}
