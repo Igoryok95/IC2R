@@ -98,9 +98,11 @@
     "replacement_characters": 0
   },
   "deployment": {
-    "client_updated": false,
-    "zip_updated": false,
-    "production_server_updated": false
+    "client_updated": true,
+    "zip_updated": true,
+    "production_server_updated": true,
+    "server_started": false,
+    "backups_retained": false
   },
   "commands": [
     "gradlew spotlessApply build runGameTestServer",
