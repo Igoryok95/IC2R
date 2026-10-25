@@ -1,3 +1,25 @@
+# 21.1.71
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+Adds the Steel Hopper to IC2R itself. It transfers one item every two ticks between
+containers, up to 10 items/s at 20 TPS, while ordinary hoppers keep their vanilla
+timing. Craft one with five steel ingots and a vanilla hopper.
+
+Retains the vanilla model, five-slot GUI, redstone locking, comparator output,
+loose-item collection and inventory drops. Mod item pipes use native NeoForge
+hopper capabilities. Contents, custom names and transfer cooldown survive reloading.
+New 32x32 steel textures follow the approved IC2R design; the Uncommon item name is
+yellow. Names and tooltips are localized in English and Russian. No EU or addon is required.
+
+Validation: 24 JUnit tests and 484 standalone GameTests pass. The actual native GUI,
+five synchronized slots, EN/RU names and yellow tooltip title were checked in an
+isolated client. See [details](docs/steel-hopper-21.1.71.md).
+
+Existing client, ZIP and production-server installations are a separate update.
+
+---
+
 # 21.1.70
 
 Restores Experimental beer/rum brewing, basic charging armor, fluid pipes and pump

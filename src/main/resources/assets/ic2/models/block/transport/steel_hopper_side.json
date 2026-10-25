@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/hopper_side",
+  "textures": {
+    "particle": "ic2:block/transport/steel_hopper_outside",
+    "top": "ic2:block/transport/steel_hopper_top",
+    "side": "ic2:block/transport/steel_hopper_outside",
+    "inside": "ic2:block/transport/steel_hopper_inside"
+  }
+}

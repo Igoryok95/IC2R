@@ -1304,7 +1304,7 @@
   "ic2.debug.mode.energy_net": "Energy Net",
   "ic2.debug.mode.accelerate": "Accelerate",
   "ic2.debug.mode.accelerate_x100": "Accelerate x100",
-  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored for Minecraft 1.21.1 NeoForge. Experimental brewing, fluid pipes, dynamite and utility equipment; six industrial villager professions. Optional Create/Mekanism ore processing with smelting XP. IC2R volume control and balanced induction inputs. Standalone core with optional IC2R Addons trades.",
+  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored for Minecraft 1.21.1 NeoForge. Experimental brewing, fluid pipes, dynamite and utility equipment; six industrial villager professions. Steel hoppers for faster item transport. Optional Create/Mekanism ore processing with smelting XP. IC2R volume control and balanced induction inputs. Standalone core with optional IC2R Addons trades.",
   "ic2.debug.acceleration.start": "Running %s ticks on %s.",
   "ic2.debug.acceleration.interrupted": "The block entity changed %s time(s), interrupted after %s updates.",
   "ic2.debug.acceleration.changed": "The block entity changed %s time(s).",
@@ -1405,5 +1405,8 @@
   "ic2.gui.warmup.manual.off": "Keep warm: Off\nProcessing and external redstone can still warm the machine.\nNo signal is emitted.",
   "ic2.gui.warmup.heat": "Heat",
   "block.ic2.item_buffer_2": "Compact Item Buffer",
-  "container.ic2.item_buffer_2": "Compact Item Buffer"
+  "container.ic2.item_buffer_2": "Compact Item Buffer",
+  "block.ic2.steel_hopper": "Steel Hopper",
+  "ic2.tooltip.steel_hopper.rate": "Container transfer: %s items/s at 20 TPS",
+  "ic2.tooltip.steel_hopper.redstone": "Disabled by a redstone signal"
 }

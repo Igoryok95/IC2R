@@ -1304,7 +1304,7 @@
   "ic2.debug.mode.energy_net": "Энергосеть",
   "ic2.debug.mode.accelerate": "Ускорение",
   "ic2.debug.mode.accelerate_x100": "Ускорение x100",
-  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored для Minecraft 1.21.1 NeoForge. Пивоварение, жидкостные трубы, динамит и снаряжение Experimental; шесть промышленных профессий жителей. Необязательная переработка руд Create/Mekanism с опытом за плавку. Регулировка громкости IC2R и равномерная загрузка индукционной печи. Работает самостоятельно; IC2R Addons расширяет торги.",
+  "fml.menu.mods.info.description.ic2": "IndustrialCraft 2: Refactored для Minecraft 1.21.1 NeoForge. Пивоварение, жидкостные трубы, динамит и снаряжение Experimental; шесть промышленных профессий жителей. Стальные воронки для быстрой передачи предметов. Необязательная переработка руд Create/Mekanism с опытом за плавку. Регулировка громкости IC2R и равномерная загрузка индукционной печи. Работает самостоятельно; IC2R Addons расширяет торги.",
   "ic2.debug.acceleration.start": "Выполняется %s тактов для %s.",
   "ic2.debug.acceleration.interrupted": "Данные блока изменились %s раз. Выполнение прервано после %s обновлений.",
   "ic2.debug.acceleration.changed": "Данные блока изменились %s раз.",
@@ -1405,5 +1405,8 @@
   "ic2.gui.warmup.manual.off": "Поддержание нагрева: выкл.\nМашина по-прежнему нагревается при работе и от внешнего редстоуна.\nСигнал наружу не выдаётся.",
   "ic2.gui.warmup.heat": "Нагрев",
   "block.ic2.item_buffer_2": "Компактный предметный буфер",
-  "container.ic2.item_buffer_2": "Компактный предметный буфер"
+  "container.ic2.item_buffer_2": "Компактный предметный буфер",
+  "block.ic2.steel_hopper": "Стальная воронка",
+  "ic2.tooltip.steel_hopper.rate": "Перенос между контейнерами: %s предметов/с при 20 TPS",
+  "ic2.tooltip.steel_hopper.redstone": "Блокируется сигналом редстоуна"
 }

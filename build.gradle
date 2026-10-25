@@ -80,6 +80,12 @@ neoForge {
                 systemProperty 'ic2.furnaceXpSmoke', 'true'
                 programArguments.addAll '--quickPlaySingleplayer', 'FurnaceXpSmoke'
             }
+            if (providers.gradleProperty('steelHopperSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
+                systemProperty 'ic2.steelHopperSmoke', 'true'
+                systemProperty 'ic2.steelHopperWorldOnly', providers.gradleProperty('steelHopperWorldOnly').isPresent().toString()
+                programArguments.addAll '--quickPlaySingleplayer', 'SteelHopperSmoke'
+            }
         }
 
         server {

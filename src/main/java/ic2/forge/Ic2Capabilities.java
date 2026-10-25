@@ -85,6 +85,9 @@ public final class Ic2Capabilities {
   }
 
   private static IItemHandler itemHandler(BlockEntity be, Direction side) {
+    if (be instanceof ic2.core.block.transport.SteelHopperBlockEntity hopper) {
+      return new net.neoforged.neoforge.items.VanillaHopperItemHandler(hopper);
+    }
     if (!(be instanceof Ic2TileEntity)) {
       return null;
     }

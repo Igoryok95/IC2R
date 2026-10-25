@@ -93,6 +93,7 @@ import ic2.core.block.storage.tank.TileEntityIronTank;
 import ic2.core.block.storage.tank.TileEntitySteelTank;
 import ic2.core.block.tileentity.Ic2SignBlockEntity;
 import ic2.core.block.tileentity.TileEntityWall;
+import ic2.core.block.transport.SteelHopperBlockEntity;
 import ic2.core.block.wiring.tileentity.TileEntityChargePadBatBox;
 import ic2.core.block.wiring.tileentity.TileEntityChargePadCESU;
 import ic2.core.block.wiring.tileentity.TileEntityChargePadMFE;
@@ -303,6 +304,8 @@ public final class Ic2BlockEntities {
       register("steam_generator", TileEntitySteamGenerator::new, Ic2Blocks.STEAM_GENERATOR);
   public static final BlockEntityType<TileEntityCrop> RED_WHEAT_CROP =
       register("red_wheat_crop", TileEntityCrop::new, Ic2Blocks.RED_WHEAT_CROP);
+  public static final BlockEntityType<SteelHopperBlockEntity> STEEL_HOPPER =
+      register("steel_hopper", SteelHopperBlockEntity::new, Ic2Blocks.STEEL_HOPPER);
   public static final BlockEntityType<TileEntityBetterItemBuffer> ITEM_BUFFER_2 =
       register("item_buffer_2", TileEntityBetterItemBuffer::new, Ic2Blocks.ITEM_BUFFER_2);
   public static final BlockEntityType<TileEntityItemBuffer> ITEM_BUFFER =

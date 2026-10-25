@@ -5,8 +5,20 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.70-blue" alt="Version 21.1.70">
+<img src="https://img.shields.io/badge/Version-21.1.71-blue" alt="Version 21.1.71">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.71 — Steel Hopper
+
+The **Steel Hopper** transfers one item every **2 ticks** between containers,
+up to **10 items/s at 20 TPS**, compared with a vanilla hopper's 2.5 items/s.
+It uses the vanilla hopper shape, five-slot menu, redstone locking and comparator
+behavior, with native **32x32** steel textures and a yellow item name.
+Craft one from **five steel ingots and one vanilla hopper**. No EU or addon is required.
+
+See [recipe, behavior and validation](docs/steel-hopper-21.1.71.md).
+
+![Vanilla hopper on the left and Steel Hopper on the right, captured in Minecraft](docs/images/steel-hopper-comparison-21.1.71.png)
 
 ## Version 21.1.70
 

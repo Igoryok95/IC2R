@@ -1,0 +1,111 @@
+{
+  "version": "21.1.71",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.234",
+  "java": 21,
+  "artifact": {
+    "file": "ic2-neoforge-21.1.71.jar",
+    "bytes": 8340078,
+    "sha256": "9b70eb37dad354aed462919794b59b3a0f64e3adb891c31e65ff005211e9b0d9"
+  },
+  "junit": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0
+  },
+  "game_tests": {
+    "configuration": "standalone IC2R without IC2R Addons",
+    "passed": 484,
+    "added": 5
+  },
+  "new_game_test_scope": [
+    "fourfold throughput against real vanilla hopper",
+    "full-speed steel chain",
+    "redstone locking, native item capabilities, simulation, save/reload, custom name preservation on drops, native menu and inventory drops",
+    "loose-item collection, steel crafting recipe, recipe-book steel predicate and yellow rarity",
+    "balanced induction inputs at full heat and retained smelting XP"
+  ],
+  "client": {
+    "isolated_world": "SteelHopperSmoke",
+    "languages": [
+      "ru_ru",
+      "en_us"
+    ],
+    "native_menu_and_five_synced_slots": true,
+    "yellow_item_title": true,
+    "item_hand_scale_and_transparency_inspected": true,
+    "block_geometry_and_textures_inspected": true,
+    "captures": [
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hopper-gui-en_us.png",
+        "sha256": "9b80995c0c51dfc7fc00db76c91f5ad8143193847b9bb652240472bf68347388",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hopper-gui-ru_ru.png",
+        "sha256": "5da21f3f28937abc76cc5ef2152b7b538753462d076ceaee26db9a882d08204b",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hopper-hand-en_us.png",
+        "sha256": "e3849f67f8200b0f2d5fa0d7cb6b4edb27ec4e28e842a5c24c2552d1035f6d61",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hopper-tooltip-en_us.png",
+        "sha256": "c0a24e2c40d75da16a8b57d9e18ef96ab3e0497d2223e377c345068e26e011dc",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hopper-tooltip-ru_ru.png",
+        "sha256": "059b1c3dd1692c418a18fd5ad17e63a541b4ab450efa44d37d6eca7735aeee31",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hoppers-world-en_us.png",
+        "sha256": "7d8b42c9bdccfebb0f94a9499cfcfcc2db351682236250e66fb198fc2aee6a78",
+        "local_fixture_capture": true
+      },
+      {
+        "file": "run/steel-hopper-client/screenshots/steel-hoppers-world-ru_ru.png",
+        "sha256": "2577a0389346d715f3f6271e180c238e8a6387dbc1beee546cb5d67a56d56687",
+        "local_fixture_capture": true
+      }
+    ]
+  },
+  "textures": {
+    "size": [
+      32,
+      32
+    ],
+    "block_surfaces": [
+      "outside",
+      "top",
+      "inside"
+    ],
+    "separate_transparent_item_sprite": true,
+    "vanilla_block_geometry": true,
+    "vanilla_item_transforms": true,
+    "tool": "built-in imagegen",
+    "reproduction": "python tools/textures/build_steel_hopper.py --check"
+  },
+  "localization": {
+    "keys": {
+      "en_us": 1410,
+      "ru_ru": 1410
+    },
+    "json_resources_parsed": 3986,
+    "replacement_characters": 0
+  },
+  "deployment": {
+    "client_updated": false,
+    "zip_updated": false,
+    "production_server_updated": false
+  },
+  "commands": [
+    "gradlew spotlessApply build runGameTestServer",
+    "gradlew runClient -PsteelHopperSmoke",
+    "gradlew spotlessApply build runClient -PsteelHopperSmoke",
+    "python tools/textures/build_steel_hopper.py --check"
+  ]
+}

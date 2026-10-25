@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/hopper",
+  "textures": {
+    "layer0": "ic2:item/steel_hopper"
+  }
+}

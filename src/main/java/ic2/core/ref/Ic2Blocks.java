@@ -104,6 +104,7 @@ import ic2.core.block.storage.tank.TileEntityIronTank;
 import ic2.core.block.storage.tank.TileEntitySteelTank;
 import ic2.core.block.tileentity.Ic2TileEntityBlock;
 import ic2.core.block.tileentity.TileEntityWall;
+import ic2.core.block.transport.SteelHopperBlock;
 import ic2.core.block.wiring.CableBlock;
 import ic2.core.block.wiring.CableType;
 import ic2.core.block.wiring.DetectorCableBlock;
@@ -972,6 +973,10 @@ public final class Ic2Blocks {
               Ic2TileEntityBlock.DefaultDrop.Machine,
               Util.noFacings,
               false));
+  public static final Block STEEL_HOPPER =
+      register(
+          "steel_hopper",
+          new SteelHopperBlock(Properties.ofFullCopy(Blocks.HOPPER).strength(4.0F, 8.0F)));
   public static final Block ITEM_BUFFER_2 =
       register(
           "item_buffer_2",

@@ -30,6 +30,7 @@
     "ic2:green_wall",
     "ic2:red_wall",
     "ic2:black_wall",
-    "ic2:obscured_wall"
+    "ic2:obscured_wall",
+    "ic2:steel_hopper"
   ]
 }
