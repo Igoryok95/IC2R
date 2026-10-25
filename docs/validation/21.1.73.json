@@ -1,0 +1,47 @@
+{
+  "version": "21.1.73",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.234+",
+  "artifact": {
+    "file": "ic2-neoforge-21.1.73.jar",
+    "bytes": 8348763
+  },
+  "junit": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0
+  },
+  "game_tests": {
+    "passed": 489,
+    "new_storage_and_charge_tests": 5
+  },
+  "addons_compatibility": {
+    "version": "1.4.3",
+    "ic2r_jar": "ic2-neoforge-21.1.73.jar",
+    "neoforge": "21.1.264",
+    "buildcraft": "8.0.25",
+    "jade": "15.10.6",
+    "game_tests_passed": 97
+  },
+  "fixes": [
+    "All eight storage blocks and chargepads bound real EU storage and repair legacy overfilled saves",
+    "Native sink-only and dual delegates and public prefabs return rejected EU",
+    "Grid demand is reduced after each accepted partial transfer",
+    "Signed storage withdrawals remain compatible with teleporters",
+    "Redstone waits for enough space for its complete energy portion",
+    "Electric item charging and discharging preserve menu snapshot independence",
+    "BatPack final charge reaches 60000 EU and updates a real container listener without moving the item"
+  ],
+  "scope": {
+    "capacities_changed": false,
+    "recipes_changed": false,
+    "item_transfer_limits_changed": false,
+    "matter_amplification_preserved": true,
+    "new_player_facing_strings": 0
+  },
+  "deployment": {
+    "status": "pending",
+    "backups_created": false,
+    "hash_checks_performed": false
+  }
+}

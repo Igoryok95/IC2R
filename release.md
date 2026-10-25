@@ -1,3 +1,20 @@
+# 21.1.73
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Bound network intake by free capacity in native EU components and public sink prefabs;
+  return rejected EU and decrement remaining network demand after each transfer.
+- Repair old overfilled BatBox/CESU/MFE/MFSU and chargepad saves on load. Bound legacy
+  storage setters and capacity reductions while preserving signed teleporter withdrawals.
+- Wait before consuming an indivisible redstone fuel portion when it does not fit.
+- Update electric-item charge through copied custom data, so menu snapshots remain
+  independent and the final charge reaches the client without moving the item.
+- Preserve native capacities, item transfer limits, recipes and Matter Fabricator amplification.
+
+See [audit and validation](docs/energy-storage-21.1.73.md).
+
+---
+
 # 21.1.72
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

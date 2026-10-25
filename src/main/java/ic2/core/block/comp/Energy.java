@@ -213,7 +213,7 @@ public class Energy extends TileEntityComponent {
       } else if (slot instanceof IDischargingSlot) {
         double space = this.capacity - this.storage;
         if (space > 0.0) {
-          this.storage = this.storage + ((IDischargingSlot) slot).discharge(space, false);
+          this.addEnergy(((IDischargingSlot) slot).discharge(space, false));
         }
       }
     }
@@ -225,10 +225,16 @@ public class Energy extends TileEntityComponent {
 
   public void setCapacity(double capacity) {
     this.capacity = capacity;
+    this.setEnergy(this.storage);
   }
 
   public double getEnergy() {
     return this.storage;
+  }
+
+  /** Assign a bounded stored amount; forceAddEnergy remains available for internal work bonuses. */
+  public void setEnergy(double amount) {
+    this.storage = Double.isNaN(amount) ? 0.0 : Math.clamp(amount, 0.0, this.capacity);
   }
 
   public double getFreeEnergy() {
@@ -244,7 +250,8 @@ public class Energy extends TileEntityComponent {
   }
 
   public double addEnergy(double amount) {
-    amount = Math.min(this.capacity - this.storage, amount);
+    if (Double.isNaN(amount)) return 0.0;
+    amount = Math.clamp(amount, -Math.max(0.0, this.storage), this.getFreeEnergy());
     this.storage += amount;
     return amount;
   }
@@ -479,8 +486,8 @@ public class Energy extends TileEntityComponent {
 
     @Override
     public double injectEnergy(Direction directionFrom, double amount, double voltage) {
-      Energy.this.storage += amount;
-      return 0.0;
+      if (!(amount > 0.0)) return amount;
+      return amount - Energy.this.addEnergy(amount);
     }
 
     @Override
@@ -525,8 +532,8 @@ public class Energy extends TileEntityComponent {
 
     @Override
     public double injectEnergy(Direction directionFrom, double amount, double voltage) {
-      Energy.this.storage += amount;
-      return 0.0;
+      if (!(amount > 0.0)) return amount;
+      return amount - Energy.this.addEnergy(amount);
     }
   }
 

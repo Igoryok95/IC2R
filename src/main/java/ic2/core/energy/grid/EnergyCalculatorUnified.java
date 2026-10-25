@@ -581,7 +581,8 @@ public class EnergyCalculatorUnified implements IEnergyCalculator {
       data.eventPaths.add(path);
     }
 
-    if (amount >= sinkDemand.doubleValue() || rejected > 0.0) {
+    sinkDemand.subtract(amount - rejected);
+    if (sinkDemand.doubleValue() <= 0.0 || rejected > 0.0) {
       data.activeSinks.remove(path.target);
     }
 

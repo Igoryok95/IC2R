@@ -89,6 +89,7 @@ abstract class BasicEnergyTile implements ILocatable, IEnergyTile {
 
   public void setCapacity(double capacity) {
     this.capacity = capacity;
+    this.setEnergyStored(this.energyStored);
   }
 
   public double getEnergyStored() {
@@ -96,23 +97,22 @@ abstract class BasicEnergyTile implements ILocatable, IEnergyTile {
   }
 
   public void setEnergyStored(double amount) {
-    this.energyStored = amount;
+    this.energyStored = Double.isNaN(amount) ? 0.0 : Math.clamp(amount, 0.0, this.capacity);
   }
 
   public double getFreeCapacity() {
-    return this.getCapacity() - this.getEnergyStored();
+    return Math.max(0.0, this.getCapacity() - this.getEnergyStored());
   }
 
   public double addEnergy(double amount) {
-    if (this.getWorldObj().isClientSide) {
+    if (Double.isNaN(amount) || this.getWorldObj().isClientSide) {
       return 0.0;
     }
 
     double energyStored = this.getEnergyStored();
     double capacity = this.getCapacity();
-    if (amount > capacity - energyStored) {
-      amount = capacity - energyStored;
-    }
+    amount =
+        Math.clamp(amount, -Math.max(0.0, energyStored), Math.max(0.0, capacity - energyStored));
 
     this.setEnergyStored(energyStored + amount);
     return amount;

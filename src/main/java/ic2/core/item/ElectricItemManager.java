@@ -16,6 +16,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class ElectricItemManager implements IElectricItemManager {
+  private static CompoundTag copyChargeData(ItemStack stack) {
+    CompoundTag tag = StackUtil.getTag(stack);
+    return tag == null ? new CompoundTag() : tag.copy();
+  }
+
   private static int mapChargeLevelToDamage(double charge, double maxCharge, int maxDamage) {
     if (maxDamage < 2) {
       return 0;
@@ -50,7 +55,7 @@ public class ElectricItemManager implements IElectricItemManager {
         amount = item.getTransferLimit(stack);
       }
 
-      CompoundTag tNBT = StackUtil.getOrCreateNbtData(stack);
+      CompoundTag tNBT = copyChargeData(stack);
       double newCharge = tNBT.getDouble("charge");
       amount = Math.min(amount, item.getMaxCharge(stack) - newCharge);
       if (!simulate) {
@@ -101,7 +106,7 @@ public class ElectricItemManager implements IElectricItemManager {
       amount = item.getTransferLimit(stack);
     }
 
-    CompoundTag tNBT = StackUtil.getOrCreateNbtData(stack);
+    CompoundTag tNBT = copyChargeData(stack);
     double newCharge = tNBT.getDouble("charge");
     amount = Math.min(amount, newCharge);
     if (!simulate) {
@@ -137,8 +142,8 @@ public class ElectricItemManager implements IElectricItemManager {
   public double getStackCharge(ItemStack stack) {
     IElectricItem item = (IElectricItem) stack.getItem();
     assert item.getMaxCharge(stack) > 0.0;
-    CompoundTag tNBT = StackUtil.getOrCreateNbtData(stack);
-    return tNBT.getDouble("charge");
+    CompoundTag tNBT = StackUtil.getTag(stack);
+    return tNBT == null ? 0.0 : tNBT.getDouble("charge");
   }
 
   @Override

@@ -64,7 +64,7 @@ public class InvSlotDischarge extends InvSlot implements IDischargingSlot {
         ElectricItem.manager.discharge(stack, amount, this.tier, ignoreLimit, true, false);
     if (realAmount <= 0.0) {
       realAmount = Info.getItemInfo().getEnergyValue(stack);
-      if (realAmount <= 0.0) {
+      if (realAmount <= 0.0 || realAmount > amount) {
         return 0.0;
       }
 

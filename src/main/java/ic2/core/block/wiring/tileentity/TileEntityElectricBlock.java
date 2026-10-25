@@ -78,6 +78,7 @@ public abstract class TileEntityElectricBlock extends TileEntityInventory
   protected void loadAdditional(
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);
+    this.energy.setEnergy(this.energy.getEnergy());
     this.redstoneMode = nbt.getByte("redstoneMode");
     this.energy.setDirections(
         EnumSet.complementOf(EnumSet.of(this.getFacing())), EnumSet.of(this.getFacing()));
@@ -197,8 +198,7 @@ public abstract class TileEntityElectricBlock extends TileEntityInventory
 
   @Override
   public int addEnergy(int amount) {
-    this.energy.addEnergy(amount);
-    return amount;
+    return (int) this.energy.addEnergy(amount);
   }
 
   @Override
@@ -208,7 +208,7 @@ public abstract class TileEntityElectricBlock extends TileEntityInventory
 
   @Override
   public void setStored(int energy) {
-    this.energy.forceAddEnergy(energy - this.energy.getEnergy());
+    this.energy.setEnergy(energy);
   }
 
   @Override

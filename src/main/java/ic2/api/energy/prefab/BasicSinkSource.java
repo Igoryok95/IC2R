@@ -75,8 +75,8 @@ public abstract class BasicSinkSource extends BasicEnergyTile
 
   @Override
   public double injectEnergy(Direction directionFrom, double amount, double voltage) {
-    this.setEnergyStored(this.getEnergyStored() + amount);
-    return 0.0;
+    if (!(amount > 0.0)) return amount;
+    return amount - this.addEnergy(amount);
   }
 
   @Override

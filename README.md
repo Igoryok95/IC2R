@@ -5,10 +5,21 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.72-blue" alt="Version 21.1.72">
+<img src="https://img.shields.io/badge/Version-21.1.73-blue" alt="Version 21.1.73">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
-## Version 21.1.72 — Steel Hopper
+## Version 21.1.73 — Energy storage and charging fixes
+
+BatBox, CESU, MFE, MFSU and all four chargepads respect their real EU capacity.
+Network receivers return unaccepted energy, and the grid updates remaining demand
+after each transfer. Existing overfilled storage saves are normalized when loaded.
+Redstone fuel waits until its whole EU portion fits instead of overfilling the buffer.
+
+Electric-item charge updates no longer mutate the menu's previous item snapshots.
+The final BatPack charge now updates from 59,900 to **60,000 EU** without moving the item.
+Capacities, transfer rates and recipes are unchanged. See [audit and validation](docs/energy-storage-21.1.73.md).
+
+## Steel Hopper (21.1.72)
 
 The **Steel Hopper** transfers one item every **2 ticks** between containers,
 up to **10 items/s**, compared with a vanilla hopper's 2.5 items/s.
