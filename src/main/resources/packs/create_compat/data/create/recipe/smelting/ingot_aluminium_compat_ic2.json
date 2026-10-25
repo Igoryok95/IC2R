@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "ic2:aluminium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "create:crushed_raw_aluminum"
+  },
+  "result": {
+    "id": "ic2:ingot_aluminium"
+  }
+}

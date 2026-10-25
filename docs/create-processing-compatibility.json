@@ -1,0 +1,17 @@
+{
+  "reference_jar": "create-1.21.1-6.0.10.jar",
+  "reference_sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+  "optional": true,
+  "reuses_create_crushed_items": true,
+  "native_metals": [
+    "copper",
+    "iron",
+    "gold",
+    "lead",
+    "tin",
+    "silver",
+    "uranium",
+    "zinc"
+  ],
+  "xp": "Data-driven native processing rewards; Create original recipes remain available to other furnaces."
+}

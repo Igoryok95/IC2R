@@ -1,0 +1,47 @@
+{
+  "parent": "ic2:item/booze_beer_brew",
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "ic2:item/booze_beer_brew"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "ic2:item/booze_beer_youngster"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "ic2:item/booze_beer_beer"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "ic2:item/booze_beer_ale"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5
+      },
+      "model": "ic2:item/booze_beer_dragon_blood"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 6
+      },
+      "model": "ic2:item/booze_beer_black_stuff"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7
+      },
+      "model": "ic2:item/booze_rum"
+    }
+  ]
+}

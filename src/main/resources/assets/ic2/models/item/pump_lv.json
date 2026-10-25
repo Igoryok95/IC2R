@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ic2:item/experimental/pump_background",
+    "layer1": "ic2:item/experimental/pump_foreground"
+  }
+}

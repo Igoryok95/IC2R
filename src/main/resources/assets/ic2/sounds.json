@@ -370,5 +370,11 @@
       "ic2:misc/nuke/explode"
     ],
     "subtitle": "subtitle.ic2.block.nuke.explode"
+  },
+  "item.dynamite.remote": {
+    "subtitle": "subtitle.ic2.item.dynamite.remote",
+    "sounds": [
+      "ic2:tools/dynamiteomote"
+    ]
   }
 }

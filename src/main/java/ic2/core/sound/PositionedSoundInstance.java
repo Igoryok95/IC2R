@@ -16,6 +16,11 @@ public class PositionedSoundInstance extends SimpleSoundInstance
   }
 
   @Override
+  public float getVolume() {
+    return Ic2AudioSettings.scale(super.getVolume());
+  }
+
+  @Override
   public void addOnFinishListener(Runnable then) {
     this.onFinish =
         this.onFinish == null

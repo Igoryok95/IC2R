@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "ic2:centrifuge",
+  "ingredient": {
+    "item": "create:crushed_raw_zinc"
+  },
+  "result": [
+    {
+      "item": "ic2:zinc_dust"
+    },
+    {
+      "item": "ic2:small_zinc_dust"
+    },
+    {
+      "item": "ic2:stone_dust"
+    }
+  ],
+  "minHeat": 500
+}

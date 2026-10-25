@@ -217,6 +217,16 @@ public abstract class TileEntityElectricBlock extends TileEntityInventory
   }
 
   @Override
+  public long getStoredLong() {
+    return (long) this.energy.getEnergy();
+  }
+
+  @Override
+  public long getCapacityLong() {
+    return (long) this.energy.getCapacity();
+  }
+
+  @Override
   public boolean isTeleporterCompatible(Direction side) {
     return true;
   }
@@ -230,7 +240,7 @@ public abstract class TileEntityElectricBlock extends TileEntityInventory
             "ic2.item.tooltip.Output",
             Math.round(EnergyNet.instance.getPowerFromTier(this.energy.getSourceTier()))));
     Ic2Tooltip.add(
-        tooltip, Component.translatable("ic2.item.tooltip.Capacity", this.getCapacity()));
+        tooltip, Component.translatable("ic2.item.tooltip.Capacity", this.getCapacityLong()));
     double stored = StackUtil.getOrCreateNbtData(stack).getDouble("energy");
     Ic2Tooltip.add(tooltip, Component.translatable("ic2.item.tooltip.Store", (long) stored));
   }

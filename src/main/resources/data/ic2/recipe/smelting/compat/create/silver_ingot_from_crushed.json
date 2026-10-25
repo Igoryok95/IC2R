@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:smelting",
+  "group": "ic2_create_processing",
+  "category": "misc",
+  "ingredient": {
+    "item": "create:crushed_raw_silver"
+  },
+  "result": {
+    "id": "ic2:silver_ingot"
+  },
+  "experience": 0.25,
+  "cookingtime": 200,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

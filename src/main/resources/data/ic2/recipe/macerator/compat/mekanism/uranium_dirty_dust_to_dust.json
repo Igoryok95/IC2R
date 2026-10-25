@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "ic2:macerator",
+  "ingredient": {
+    "tag": "c:dirty_dusts/uranium"
+  },
+  "result": {
+    "item": "mekanism:dust_uranium",
+    "count": 1
+  }
+}

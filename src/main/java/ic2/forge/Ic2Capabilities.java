@@ -32,6 +32,10 @@ public final class Ic2Capabilities {
   private Ic2Capabilities() {}
 
   public static void register(RegisterCapabilitiesEvent event) {
+    event.registerBlockEntity(
+        Capabilities.FluidHandler.BLOCK,
+        ic2.core.experimental.ExperimentalPipes.TYPE,
+        (be, side) -> be.handler(side));
     for (BlockEntityType<?> type : ic2.core.ref.Ic2BlockEntities.allTypes()) {
       event.registerBlockEntity(
           Capabilities.FluidHandler.BLOCK, type, (be, side) -> fluidHandler(be, side));

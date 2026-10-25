@@ -1,0 +1,25 @@
+{
+  "type": "ic2:ore_washer",
+  "ingredient": {
+    "item": "create:crushed_raw_silver"
+  },
+  "result": [
+    {
+      "item": "ic2:purified_silver"
+    },
+    {
+      "item": "ic2:small_silver_dust",
+      "count": 2
+    },
+    {
+      "item": "ic2:stone_dust"
+    }
+  ],
+  "amount": 1000,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

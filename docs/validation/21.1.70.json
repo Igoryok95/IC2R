@@ -1,0 +1,92 @@
+{
+  "version": "21.1.70",
+  "status": "development_branch_only",
+  "branch": "experimental-restoration-21.1.70",
+  "minecraft": "1.21.1",
+  "java": 21,
+  "artifact": {
+    "file": "ic2-neoforge-21.1.70.jar",
+    "sha256": "7ca2f08a3bb2921d1ff5f43d38c8bef3943e34002dc2aa8453f295e2c7b88a71",
+    "bytes": 8268507
+  },
+  "junit": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0
+  },
+  "game_tests": [
+    {
+      "configuration": "IC2R standalone, NeoForge 21.1.234",
+      "passed": 471,
+      "optional_mod_tests_noop": 6
+    },
+    {
+      "configuration": "IC2R + Create 6.0.10",
+      "passed": 3,
+      "namespace": "ic2_create"
+    },
+    {
+      "configuration": "IC2R + Mekanism 10.7.19.85 + Almost Unified 1.4.2",
+      "passed": 3,
+      "namespace": "ic2_mekanism"
+    },
+    {
+      "configuration": "IC2R + Create + Mekanism + Almost Unified",
+      "passed": 3,
+      "namespace": "ic2_mekanism"
+    }
+  ],
+  "commands": [
+    "gradlew spotlessApply build runGameTestServer",
+    "gradlew runGameTestServer -PcreateTestsOnly -PcreateModsDir=<client-mods>",
+    "gradlew build runGameTestServer -PmekanismTestsOnly -PmekanismModsDir=<client-mods> -PcreateModsDir=<client-mods>",
+    "gradlew runGameTestServer -PmekanismTestsOnly -PmekanismModsDir=<client-mods>",
+    "gradlew spotlessApply build"
+  ],
+  "deployment": {
+    "github_release": false,
+    "main_merged": false,
+    "client_updated": false,
+    "zip_updated": false,
+    "production_server_updated": false
+  },
+  "locale_keys": {
+    "en_us": 1402,
+    "ru_ru": 1402,
+    "replacement_characters": 0,
+    "json_resources_parsed": 3968
+  },
+  "boundaries": {
+    "classic_mechanics_classes": 0,
+    "original_profession_textures": 12,
+    "native_capacities_unchanged": true,
+    "world_generation_unchanged": true,
+    "scaffolds_added": false
+  },
+  "client_validation": {
+    "language": "ru_ru",
+    "changed_menus_inspected": 23,
+    "scope": [
+      "4 native storage menus",
+      "4 Addons solar menus",
+      "8 Advanced Machines menus",
+      "offhand Containment Box",
+      "6 merchant screens",
+      "original skins and item models",
+      "150px IC2R volume slider beside Voice/Speech",
+      "saved volume and live mute/unmute of a managed looping sound"
+    ],
+    "limits": [
+      "Menu checks collected across the initial screen pass and affected follow-ups.",
+      "Audio checks verify the live engine loop and scaling; no calibrated acoustic loudness measurement.",
+      "No production installation or release."
+    ]
+  },
+  "fixes_found_during_validation": [
+    "Create 6.0.10 recipes referenced obsolete IC2 ingot/nugget IDs; conditional priority compatibility pack corrects them.",
+    "Managed item menus used the main-hand item for offhand opening; lookup and title now use the actual hand.",
+    "Sticky dynamite drifted after impact; synchronized attachment anchors it until support is removed.",
+    "Fluid cell client use-on consumed ordinary block clicks; tank interaction is now conditional so world pickup remains available.",
+    "Sound slider now shares the narrow Voice/Speech row rather than adding a full-width row."
+  ]
+}

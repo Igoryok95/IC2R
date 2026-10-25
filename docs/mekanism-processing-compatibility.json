@@ -1,0 +1,24 @@
+{
+  "optional": true,
+  "reference_jar": "Mekanism-1.21.1-10.7.19.85.jar",
+  "reference_sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+  "metals": [
+    "iron",
+    "gold",
+    "copper",
+    "tin",
+    "lead",
+    "uranium",
+    "osmium"
+  ],
+  "additional_ore": "fluorite",
+  "new_items": 0,
+  "raw_osmium_yield": 2,
+  "raw_osmium_block_yield": 18,
+  "osmium_processed_smelting_xp": 0.3,
+  "cleaning_yield": "1:1, no extra metal byproducts or chemical steps skipped",
+  "create_osmium_requires": [
+    "create",
+    "mekanism"
+  ]
+}

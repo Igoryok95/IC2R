@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "ic2:ore_washer",
+  "ingredient": {
+    "item": "create:crushed_raw_zinc"
+  },
+  "result": [
+    {
+      "item": "ic2:purified_zinc"
+    },
+    {
+      "item": "ic2:small_zinc_dust",
+      "count": 2
+    },
+    {
+      "item": "ic2:stone_dust"
+    }
+  ],
+  "amount": 1000
+}

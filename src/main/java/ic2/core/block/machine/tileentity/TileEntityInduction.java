@@ -52,6 +52,19 @@ public class TileEntityInduction extends TileEntityElectricMachine
   }
 
   @Override
+  public int[] getSlotsForFace(net.minecraft.core.Direction side) {
+    int[] slots = super.getSlotsForFace(side);
+    if (inputSlotB.get().getCount() < inputSlotA.get().getCount()) {
+      int a = getBaseIndex(inputSlotA), b = getBaseIndex(inputSlotB);
+      for (int i = 0; i < slots.length; i++) {
+        if (slots[i] == a) slots[i] = b;
+        else if (slots[i] == b) slots[i] = a;
+      }
+    }
+    return slots;
+  }
+
+  @Override
   protected void loadAdditional(
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);

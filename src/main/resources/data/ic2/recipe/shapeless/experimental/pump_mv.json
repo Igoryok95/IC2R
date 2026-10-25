@@ -1,0 +1,18 @@
+{
+  "type": "ic2:shapeless",
+  "ingredients": [
+    {
+      "item": "ic2:steel_pipe_medium"
+    },
+    {
+      "item": "minecraft:piston"
+    },
+    {
+      "item": "ic2:insulated_gold_cable"
+    }
+  ],
+  "result": {
+    "item": "ic2:pump_mv",
+    "count": 1
+  }
+}

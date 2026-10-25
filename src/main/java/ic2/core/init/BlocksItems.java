@@ -16,6 +16,11 @@ public class BlocksItems {
     Ic2BlockEntities.init();
     Ic2Items.init();
     Ic2ScreenHandlers.init();
+    ic2.core.experimental.ExperimentalItems.init();
+    ic2.core.experimental.ExperimentalBrewing.init();
+    ic2.core.experimental.ExperimentalPipes.init();
+    ic2.core.experimental.ExperimentalDynamite.init();
+    ic2.integration.create.CreateOreProcessing.init();
     initMigration();
   }
 

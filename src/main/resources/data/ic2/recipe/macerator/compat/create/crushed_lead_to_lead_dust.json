@@ -1,0 +1,15 @@
+{
+  "type": "ic2:macerator",
+  "ingredient": {
+    "item": "create:crushed_raw_lead"
+  },
+  "result": {
+    "item": "ic2:lead_dust"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "experimental_jar_sha256": "f96b1886b6d060b308fb811029d5c5cc76deb17b835aa368dcb6071f2de290d4",
+  "classic_jar_sha256": "f0a99733ef33491eca418831d681a79902250d341650f652d06f8b88d3627f83",
+  "classic_scope": "Only original villager and zombie-villager profession textures",
+  "scaling": "Only 16x16 item/block textures enlarged to 32x32 with nearest-neighbor sampling",
+  "images": [
+    {
+      "source": "assets/ic2/textures/items/armor/solar_helmet.png",
+      "target": "assets/ic2/textures/item/experimental/solar_helmet.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "c1d2c41d41b7f9d96db75ce8026b8010ca18e7d192791b1f0088d96eac91c783",
+      "sha256": "1da720f0431c82fc1c4b4eac6772a65b3dadb1c4f0198716ff9049595014615a"
+    },
+    {
+      "source": "assets/ic2/textures/items/armor/static_boots.png",
+      "target": "assets/ic2/textures/item/experimental/static_boots.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "a653d84ade7977a6375126b061487316135e1238881c2715b21a08174aeb03cd",
+      "sha256": "4400738ed661d681464be4d4410ca05b8fcf1f250f68dcfd61e90880ed236dce"
+    },
+    {
+      "source": "assets/ic2/textures/items/tool/containment_box.png",
+      "target": "assets/ic2/textures/item/experimental/containment_box.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "5b663ad22901e671fcafa71e1c1be65a752035187d1be13c35e7c4f0b9b6a122",
+      "sha256": "4d3f987d1379e8e78a7bad50129688b60370d881730d823363d335a16948fd48"
+    },
+    {
+      "source": "assets/ic2/textures/items/iodine_tablet.png",
+      "target": "assets/ic2/textures/item/experimental/iodine_tablet.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "a1dd0ae3deba1575896b2d5200a5e6f03177181ee344b8d65e05ebbbea83ca5c",
+      "sha256": "92a8db4df46e0549698116a835d2110393f0eee2855b601caf35c0cab20834bd"
+    },
+    {
+      "source": "assets/ic2/textures/items/crafting/mfsu_upgrade_kit.png",
+      "target": "assets/ic2/textures/item/experimental/mfsu_upgrade_kit.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "6ca7f1a1eb9ce25707be4b04c57a4d49e68b2711fe3fb42406a82af06e611d26",
+      "sha256": "6ca7f1a1eb9ce25707be4b04c57a4d49e68b2711fe3fb42406a82af06e611d26"
+    },
+    {
+      "source": "assets/ic2/textures/items/cell/fluid_cell.png",
+      "target": "assets/ic2/textures/item/experimental/fluid_cell.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "c366a5aaa6aa43363529def6f4618a5f50fe2b42e53ffabf55a85b760582b0d3",
+      "sha256": "5d0a23fc4e7cd984f4fab631789ed4400a3af2a8c99581e57a5668f9d9a55820"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/barrel.png",
+      "target": "assets/ic2/textures/item/experimental/barrel.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "d959be72fbe51103b1d54aae5fc9615058a7f9fc1254b761ea988c6b40218f88",
+      "sha256": "2c790f1b4652821060eee995f81b5a3245d46c7ab92436275ea3f8f888b92ad5"
+    },
+    {
+      "source": "assets/ic2/textures/items/dynamite.png",
+      "target": "assets/ic2/textures/item/experimental/dynamite.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "df2e2c37409b483004f1c871cf9af2039a22c7be74824f65af251a8d09c24eab",
+      "sha256": "9012acd3c3c94bd6969a5d56bc4bf9ef93035bd48069eea6f490309b78525b8f"
+    },
+    {
+      "source": "assets/ic2/textures/items/dynamite_sticky.png",
+      "target": "assets/ic2/textures/item/experimental/dynamite_sticky.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "e42d9171ba6d256b9080f5bbc5ef343a5ee64b5843de58be5d8138dd7b31a7cc",
+      "sha256": "b931bbf0d0af5939bb6585594ae5010372596891c12c1d00b46b2a96235526bd"
+    },
+    {
+      "source": "assets/ic2/textures/items/tool/remote.png",
+      "target": "assets/ic2/textures/item/experimental/remote.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ee853e719a3ded28097d84dad18f3a96b0628776153ae607664ca6723a639f0f",
+      "sha256": "a50c303876928637d3aab236ec2710a4809d06ec580f18db9398fd2b0ecd181b"
+    },
+    {
+      "source": "assets/ic2/textures/items/cover/pump_foreground.png",
+      "target": "assets/ic2/textures/item/experimental/pump_lv.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed",
+      "sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed"
+    },
+    {
+      "source": "assets/ic2/textures/items/cover/pump_foreground.png",
+      "target": "assets/ic2/textures/item/experimental/pump_mv.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed",
+      "sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed"
+    },
+    {
+      "source": "assets/ic2/textures/items/cover/pump_background.png",
+      "target": "assets/ic2/textures/item/experimental/pump_background.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ffec275a4776e8a83eec6fada022b7fac36900a275b8d844163019b3d50e5619",
+      "sha256": "ffec275a4776e8a83eec6fada022b7fac36900a275b8d844163019b3d50e5619"
+    },
+    {
+      "source": "assets/ic2/textures/items/cover/pump_foreground.png",
+      "target": "assets/ic2/textures/item/experimental/pump_foreground.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed",
+      "sha256": "8446e5e0babcdc59120331018fa9e07a572d2c64ee746b006269164ae9e083ed"
+    },
+    {
+      "source": "assets/ic2/textures/items/cell/fluid_cell_window.png",
+      "target": "assets/ic2/textures/item/experimental/fluid_cell_window.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "b471a6af81b1ce3184cb9d4242d0890ec7557bd36718a2f72307376a623327a9",
+      "sha256": "9c68a5a0d1778837f3321c9a98fe9b57d4dcf3f45a6e7d3027b2dd0559db250d"
+    },
+    {
+      "source": "assets/ic2/textures/armor/solar_1.png",
+      "target": "assets/ic2/textures/models/armor/experimental_solar_layer_1.png",
+      "source_size": [
+        64,
+        32
+      ],
+      "size": [
+        64,
+        32
+      ],
+      "source_sha256": "75d43f48e6a5d85a11c5cab38e22f6a1af8077842b0470ab4a3c8cd4eb0ebdb4",
+      "sha256": "75d43f48e6a5d85a11c5cab38e22f6a1af8077842b0470ab4a3c8cd4eb0ebdb4"
+    },
+    {
+      "source": "assets/ic2/textures/armor/rubber_1.png",
+      "target": "assets/ic2/textures/models/armor/experimental_static_layer_1.png",
+      "source_size": [
+        64,
+        32
+      ],
+      "size": [
+        64,
+        32
+      ],
+      "source_sha256": "33adb3455c6774f6cff46a7cd5ab2b9b45ee76030700530e8c9760646057fe72",
+      "sha256": "33adb3455c6774f6cff46a7cd5ab2b9b45ee76030700530e8c9760646057fe72"
+    },
+    {
+      "source": "assets/ic2/textures/gui/guicontainmentbox.png",
+      "target": "assets/ic2/textures/gui/experimental/containment_box.png",
+      "source_size": [
+        256,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "source_sha256": "9b7fe5aa9142414dca0fca6c4cc1dfca0bcf8dff0d4b861c90ccf575cef27cc4",
+      "sha256": "9b7fe5aa9142414dca0fca6c4cc1dfca0bcf8dff0d4b861c90ccf575cef27cc4"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_brew.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_brew.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ad6658fc5e6ee73a67b7b111933d154255e400620c3ccc5b47c1b34695b827bb",
+      "sha256": "2ba076be713a2586637fb3ea12c49e19b68a3c21751d46a96e132daf8809e352"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_youngster.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_youngster.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "83d3d6e538eb3d5145be8d5dfe0e0f10864751f67cf5aadcc7ff4404adaabb80",
+      "sha256": "5a1e9de2b96eb3ef4781624f36ab511ae1deafbbb7c39e5326ec0d4af9a5472b"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_beer.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_beer.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "3b2be16303c22c2aebe0574f6342e3f73248d8c349f3f7fbdd551ad43359b213",
+      "sha256": "d33db26079944f117dec403b17de86f9c6ca1e0f12a7374b9b529e551e67ccf6"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_ale.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_ale.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "8a58e3cd419e08093895105df75ca8696a6d9d06d58ab027098d237bee0c083d",
+      "sha256": "a88513d526f321fbcfe0ab6d548910dde5d2265673acc3f98d2f66c83d8ca2b5"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_dragon_blood.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_dragon_blood.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ff8cff834b08371928bd28e0da7e9f32c249d4d6c72e9de21aadc0d8ea789b64",
+      "sha256": "3a90ef82c06bc92c9f1a40803c2ed7258e726b04c48a67bb2f2fde32adbb8e31"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_beer_black_stuff.png",
+      "target": "assets/ic2/textures/item/experimental/booze_beer_black_stuff.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "1e634e88fdc20dd8974f3bf84aef694920700a66f01c6c709e22da65915f0842",
+      "sha256": "fe0f0d24193e5db0dbc33769d1130cdcca788e7ec2dc2bad3f7b6187057da6b4"
+    },
+    {
+      "source": "assets/ic2/textures/items/brewing/booze_mug_rum.png",
+      "target": "assets/ic2/textures/item/experimental/booze_rum.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "2ce2707191608e70edc1fc57215b5c853623379a70607b5b23607ae514e5a326",
+      "sha256": "4d51f8a224e613284e94aa1687fc7ca2f8430e3b24b792822726d294fab6c97c"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/barrel_bottomtop.png",
+      "target": "assets/ic2/textures/block/experimental/barrel_bottomtop.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "76825a9537cd00c33811438a1779bd905707621a0a807e13f36833680ddba724",
+      "sha256": "17239b49c5bcecb3b5c06468495e12c22140b429d503d241aaafd391bc012712"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/barrel_sides.png",
+      "target": "assets/ic2/textures/block/experimental/barrel_sides.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "3ea0f9abaab34ebc70f82ebc9407b20e8bc115768582d70f488a5875e7439278",
+      "sha256": "f79213441cfc11393e6af3bcd0789d212d1e707237da286aa55f396b9ddc23fb"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/barrel_tap.png",
+      "target": "assets/ic2/textures/block/experimental/barrel_tap.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "d772b8c069c7cb89360216bfaccfe7b24aa2827c9c489c15d458e29b2a471fde",
+      "sha256": "4de55d150b46b0416453aa24d39e451f05897fb94b0fb2e939e6b28e36bfd7b2"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/transport/pipe_tiny.png",
+      "target": "assets/ic2/textures/block/experimental/pipe_tiny.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ccba9a2020a70987db62d2c043fc25371df8e8500c0f817a68481875f926fa40",
+      "sha256": "ccba9a2020a70987db62d2c043fc25371df8e8500c0f817a68481875f926fa40"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/transport/pipe_small.png",
+      "target": "assets/ic2/textures/block/experimental/pipe_small.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "78d259a21d2a6d49922193853ebee3c12be104637a7104cd6f785fc79876867c",
+      "sha256": "78d259a21d2a6d49922193853ebee3c12be104637a7104cd6f785fc79876867c"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/transport/pipe_medium.png",
+      "target": "assets/ic2/textures/block/experimental/pipe_medium.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "0264a43fb6bddb12b6e50c655d1e71aebf5c070385d3045b726331dbf2f6cb19",
+      "sha256": "0264a43fb6bddb12b6e50c655d1e71aebf5c070385d3045b726331dbf2f6cb19"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/transport/pipe_large.png",
+      "target": "assets/ic2/textures/block/experimental/pipe_large.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "e7acffdefbfc42a11245e4aadede302998ff49d28b53d49f4264f31efedef605",
+      "sha256": "e7acffdefbfc42a11245e4aadede302998ff49d28b53d49f4264f31efedef605"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/transport/pipe_side.png",
+      "target": "assets/ic2/textures/block/experimental/pipe_side.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "cae01a2879a04dff4ee40348da86f9231045d8a5e842a0689132260d38fc17db",
+      "sha256": "cae01a2879a04dff4ee40348da86f9231045d8a5e842a0689132260d38fc17db"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/explosive/dynamite.png",
+      "target": "assets/ic2/textures/block/experimental/dynamite.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "ad9801777c1ea2fd15a938f94e53e71d093c8708031a3d831221cc5321ff5452",
+      "sha256": "06344b94899b62d9b58f9ab9cc0a2a623c0735c373ad5a2b92373d9133c8dc73"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/explosive/dynamite_remote.png",
+      "target": "assets/ic2/textures/block/experimental/dynamite_remote.png",
+      "source_size": [
+        16,
+        16
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "c48af4c4e91d12ecdf44e4761697aefafa8ff7725f97dcaab57910d520f65d85",
+      "sha256": "c6d9ec84ed35ee4d9cba2b89d4dedb7ebeccf6df9d361eb712849c452ed65176"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/electric.png",
+      "target": "assets/ic2/textures/entity/villager/profession/electric.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "dc26103eb829f91696a8dc46fd03977f428b99aae3bb8abd3532704e9ae236d3",
+      "sha256": "dc26103eb829f91696a8dc46fd03977f428b99aae3bb8abd3532704e9ae236d3"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/nuclear.png",
+      "target": "assets/ic2/textures/entity/villager/profession/nuclear.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "9e9efde8690ba9d9d3612207b2eec2ef2e1e618cf5c8ccf8474aabcf8446c420",
+      "sha256": "9e9efde8690ba9d9d3612207b2eec2ef2e1e618cf5c8ccf8474aabcf8446c420"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/crop.png",
+      "target": "assets/ic2/textures/entity/villager/profession/crop.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "db83a354fb4ea059cf43bf587a8ec048f013baa8ebdc4182203682f001027dd6",
+      "sha256": "db83a354fb4ea059cf43bf587a8ec048f013baa8ebdc4182203682f001027dd6"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/demo.png",
+      "target": "assets/ic2/textures/entity/villager/profession/demo.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "cb6dfdb871118cf89aa40ac7d0c208df885bc83f945f7dbe82d45156d80bdec2",
+      "sha256": "cb6dfdb871118cf89aa40ac7d0c208df885bc83f945f7dbe82d45156d80bdec2"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/brewing.png",
+      "target": "assets/ic2/textures/entity/villager/profession/brewing.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "0e6cb140e4591adb9949566f4b5ab6d4f5e03ea104449d15c9e041ac04c2a955",
+      "sha256": "0e6cb140e4591adb9949566f4b5ab6d4f5e03ea104449d15c9e041ac04c2a955"
+    },
+    {
+      "source": "assets/ic2/textures/entity/villager/profession/greg.png",
+      "target": "assets/ic2/textures/entity/villager/profession/greg.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "f6f5e9d92a40d52b31bdf162eddd7a8efe55d2ec8c307642ff5ffa61a1b43cb6",
+      "sha256": "f6f5e9d92a40d52b31bdf162eddd7a8efe55d2ec8c307642ff5ffa61a1b43cb6"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/electric.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/electric.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "dc26103eb829f91696a8dc46fd03977f428b99aae3bb8abd3532704e9ae236d3",
+      "sha256": "dc26103eb829f91696a8dc46fd03977f428b99aae3bb8abd3532704e9ae236d3"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/nuclear.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/nuclear.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "4d8589a29e5783fd77eea6cf2cf9ecf0f9410751950272c2c5203580392cced2",
+      "sha256": "4d8589a29e5783fd77eea6cf2cf9ecf0f9410751950272c2c5203580392cced2"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/crop.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/crop.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "db83a354fb4ea059cf43bf587a8ec048f013baa8ebdc4182203682f001027dd6",
+      "sha256": "db83a354fb4ea059cf43bf587a8ec048f013baa8ebdc4182203682f001027dd6"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/demo.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/demo.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "cb6dfdb871118cf89aa40ac7d0c208df885bc83f945f7dbe82d45156d80bdec2",
+      "sha256": "cb6dfdb871118cf89aa40ac7d0c208df885bc83f945f7dbe82d45156d80bdec2"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/brewing.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/brewing.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "8d43f1d3a2a0bdb6ef647fddee74f5dcb4f79941e5bf952f094d4d27c6bb6335",
+      "sha256": "8d43f1d3a2a0bdb6ef647fddee74f5dcb4f79941e5bf952f094d4d27c6bb6335"
+    },
+    {
+      "source": "assets/ic2/textures/entity/zombie_villager/profession/greg.png",
+      "target": "assets/ic2/textures/entity/zombie_villager/profession/greg.png",
+      "source_size": [
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "source_sha256": "8b3b460212d88523cbf8ba41537cb74065c03dd9f7ddc7731fe782027fc74e06",
+      "sha256": "8b3b460212d88523cbf8ba41537cb74065c03dd9f7ddc7731fe782027fc74e06"
+    }
+  ]
+}

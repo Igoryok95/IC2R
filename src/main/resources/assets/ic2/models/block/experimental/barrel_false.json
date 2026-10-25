@@ -1,0 +1,45 @@
+{
+  "textures": {
+    "north": "ic2:block/experimental/barrel_sides",
+    "south": "ic2:block/experimental/barrel_sides",
+    "east": "ic2:block/experimental/barrel_sides",
+    "west": "ic2:block/experimental/barrel_sides",
+    "up": "ic2:block/experimental/barrel_bottomtop",
+    "down": "ic2:block/experimental/barrel_bottomtop",
+    "particle": "ic2:block/experimental/barrel_sides"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#north"
+        },
+        "south": {
+          "texture": "#south"
+        },
+        "east": {
+          "texture": "#east"
+        },
+        "west": {
+          "texture": "#west"
+        },
+        "up": {
+          "texture": "#up"
+        },
+        "down": {
+          "texture": "#down"
+        }
+      }
+    }
+  ]
+}

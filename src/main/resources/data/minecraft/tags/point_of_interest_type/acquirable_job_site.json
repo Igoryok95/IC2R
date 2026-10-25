@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ic2:electric",
+    "ic2:nuclear",
+    "ic2:crop",
+    "ic2:demo",
+    "ic2:brewing",
+    "ic2:greg"
+  ]
+}

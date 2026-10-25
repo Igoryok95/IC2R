@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=north,active=false": {
+      "model": "ic2:block/experimental/barrel_false",
+      "y": 0
+    },
+    "facing=north,active=true": {
+      "model": "ic2:block/experimental/barrel_true",
+      "y": 0
+    },
+    "facing=east,active=false": {
+      "model": "ic2:block/experimental/barrel_false",
+      "y": 90
+    },
+    "facing=east,active=true": {
+      "model": "ic2:block/experimental/barrel_true",
+      "y": 90
+    },
+    "facing=south,active=false": {
+      "model": "ic2:block/experimental/barrel_false",
+      "y": 180
+    },
+    "facing=south,active=true": {
+      "model": "ic2:block/experimental/barrel_true",
+      "y": 180
+    },
+    "facing=west,active=false": {
+      "model": "ic2:block/experimental/barrel_false",
+      "y": 270
+    },
+    "facing=west,active=true": {
+      "model": "ic2:block/experimental/barrel_true",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "ic2:macerator",
+  "ingredient": {
+    "tag": "c:storage_blocks/raw_tin"
+  },
+  "result": {
+    "item": "ic2:raw_tin",
+    "count": 9
+  }
+}

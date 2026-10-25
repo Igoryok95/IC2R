@@ -1,3 +1,27 @@
+# 21.1.70 (development branch)
+
+Restores Experimental beer/rum brewing, basic charging armor, fluid pipes and pump
+covers, dynamite and remote control, containment box, iodine, MFSU upgrade kit and
+reusable fluid cell. Six original Classic profession skins accompany native
+Experimental trades; Addons extends matching trades when installed.
+
+Optional Create compatibility reuses existing crushed ores and includes zinc
+processing, with positive recipe XP retained by all three furnaces. Fixes Create's
+outdated IC2 recipe identifiers through a conditional built-in compatibility pack.
+Also supports optional Mekanism osmium, fluorite and tagged intermediates, including
+Create crushed osmium and positive XP. Adds a localized client volume slider for
+IC2R audio and balanced hopper insertion into both induction inputs. No Classic
+progression, PESU, upper solar tiers or world-generation changes.
+
+Retains released XP, localization, input, crop-save and GUI fixes. Storage gauges
+show exact values in live tooltips; teleporter sums and external readings avoid
+integer overflow. Russian Compressor naming is unified. See
+[feature and validation details](docs/experimental-restoration-21.1.70.md).
+
+This is not yet a published release or an installed client/server update.
+
+---
+
 # 21.1.69
 
 Minecraft **1.21.1** · NeoForge **21.1.234+** · Java **21**

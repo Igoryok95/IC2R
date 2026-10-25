@@ -25,6 +25,7 @@ public class SoundClient extends Sound {
   private BlockPos pos;
   private LivingEntity entity;
   private float volume;
+  private boolean loopRequested;
   private float pitch;
   private Item sourceItem;
   private boolean isStarted = false;
@@ -70,6 +71,7 @@ public class SoundClient extends Sound {
 
   @Override
   public void play() {
+    loopRequested = true;
     super.play();
     this.isStarted = true;
     DeferredSoundOps.run(
@@ -126,6 +128,7 @@ public class SoundClient extends Sound {
 
   @Override
   public void playOnce() {
+    loopRequested = false;
     super.playOnce();
     this.isStarted = true;
     DeferredSoundOps.run(
@@ -148,6 +151,7 @@ public class SoundClient extends Sound {
 
   @Override
   public void stop() {
+    loopRequested = false;
     super.stop();
     this.isStarted = false;
     this.playGraceTicks = 0;
@@ -243,12 +247,21 @@ public class SoundClient extends Sound {
     this.onFinishSound(this.entityTrackingInstance, then);
   }
 
+  public void resumeAfterMute() {
+    if (loopRequested && isStarted) {
+      stopAllStarted();
+      play();
+    }
+  }
+
+  @Override
   public void tick() {
     super.tick();
     if (this.playGraceTicks > 0) {
       this.playGraceTicks--;
     }
 
+    if (loopRequested && Ic2AudioSettings.scale(1) == 0) return;
     if (this.isStarted) {
       this.checkSoundFinished(this.onceInstance);
       this.checkSoundFinished(this.repeatInstance);

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=up,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 0,
+      "y": 0
+    },
+    "facing=up,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 0,
+      "y": 0
+    },
+    "facing=down,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 180,
+      "y": 0
+    },
+    "facing=down,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 180,
+      "y": 0
+    },
+    "facing=north,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 270,
+      "y": 0
+    },
+    "facing=north,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 270,
+      "y": 0
+    },
+    "facing=south,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 90,
+      "y": 0
+    },
+    "facing=south,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 90,
+      "y": 0
+    },
+    "facing=east,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,linked=false": {
+      "model": "ic2:block/experimental/dynamite",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,linked=true": {
+      "model": "ic2:block/experimental/dynamite_remote",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

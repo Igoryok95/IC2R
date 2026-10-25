@@ -1,0 +1,17 @@
+{
+  "type": "ic2:shaped",
+  "pattern": [
+    "C C",
+    "C C",
+    "C C"
+  ],
+  "key": {
+    "C": {
+      "item": "ic2:steel_plate"
+    }
+  },
+  "result": {
+    "item": "ic2:steel_pipe_large",
+    "count": 1
+  }
+}

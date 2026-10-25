@@ -35,7 +35,11 @@ public enum Ic2ArmorMaterials {
   ADVANCED_BAT_PACK(
       "ic2:ic2_advanced_bat_pack", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 8, 0}, 2.0F),
   ENERGY_PACK("ic2:ic2_energy_pack", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 8, 0}, 2.0F),
-  LAP_PACK("ic2:ic2_lap_pack", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 8, 0}, 2.0F);
+  LAP_PACK("ic2:ic2_lap_pack", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 8, 0}, 2.0F),
+  SOLAR_HELMET(
+      "ic2:experimental_solar", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 0, 0}, 0.0F),
+  STATIC_BOOTS(
+      "ic2:experimental_static", SoundEvents.ARMOR_EQUIP_IRON, new int[] {0, 0, 0, 0}, 0.0F);
 
   private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
   private final String name;

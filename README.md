@@ -8,6 +8,24 @@ and experience rewards for processed ore in iron, electric and induction furnace
 <img src="https://img.shields.io/badge/Version-21.1.69-blue" alt="Version 21.1.69">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
+## Development: 21.1.70
+
+The `experimental-restoration-21.1.70` branch restores missing **IC2 Experimental** features:
+beer/rum brewing, basic solar helmet and static boots, bronze/steel fluid pipes and
+pump covers, dynamite and remote control, radioactive containment, iodine tablets,
+MFSU upgrades and a reusable fluid cell. Six professions use original Classic skins
+with Experimental trades. IC2R works independently; Addons can extend their trades.
+
+Optional Create/Mekanism compatibility reuses existing intermediates, adds zinc/osmium processing and
+retains collectible smelting XP in all three native furnaces. Storage menus keep
+the charge gauge and show exact EU in its tooltip. The Russian machine name is
+consistently **Компрессор**. A client volume slider controls IC2R sounds; hoppers
+balance the Induction Furnace inputs. Native capacities and world generation are unchanged.
+
+See [feature details and villager comparison](docs/experimental-restoration-21.1.70.md)
+and [preserved fixes](docs/maintenance-21.1.70.md). This branch is development source;
+the latest published installation below remains **21.1.69**.
+
 ## This fork
 
 Version **21.1.69** builds on upstream **21.1.66** and includes:

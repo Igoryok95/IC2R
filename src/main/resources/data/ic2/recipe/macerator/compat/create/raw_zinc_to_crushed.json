@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "ic2:macerator",
+  "ingredient": {
+    "tag": "c:raw_materials/zinc"
+  },
+  "result": {
+    "item": "create:crushed_raw_zinc",
+    "count": 2
+  }
+}

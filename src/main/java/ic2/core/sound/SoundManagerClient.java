@@ -68,6 +68,11 @@ public class SoundManagerClient extends SoundManager {
       }
     }
 
+    if (sound != null
+        && sound.getLocation().getNamespace().equals("ic2")
+        && !(sound instanceof PositionedSoundInstance)
+        && !(sound instanceof EntityTrackingSoundInstance)
+        && !(sound instanceof VolumeScaledSound)) sound = VolumeScaledSound.wrap(sound);
     return sound;
   }
 
@@ -188,6 +193,10 @@ public class SoundManagerClient extends SoundManager {
     super.tick();
     this.objectToSoundMap.forEach(
         (object, soundClientList) -> soundClientList.forEach(SoundClient::tick));
+  }
+
+  public void resumeMutedLoops() {
+    this.objectToSoundMap.values().forEach(list -> list.forEach(SoundClient::resumeAfterMute));
   }
 
   public static class WeakObject extends WeakReference<Object> {

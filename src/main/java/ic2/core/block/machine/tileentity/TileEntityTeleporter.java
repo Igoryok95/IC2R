@@ -235,13 +235,13 @@ public class TileEntityTeleporter extends TileEntityBase
       if (world.getBlockEntity(this.worldPosition.relative(dir))
               instanceof IEnergyStorage energySource
           && energySource.isTeleporterCompatible(dir.getOpposite())
-          && energySource.getStored() > 0) {
+          && energySource.getStoredLong() > 0) {
         energySources.add(energySource);
       }
     }
 
-    while (energy > 0) {
-      int drain = (energy + energySources.size() - 1) / energySources.size();
+    while (energy > 0 && !energySources.isEmpty()) {
+      int drain = (int) (((long) energy + energySources.size() - 1) / energySources.size());
       Iterator<IEnergyStorage> it = energySources.iterator();
 
       while (it.hasNext()) {
@@ -250,8 +250,8 @@ public class TileEntityTeleporter extends TileEntityBase
           drain = energy;
         }
 
-        if (energySource.getStored() <= drain) {
-          energy -= energySource.getStored();
+        if (energySource.getStoredLong() <= drain) {
+          energy -= (int) energySource.getStoredLong();
           energySource.setStored(0);
           it.remove();
         } else {
@@ -264,16 +264,16 @@ public class TileEntityTeleporter extends TileEntityBase
 
   public int getAvailableEnergy() {
     Level world = this.getLevel();
-    int energy = 0;
+    long energy = 0;
 
     for (Direction dir : Util.ALL_DIRS) {
       if (world.getBlockEntity(this.worldPosition.relative(dir)) instanceof IEnergyStorage storage
           && storage.isTeleporterCompatible(dir.getOpposite())) {
-        energy += storage.getStored();
+        energy = Math.min(Integer.MAX_VALUE, energy + Math.max(0, storage.getStoredLong()));
       }
     }
 
-    return energy;
+    return (int) energy;
   }
 
   public int getWeightOf(Entity user) {

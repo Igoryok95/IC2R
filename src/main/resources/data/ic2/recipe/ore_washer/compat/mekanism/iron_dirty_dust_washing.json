@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "ic2:ore_washer",
+  "ingredient": {
+    "tag": "c:dirty_dusts/iron"
+  },
+  "result": {
+    "item": "mekanism:dust_iron",
+    "count": 1
+  },
+  "amount": 1000
+}

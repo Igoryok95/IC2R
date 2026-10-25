@@ -1,0 +1,24 @@
+{
+  "type": "ic2:centrifuge",
+  "ingredient": {
+    "item": "create:crushed_raw_tin"
+  },
+  "result": [
+    {
+      "item": "ic2:tin_dust"
+    },
+    {
+      "item": "ic2:small_iron_dust"
+    },
+    {
+      "item": "ic2:stone_dust"
+    }
+  ],
+  "minHeat": 1000,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

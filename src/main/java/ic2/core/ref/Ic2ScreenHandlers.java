@@ -170,6 +170,8 @@ public final class Ic2ScreenHandlers {
   public static final MenuType<ContainerToolScanner> SCANNER = registerManagedItem("scanner");
   public static final MenuType<ContainerMeter> METER = registerManagedItem("meter");
   public static final MenuType<ContainerToolbox> TOOL_BOX = registerManagedItem("tool_box");
+  public static final MenuType<ic2.core.experimental.ContainmentMenu> CONTAINMENT_BOX =
+      registerManagedItem("containment_box");
   public static final MenuType<ContainerAnalyzer> CROP_ANALYZER =
       registerManagedItem("crop_analyzer");
   public static final MenuType<ContainerMiningFilter> MINING_FILTER =
@@ -234,7 +236,7 @@ public final class Ic2ScreenHandlers {
         }
 
         hand = Util.HANDS[handOrdinal];
-        currentItem = player.getMainHandItem();
+        currentItem = player.getItemInHand(hand);
       } else {
         if (currentItemPosition != player.getInventory().selected) {
           return null;
@@ -262,7 +264,7 @@ public final class Ic2ScreenHandlers {
 
   public static void writeManagedItemData(
       Player player, InteractionHand hand, Integer subGuiId, GrowingBuffer buffer) {
-    Item item = player.getMainHandItem().getItem();
+    Item item = player.getItemInHand(hand).getItem();
     assert item instanceof IHandHeldInventory;
     int slot;
     if (hand == InteractionHand.MAIN_HAND) {

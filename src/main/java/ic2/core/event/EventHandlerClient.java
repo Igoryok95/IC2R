@@ -171,7 +171,9 @@ public class EventHandlerClient {
   }
 
   public static void onGuiCreate(
-      Screen screen, List<GuiEventListener> widgets, Consumer<GuiEventListener> widgetAdder) {}
+      Screen screen, List<GuiEventListener> widgets, Consumer<GuiEventListener> widgetAdder) {
+    ic2.core.sound.Ic2AudioSettings.addSlider(screen, widgets);
+  }
 
   private static final GuiOverlayer guiOverlayer = new GuiOverlayer(SideProxyClient.mc);
 

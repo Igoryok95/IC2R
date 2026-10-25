@@ -4,6 +4,7 @@ import ic2.core.IC2;
 import net.minecraft.sounds.SoundEvent;
 
 public class Ic2SoundEvents {
+  public static final SoundEvent ITEM_DYNAMITE_REMOTE = register("item.dynamite.remote");
   public static final SoundEvent ITEM_TREETAP_USE = register("item.treetap.use");
   public static final SoundEvent ITEM_WRENCH_USE = register("item.wrench.use");
   public static final SoundEvent ITEM_CUTTER_USE = register("item.cutter.use");

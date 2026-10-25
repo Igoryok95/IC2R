@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ic2:item/experimental/fluid_cell"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "ic2:filled": 1
+      },
+      "model": "ic2:item/experimental/fluid_cell_filled"
+    }
+  ]
+}

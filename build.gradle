@@ -90,7 +90,7 @@ neoForge {
 
         gameTestServer {
             type = "gameTestServer"
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enabledGameTestNamespaces', providers.gradleProperty('mekanismTestsOnly').isPresent() ? 'ic2_mekanism' : providers.gradleProperty('createTestsOnly').isPresent() ? 'ic2_create' : 'ic2,ic2_create,ic2_mekanism'
         }
 
         data {
@@ -121,6 +121,14 @@ configurations {
 }
 
 dependencies {
+    if (providers.gradleProperty('mekanismModsDir').isPresent()) {
+        runtimeOnly fileTree(dir: providers.gradleProperty('mekanismModsDir').get(), includes: ['Mekanism-1.21.1-*.jar', 'almostunified-*.jar'])
+    }
+
+    if (providers.gradleProperty('createModsDir').isPresent()) {
+        runtimeOnly fileTree(dir: providers.gradleProperty('createModsDir').get(), includes: ['create-*.jar', 'flywheel-*.jar', 'ponder-*.jar'])
+    }
+
     compileOnly "mezz.jei:jei-1.21.1-neoforge-api:${jei_version}"
     runtimeOnly "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
 

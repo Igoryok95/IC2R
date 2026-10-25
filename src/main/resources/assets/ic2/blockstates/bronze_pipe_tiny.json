@@ -1,0 +1,57 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_north"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_south"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_east"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_west"
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_up"
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "ic2:block/experimental/bronze_pipe_tiny_down"
+      }
+    }
+  ]
+}

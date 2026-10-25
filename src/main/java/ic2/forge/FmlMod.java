@@ -56,9 +56,11 @@ public final class FmlMod {
       this.modContainer.registerConfig(ModConfig.Type.CLIENT, IC2ClientConfig.SPEC);
     }
     Ic2Fluids.init();
+    ic2.core.experimental.RestoredVillagers.register(modEventBus);
     this.modContainer.registerConfig(ModConfig.Type.COMMON, IC2Config.SPEC);
     modEventBus.addListener(Ic2Capabilities::register);
     modEventBus.addListener(Ic2Network::register);
+    modEventBus.addListener(ic2.integration.create.CreateOreProcessing::addCompatibilityPack);
   }
 
   @SubscribeEvent

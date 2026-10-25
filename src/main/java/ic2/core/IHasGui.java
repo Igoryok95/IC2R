@@ -73,7 +73,7 @@ public interface IHasGui extends Container {
     this.writeScreenOpenData(player, hand, buffer);
 
     buffer.flip();
-    final Item item = player.getMainHandItem().getItem();
+    final Item item = player.getItemInHand(hand).getItem();
     return IC2.envProxy.openHandledScreen(
         player,
         new MenuProvider() {
