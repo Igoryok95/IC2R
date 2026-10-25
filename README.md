@@ -24,6 +24,9 @@ balance the Induction Furnace inputs. Local torch buttons keep the Induction Fur
 Thermal Centrifuge and Blast Furnace warm without powering nearby hoppers. Native
 capacities and ore generation are unchanged. New workshops use the existing village structure pools.
 
+Validation: **23 JUnit tests** and **479 standalone GameTests** pass locally and in
+[GitHub CI](https://github.com/Igoryok95/IC2R/actions/runs/40213359843).
+
 See [feature details and villager comparison](docs/experimental-restoration-21.1.70.md)
 and [preserved fixes](docs/maintenance-21.1.70.md). The 21.1.69 fixes below are retained.
 
@@ -112,7 +115,7 @@ recipes, world generation, energy costs, machine processing or saved-item identi
 ## Installation
 
 1. Install Minecraft **1.21.1**, NeoForge **21.1.234 or newer**, and Java **21**.
-2. Download `ic2-neoforge-21.1.69.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases/tag/21.1.69).
+2. Download `ic2-neoforge-21.1.70.jar` from [Releases](https://github.com/Igoryok95/IC2R/releases/tag/21.1.70).
 3. Replace the previous IC2R JAR in `mods`; keep only one IC2R JAR.
 4. Install IC2R on both the client and server. Keep their versions aligned.
 

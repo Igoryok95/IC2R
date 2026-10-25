@@ -1,13 +1,12 @@
 {
   "version": "21.1.70",
-  "status": "development_branch_only",
-  "branch": "experimental-restoration-21.1.70",
+  "status": "release",
   "minecraft": "1.21.1",
   "java": 21,
   "artifact": {
     "file": "ic2-neoforge-21.1.70.jar",
-    "sha256": "1a68f10c6666e9095027e303fa0d9bcfee746af59fe8a856415718b5c333c3f0",
-    "bytes": 8309193
+    "sha256": "b646e36dc121097ba59dd6f6aff77264550b0c9d244745e4a08366fd4ce57e74",
+    "bytes": 8309192
   },
   "junit": {
     "tests": 23,
@@ -44,8 +43,8 @@
     "gradlew spotlessApply build"
   ],
   "deployment": {
-    "github_release": false,
-    "main_merged": false,
+    "github_release": true,
+    "main_merged": true,
     "client_updated": false,
     "zip_updated": false,
     "production_server_updated": false
@@ -92,11 +91,20 @@
     "Fluid cell client use-on consumed ordinary block clicks; tank interaction is now conditional so world pickup remains available.",
     "Sound slider now shares the narrow Voice/Speech row rather than adding a full-width row.",
     "Empty warm-up XML buttons had null text; dynamic GUI now accepts icon-only nodes.",
-    "New compact-buffer menu lacked its container-name translation; both locales now resolve it."
+    "New compact-buffer menu lacked its container-name translation; both locales now resolve it.",
+    "Fresh Linux CI tooltip lookup resolved through TooltipFlag constants, preserving HUD behavior across NeoForge patches."
   ],
   "game_test_validation": [
     "standalone local standby, energy/heat supply, persistence and hopper isolation",
     "compact pulling/ejector upgrades without EU",
     "all 30 workstation overlays and actual vanilla jigsaw resident placement"
-  ]
+  ],
+  "source_branch": "experimental-restoration-21.1.70",
+  "branch": "main",
+  "release_url": "https://github.com/Igoryok95/IC2R/releases/tag/21.1.70",
+  "github_ci": {
+    "status": "success",
+    "url": "https://github.com/Igoryok95/IC2R/actions/runs/40213359843",
+    "source_commit": "d3369e95"
+  }
 }
