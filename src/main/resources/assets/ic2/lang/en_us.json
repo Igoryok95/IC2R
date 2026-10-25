@@ -1407,6 +1407,6 @@
   "block.ic2.item_buffer_2": "Compact Item Buffer",
   "container.ic2.item_buffer_2": "Compact Item Buffer",
   "block.ic2.steel_hopper": "Steel Hopper",
-  "ic2.tooltip.steel_hopper.rate": "Container transfer: %s items/s at 20 TPS",
+  "ic2.tooltip.steel_hopper.rate": "Transfer: %s items/s",
   "ic2.tooltip.steel_hopper.redstone": "Disabled by a redstone signal"
 }

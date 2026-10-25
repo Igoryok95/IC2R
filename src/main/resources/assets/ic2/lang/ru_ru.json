@@ -1407,6 +1407,6 @@
   "block.ic2.item_buffer_2": "Компактный предметный буфер",
   "container.ic2.item_buffer_2": "Компактный предметный буфер",
   "block.ic2.steel_hopper": "Стальная воронка",
-  "ic2.tooltip.steel_hopper.rate": "Перенос между контейнерами: %s предметов/с при 20 TPS",
+  "ic2.tooltip.steel_hopper.rate": "Перенос: %s предметов/с",
   "ic2.tooltip.steel_hopper.redstone": "Блокируется сигналом редстоуна"
 }

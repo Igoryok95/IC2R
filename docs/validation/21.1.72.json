@@ -1,0 +1,31 @@
+{
+  "version": "21.1.72",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.234+",
+  "artifact": {
+    "file": "ic2-neoforge-21.1.72.jar",
+    "bytes": 8339624
+  },
+  "junit": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0
+  },
+  "game_tests": {
+    "passed": 484
+  },
+  "fixes": [
+    "Five steel plates and a vanilla hopper; the old ingot recipe is rejected",
+    "Plate-based recipe-book unlock",
+    "Flat vanilla-style inventory icon with native hopper proportions",
+    "Short EN/RU transfer tooltip"
+  ],
+  "deployment": {
+    "client_updated": true,
+    "zip_updated": true,
+    "production_server_updated": true,
+    "server_started": false,
+    "backups_created": false,
+    "hash_checks_performed": false
+  }
+}

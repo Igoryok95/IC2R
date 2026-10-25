@@ -190,7 +190,7 @@ public final class SteelHopperGameTests {
             new ItemStack(Items.IRON_INGOT, 4));
     entity.setDeltaMovement(0, 0, 0);
     h.getLevel().addFreshEntity(entity);
-    var s = new ItemStack(Ic2Items.STEEL_INGOT);
+    var s = new ItemStack(Ic2Items.STEEL_PLATE);
     var advancement =
         h.getLevel()
             .getServer()
@@ -198,11 +198,11 @@ public final class SteelHopperGameTests {
             .get(ic2.core.IC2.getIdentifier("recipes/shaped/steel_hopper"));
     var unlock =
         (net.minecraft.advancements.critereon.InventoryChangeTrigger.TriggerInstance)
-            advancement.value().criteria().get("has_steel").triggerInstance();
+            advancement.value().criteria().get("has_steel_plate").triggerInstance();
     h.assertTrue(
         unlock.items().getFirst().test(s)
             && !unlock.items().getFirst().test(new ItemStack(Items.STONE)),
-        "the loaded recipe-book criterion requires steel rather than any inventory item");
+        "the loaded recipe-book criterion requires steel plates rather than any inventory item");
     var input =
         CraftingInput.of(
             3,
@@ -227,7 +227,16 @@ public final class SteelHopperGameTests {
         result.is(Ic2Items.STEEL_HOPPER)
             && result.getCount() == 1
             && result.getRarity() == Rarity.UNCOMMON,
-        "five steel ingots and a vanilla hopper craft one yellow-named steel hopper");
+        "five steel plates and a vanilla hopper craft one yellow-named steel hopper");
+    var ingotInput = new java.util.ArrayList<ItemStack>();
+    for (int slot = 0; slot < 9; slot++) {
+      var stack = input.getItem(slot);
+      ingotInput.add(
+          stack.is(Ic2Items.STEEL_PLATE) ? new ItemStack(Ic2Items.STEEL_INGOT) : stack.copy());
+    }
+    h.assertTrue(
+        !recipe.value().matches(CraftingInput.of(3, 3, ingotInput), h.getLevel()),
+        "steel ingots no longer substitute for plates in the hopper recipe");
     h.succeedWhen(
         () ->
             h.assertTrue(

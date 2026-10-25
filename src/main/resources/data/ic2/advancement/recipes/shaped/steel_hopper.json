@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_steel": {
+    "has_steel_plate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": "#c:ingots/steel"
+            "items": "#c:plates/steel"
           }
         ]
       }
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_steel",
+      "has_steel_plate",
       "has_the_recipe"
     ]
   ],

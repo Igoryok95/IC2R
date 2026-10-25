@@ -7,7 +7,7 @@
   ],
   "key": {
     "S": {
-      "tag": "c:ingots/steel"
+      "tag": "c:plates/steel"
     },
     "H": {
       "item": "minecraft:hopper"

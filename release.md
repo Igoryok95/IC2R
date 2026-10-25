@@ -1,9 +1,20 @@
+# 21.1.72
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Change the Steel Hopper recipe to five steel plates and one vanilla hopper. The recipe book unlocks with steel plates; ingots no longer match.
+- Replace the block-like inventory picture with a flat, front-facing 32x32 hopper icon in vanilla proportions, with a transparent background and steel colors.
+- Shorten English and Russian transfer tooltips to the item rate.
+- Preserve the transfer rate, yellow rarity, block model, inventory and redstone behavior.
+
+---
+
 # 21.1.71
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
 
 Adds the Steel Hopper to IC2R itself. It transfers one item every two ticks between
-containers, up to 10 items/s at 20 TPS, while ordinary hoppers keep their vanilla
+containers, up to 10 items/s, while ordinary hoppers keep their vanilla
 timing. Craft one with five steel ingots and a vanilla hopper.
 
 Retains the vanilla model, five-slot GUI, redstone locking, comparator output,

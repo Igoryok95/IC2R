@@ -31,8 +31,11 @@ def main():
             path.write_bytes(encoded.getvalue())
         print(f"{surface}: 32x32, opaque, {'checked' if args.check else 'written'}")
     item = Image.open(SOURCE.with_name("source-item.png")).convert("RGBA")
-    item = item.resize((32, 32), Image.Resampling.NEAREST)
     item.putalpha(item.getchannel("A").point(lambda value: 255 if value >= 128 else 0))
+    item = item.crop(item.getbbox()).resize((28, 26), Image.Resampling.NEAREST)
+    canvas = Image.new("RGBA", (32, 32))
+    canvas.paste(item, (2, 4))
+    item = canvas
     assert item.getchannel("A").getextrema() == (0, 255), "The inventory sprite must retain transparency"
     encoded = BytesIO()
     item.save(encoded, format="PNG", optimize=True)
