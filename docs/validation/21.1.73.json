@@ -40,7 +40,14 @@
     "new_player_facing_strings": 0
   },
   "deployment": {
-    "status": "pending",
+    "status": "complete",
+    "client_updated": true,
+    "zip_updated": true,
+    "production_server_updated": true,
+    "save_all_flush_confirmed": true,
+    "graceful_stop": true,
+    "server_started": true,
+    "minecraft_status": "online",
     "backups_created": false,
     "hash_checks_performed": false
   }
