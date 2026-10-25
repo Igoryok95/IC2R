@@ -68,9 +68,14 @@ jobs:
         if: github.event_name == 'release'
         shell: bash
         run: |
-          gh release upload "${{ github.event.release.tag_name }}" \
-            build/libs/*.jar \
-            build/libs/*.jar.sha256 \
-            --clobber
+          existing_assets="$(gh release view "${{ github.event.release.tag_name }}" --json assets --jq '.assets[].name')"
+          for asset in build/libs/*.jar build/libs/*.jar.sha256; do
+            asset_name="$(basename "$asset")"
+            if printf '%s\n' "$existing_assets" | grep -Fxq "$asset_name"; then
+              printf 'Preserving verified release asset: %s\n' "$asset_name"
+            else
+              gh release upload "${{ github.event.release.tag_name }}" "$asset"
+            fi
+          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

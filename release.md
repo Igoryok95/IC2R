@@ -1,4 +1,4 @@
-# 21.1.70 (development branch)
+# 21.1.70
 
 Restores Experimental beer/rum brewing, basic charging armor, fluid pipes and pump
 covers, dynamite and remote control, containment box, iodine, MFSU upgrade kit and
@@ -25,7 +25,9 @@ show exact values in live tooltips; teleporter sums and external readings avoid
 integer overflow. Russian Compressor naming is unified. See
 [feature and validation details](docs/experimental-restoration-21.1.70.md).
 
-This is not yet a published release or an installed client/server update.
+Requires Minecraft 1.21.1, Java 21 and NeoForge 21.1.234+. IC2R Addons is optional.
+Existing explored chunks are preserved; village workshops appear in newly generated village chunks.
+This release does not install itself into any existing client, ZIP or server.
 
 ---
 

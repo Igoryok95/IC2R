@@ -5,12 +5,12 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.69-blue" alt="Version 21.1.69">
+<img src="https://img.shields.io/badge/Version-21.1.70-blue" alt="Version 21.1.70">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
-## Development: 21.1.70
+## Version 21.1.70
 
-The `experimental-restoration-21.1.70` branch restores missing **IC2 Experimental** features:
+Version 21.1.70 restores missing **IC2 Experimental** features:
 beer/rum brewing, basic solar helmet and static boots, bronze/steel fluid pipes and
 pump covers, dynamite and remote control, radioactive containment, iodine tablets,
 MFSU upgrades, a reusable fluid cell and the Compact Item Buffer. Six professions use original Classic skins
@@ -25,8 +25,7 @@ Thermal Centrifuge and Blast Furnace warm without powering nearby hoppers. Nativ
 capacities and ore generation are unchanged. New workshops use the existing village structure pools.
 
 See [feature details and villager comparison](docs/experimental-restoration-21.1.70.md)
-and [preserved fixes](docs/maintenance-21.1.70.md). This branch is development source;
-the latest published installation below remains **21.1.69**.
+and [preserved fixes](docs/maintenance-21.1.70.md). The 21.1.69 fixes below are retained.
 
 ## This fork
 

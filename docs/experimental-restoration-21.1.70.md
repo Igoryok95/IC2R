@@ -1,8 +1,8 @@
 # Experimental restoration for IC2R 21.1.70
 
-Development branch based on released 21.1.69. The broad Classic restoration is
-cancelled. This document describes implemented source, not a published release or
-an installed client, ZIP or multiplayer-server update.
+Version 21.1.70 builds on 21.1.69 and restores Experimental features. The broad
+Classic restoration was cancelled; Classic supplies only the original profession
+artwork and trade-specialization reference. Installation is a separate operation.
 
 ## Included
 

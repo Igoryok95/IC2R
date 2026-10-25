@@ -126,9 +126,7 @@ public class GuiOverlayer {
                   rightItem.getTooltipLines(
                       Item.TooltipContext.of(this.mc.level),
                       this.mc.player,
-                      hudMode == HudMode.ADVANCED
-                          ? TooltipFlag.Default.ADVANCED
-                          : TooltipFlag.Default.NORMAL);
+                      hudMode == HudMode.ADVANCED ? TooltipFlag.ADVANCED : TooltipFlag.NORMAL);
               if (tooltip.size() > 1) {
                 for (int l = 1; l < tooltip.size(); l++) {
                   guiGraphics.drawString(
@@ -163,9 +161,7 @@ public class GuiOverlayer {
                   leftItem.getTooltipLines(
                       Item.TooltipContext.of(this.mc.level),
                       this.mc.player,
-                      hudMode == HudMode.ADVANCED
-                          ? TooltipFlag.Default.ADVANCED
-                          : TooltipFlag.Default.NORMAL);
+                      hudMode == HudMode.ADVANCED ? TooltipFlag.ADVANCED : TooltipFlag.NORMAL);
               if (tooltip.size() > 1) {
                 for (int l = 1; l < tooltip.size(); l++) {
                   guiGraphics.drawString(

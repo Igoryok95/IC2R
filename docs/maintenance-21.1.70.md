@@ -1,9 +1,8 @@
-# IC2R 21.1.70 maintenance branch
+# IC2R 21.1.70 maintenance changes
 
-This branch starts from released IC2R 21.1.69. The broad Classic restoration is no
+Version 21.1.70 starts from released IC2R 21.1.69. The broad Classic restoration is no
 longer part of the planned update. Experimental restoration and the separately
-approved six villager professions are tracked in [the scope](experimental-restoration-21.1.70.md). This is development source, not a published
-release or an installed client/server update.
+approved six villager professions are tracked in [the scope](experimental-restoration-21.1.70.md). Installing the release into an existing client/server remains a separate operation.
 
 ## Preserved fixes
 
@@ -57,3 +56,7 @@ The approved additive weights are 2/2/2/2/1/1 across all five vanilla village st
 existing vanilla weights and explored chunks are preserved. Actual jigsaw placement
 is checked for a native resident and workstation. The brewing-barrel recipe uses a
 vanilla barrel plus two rubber, preserving the separate fermentation block.
+
+Fresh CI compilation resolves tooltip constants through `TooltipFlag` directly,
+avoiding inherited constant lookup through the implementation record across
+NeoForge patch versions. HUD behavior remains unchanged.
