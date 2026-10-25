@@ -1,0 +1,155 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/electric",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/crop",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/brewing",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/demo",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/nuclear",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:list_pool_element",
+        "elements": [
+          {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "location": "minecraft:village/savanna/houses/savanna_small_house_1",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          },
+          {
+            "element_type": "minecraft:single_pool_element",
+            "location": "ic2:village/savanna/workstations/greg",
+            "processors": {
+              "processors": []
+            },
+            "projection": "rigid"
+          }
+        ],
+        "projection": "rigid"
+      }
+    }
+  ]
+}

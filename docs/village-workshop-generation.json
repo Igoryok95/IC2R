@@ -1,0 +1,101 @@
+{
+  "minecraft": "1.21.1",
+  "vanilla_weight_multiplier": 1,
+  "variants": [
+    {
+      "biome": "plains",
+      "vanilla_pool_weight": 87,
+      "base_house": "village/plains/houses/plains_small_house_1",
+      "workstation_pos": [
+        4,
+        1,
+        3
+      ],
+      "new_pool_weight": 97,
+      "weights": {
+        "electric": 2,
+        "crop": 2,
+        "brewing": 2,
+        "demo": 2,
+        "nuclear": 1,
+        "greg": 1
+      }
+    },
+    {
+      "biome": "desert",
+      "vanilla_pool_weight": 72,
+      "base_house": "village/desert/houses/desert_small_house_1",
+      "workstation_pos": [
+        4,
+        2,
+        1
+      ],
+      "new_pool_weight": 82,
+      "weights": {
+        "electric": 2,
+        "crop": 2,
+        "brewing": 2,
+        "demo": 2,
+        "nuclear": 1,
+        "greg": 1
+      }
+    },
+    {
+      "biome": "savanna",
+      "vanilla_pool_weight": 81,
+      "base_house": "village/savanna/houses/savanna_small_house_1",
+      "workstation_pos": [
+        3,
+        1,
+        2
+      ],
+      "new_pool_weight": 91,
+      "weights": {
+        "electric": 2,
+        "crop": 2,
+        "brewing": 2,
+        "demo": 2,
+        "nuclear": 1,
+        "greg": 1
+      }
+    },
+    {
+      "biome": "taiga",
+      "vanilla_pool_weight": 76,
+      "base_house": "village/taiga/houses/taiga_small_house_1",
+      "workstation_pos": [
+        3,
+        2,
+        5
+      ],
+      "new_pool_weight": 86,
+      "weights": {
+        "electric": 2,
+        "crop": 2,
+        "brewing": 2,
+        "demo": 2,
+        "nuclear": 1,
+        "greg": 1
+      }
+    },
+    {
+      "biome": "snowy",
+      "vanilla_pool_weight": 68,
+      "base_house": "village/snowy/houses/snowy_small_house_1",
+      "workstation_pos": [
+        4,
+        1,
+        2
+      ],
+      "new_pool_weight": 78,
+      "weights": {
+        "electric": 2,
+        "crop": 2,
+        "brewing": 2,
+        "demo": 2,
+        "nuclear": 1,
+        "greg": 1
+      }
+    }
+  ]
+}

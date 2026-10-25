@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui width="176" height="166">
     <!-- image x="25" y="18" src="textures/gui/overlay/blast_furnace"/ -->
-    <text y="6" align="center">%name%</text>
+    <text x="-4" y="6" align="center" maxwidth="128">%name%</text>
+    <button type="warmup" x="152" y="4" width="20" height="20" event="100"></button>
     <slot name="input" x="55" y="24"/>
     <slotgrid x="111" y="24" name="output" rows="2"/>
     <environment name="game">
-        <slotgrid name="upgrade" x="151" y="7" cols="1"/>
+        <slotgrid name="upgrade" x="151" y="28" cols="1"/>
         <button type="recipe" x="80" y="35" width="22" height="15" event="blast_furnace"></button>
     </environment>
     <slot name="cellInput" x="7" y="52"/>
     <slot name="cellOutput" x="25" y="52"/>
     <fluidslot x="55" y="42" name="fluid"/>
     <gauge name="progress" x="80" y="35" style="progressarrow"/>
-    <text x="14" y="25">Heat</text>
+    <text x="7" y="23" maxwidth="43">{ic2.gui.warmup.heat}</text>
     <gauge name="heat" x="15" y="34" style="heatcentrifuge"/>
     <playerInventory x="7" y="83"/>
 </gui>

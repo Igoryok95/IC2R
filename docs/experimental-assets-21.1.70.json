@@ -661,6 +661,20 @@
       ],
       "source_sha256": "8b3b460212d88523cbf8ba41537cb74065c03dd9f7ddc7731fe782027fc74e06",
       "sha256": "8b3b460212d88523cbf8ba41537cb74065c03dd9f7ddc7731fe782027fc74e06"
+    },
+    {
+      "source": "assets/ic2/textures/blocks/machine/misc/item_buffer_2.png",
+      "target": "assets/ic2/textures/block/machine/misc/item_buffer_2.png",
+      "source_size": [
+        32,
+        32
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "source_sha256": "9ab8ecdb2381ce2bda63b374790ffbb173f9902578187dca57d175347d7fe25d",
+      "sha256": "a9e8b46bd0c9d1ae5066af44e939cde9451c318ddf2ca45d8037abdde03042f4"
     }
   ]
 }

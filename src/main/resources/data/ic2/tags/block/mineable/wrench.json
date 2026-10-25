@@ -86,6 +86,7 @@
     "ic2:steel_tank",
     "ic2:iridium_tank",
     "ic2:industrial_workbench",
-    "ic2:batch_crafter"
+    "ic2:batch_crafter",
+    "ic2:item_buffer_2"
   ]
 }

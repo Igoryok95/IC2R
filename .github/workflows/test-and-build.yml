@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - experimental-restoration-21.1.70
   pull_request:
   workflow_dispatch:
 

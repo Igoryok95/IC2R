@@ -11,6 +11,7 @@ import ic2.core.block.comp.Redstone;
 import ic2.core.block.invslot.InvSlotOutput;
 import ic2.core.block.invslot.InvSlotProcessableSmelting;
 import ic2.core.block.invslot.InvSlotUpgrade;
+import ic2.core.block.machine.IWarmupControl;
 import ic2.core.gui.dynamic.DynamicContainer;
 import ic2.core.gui.dynamic.IGuiValueProvider;
 import ic2.core.network.GrowingBuffer;
@@ -28,7 +29,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class TileEntityInduction extends TileEntityElectricMachine
-    implements IHasGui, IUpgradableBlock, IGuiValueProvider, INetworkClientTileEntityEventListener {
+    implements IHasGui,
+        IUpgradableBlock,
+        IGuiValueProvider,
+        INetworkClientTileEntityEventListener,
+        IWarmupControl {
   private static final short maxHeat = 10000;
   public final InvSlotProcessableSmelting inputSlotA;
   public final InvSlotProcessableSmelting inputSlotB;
@@ -36,6 +41,23 @@ public class TileEntityInduction extends TileEntityElectricMachine
   public final InvSlotOutput outputSlotA;
   public final InvSlotOutput outputSlotB;
   protected final Redstone redstone;
+  @GuiSynced private boolean manualWarmup;
+
+  @Override
+  public boolean isManualWarmup() {
+    return manualWarmup;
+  }
+
+  @Override
+  public void setManualWarmup(boolean enabled) {
+    manualWarmup = enabled;
+    setChanged();
+  }
+
+  private boolean isWarmupRequested() {
+    return manualWarmup || redstone.hasRedstoneInput();
+  }
+
   @GuiSynced public short heat = 0;
   @GuiSynced public short progress = 0;
   protected double xp = 0.0;
@@ -69,6 +91,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);
     this.heat = nbt.getShort("heat");
+    this.manualWarmup = nbt.getBoolean("manualWarmup");
     this.progress = nbt.getShort("progress");
     this.xp = nbt.getDouble("xp");
   }
@@ -77,6 +100,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
   public void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.saveAdditional(nbt, registries);
     nbt.putShort("heat", this.heat);
+    nbt.putBoolean("manualWarmup", this.manualWarmup);
     nbt.putShort("progress", this.progress);
     nbt.putDouble("xp", this.xp);
   }
@@ -98,7 +122,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
     }
 
     boolean canOperate = this.canOperate();
-    if ((canOperate || this.redstone.hasRedstoneInput()) && this.energy.useEnergy(1.0)) {
+    if ((canOperate || this.isWarmupRequested()) && this.energy.useEnergy(1.0)) {
       if (this.heat < 10000) {
         this.heat++;
       }
@@ -170,6 +194,7 @@ public class TileEntityInduction extends TileEntityElectricMachine
 
   @Override
   public void onNetworkEvent(Player player, int event) {
+    if (handleWarmupEvent(player, event)) return;
     if (event == 0) {
       assert !this.getLevel().isClientSide;
       this.xp = TileEntityIronFurnace.spawnXP(player, this.xp);

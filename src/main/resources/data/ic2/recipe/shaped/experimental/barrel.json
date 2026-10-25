@@ -1,16 +1,16 @@
 {
   "type": "ic2:shaped",
   "pattern": [
-    "P",
-    "W",
-    "P"
+    "R",
+    "B",
+    "R"
   ],
   "key": {
-    "P": {
-      "tag": "minecraft:planks"
+    "R": {
+      "item": "ic2:rubber"
     },
-    "W": {
-      "item": "ic2:rubber_log"
+    "B": {
+      "item": "minecraft:barrel"
     }
   },
   "result": {

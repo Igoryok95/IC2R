@@ -2,12 +2,13 @@
 <gui width="176" height="166">
     <image x="40" y="18" width="80" height="60" basesize="256" u="40" v="18"
            src="ic2:textures/gui/guithermalcentrifuge.png"/>
-    <text y="6" align="center">%name%</text>
+    <text x="-4" y="6" align="center" maxwidth="128">%name%</text>
+    <button type="warmup" x="152" y="4" width="20" height="20" event="100"></button>
     <slot name="input" x="10" y="17"/>
     <slot name="discharge" x="10" y="53"/>
-    <slotgrid x="123" y="17" name="output" rows="3"/>
+    <slotgrid x="111" y="17" name="output" rows="3"/>
     <environment name="game">
-        <slotgrid name="upgrade" x="151" y="7" cols="1"/>
+        <slotgrid name="upgrade" x="132" y="39" cols="2" rows="2"/>
         <button type="recipe" x="84" y="25" width="3" height="28" event="centrifuge"></button>
     </environment>
     <gauge name="progress" x="84" y="25" style="progresscentrifuge"></gauge>

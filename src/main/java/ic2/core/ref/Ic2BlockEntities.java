@@ -23,6 +23,7 @@ import ic2.core.block.kineticgenerator.tileentity.TileEntityWaterKineticGenerato
 import ic2.core.block.kineticgenerator.tileentity.TileEntityWindKineticGenerator;
 import ic2.core.block.machine.tileentity.TileEntityAdvMiner;
 import ic2.core.block.machine.tileentity.TileEntityBatchCrafter;
+import ic2.core.block.machine.tileentity.TileEntityBetterItemBuffer;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
 import ic2.core.block.machine.tileentity.TileEntityBlockCutter;
 import ic2.core.block.machine.tileentity.TileEntityCanner;
@@ -302,6 +303,8 @@ public final class Ic2BlockEntities {
       register("steam_generator", TileEntitySteamGenerator::new, Ic2Blocks.STEAM_GENERATOR);
   public static final BlockEntityType<TileEntityCrop> RED_WHEAT_CROP =
       register("red_wheat_crop", TileEntityCrop::new, Ic2Blocks.RED_WHEAT_CROP);
+  public static final BlockEntityType<TileEntityBetterItemBuffer> ITEM_BUFFER_2 =
+      register("item_buffer_2", TileEntityBetterItemBuffer::new, Ic2Blocks.ITEM_BUFFER_2);
   public static final BlockEntityType<TileEntityItemBuffer> ITEM_BUFFER =
       register("item_buffer", TileEntityItemBuffer::new, Ic2Blocks.ITEM_BUFFER);
   public static final BlockEntityType<TileEntityCrop> COFFEE_CROP =

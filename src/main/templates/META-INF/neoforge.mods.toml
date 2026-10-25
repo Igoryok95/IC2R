@@ -15,3 +15,5 @@ ${mod_description}
 
 [[mixin]]
 config="ic2.mixins.json"
+[[mixins]]
+config="ic2.villages.mixins.json"

@@ -64,6 +64,13 @@ def cube(textures, start=(0, 0, 0), end=(16, 16, 16), tint=False):
 
 experimental = Path(sys.argv[1]); classic = Path(sys.argv[2])
 with zipfile.ZipFile(experimental) as exp, zipfile.ZipFile(classic) as cls:
+    image(exp, 'assets/ic2/textures/blocks/machine/misc/item_buffer_2.png',
+          'assets/ic2/textures/block/machine/misc/item_buffer_2.png')
+    write('assets/ic2/guidef/item_buffer_2.xml', exp.read('assets/ic2/guidef/item_buffer_2.xml')
+          .replace(b'<text y="6" align="center">',
+                   b'<text x="-4" y="6" align="center" maxwidth="128">'))
+    shaped('item_buffer_2', ['ICI', 'IMI', 'ICI'],
+           {'I':'ic2:iron_casing', 'C':'#c:chests/wooden', 'M':'ic2:machine'}, 'ic2:item_buffer_2')
     icons = {'solar_helmet': 'armor/solar_helmet', 'static_boots': 'armor/static_boots',
              'containment_box': 'tool/containment_box', 'iodine_tablet': 'iodine_tablet',
              'mfsu_upgrade_kit': 'crafting/mfsu_upgrade_kit', 'fluid_cell': 'cell/fluid_cell',
@@ -136,7 +143,7 @@ shaped('solar_helmet',['III','ISI','CCC'], {'I':'minecraft:iron_ingot','S':'ic2:
 shaped('solar_helmet_from_armor',[' H ',' S ','CCC'], {'H':'minecraft:iron_helmet','S':'ic2:solar_generator','C':'ic2:insulated_copper_cable'},'ic2:solar_helmet')
 shaped('static_boots',['I I','ISI','CCC'], {'I':'minecraft:iron_ingot','S':'#minecraft:wool','C':'ic2:insulated_copper_cable'},'ic2:static_boots')
 shaped('static_boots_from_armor',[' H ',' S ','CCC'], {'H':'minecraft:iron_boots','S':'#minecraft:wool','C':'ic2:insulated_copper_cable'},'ic2:static_boots')
-shaped('barrel',['P','W','P'], {'P':'#minecraft:planks','W':'ic2:rubber_log'},'ic2:barrel')
+shaped('barrel',['R','B','R'], {'R':'ic2:rubber','B':'minecraft:barrel'},'ic2:barrel')
 shaped('containment_box',['III','ICI','III'], {'I':'ic2:lead_casing','C':'minecraft:chest'},'ic2:containment_box')
 shapeless('iodine_tablet',['ic2:iodine','ic2:tin_plate'],'ic2:iodine_tablet')
 shaped('mfsu_upgrade_kit',['LCL','LML','LAL'], {'L':'ic2:lapotron_crystal','C':'ic2:advanced_circuit','M':'ic2:wrench','A':'ic2:advanced_machine'},'ic2:mfsu_upgrade_kit')

@@ -35,8 +35,25 @@ sound slider and balanced induction hopper inputs are documented in
 [the feature scope](experimental-restoration-21.1.70.md). The sound slider uses the
 free narrow cell beside Voice/Speech. Core remains independent of Addons.
 
-Final checks: 23 JUnit tests, 471 standalone server GameTests (six optional no-op
-checks), separate 3-test Create and Mekanism combinations, 87 Addons integration
+Final checks: 23 JUnit tests, 479 standalone server GameTests (six optional no-op
+checks), separate 3-test Create and Mekanism combinations, 94 Addons integration
 tests, and 23 changed menus inspected in the Russian client. Saved audio gain and
 an active looping sound pass mute/unmute checks. See the
 [validation receipt](validation/21.1.70.json) for exact commands and limits.
+
+## Local standby and compact buffering
+
+Manual torch controls now preserve standby state across saves without producing
+redstone that could lock adjacent hoppers. The three native warm-up machines keep
+their original power/heat rules. Dynamic GUI titles can reserve bounded space for
+corner controls; the Blast Furnace heat label is localized. Experimental's compact
+buffer restores shared storage and both transfer-upgrade directions without EU.
+See the feature document and validation receipt for current checks.
+
+## Natural professions
+
+The six jobs now have natural village workshops, not only manually placed POIs.
+The approved additive weights are 2/2/2/2/1/1 across all five vanilla village styles;
+existing vanilla weights and explored chunks are preserved. Actual jigsaw placement
+is checked for a native resident and workstation. The brewing-barrel recipe uses a
+vanilla barrel plus two rubber, preserving the separate fermentation block.

@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "ic2.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+    "StructureTemplatePoolAccessor"
+  ]
+}

@@ -468,6 +468,8 @@ public final class Ic2Items {
       register("solar_distiller", new ItemBlockIc2(Ic2Blocks.SOLAR_DISTILLER, new Properties()));
   public static final Item STEAM_GENERATOR =
       register("steam_generator", new ItemBlockIc2(Ic2Blocks.STEAM_GENERATOR, new Properties()));
+  public static final Item ITEM_BUFFER_2 =
+      register("item_buffer_2", new ItemBlockIc2(Ic2Blocks.ITEM_BUFFER_2, new Properties()));
   public static final Item ITEM_BUFFER =
       register("item_buffer", new ItemBlockIc2(Ic2Blocks.ITEM_BUFFER, new Properties()));
   public static final Item MAGNETIZER =
@@ -1560,6 +1562,7 @@ public final class Ic2Items {
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> INDUSTRIAL_WORKBENCH);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> IRON_FURNACE);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> ITEM_BUFFER);
+    addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> ITEM_BUFFER_2);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> LIQUID_HEAT_EXCHANGER);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> MACERATOR);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> MAGNETIZER);

@@ -6,6 +6,7 @@ import ic2.core.block.IInventorySlotHolder;
 import ic2.core.block.comp.Energy;
 import ic2.core.block.comp.Fluids;
 import ic2.core.block.invslot.InvSlot;
+import ic2.core.block.machine.IWarmupControl;
 import ic2.core.block.tileentity.Ic2TileEntity;
 import ic2.core.gui.Button;
 import ic2.core.gui.CustomButton;
@@ -21,6 +22,7 @@ import ic2.core.gui.TankFluidSlot;
 import ic2.core.gui.TankGauge;
 import ic2.core.gui.TextLabel;
 import ic2.core.gui.VanillaButton;
+import ic2.core.gui.WarmupButton;
 import ic2.core.item.tool.HandHeldInventory;
 import ic2.core.util.LogCategory;
 import java.util.Collections;
@@ -78,6 +80,17 @@ public class DynamicGui<T extends Container> extends GuiDefaultBackground<Dynami
               case CUSTOM:
               default:
                 break;
+              case WARMUP:
+                button =
+                    new WarmupButton(
+                        this,
+                        node.x,
+                        node.y,
+                        node.width,
+                        node.height,
+                        this.createEventSender(node.eventID, node.eventName),
+                        (IWarmupControl) this.menu.base);
+                break;
               case TRANSPARENT:
                 button =
                     new CustomButton(
@@ -104,10 +117,14 @@ public class DynamicGui<T extends Container> extends GuiDefaultBackground<Dynami
 
             if (button != null) {
               String text =
-                  node.text.get(
-                      this.menu.base,
-                      Collections.singletonMap("name", TextProvider.of(this.title)));
-              if (node.icon == null) {
+                  node.text == null
+                      ? ""
+                      : node.text.get(
+                          this.menu.base,
+                          Collections.singletonMap("name", TextProvider.of(this.title)));
+              if (node.type == GuiParser.ButtonNode.ButtonType.WARMUP) {
+                // The icon and tooltip follow the synchronized machine state.
+              } else if (node.icon == null) {
                 button = button.withText(text);
               } else {
                 button.withIcon(() -> node.icon);
@@ -290,7 +307,7 @@ public class DynamicGui<T extends Container> extends GuiDefaultBackground<Dynami
                       node.centerY);
             }
 
-            parentNode.addElement(this, text);
+            parentNode.addElement(this, text.withMaxWidth(node.maxWidth));
             break;
           }
         case fluidtank:

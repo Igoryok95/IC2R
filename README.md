@@ -13,14 +13,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 The `experimental-restoration-21.1.70` branch restores missing **IC2 Experimental** features:
 beer/rum brewing, basic solar helmet and static boots, bronze/steel fluid pipes and
 pump covers, dynamite and remote control, radioactive containment, iodine tablets,
-MFSU upgrades and a reusable fluid cell. Six professions use original Classic skins
-with Experimental trades. IC2R works independently; Addons can extend their trades.
+MFSU upgrades, a reusable fluid cell and the Compact Item Buffer. Six professions use original Classic skins
+with Experimental trades and naturally generated village workshops. IC2R works independently; Addons can extend their trades.
 
 Optional Create/Mekanism compatibility reuses existing intermediates, adds zinc/osmium processing and
 retains collectible smelting XP in all three native furnaces. Storage menus keep
 the charge gauge and show exact EU in its tooltip. The Russian machine name is
 consistently **Компрессор**. A client volume slider controls IC2R sounds; hoppers
-balance the Induction Furnace inputs. Native capacities and world generation are unchanged.
+balance the Induction Furnace inputs. Local torch buttons keep the Induction Furnace,
+Thermal Centrifuge and Blast Furnace warm without powering nearby hoppers. Native
+capacities and ore generation are unchanged. New workshops use the existing village structure pools.
 
 See [feature details and villager comparison](docs/experimental-restoration-21.1.70.md)
 and [preserved fixes](docs/maintenance-21.1.70.md). This branch is development source;

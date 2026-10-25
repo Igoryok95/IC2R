@@ -199,6 +199,7 @@ public class GuiParser {
       VANILLA,
       CUSTOM,
       TRANSPARENT,
+      WARMUP,
       RECIPE;
 
       public static GuiParser.ButtonNode.ButtonType get(String name) {
@@ -856,6 +857,7 @@ public class GuiParser {
   public static class TextNode extends GuiParser.Node {
     public final int x;
     public final int y;
+    public final int maxWidth;
     public final int width;
     public final int height;
     public final int xOffset;
@@ -872,6 +874,7 @@ public class GuiParser {
       super(parent);
       this.x = XmlUtil.getIntAttr(attributes, "x", 0);
       this.y = XmlUtil.getIntAttr(attributes, "y", 0);
+      this.maxWidth = XmlUtil.getIntAttr(attributes, "maxwidth", -1);
       this.width = XmlUtil.getIntAttr(attributes, "width", -1);
       this.height = XmlUtil.getIntAttr(attributes, "height", -1);
       this.xOffset = XmlUtil.getIntAttr(attributes, "xoffset", 0);

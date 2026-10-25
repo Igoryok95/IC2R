@@ -6,6 +6,7 @@ import ic2.api.recipe.Recipes;
 import ic2.api.upgrade.UpgradableProperty;
 import ic2.core.block.comp.Redstone;
 import ic2.core.block.invslot.InvSlotProcessableGeneric;
+import ic2.core.block.machine.IWarmupControl;
 import ic2.core.network.GuiSynced;
 import ic2.core.profile.NotClassic;
 import ic2.core.ref.Ic2BlockEntities;
@@ -19,9 +20,27 @@ import net.minecraft.world.level.block.state.BlockState;
 
 @NotClassic
 public class TileEntityCentrifuge
-    extends TileEntityStandardMachine<IRecipeInput, Collection<ItemStack>, ItemStack> {
+    extends TileEntityStandardMachine<IRecipeInput, Collection<ItemStack>, ItemStack>
+    implements IWarmupControl {
   public static final short maxHeat = 5000;
   protected final Redstone redstone;
+  @GuiSynced private boolean manualWarmup;
+
+  @Override
+  public boolean isManualWarmup() {
+    return manualWarmup;
+  }
+
+  @Override
+  public void setManualWarmup(boolean enabled) {
+    manualWarmup = enabled;
+    setChanged();
+  }
+
+  private boolean isWarmupRequested() {
+    return manualWarmup || redstone.hasRedstoneInput();
+  }
+
   @GuiSynced public short heat = 0;
   @GuiSynced public short workheat = 5000;
 
@@ -40,12 +59,14 @@ public class TileEntityCentrifuge
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);
     this.heat = nbt.getShort("heat");
+    this.manualWarmup = nbt.getBoolean("manualWarmup");
   }
 
   @Override
   public void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.saveAdditional(nbt, registries);
     nbt.putShort("heat", this.heat);
+    nbt.putBoolean("manualWarmup", this.manualWarmup);
   }
 
   public double getHeatRatio() {
@@ -63,13 +84,13 @@ public class TileEntityCentrifuge
       MachineRecipeResult<
               ? extends IRecipeInput, ? extends Collection<ItemStack>, ? extends ItemStack>
           output = super.getRecipeResult();
-      if (output != null && !this.redstone.hasRedstoneInput()) {
+      if (output != null && !this.isWarmupRequested()) {
         heatRequested = min(output.recipe().getMetaData().getShort("minHeat"));
         this.workheat = heatRequested;
         if (this.heat > heatRequested) {
           this.heat = heatRequested;
         }
-      } else if (this.heat <= 5000 && this.redstone.hasRedstoneInput()) {
+      } else if (this.heat <= 5000 && this.isWarmupRequested()) {
         heatRequested = 5000;
         this.workheat = heatRequested;
       }

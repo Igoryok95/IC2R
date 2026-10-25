@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui width="176" height="166">
-    <text y="6" align="center">%name%</text>
+    <text x="-4" y="6" align="center" maxwidth="128">%name%</text>
+    <button type="warmup" x="152" y="4" width="20" height="20" event="100"></button>
 
     <image x="42" y="16" src="textures/gui/overlay/induction_furnace_input"/>
     <slot name="inputA" x="43" y="17" style="plain"/>

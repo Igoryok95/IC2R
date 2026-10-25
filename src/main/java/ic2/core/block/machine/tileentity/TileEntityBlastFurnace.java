@@ -14,6 +14,7 @@ import ic2.core.block.invslot.InvSlotConsumableLiquidByList;
 import ic2.core.block.invslot.InvSlotOutput;
 import ic2.core.block.invslot.InvSlotProcessableGeneric;
 import ic2.core.block.invslot.InvSlotUpgrade;
+import ic2.core.block.machine.IWarmupControl;
 import ic2.core.block.tileentity.TileEntityInventory;
 import ic2.core.fluid.Ic2FluidTank;
 import ic2.core.gui.dynamic.DynamicContainer;
@@ -37,7 +38,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 @NotClassic
 public class TileEntityBlastFurnace extends TileEntityInventory
-    implements IUpgradableBlock, IHasGui, IGuiValueProvider {
+    implements IUpgradableBlock, IHasGui, IGuiValueProvider, IWarmupControl {
   public static int maxHeat = 50000;
 
   /** Oxygen doubles progress per tick (100% acceleration → half wall-clock time). */
@@ -53,6 +54,23 @@ public class TileEntityBlastFurnace extends TileEntityInventory
   public final InvSlotUpgrade upgradeSlot = new InvSlotUpgrade(this, "upgrade", 2);
   @GuiSynced public final Ic2FluidTank fluidTank;
   protected final Redstone redstone;
+  @GuiSynced private boolean manualWarmup;
+
+  @Override
+  public boolean isManualWarmup() {
+    return manualWarmup;
+  }
+
+  @Override
+  public void setManualWarmup(boolean enabled) {
+    manualWarmup = enabled;
+    setChanged();
+  }
+
+  private boolean isWarmupRequested() {
+    return manualWarmup || redstone.hasRedstoneInput();
+  }
+
   protected final Fluids fluids;
   public int heat = 0;
   @GuiSynced public float guiHeat;
@@ -150,6 +168,7 @@ public class TileEntityBlastFurnace extends TileEntityInventory
       CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.loadAdditional(nbt, registries);
     this.heat = nbt.getInt("heat");
+    this.manualWarmup = nbt.getBoolean("manualWarmup");
     this.progress = nbt.getInt("progress");
   }
 
@@ -157,6 +176,7 @@ public class TileEntityBlastFurnace extends TileEntityInventory
   public void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
     super.saveAdditional(nbt, registries);
     nbt.putInt("heat", this.heat);
+    nbt.putBoolean("manualWarmup", this.manualWarmup);
     nbt.putInt("progress", this.progress);
   }
 
@@ -166,7 +186,7 @@ public class TileEntityBlastFurnace extends TileEntityInventory
     int gainhU = 0;
     if ((!this.inputSlot.isEmpty() || this.progress >= 1) && this.heat <= maxHeat) {
       heatRequested = maxHeat - this.heat + 100;
-    } else if (this.redstone.hasRedstoneInput() && this.heat <= maxHeat) {
+    } else if (this.isWarmupRequested() && this.heat <= maxHeat) {
       heatRequested = maxHeat - this.heat + 100;
     }
 

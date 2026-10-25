@@ -1400,5 +1400,10 @@
   "subtitle.ic2.item.dynamite.remote": "Remote detonator activates",
   "ic2.pack.create_compat": "IC2R: Create compatibility",
   "ic2.audio.volume": "IC2R",
-  "ic2.audio.volume.tooltip": "Volume of IC2R machines and electric equipment. Saved locally; other mods keep their volume."
+  "ic2.audio.volume.tooltip": "Volume of IC2R machines and electric equipment. Saved locally; other mods keep their volume.",
+  "ic2.gui.warmup.manual.on": "Keep warm: On\nUses the normal heat/energy supply.\nExternal redstone works independently. No signal is emitted.",
+  "ic2.gui.warmup.manual.off": "Keep warm: Off\nProcessing and external redstone can still warm the machine.\nNo signal is emitted.",
+  "ic2.gui.warmup.heat": "Heat",
+  "block.ic2.item_buffer_2": "Compact Item Buffer",
+  "container.ic2.item_buffer_2": "Compact Item Buffer"
 }

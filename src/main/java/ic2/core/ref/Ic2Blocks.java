@@ -29,6 +29,7 @@ import ic2.core.block.kineticgenerator.tileentity.TileEntityWindKineticGenerator
 import ic2.core.block.machine.MiningPipeBlock;
 import ic2.core.block.machine.tileentity.TileEntityAdvMiner;
 import ic2.core.block.machine.tileentity.TileEntityBatchCrafter;
+import ic2.core.block.machine.tileentity.TileEntityBetterItemBuffer;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
 import ic2.core.block.machine.tileentity.TileEntityBlockCutter;
 import ic2.core.block.machine.tileentity.TileEntityCanner;
@@ -969,6 +970,20 @@ public final class Ic2Blocks {
               TileEntityItemBuffer.class,
               false,
               Ic2TileEntityBlock.DefaultDrop.Machine,
+              Util.noFacings,
+              false));
+  public static final Block ITEM_BUFFER_2 =
+      register(
+          "item_buffer_2",
+          Ic2TileEntityBlock.create(
+              Properties.of()
+                  .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                  .strength(2.0F, 10.0F)
+                  .requiresCorrectToolForDrops()
+                  .sound(SoundType.METAL),
+              TileEntityBetterItemBuffer.class,
+              false,
+              Ic2TileEntityBlock.DefaultDrop.Self,
               Util.noFacings,
               false));
   public static final Block MAGNETIZER =

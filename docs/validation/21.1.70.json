@@ -6,8 +6,8 @@
   "java": 21,
   "artifact": {
     "file": "ic2-neoforge-21.1.70.jar",
-    "sha256": "7ca2f08a3bb2921d1ff5f43d38c8bef3943e34002dc2aa8453f295e2c7b88a71",
-    "bytes": 8268507
+    "sha256": "1a68f10c6666e9095027e303fa0d9bcfee746af59fe8a856415718b5c333c3f0",
+    "bytes": 8309193
   },
   "junit": {
     "tests": 23,
@@ -17,7 +17,7 @@
   "game_tests": [
     {
       "configuration": "IC2R standalone, NeoForge 21.1.234",
-      "passed": 471,
+      "passed": 479,
       "optional_mod_tests_noop": 6
     },
     {
@@ -51,17 +51,18 @@
     "production_server_updated": false
   },
   "locale_keys": {
-    "en_us": 1402,
-    "ru_ru": 1402,
+    "en_us": 1407,
+    "ru_ru": 1407,
     "replacement_characters": 0,
-    "json_resources_parsed": 3968
+    "json_resources_parsed": 3979
   },
   "boundaries": {
     "classic_mechanics_classes": 0,
     "original_profession_textures": 12,
     "native_capacities_unchanged": true,
-    "world_generation_unchanged": true,
-    "scaffolds_added": false
+    "scaffolds_added": false,
+    "ore_generation_unchanged": true,
+    "village_workshops": "five vanilla styles, additive weights 2/2/2/2/1/1, no regeneration of explored chunks"
   },
   "client_validation": {
     "language": "ru_ru",
@@ -74,7 +75,9 @@
       "6 merchant screens",
       "original skins and item models",
       "150px IC2R volume slider beside Voice/Speech",
-      "saved volume and live mute/unmute of a managed looping sound"
+      "saved volume and live mute/unmute of a managed looping sound",
+      "native 3 local warm-up torch menus with C2S state checks",
+      "Compact Item Buffer slots and localized title"
     ],
     "limits": [
       "Menu checks collected across the initial screen pass and affected follow-ups.",
@@ -87,6 +90,13 @@
     "Managed item menus used the main-hand item for offhand opening; lookup and title now use the actual hand.",
     "Sticky dynamite drifted after impact; synchronized attachment anchors it until support is removed.",
     "Fluid cell client use-on consumed ordinary block clicks; tank interaction is now conditional so world pickup remains available.",
-    "Sound slider now shares the narrow Voice/Speech row rather than adding a full-width row."
+    "Sound slider now shares the narrow Voice/Speech row rather than adding a full-width row.",
+    "Empty warm-up XML buttons had null text; dynamic GUI now accepts icon-only nodes.",
+    "New compact-buffer menu lacked its container-name translation; both locales now resolve it."
+  ],
+  "game_test_validation": [
+    "standalone local standby, energy/heat supply, persistence and hopper isolation",
+    "compact pulling/ejector upgrades without EU",
+    "all 30 workstation overlays and actual vanilla jigsaw resident placement"
   ]
 }

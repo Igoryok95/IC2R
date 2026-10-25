@@ -13,6 +13,13 @@ public class TextLabel extends GuiElement<TextLabel> {
   private final TextProvider.ITextProvider textProvider;
   private final IntSupplier color;
   private final boolean shadow;
+  private int maxWidth = -1;
+
+  public TextLabel withMaxWidth(int width) {
+    this.maxWidth = width;
+    return this;
+  }
+
   private final boolean fixedHoverWidth;
   private final boolean fixedHoverHeight;
   private final int baseX;
@@ -238,6 +245,8 @@ public class TextLabel extends GuiElement<TextLabel> {
       textHeight = 8;
     }
 
+    float scale = maxWidth > 0 && textWidth > maxWidth ? (float) maxWidth / textWidth : 1;
+    textWidth = Math.round(textWidth * scale);
     int textX = this.baseX;
     if (this.centerX) {
       textX -= textWidth / 2;
@@ -260,7 +269,23 @@ public class TextLabel extends GuiElement<TextLabel> {
 
     super.drawBackground(guiGraphics, mouseX, mouseY);
     if (!text.isEmpty()) {
-      this.gui.drawString(guiGraphics, textX, textY, text, this.color.getAsInt(), this.shadow);
+      if (scale < 1) {
+        guiGraphics.pose().pushPose();
+        guiGraphics
+            .pose()
+            .translate(this.gui.getX() + textX, this.gui.getY() + textY + (8 - 8 * scale) / 2, 0);
+        guiGraphics.pose().scale(scale, scale, 1);
+        guiGraphics.drawString(
+            net.minecraft.client.Minecraft.getInstance().font,
+            text,
+            0,
+            0,
+            this.color.getAsInt(),
+            this.shadow);
+        guiGraphics.pose().popPose();
+      } else {
+        this.gui.drawString(guiGraphics, textX, textY, text, this.color.getAsInt(), this.shadow);
+      }
     }
   }
 

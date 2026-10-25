@@ -8,7 +8,7 @@ an installed client, ZIP or multiplayer-server update.
 
 - Preserve released furnace XP/collection, client-language messages, empty-input,
   crop-save and GUI texture fixes. Keep storage/teleporter arithmetic and live
-  tooltip fixes. Native EU capacities and world generation remain unchanged.
+  tooltip fixes. Native EU capacities and ore generation remain unchanged.
 - Use the Russian name **Компрессор** consistently with Addons.
 - Restore Experimental beer and rum brewing, original ingredient ratios, aging,
   tapped/closed state, serving, drink effects and saved barrel contents. A barrel
@@ -30,7 +30,9 @@ an installed client, ZIP or multiplayer-server update.
   NeoForge capabilities and work with dispensers/world fluids.
 - Add all six professions using original Classic villager/zombie artwork,
   adapting trades and workstations to Experimental items. Villagers acquire jobs
-  from the workstations below; this update does not add village houses or worldgen.
+  from the workstations below. Additive workshops generate in new plains, desert,
+  savanna, taiga and snowy villages using native building templates and empty,
+  functional IC2R workstations. Existing explored chunks are not regenerated.
 - Complete matching English/Russian names, tooltips, messages, recipes and models.
 
 ## Villager comparison
@@ -53,6 +55,29 @@ superconducting covers and the first advanced solar panel; the Nuclear Engineer
 with thermometers/monitors/panels; Greg with advanced tools and the Advanced Lappack.
 Those entries are registered by Addons, never referenced from standalone IC2R.
 The other three professions retain native trades.
+
+## Natural village workshops and brewing recipe
+
+The Electrical Engineer, Crop Farmer, Brewing Master and Demolition Man workshops
+have weight **2** each; Nuclear Engineer and Greg have weight **1** each. Existing
+vanilla entries retain their weights. The plains houses pool rises from 87 to 97:
+a particular weight-2 workshop is 2/97 (2.06%) per weighted selection; a weight-1
+workshop is 1/97 (1.03%). These are selection weights, not whole-village spawn
+probabilities: road growth, collision checks and available space also matter.
+
+All five village styles reuse their vanilla small-house template at runtime,
+including the native resident marker and bed. A one-block IC2R overlay adds the
+functional workstation without bundling modified vanilla houses or new artwork.
+The reactor is empty, unpowered and contains no fuel. Professions, POIs and trades
+remain functional without Addons. The generator is reproducible with
+`python tools/generate_village_workshops.py <minecraft-1.21.1.jar>`; see
+[weights and placement](village-workshop-generation.json).
+
+The IC2 brewing barrel remains its own 32-litre fermentation block; a vanilla
+barrel remains ordinary item storage and the fisherman's workstation. Its crafting
+recipe changes from vertical **plank / rubber log / plank** to vertical
+**rubber / Minecraft barrel / rubber**. Brewing ratios, aging, tap operation,
+serving and existing saved barrels are unchanged.
 
 ## Optional Create processing
 
@@ -116,6 +141,25 @@ Full or incompatible slots fall back to the other channel. The same ordering is
 exposed through sided item capabilities, without changing manual slot assignments.
 Other inspected advanced machines have either one process input or distinct-purpose
 inputs; fuel, container, upgrade and output slots keep their original rules.
+
+## Local keep-warm control and compact buffering
+
+The Induction Furnace, Thermal Centrifuge and Blast Furnace have a torch button
+in the upper-right corner. Its saved, synchronized state requests standby warm-up
+inside that machine only. It does not modify the redstone component or emit a
+weak/direct signal, so a hopper above the machine stays unlocked. Turning it off
+leaves normal processing warm-up and external redstone intact. Original EU demand,
+heat limits and the Blast Furnace's external hU source are preserved. Old saves
+start with manual standby off. Addons applies the same control to its eight
+Advanced Machines, retaining their EU and water costs.
+
+Experimental's `ic2:item_buffer_2` (Compact Item Buffer) has nine shared IO slots
+and four upgrade slots. Pulling/ejector upgrades transfer items between adjacent
+inventories without an EU connection; directional/advanced filters use the existing
+upgrade behavior. The original buffer stays available. The compact recipe uses
+six iron casings, two wooden chests and one basic machine casing in Experimental's
+vertical-chest pattern. Its original 32x32 face is copied unchanged; its original
+GUI slot arrangement is retained, with a bounded localized title.
 
 ## Original assets and references
 

@@ -2,8 +2,15 @@
 
 Restores Experimental beer/rum brewing, basic charging armor, fluid pipes and pump
 covers, dynamite and remote control, containment box, iodine, MFSU upgrade kit and
-reusable fluid cell. Six original Classic profession skins accompany native
-Experimental trades; Addons extends matching trades when installed.
+reusable fluid cell and the original Compact Item Buffer (nine shared slots, four
+transfer upgrades, no EU). Local torch buttons keep the Induction Furnace, Thermal
+Centrifuge and Blast Furnace warm without emitting redstone to neighboring blocks.
+Original EU/hU supply and external redstone behavior are preserved. Six original Classic profession skins accompany native
+Experimental trades and functional village workshops; Addons extends matching trades when installed.
+Workshops enter the five vanilla village styles additively: electrical, crop, brewing and demolition
+weight 2 each, nuclear and Greg weight 1 each. Vanilla weights remain unchanged; only new village
+chunks receive workshops. The nuclear workstation is empty and contains no fuel.
+The IC2 brewing-barrel recipe now uses a vanilla barrel between two rubber items.
 
 Optional Create compatibility reuses existing crushed ores and includes zinc
 processing, with positive recipe XP retained by all three furnaces. Fixes Create's
@@ -11,7 +18,7 @@ outdated IC2 recipe identifiers through a conditional built-in compatibility pac
 Also supports optional Mekanism osmium, fluorite and tagged intermediates, including
 Create crushed osmium and positive XP. Adds a localized client volume slider for
 IC2R audio and balanced hopper insertion into both induction inputs. No Classic
-progression, PESU, upper solar tiers or world-generation changes.
+progression, PESU, upper solar tiers or ore-generation changes.
 
 Retains released XP, localization, input, crop-save and GUI fixes. Storage gauges
 show exact values in live tooltips; teleporter sums and external readings avoid
