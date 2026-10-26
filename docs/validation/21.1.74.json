@@ -81,9 +81,16 @@
     "addon_optional_for_core": true
   },
   "deployment": {
-    "client_updated": false,
-    "zip_updated": false,
-    "production_server_updated": false,
-    "status": "not requested for this integration update"
+    "date": "2026-10-26",
+    "status": "complete; production server intentionally left stopped",
+    "client_updated": true,
+    "zip_updated": true,
+    "zip": "Minecraft-1.21.1-NeoForge-client-2026-10-22.zip",
+    "production_server_updated": true,
+    "server_was_stopped": true,
+    "server_started": false,
+    "backups_created": false,
+    "hash_checks_performed": false,
+    "production_runtime_validation": "not performed; server left stopped"
   }
 }
