@@ -5,8 +5,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.76-blue" alt="Version 21.1.76">
+<img src="https://img.shields.io/badge/Version-21.1.77-blue" alt="Version 21.1.77">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.77 — Reactor chamber readings in Jade
+
+Pointing Jade at any of a reactor's six attached chambers now displays the central
+reactor's heat, maximum heat, nominal EU output and operating state. A standalone
+chamber adds no reactor readings. The lookup uses the live adjacent reactor, so a
+removed or replaced reactor cannot leave stale telemetry behind. See
+[details and validation](docs/reactor-chamber-jade-21.1.77.md).
 
 ## Version 21.1.76 — Glass fluid pipes
 

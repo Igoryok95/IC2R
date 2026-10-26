@@ -35,8 +35,10 @@ public final class Ic2JadePlugin implements IWailaPlugin {
 
     @Override
     public void appendServerData(CompoundTag data, BlockAccessor accessor) {
-      if (accessor.getBlockEntity() instanceof Ic2TileEntity tile)
-        data.put("ic2_status", MachineStatusData.collect(tile));
+      if (accessor.getBlockEntity() instanceof Ic2TileEntity tile) {
+        var status = MachineStatusData.collect(tile);
+        if (!status.isEmpty()) data.put("ic2_status", status);
+      }
     }
 
     @Override

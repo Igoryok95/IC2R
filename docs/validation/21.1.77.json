@@ -1,0 +1,28 @@
+{
+  "version": "21.1.77",
+  "unit_tests": 26,
+  "unit_failures": 0,
+  "required_gametests": 495,
+  "gametest_failures": 0,
+  "server_runtime": "Jade absent",
+  "server_checks": [
+    "All six attached chambers match central reactor readings",
+    "Heat, output and operating state track the live reactor",
+    "Standalone chamber produces an empty status",
+    "Removal without neighbor notification clears readings",
+    "Same-tick replacement resolves the new reactor"
+  ],
+  "client_runtime": "Jade 15.10.6+neoforge",
+  "client_marker": "IC2R_REACTOR_JADE_CLIENT_PASS",
+  "client_checks": [
+    "Actual Jade server data received while targeting a chamber",
+    "Complete reactor fields in Russian and English",
+    "Standalone chamber has no ic2_status tag"
+  ],
+  "screenshots": [
+    "reactor-chamber-jade-ru_ru.png",
+    "reactor-chamber-jade-en_us.png",
+    "reactor-chamber-jade-orphan.png"
+  ],
+  "deployment": "Source and isolated development world only"
+}

@@ -5,6 +5,8 @@ import ic2.core.block.comp.Energy;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
 import ic2.core.block.machine.tileentity.TileEntityCentrifuge;
 import ic2.core.block.machine.tileentity.TileEntityInduction;
+import ic2.core.block.reactor.tileentity.TileEntityNuclearReactorElectric;
+import ic2.core.block.reactor.tileentity.TileEntityReactorChamberElectric;
 import ic2.core.block.tileentity.Ic2TileEntity;
 import ic2.core.gui.dynamic.MachineTransferSlots;
 import ic2.core.ref.Ic2Blocks;
@@ -12,6 +14,7 @@ import ic2.core.slot.SlotInvSlot;
 import ic2.integration.jade.MachineStatusData;
 import java.util.List;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.level.GameType;
@@ -109,6 +112,71 @@ public final class MachineIntegrationGameTests {
     h.assertTrue(
         MachineStatusData.collect(blast).getDouble("heat") == .5,
         "heat-powered blast furnace does not require an EU component");
+    h.succeed();
+  }
+
+  @GameTest(template = "gametest/empty3x3x3")
+  public static void allSixChambersExposeTheLiveReactorStatus(GameTestHelper h) {
+    var pos = new BlockPos(1, 1, 1);
+    h.setBlock(pos, Ic2Blocks.NUCLEAR_REACTOR);
+    for (var side : Direction.values()) h.setBlock(pos.relative(side), Ic2Blocks.REACTOR_CHAMBER);
+    TileEntityNuclearReactorElectric reactor = h.getBlockEntity(pos);
+    reactor.heat = 4032;
+    reactor.maxHeat = 12000;
+    reactor.output = 24;
+    reactor.setActive(true);
+    var expected = MachineStatusData.collect(reactor);
+    h.assertTrue(
+        expected.getDouble("reactorHeat") == 4032 && expected.getBoolean("active"),
+        "reactor fixture contains heat and running state");
+    for (var side : Direction.values()) {
+      TileEntityReactorChamberElectric chamber = h.getBlockEntity(pos.relative(side));
+      h.assertTrue(
+          MachineStatusData.collect(chamber).equals(expected),
+          "identical reactor readings through the " + side + " chamber");
+    }
+    reactor.heat = 4500;
+    reactor.output = 8;
+    reactor.setActive(false);
+    TileEntityReactorChamberElectric chamber = h.getBlockEntity(pos.north());
+    var changed = MachineStatusData.collect(chamber);
+    h.assertTrue(
+        changed.equals(MachineStatusData.collect(reactor))
+            && changed.getDouble("reactorHeat") == 4500
+            && !changed.getBoolean("active"),
+        "chamber readings follow subsequent reactor changes");
+    h.succeed();
+  }
+
+  @GameTest(template = "gametest/empty3x3x3")
+  public static void orphanedChambersNeverReportCachedReactorReadings(GameTestHelper h) {
+    var pos = new BlockPos(1, 1, 1);
+    h.setBlock(pos, Ic2Blocks.REACTOR_CHAMBER);
+    TileEntityReactorChamberElectric chamber = h.getBlockEntity(pos);
+    h.assertTrue(
+        MachineStatusData.collect(chamber).isEmpty(), "a standalone chamber has no status to send");
+    h.setBlock(pos.west(), Ic2Blocks.NUCLEAR_REACTOR);
+    TileEntityNuclearReactorElectric first = h.getBlockEntity(pos.west());
+    first.heat = 1234;
+    chamber.getContainerSize();
+    h.assertTrue(
+        MachineStatusData.collect(chamber).getDouble("reactorHeat") == 1234,
+        "connected chamber reports its reactor");
+    h.getLevel()
+        .setBlock(
+            h.absolutePos(pos.west()),
+            net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(),
+            2);
+    h.assertTrue(
+        MachineStatusData.collect(chamber).isEmpty(),
+        "removal clears readings immediately even without a neighbor notification");
+    h.getLevel()
+        .setBlock(h.absolutePos(pos.west()), Ic2Blocks.NUCLEAR_REACTOR.defaultBlockState(), 2);
+    TileEntityNuclearReactorElectric replacement = h.getBlockEntity(pos.west());
+    replacement.heat = 2345;
+    h.assertTrue(
+        MachineStatusData.collect(chamber).getDouble("reactorHeat") == 2345,
+        "same-tick replacement uses the new reactor rather than the cached instance");
     h.succeed();
   }
 }

@@ -7,9 +7,12 @@ import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
 import ic2.core.block.machine.tileentity.TileEntityCentrifuge;
 import ic2.core.block.machine.tileentity.TileEntityInduction;
 import ic2.core.block.machine.tileentity.TileEntityStandardMachine;
+import ic2.core.block.reactor.tileentity.TileEntityNuclearReactorElectric;
+import ic2.core.block.reactor.tileentity.TileEntityReactorChamberElectric;
 import ic2.core.block.tileentity.Ic2TileEntity;
 import ic2.core.block.wiring.tileentity.TileEntityElectricBlock;
 import java.util.Locale;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 
@@ -17,6 +20,11 @@ import net.minecraft.nbt.CompoundTag;
 public final class MachineStatusData {
   public static CompoundTag collect(Ic2TileEntity tile) {
     var data = new CompoundTag();
+    if (tile.isRemoved()) return data;
+    if (tile instanceof TileEntityReactorChamberElectric) {
+      tile = connectedReactor(tile);
+      if (tile == null) return data;
+    }
     if (!BuiltInRegistries.BLOCK
         .getKey(tile.getBlockState().getBlock())
         .getNamespace()
@@ -54,6 +62,19 @@ public final class MachineStatusData {
       data.putDouble("reactorOutput", reactor.getReactorEUEnergyOutput());
     }
     return data;
+  }
+
+  private static TileEntityNuclearReactorElectric connectedReactor(Ic2TileEntity chamber) {
+    var level = chamber.getLevel();
+    if (level == null) return null;
+    // Resolve the live adjacent block instead of the chamber's potentially stale reactor cache.
+    for (Direction side : Direction.values()) {
+      var pos = chamber.getBlockPos().relative(side);
+      if (level.hasChunkAt(pos)
+          && level.getBlockEntity(pos) instanceof TileEntityNuclearReactorElectric reactor
+          && !reactor.isRemoved()) return reactor;
+    }
+    return null;
   }
 
   public static String percent(double percent) {
