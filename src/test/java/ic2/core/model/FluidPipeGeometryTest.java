@@ -9,10 +9,34 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import org.junit.jupiter.api.Test;
 
 class FluidPipeGeometryTest {
-  private static final String[] DIRECTIONS = {"down", "up", "north", "south", "west", "east"};
+
+  @Test
+  void glassKeepsPositionDerivedUvsAcrossAllConnectionPatches() throws Exception {
+    for (String size : List.of("tiny", "small", "medium", "large"))
+      for (int mask = 0; mask < 64; mask++) {
+        String name = size + "_" + mask;
+        var json = resource("assets/ic2/models/block/experimental/glass_pipe/" + name + ".json");
+        var model = BlockModel.fromString(json.toString());
+        int glass = 0;
+        for (var element : model.getElements())
+          for (var entry : element.faces.entrySet()) {
+            var face = entry.getValue();
+            if (!face.texture().equals("#glass")) continue;
+            glass++;
+            assertArrayEquals(
+                element.uvsByFace(entry.getKey()),
+                face.uv().uvs,
+                name + ": parsed UVs must keep native scale and shared model-space alignment");
+            assertEquals(
+                0, face.uv().rotation, name + ": coplanar glass patches share their orientation");
+          }
+        assertTrue(glass > 0, name);
+      }
+  }
 
   @Test
   void everyMaterialSizeAndConnectionMaskHasNoOverlappingCoplanarFaces() throws Exception {

@@ -56,8 +56,10 @@ def shell(width, mask, variant="light"):
             while all((xx,y+h) in cells for xx in range(x,x+w)):h+=1
             cells.difference_update((xx,yy) for xx in range(x,x+w) for yy in range(y,y+h))
             lo=[0,0,0];hi=[0,0,0];lo[axis]=hi[axis]=plane;lo[u]=x;hi[u]=x+w;lo[v]=y;hi[v]=y+h
-            face={'texture':'#'+material,'uv':[0,0,16,16]}
-            if material=='metal':face['tintindex']=0
+            face={'texture':'#'+material}
+            # Glass uses Minecraft's position-derived UVs. Adjacent patches sample one
+            # continuous sheet at native scale instead of repeating a full framed tile.
+            if material=='metal':face.update(uv=[0,0,16,16],tintindex=0)
             elements.append({'from':lo,'to':hi,'faces':{direction:face}})
     return {'parent':'minecraft:block/block','render_type':'minecraft:cutout','textures':{'metal':'ic2:block/experimental/pipe_side','glass':'minecraft:block/glass','particle':'ic2:block/experimental/pipe_side'},'elements':elements}
 

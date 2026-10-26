@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 public final class PipeClientSmoke {
   private static final List<BlockPos> DISPLAY = new ArrayList<>();
   private static final BlockPos FLOW = new BlockPos(7, 129, -3);
+  private static final BlockPos ELBOW = new BlockPos(12, 129, -3);
   private static int ticks;
 
   @SubscribeEvent
@@ -55,9 +56,18 @@ public final class PipeClientSmoke {
               for (int z = -5; z <= 10; z++) {
                 level.setBlockAndUpdate(
                     new BlockPos(x, 127, z), Blocks.SMOOTH_STONE.defaultBlockState());
-                for (int y = 128; y <= 133; y++)
-                  level.setBlockAndUpdate(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState());
+                for (int y = 128; y <= 133; y++) {
+                  var pos = new BlockPos(x, y, z);
+                  if (level.getBlockEntity(pos) instanceof net.minecraft.world.Container container)
+                    container.clearContent();
+                  level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+                }
               }
+            level
+                .getEntitiesOfClass(
+                    net.minecraft.world.entity.item.ItemEntity.class,
+                    new net.minecraft.world.phys.AABB(-3, 127, -5, 20, 135, 11))
+                .forEach(net.minecraft.world.entity.Entity::discard);
             String[] sizes = {"tiny", "small", "medium", "large"};
             for (int material = 0; material < 2; material++)
               for (int size = 0; size < sizes.length; size++) {
@@ -79,6 +89,16 @@ public final class PipeClientSmoke {
                   DISPLAY.add(pos);
                 }
               }
+            var elbow = ExperimentalPipes.BLOCKS.get("bronze_pipe_medium");
+            var elbowPositions = List.of(ELBOW, ELBOW.east(), ELBOW.below());
+            for (var pos : elbowPositions) level.setBlockAndUpdate(pos, elbow.defaultBlockState());
+            for (var pos : elbowPositions) {
+              var pipe = (ExperimentalFluidPipe) level.getBlockEntity(pos);
+              pipe.tank.fill(
+                  new FluidStack(Fluids.WATER, pipe.tank.getCapacity() * 3 / 5),
+                  IFluidHandler.FluidAction.EXECUTE);
+              DISPLAY.add(pos);
+            }
             level.setBlockAndUpdate(FLOW.west(), Ic2Blocks.TANK.defaultBlockState());
             level.setBlockAndUpdate(
                 FLOW, ExperimentalPipes.BLOCKS.get("bronze_pipe_medium").defaultBlockState());
@@ -107,8 +127,9 @@ public final class PipeClientSmoke {
           || pipe.visuals.offset(Direction.EAST, mc.level.getGameTime() + 1).lengthSqr() == 0)
         throw new IllegalStateException("Measured pipe flow did not reach client");
       capture(mc, "glass-pipes-overview.png");
+      mc.options.fov().set(30);
       server.execute(
-          () -> server.getPlayerList().getPlayer(id).connection.teleport(11, 130.2, -2, -25, 15));
+          () -> server.getPlayerList().getPlayer(id).connection.teleport(14.2, 129, -5.2, 26, 28));
     }
     if (phase == 140) {
       capture(mc, "glass-pipes-bronze-close.png");
@@ -125,7 +146,7 @@ public final class PipeClientSmoke {
               var pipe = (ExperimentalFluidPipe) level.getBlockEntity(pos);
               pipe.tank.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.EXECUTE);
             }
-            player.connection.teleport(8, 134, -9, 0, 29);
+            player.connection.teleport(14.2, 129, -5.2, 26, 28);
           });
     }
     if (phase == 230) {
@@ -138,6 +159,7 @@ public final class PipeClientSmoke {
     }
     if (phase == 250) {
       mc.options.hideGui = false;
+      mc.options.fov().set(70);
       LoggerFactory.getLogger("IC2R-Glass-Pipes")
           .info(
               "IC2R_GLASS_PIPE_CLIENT_PASS: all eight sizes/materials, real water/lava, emptying and synchronized measured flow");
