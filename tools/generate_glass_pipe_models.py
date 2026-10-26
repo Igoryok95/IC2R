@@ -44,6 +44,9 @@ def shell(width, mask, variant="light"):
         for i,(_,step) in enumerate(DIRECTIONS):
             q=tuple(p[j]+step[j] for j in range(3))
             if q in walls and not (material=='metal' and q in glass): continue
+            # Glazing has one outward surface, avoiding stacked tint layers through
+            # the same thin wall. The opaque metal still encloses its full thickness.
+            if material=='glass' and full(q): continue
             axis=next(j for j,v in enumerate(step) if v);u=(axis+1)%3;v=(axis+2)%3
             faces[(i,p[axis]+(step[axis]>0),material)].add((p[u],p[v]))
     elements=[]
@@ -60,8 +63,23 @@ def shell(width, mask, variant="light"):
             # Glass uses Minecraft's position-derived UVs. Adjacent patches sample one
             # continuous sheet at native scale instead of repeating a full framed tile.
             if material=='metal':face.update(uv=[0,0,16,16],tintindex=0)
-            elements.append({'from':lo,'to':hi,'faces':{direction:face}})
-    return {'parent':'minecraft:block/block','render_type':'minecraft:cutout','textures':{'metal':'ic2:block/experimental/pipe_side','glass':'minecraft:block/glass','particle':'ic2:block/experimental/pipe_side'},'elements':elements}
+            else:face['neoforge_data']={'color':'4dbed9e6','ambient_occlusion':False}
+            element={'from':lo,'to':hi,'faces':{direction:face}}
+            if material=='glass':element['shade']=False
+            elements.append(element)
+            if material=='glass' and w>=2 and h>=2:
+                # A native vanilla three-pixel diagonal at 32px density. Its dimensions
+                # never follow the aspect ratio of the merged window or elbow patch.
+                marks=[(x+.25,y+.25)]
+                if w>=7 and h>=5:marks.append((x+w-1.75,y+h-1.75))
+                for mx,my in marks:
+                    glint_lo=lo.copy();glint_hi=hi.copy()
+                    glint_lo[axis]=glint_hi[axis]=plane+step[axis]*.01
+                    glint_lo[u]=mx;glint_hi[u]=mx+1.5;glint_lo[v]=my;glint_hi[v]=my+1.5
+                    glint={'texture':'#shine','uv':[2,2,5,5],
+                           'neoforge_data':{'color':'a6ffffff','ambient_occlusion':False}}
+                    elements.append({'from':glint_lo,'to':glint_hi,'shade':False,'faces':{direction:glint}})
+    return {'parent':'minecraft:block/block','render_type':'minecraft:translucent','textures':{'metal':'ic2:block/experimental/pipe_side','glass':'minecraft:block/white_stained_glass','shine':'minecraft:block/glass','particle':'ic2:block/experimental/pipe_side'},'elements':elements}
 
 def generate(root):
     for size,width in SIZES:

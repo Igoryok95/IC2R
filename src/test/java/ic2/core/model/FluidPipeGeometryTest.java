@@ -20,13 +20,33 @@ class FluidPipeGeometryTest {
       for (int mask = 0; mask < 64; mask++) {
         String name = size + "_" + mask;
         var json = resource("assets/ic2/models/block/experimental/glass_pipe/" + name + ".json");
+        assertEquals("minecraft:translucent", json.get("render_type").getAsString(), name);
         var model = BlockModel.fromString(json.toString());
-        int glass = 0;
+        int glass = 0, highlights = 0;
+        boolean hasHighlightSpace = false;
         for (var element : model.getElements())
           for (var entry : element.faces.entrySet()) {
             var face = entry.getValue();
+            if (face.texture().equals("#shine")) {
+              highlights++;
+              int axis = entry.getKey().getAxis().ordinal();
+              for (int coordinate = 0; coordinate < 3; coordinate++)
+                if (coordinate != axis)
+                  assertEquals(
+                      1.5f,
+                      element.to.get(coordinate) - element.from.get(coordinate),
+                      name + ": three-pixel highlights keep their 32px density");
+              assertArrayEquals(new float[] {2, 2, 5, 5}, face.uv().uvs, name);
+            }
             if (!face.texture().equals("#glass")) continue;
             glass++;
+            int planeAxis = entry.getKey().getAxis().ordinal();
+            hasHighlightSpace |=
+                element.to.get((planeAxis + 1) % 3) - element.from.get((planeAxis + 1) % 3) >= 2
+                    && element.to.get((planeAxis + 2) % 3) - element.from.get((planeAxis + 2) % 3)
+                        >= 2;
+            int alpha = face.faceData().color() >>> 24;
+            assertTrue(alpha > 0 && alpha < 128, name + ": glass has a subtle visible tint");
             assertArrayEquals(
                 element.uvsByFace(entry.getKey()),
                 face.uv().uvs,
@@ -35,6 +55,7 @@ class FluidPipeGeometryTest {
                 0, face.uv().rotation, name + ": coplanar glass patches share their orientation");
           }
         assertTrue(glass > 0, name);
+        if (hasHighlightSpace) assertTrue(highlights > 0, name);
       }
   }
 
