@@ -1,0 +1,46 @@
+{
+  "version": "21.1.75",
+  "minecraft": "1.21.1",
+  "artifact": {
+    "file": "ic2-neoforge-21.1.75.jar",
+    "bytes": 8364140
+  },
+  "junit": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0
+  },
+  "change_scope": "GUI positions and opt-in visual regression harness only; no gameplay or menu slot-order changes",
+  "game_tests": "Not rerun for this GUI-only change",
+  "real_client": {
+    "core": "21.1.75",
+    "addons": "1.4.5",
+    "neoforge": "21.1.264",
+    "isolated_world": "RestorationSmoke",
+    "languages": [
+      "ru_ru",
+      "en_us"
+    ],
+    "gui_scale": 2,
+    "maximum_warmup": "100.00%",
+    "normal_font_size": true,
+    "filled_processing_slots": true,
+    "screens": 18,
+    "widget_clearance_checks": 520,
+    "minimum_clearance_gui_pixels": 4,
+    "marker": "WARMUP_LAYOUT_COMPLETE",
+    "log": "C:/GIT/IC2R-Addons/build/warmup-spacing-1.4.5-layout-client.log"
+  },
+  "localization": {
+    "en_us_keys": 1422,
+    "ru_ru_keys": 1422,
+    "missing_ru_keys": 0,
+    "replacement_characters": 0,
+    "new_player_facing_strings": 0
+  },
+  "deployment": {
+    "client_updated": false,
+    "zip_updated": false,
+    "production_server_updated": false
+  }
+}

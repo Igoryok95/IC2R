@@ -5,8 +5,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.74-blue" alt="Version 21.1.74">
+<img src="https://img.shields.io/badge/Version-21.1.75-blue" alt="Version 21.1.75">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.75 — Warm-up display spacing
+
+The Induction Furnace keeps a clear gap between its full `100.00%` heat value,
+input slots and energy indicator. Its processing column is repositioned without
+changing the font, precision, inventory or machine behavior. See
+[GUI validation](docs/warmup-spacing-21.1.75.md). Addons **1.4.5** applies the
+corresponding spacing fix to all eight Advanced Machines.
 
 ## Version 21.1.74 — JEI and Jade
 

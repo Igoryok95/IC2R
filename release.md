@@ -1,3 +1,19 @@
+# 21.1.75
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Reserve room for the full `100.00%` Induction Furnace heat value. Move the input
+  overlay, input slots, battery and EU indicator together; keep the recipe click
+  area aligned with its progress arrow.
+- Preserve two decimal places and the normal font size. Machine logic, inventory
+  order, balance and recipes are unchanged.
+- Check actual rendered text against widget bounds at maximum heat, with filled
+  slots and both English and Russian labels; width-only checks are insufficient.
+
+See [GUI validation](docs/warmup-spacing-21.1.75.md).
+
+---
+
 # 21.1.74
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

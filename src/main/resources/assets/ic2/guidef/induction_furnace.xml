@@ -3,23 +3,23 @@
     <text x="-4" y="6" align="center" maxwidth="128">%name%</text>
     <button type="warmup" x="152" y="4" width="20" height="20" event="100"></button>
 
-    <image x="42" y="16" src="textures/gui/overlay/induction_furnace_input"/>
-    <slot name="inputA" x="43" y="17" style="plain"/>
-    <slot name="inputB" x="59" y="17" style="plain"/>
+    <image x="54" y="16" src="textures/gui/overlay/induction_furnace_input"/>
+    <slot name="inputA" x="55" y="17" style="plain"/>
+    <slot name="inputB" x="71" y="17" style="plain"/>
 
     <image x="110" y="30" src="textures/gui/overlay/induction_furnace_output"/>
     <slot name="outputA" x="113" y="35" style="plain"/>
     <slot name="outputB" x="129" y="35" style="plain"/>
 
-    <slot name="discharge" x="50" y="52"/>
+    <slot name="discharge" x="62" y="52"/>
     <slotgrid name="upgrade" x="151" y="25" cols="1"/>
-    <energygauge x="55" y="37"/>
-    <gauge name="progress" x="81" y="35" style="progressarrow"/>
-    <button type="recipe" x="81" y="35" width="22" height="15" event="minecraft.smelting"></button>
+    <energygauge x="67" y="37"/>
+    <gauge name="progress" x="83" y="35" style="progressarrow"/>
+    <button type="recipe" x="83" y="35" width="22" height="15" event="minecraft.smelting"></button>
     <playerInventory x="7" y="83"/>
 
     <text x="6" y="24">{ic2.Induction.gui.heat}</text>
-    <text x="10" y="34">%base.getHeat()%</text>
+    <text x="6" y="36">%base.getHeat()%</text>
     <button x="6" y="50" width="20" height="20" icon="minecraft:experience_bottle" event="0">{ic2.IronFurnace.gui.xp}
     </button>
 </gui>
