@@ -1,0 +1,26 @@
+{
+  "version": "21.1.78",
+  "unit_tests": 27,
+  "unit_failures": 0,
+  "connection_models": 256,
+  "pipe_variants": 8,
+  "model_checks": [
+    "Minecraft model parser preserves native glass UV scale",
+    "Translucent glazing has a non-opaque tint",
+    "Vanilla highlights keep fixed 32px density",
+    "No overlapping coplanar shell faces"
+  ],
+  "client_marker": "IC2R_GLASS_PIPE_CLIENT_PASS",
+  "client_checks": [
+    "All eight bronze and steel variants with actual water and lava",
+    "Measured fluid movement reaches the client",
+    "Emptying removes the rendered contents",
+    "Close views of empty and filled elbows"
+  ],
+  "screenshots": [
+    "docs/images/glass-pipes-21.1.78/empty.png",
+    "docs/images/glass-pipes-21.1.78/water.png"
+  ],
+  "visual_review": "Approved by the user before publication",
+  "production_installation": "Not part of this release operation"
+}

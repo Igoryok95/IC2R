@@ -1,5 +1,8 @@
 # Glass fluid pipes — 21.1.76
 
+The current glass appearance and its screenshots are documented in
+[21.1.78](glass-fluid-pipes-21.1.78.md). This page records the original pipe restoration.
+
 The previous restored pipe model placed its center and connected arms in the same
 volume. Their coincident faces produced camera-dependent black stripes. Implicit
 UV mapping also sampled a flat part of the original metal texture.

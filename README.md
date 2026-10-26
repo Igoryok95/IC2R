@@ -5,8 +5,20 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.77-blue" alt="Version 21.1.77">
+<img src="https://img.shields.io/badge/Version-21.1.78-blue" alt="Version 21.1.78">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.78 — Readable fluid-pipe glass
+
+Bronze and steel pipe windows keep a consistent texture scale on straight sections
+and elbows. Subtle glazing and small vanilla highlights make the glass visible
+without stretching a square border across each window. The highlights retain
+their 32px density in all four pipe sizes. Pipe IDs, recipes, contents and transfer
+rates are unchanged from 21.1.77.
+
+See [details, validation and in-game screenshots](docs/glass-fluid-pipes-21.1.78.md).
+
+![Bronze pipe elbow with visible glass and water, captured in Minecraft](docs/images/glass-pipes-21.1.78/water.png)
 
 ## Version 21.1.77 — Reactor chamber readings in Jade
 

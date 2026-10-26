@@ -1,7 +1,4 @@
-# Pipe glass UV preview
-
-Status: unreleased, awaiting visual review. Stable `main` and installed clients remain
-on 21.1.77 while this change is prepared on `fix/pipe-glass-uv`.
+# Readable fluid-pipe glass — 21.1.78
 
 ## Cause and change
 
@@ -11,10 +8,8 @@ a one-pixel patch at an elbow compressed the same sprite into a tiny framed inse
 That insert was glass, rather than an extra structural metal piece.
 
 Glass uses Minecraft's position-derived UV mapping, so coplanar elbow patches share
-the same texture coordinates. Sampling the center of vanilla clear glass, however,
-made the first UV-corrected preview almost invisible.
-
-The glazing now uses the vanilla white stained-glass surface with a subtle pale-blue
+the same texture coordinates. The glazing uses the vanilla white stained-glass
+surface with a subtle pale-blue
 vertex tint and reduced alpha. It has one outward surface per wall and uses the
 translucent render pass, avoiding stacked tint within the same thin wall. Small
 three-pixel diagonal highlights come from the original vanilla clear-glass artwork.
@@ -34,9 +29,10 @@ logic and saved IDs are unchanged. No raster assets or player-facing strings are
   actual water/lava and verifies synchronized fluid levels and emptying. Close
   views show the elbow both filled and empty.
 
-![Empty glazed elbow, captured in Minecraft](images/pipe-glass-uv-preview/empty-tinted.png)
+![Empty glazed elbow, captured in Minecraft](images/glass-pipes-21.1.78/empty.png)
 
-![The same glazed elbow with water, captured in Minecraft](images/pipe-glass-uv-preview/water-tinted.png)
+![The same glazed elbow with water, captured in Minecraft](images/glass-pipes-21.1.78/water.png)
 
-These are development-client screenshots. This preview has not been installed in
-the production client, exchange ZIP or server, and no version has been published.
+The screenshots are captured in the isolated Minecraft development client. This
+release operation does not install files in the production client, exchange ZIP or
+server. See the [validation receipt](validation/21.1.78.json).
