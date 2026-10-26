@@ -5,8 +5,20 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.75-blue" alt="Version 21.1.75">
+<img src="https://img.shields.io/badge/Version-21.1.76-blue" alt="Version 21.1.76">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.76 — Glass fluid pipes
+
+Bronze and steel fluid pipes have a thin metal frame and glass windows in all four
+sizes. Disjoint shell faces remove the camera-dependent stripes caused by overlapping
+pipe sections. The visible fluid uses its real texture, tint and fill level;
+directional scrolling follows measured transfer and stops when the fluid is stationary.
+
+Each recipe now includes **one clear glass pane**, keeping its existing metal cost
+and output count. Pipe IDs, saved contents, capacity, throughput and pump-cover
+behavior are preserved. A passive pipe needs a pump cover facing the source, or an
+active fluid ejector on that source. See [pipe behavior and validation](docs/glass-fluid-pipes-21.1.76.md).
 
 ## Version 21.1.75 — Warm-up display spacing
 

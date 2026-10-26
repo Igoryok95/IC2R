@@ -2,12 +2,15 @@
   "type": "ic2:shaped",
   "pattern": [
     "C C",
-    "C C",
+    "CGC",
     "C C"
   ],
   "key": {
     "C": {
       "item": "ic2:steel_plate"
+    },
+    "G": {
+      "tag": "c:glass_panes/colorless"
     }
   },
   "result": {

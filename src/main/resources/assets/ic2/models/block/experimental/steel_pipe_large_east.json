@@ -11,7 +11,7 @@
   "elements": [
     {
       "from": [
-        3.0,
+        13.0,
         3.0,
         3.0
       ],
@@ -31,10 +31,6 @@
         },
         "east": {
           "texture": "#east",
-          "tintindex": 0
-        },
-        "west": {
-          "texture": "#west",
           "tintindex": 0
         },
         "up": {

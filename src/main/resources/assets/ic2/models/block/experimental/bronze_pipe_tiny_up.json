@@ -12,7 +12,7 @@
     {
       "from": [
         6.0,
-        6.0,
+        10.0,
         6.0
       ],
       "to": [
@@ -39,10 +39,6 @@
         },
         "up": {
           "texture": "#up",
-          "tintindex": 0
-        },
-        "down": {
-          "texture": "#down",
           "tintindex": 0
         }
       }

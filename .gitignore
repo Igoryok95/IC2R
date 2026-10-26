@@ -8,6 +8,7 @@ run/
 out/
 terminals/
 agent-tools/
+__pycache__/
 
 gradle-wrapper.jar
 

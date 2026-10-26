@@ -12,7 +12,7 @@
     {
       "from": [
         5.0,
-        5.0,
+        11.0,
         5.0
       ],
       "to": [
@@ -39,10 +39,6 @@
         },
         "up": {
           "texture": "#up",
-          "tintindex": 0
-        },
-        "down": {
-          "texture": "#down",
           "tintindex": 0
         }
       }

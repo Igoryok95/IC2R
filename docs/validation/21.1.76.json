@@ -1,0 +1,25 @@
+{
+  "version": "21.1.76",
+  "design": "Thin metal frame and glass windows, option A",
+  "unit_tests": 26,
+  "unit_failures": 0,
+  "required_gametests": 493,
+  "gametest_failures": 0,
+  "geometry_models": 256,
+  "connection_states_per_size": 64,
+  "pipe_variants": 8,
+  "client_marker": "IC2R_GLASS_PIPE_CLIENT_PASS",
+  "client_checks": [
+    "Actual water and lava in every size and material",
+    "Synchronized tank amounts and measured directional flow",
+    "Turns and vertical joins from opposite camera angles",
+    "Empty tanks stop rendering fluid"
+  ],
+  "screenshots": [
+    "glass-pipes-overview.png",
+    "glass-pipes-bronze-close.png",
+    "glass-pipes-steel-reverse.png",
+    "glass-pipes-empty.png"
+  ],
+  "deployment": "Source and isolated test world only"
+}

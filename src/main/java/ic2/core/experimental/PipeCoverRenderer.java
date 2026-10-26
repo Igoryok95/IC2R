@@ -22,6 +22,7 @@ public final class PipeCoverRenderer implements BlockEntityRenderer<Experimental
       MultiBufferSource buffers,
       int light,
       int overlay) {
+    PipeFluidRenderer.render(pipe, partial, pose, buffers, light, overlay);
     for (Direction side : Direction.values()) {
       int pump = pipe.pumps[side.ordinal()];
       if (pump == 0) continue;

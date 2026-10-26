@@ -118,10 +118,15 @@ with zipfile.ZipFile(experimental) as exp, zipfile.ZipFile(classic) as cls:
             parts=[{'apply': {'model': parent}}]
             for direction in ['north','south','east','west','up','down']:
                 lo=[a,a,a];hi=[b,b,b]; axis=0 if direction in ['east','west'] else 1 if direction in ['up','down'] else 2
-                if direction in ['north','west','down']:lo[axis]=0
-                else:hi[axis]=16
+                if direction in ['north','west','down']:
+                    lo[axis]=0; hi[axis]=a
+                else:
+                    lo[axis]=b; hi[axis]=16
                 tex={d:'ic2:block/experimental/pipe_side' for d in texture};tex[direction]=texture[direction]
-                write(f'assets/ic2/models/block/experimental/{name}_{direction}.json',cube(tex,lo,hi,True))
+                arm=cube(tex,lo,hi,True)
+                opposite={'north':'south','south':'north','east':'west','west':'east','up':'down','down':'up'}[direction]
+                del arm['elements'][0]['faces'][opposite]
+                write(f'assets/ic2/models/block/experimental/{name}_{direction}.json',arm)
                 parts.append({'when':{direction:'true'},'apply':{'model':parent+'_'+direction}})
             write(f'assets/ic2/blockstates/{name}.json', {'multipart':parts})
             write(f'assets/ic2/models/item/{name}.json', {'parent':parent})
@@ -152,9 +157,13 @@ shapeless('dynamite',['ic2:itnt','minecraft:string'],'ic2:dynamite',8)
 shaped('dynamite_sticky',['DDD','DRD','DDD'],{'D':'ic2:dynamite','R':'ic2:resin'},'ic2:dynamite_sticky',8)
 shaped('remote',[' c ','GCG','TTT'],{'c':'ic2:insulated_copper_cable','G':'minecraft:glowstone_dust','C':'ic2:circuit','T':'minecraft:tnt'},'ic2:remote')
 shaped('remote_from_transmitter',[' C ','TLT',' F '],{'C':'ic2:insulated_copper_cable','T':'ic2:tin_casing','L':'minecraft:lapis_lazuli','F':'ic2:frequency_transmitter'},'ic2:remote')
+from generate_glass_pipe_models import generate as generate_glass_pipe_models
+generate_glass_pipe_models(RES)
+
 for material in ['bronze','steel']:
     for size, pattern, ingredient, count in [('tiny',['CCC','   ','CCC'],'casing',6),('small',['C C','C C','C C'],'casing',3),('medium',['CCC','   ','CCC'],'plate',2),('large',['C C','C C','C C'],'plate',1)]:
-        name=f'{material}_pipe_{size}';shaped(name,pattern,{'C':f'ic2:{material}_{ingredient}'},'ic2:'+name,count)
+        name=f'{material}_pipe_{size}';pattern=list(pattern);pattern[1]=pattern[1][:1]+'G'+pattern[1][2:]
+        shaped(name,pattern,{'C':f'ic2:{material}_{ingredient}','G':'#c:glass_panes/colorless'},'ic2:'+name,count)
 for tier, material, wire in [('lv','bronze','copper'),('mv','steel','gold')]:
     shapeless('pump_'+tier,[f'ic2:{material}_pipe_medium','minecraft:piston',f'ic2:insulated_{wire}_cable'],'ic2:pump_'+tier)
 write('data/minecraft/tags/point_of_interest_type/acquirable_job_site.json', {'replace':False,'values':['ic2:'+role for role in ['electric','nuclear','crop','demo','brewing','greg']]})

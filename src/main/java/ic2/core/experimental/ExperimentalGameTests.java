@@ -305,6 +305,62 @@ public final class ExperimentalGameTests {
   }
 
   @GameTest(template = EMPTY)
+  public static void pumpNeedsExtractionAndCoverFeedsNativeOreWasher(GameTestHelper h) {
+    var source = new BlockPos(0, 1, 1);
+    var middle = new BlockPos(1, 1, 1);
+    var output = new BlockPos(2, 1, 1);
+    h.setBlock(source, Ic2Blocks.PUMP);
+    h.setBlock(middle, ExperimentalPipes.BLOCKS.get("bronze_pipe_medium"));
+    h.setBlock(output, Ic2Blocks.ORE_WASHING_PLANT);
+    var pump = (ic2.core.block.machine.tileentity.TileEntityPump) h.getBlockEntity(source);
+    var washer = (ic2.core.block.machine.tileentity.TileEntityOreWashing) h.getBlockEntity(output);
+    var input = pump.getComponent(ic2.core.block.comp.Fluids.class).getFluidTank("fluid");
+    var result = washer.getComponent(ic2.core.block.comp.Fluids.class).getFluidTank("fluid");
+    input.fillMbUnchecked(Ic2FluidStack.create(Fluids.WATER, 2000), false);
+    ExperimentalFluidPipe pipe = h.getBlockEntity(middle);
+    for (int i = 0; i < 10; i++) pipe.tick();
+    h.assertTrue(
+        pipe.tank.isEmpty() && result.getFluidAmount() == 0,
+        "passive pipe does not extract on its own");
+    pipe.pumps[net.minecraft.core.Direction.WEST.ordinal()] = 1;
+    for (int i = 0; i < 80; i++) pipe.tick();
+    h.assertTrue(
+        input.getFluidAmount() == 0 && pipe.tank.isEmpty() && result.getFluidAmount() == 2000,
+        "LV cover feeds the native washer without loss or duplication");
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY)
+  public static void pipeVisualsFollowMeasuredFlowAndStopWithoutDrift(GameTestHelper h) {
+    var visual = new PipeFluidVisuals();
+    var east = net.minecraft.core.Direction.EAST;
+    var west = net.minecraft.core.Direction.WEST;
+    var flows = new int[6];
+    flows[east.ordinal()] = 100;
+    flows[west.ordinal()] = -100;
+    visual.receive(new FluidStack(Fluids.WATER, 400), flows, 100, 1000);
+    h.assertTrue(visual.amount(100) == 400, "initial contents appear immediately");
+    h.assertTrue(
+        visual.offset(east, 105).x < 0 && visual.offset(west, 105).x < 0,
+        "both sections scroll with eastbound flow");
+    var stopped = visual.offset(east, 105);
+    visual.receive(new FluidStack(Fluids.WATER, 800), new int[6], 105, 1000);
+    h.assertTrue(visual.amount(107.5) == 600, "tank level interpolates over five ticks");
+    h.assertTrue(
+        stopped.equals(visual.offset(east, 110)) && stopped.equals(visual.offset(east, 1000)),
+        "stationary fluid has no residual scrolling");
+    visual.receive(FluidStack.EMPTY, new int[6], 110, 1000);
+    h.assertTrue(
+        visual.amount(112.5) == 400 && visual.amount(115) == 0,
+        "draining interpolates down to empty");
+    visual.receive(new FluidStack(Fluids.LAVA, 500), new int[6], 115, 1000);
+    h.assertTrue(
+        visual.amount(115) == 0 && visual.fluid().getFluid() == Fluids.LAVA,
+        "replacement fluid never borrows the prior fluid level");
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY)
   public static void professionsHaveWorkstationsAndValidTradesAtEveryLevel(GameTestHelper h) {
     for (var entry : RestoredVillagers.ALL.entrySet()) {
       var profession = entry.getValue().get();

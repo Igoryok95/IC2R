@@ -17,6 +17,15 @@ public final class ExperimentalFluidPipe extends BlockEntity {
   public final FluidTank tank;
   public final byte[] pumps = new byte[6];
   public int disabled;
+  public final PipeFluidVisuals visuals = new PipeFluidVisuals();
+  private final int[] pendingFlow = new int[6];
+  private final int[] displayFlow = new int[6];
+  private boolean renderDirty;
+  private long lastRenderUpdate = -5;
+
+  private record Outlet(IFluidHandler handler, Direction side) {}
+
+  private record Neighbor(ExperimentalFluidPipe pipe, Direction side) {}
 
   public ExperimentalFluidPipe(BlockPos pos, BlockState state) {
     super(ExperimentalPipes.TYPE, pos, state);
@@ -25,12 +34,20 @@ public final class ExperimentalFluidPipe extends BlockEntity {
           @Override
           protected void onContentsChanged() {
             setChanged();
+            renderDirty = true;
           }
         };
   }
 
   public boolean enabled(Direction side) {
     return (disabled & (1 << side.ordinal())) == 0;
+  }
+
+  @Override
+  public void onLoad() {
+    super.onLoad();
+    if (level != null && level.isClientSide)
+      visuals.receive(tank.getFluid(), displayFlow, level.getGameTime(), tank.getCapacity());
   }
 
   public IFluidHandler handler(Direction side) {
@@ -59,28 +76,41 @@ public final class ExperimentalFluidPipe extends BlockEntity {
 
       @Override
       public int fill(FluidStack fluid, FluidAction action) {
-        return enabled(side) ? tank.fill(fluid, action) : 0;
+        int accepted = enabled(side) ? tank.fill(fluid, action) : 0;
+        if (action.execute()) recordFlow(side, -accepted);
+        return accepted;
       }
 
       @Override
       public FluidStack drain(int amount, FluidAction action) {
-        return enabled(side) && pumps[side.ordinal()] == 0
-            ? tank.drain(amount, action)
-            : FluidStack.EMPTY;
+        var result =
+            enabled(side) && pumps[side.ordinal()] == 0
+                ? tank.drain(amount, action)
+                : FluidStack.EMPTY;
+        if (action.execute()) recordFlow(side, result.getAmount());
+        return result;
       }
 
       @Override
       public FluidStack drain(FluidStack fluid, FluidAction action) {
-        return enabled(side) && pumps[side.ordinal()] == 0
-            ? tank.drain(fluid, action)
-            : FluidStack.EMPTY;
+        var result =
+            enabled(side) && pumps[side.ordinal()] == 0
+                ? tank.drain(fluid, action)
+                : FluidStack.EMPTY;
+        if (action.execute()) recordFlow(side, result.getAmount());
+        return result;
       }
     };
   }
 
   public void tick() {
-    var outputs = new ArrayList<IFluidHandler>();
-    var neighbors = new ArrayList<ExperimentalFluidPipe>();
+    moveFluid();
+    syncRender();
+  }
+
+  private void moveFluid() {
+    var outputs = new ArrayList<Outlet>();
+    var neighbors = new ArrayList<Neighbor>();
     long total = tank.getFluidAmount();
     for (var side : Direction.values()) {
       if (!enabled(side) || !level.hasChunkAt(worldPosition.relative(side))) continue;
@@ -89,7 +119,7 @@ public final class ExperimentalFluidPipe extends BlockEntity {
               Capabilities.FluidHandler.BLOCK, worldPosition.relative(side), side.getOpposite());
       if (handler == null) continue;
       if (pumps[side.ordinal()] != 0) {
-        transfer(handler, tank, pumps[side.ordinal()] == 1 ? 32 : 128);
+        recordFlow(side, -transfer(handler, tank, pumps[side.ordinal()] == 1 ? 32 : 128));
         continue;
       }
       if (tank.isEmpty()) continue;
@@ -100,27 +130,49 @@ public final class ExperimentalFluidPipe extends BlockEntity {
             && (pipe.tank.isEmpty()
                 || FluidStack.isSameFluidSameComponents(pipe.tank.getFluid(), tank.getFluid()))
             && pipe.tank.getFluidAmount() <= tank.getFluidAmount()) {
-          neighbors.add(pipe);
+          neighbors.add(new Neighbor(pipe, side));
           total += pipe.tank.getFluidAmount();
         }
       } else if (handler.fill(tank.getFluid(), IFluidHandler.FluidAction.SIMULATE) > 0)
-        outputs.add(handler);
+        outputs.add(new Outlet(handler, side));
     }
     if (tank.isEmpty()) return;
     total = tank.getFluidAmount();
-    for (var pipe : neighbors) total += pipe.tank.getFluidAmount();
+    for (var neighbor : neighbors) total += neighbor.pipe.tank.getFluidAmount();
     int share = (int) (total / (neighbors.size() + 1));
-    for (var pipe : neighbors)
-      transfer(tank, pipe.tank, Math.max(0, share - pipe.tank.getFluidAmount()));
+    for (var neighbor : neighbors) {
+      int sent =
+          transfer(
+              tank, neighbor.pipe.tank, Math.max(0, share - neighbor.pipe.tank.getFluidAmount()));
+      recordFlow(neighbor.side, sent);
+      neighbor.pipe.recordFlow(neighbor.side.getOpposite(), -sent);
+    }
     int budget =
         Math.min(
             tank.getFluidAmount(), ((ExperimentalPipeBlock) getBlockState().getBlock()).rate / 20);
     int left = outputs.size();
-    for (var handler : outputs) {
-      int sent = transfer(tank, handler, (budget + left - 1) / left);
+    for (var output : outputs) {
+      int sent = transfer(tank, output.handler, (budget + left - 1) / left);
+      recordFlow(output.side, sent);
       budget -= sent;
       left--;
     }
+  }
+
+  private void recordFlow(Direction side, int amount) {
+    pendingFlow[side.ordinal()] += amount;
+  }
+
+  private void syncRender() {
+    if (level == null || level.isClientSide || level.getGameTime() - lastRenderUpdate < 5) return;
+    boolean moving = java.util.Arrays.stream(pendingFlow).anyMatch(value -> value != 0);
+    boolean stopping = java.util.Arrays.stream(displayFlow).anyMatch(value -> value != 0);
+    if (!renderDirty && !moving && !stopping) return;
+    System.arraycopy(pendingFlow, 0, displayFlow, 0, 6);
+    java.util.Arrays.fill(pendingFlow, 0);
+    renderDirty = false;
+    lastRenderUpdate = level.getGameTime();
+    level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 2);
   }
 
   public static int transfer(IFluidHandler source, IFluidHandler target, int amount) {
@@ -147,7 +199,9 @@ public final class ExperimentalFluidPipe extends BlockEntity {
 
   @Override
   public CompoundTag getUpdateTag(HolderLookup.Provider registry) {
-    return saveWithoutMetadata(registry);
+    var tag = saveWithoutMetadata(registry);
+    tag.putIntArray("visualFlow", displayFlow);
+    return tag;
   }
 
   @Override
@@ -159,6 +213,9 @@ public final class ExperimentalFluidPipe extends BlockEntity {
   protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registry) {
     super.loadAdditional(nbt, registry);
     tank.readFromNBT(registry, nbt.getCompound("tank"));
+    if (level != null && level.isClientSide)
+      visuals.receive(
+          tank.getFluid(), nbt.getIntArray("visualFlow"), level.getGameTime(), tank.getCapacity());
     disabled = nbt.getInt("disabled") & 63;
     byte[] saved = nbt.getByteArray("pumps");
     for (int i = 0; i < Math.min(saved.length, 6); i++)

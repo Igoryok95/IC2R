@@ -17,7 +17,7 @@
       ],
       "to": [
         13.0,
-        13.0,
+        3.0,
         13.0
       ],
       "faces": {
@@ -35,10 +35,6 @@
         },
         "west": {
           "texture": "#west",
-          "tintindex": 0
-        },
-        "up": {
-          "texture": "#up",
           "tintindex": 0
         },
         "down": {

@@ -74,6 +74,8 @@ public final class ExperimentalPipeBlock extends Block implements EntityBlock {
                   && world.getCapability(
                           Capabilities.FluidHandler.BLOCK, neighbor, direction.getOpposite())
                       != null;
+      if (level.getBlockEntity(neighbor) instanceof ExperimentalFluidPipe other)
+        connected &= other.enabled(direction.getOpposite());
       state = state.setValue(CONNECTIONS[direction.ordinal()], connected);
     }
     return state;
