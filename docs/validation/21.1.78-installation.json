@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "ic2r": "21.1.78",
+  "addons": "1.4.5 unchanged",
+  "targets": [
+    "Local Minecraft client mods directory",
+    "Z:/1_Exchange/Minecraft-1.21.1-NeoForge-client-2026-10-22.zip",
+    "Configured Minecraft server instance mods directory"
+  ],
+  "result": "IC2R 21.1.78 installed; older IC2R JARs removed; Addons left unchanged",
+  "server": "Stopped before replacement and left stopped",
+  "backups_created": false,
+  "hash_comparisons": false,
+  "tests_repeated": false,
+  "configuration_changes": false
+}
