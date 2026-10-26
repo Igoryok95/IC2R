@@ -127,6 +127,8 @@ configurations {
 }
 
 dependencies {
+    compileOnly 'maven.modrinth:jade:15.10.6+neoforge'
+    if (providers.gradleProperty('withJade').isPresent()) runtimeOnly 'maven.modrinth:jade:15.10.6+neoforge'
     if (providers.gradleProperty('mekanismModsDir').isPresent()) {
         runtimeOnly fileTree(dir: providers.gradleProperty('mekanismModsDir').get(), includes: ['Mekanism-1.21.1-*.jar', 'almostunified-*.jar'])
     }
@@ -136,7 +138,7 @@ dependencies {
     }
 
     compileOnly "mezz.jei:jei-1.21.1-neoforge-api:${jei_version}"
-    runtimeOnly "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+    if (!providers.gradleProperty('withoutJEI').isPresent()) runtimeOnly "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
 
     compileOnly "org.appliedenergistics:appliedenergistics2:${ae2_version}:api"
 

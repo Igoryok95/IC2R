@@ -1,3 +1,22 @@
+# 21.1.74
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Add optional Jade EU gauges, tiers, measured network input/output, storage output,
+  machine progress/heat and reactor heat/output, with English and Russian labels.
+- Resolve JEI inputs and all 36 player inventory slots from the actual dynamic menu.
+  Prevent the per-frame IndexOutOfBoundsException caused by addon menu layouts.
+- Keep outputs, upgrades, batteries, blades and fluid service slots out of recipe
+  ingredients. Match solid-canner container/material ordering and slot-grid bounds.
+- Add native furnace transfer without JEI's decorative fuel requirement and dynamic
+  transfer for all three Metal Former modes. Resolve addon recipe-button categories.
+- Display Induction Furnace heat with two decimal places, matching Addons 1.4.4.
+- Keep JEI, Jade and IC2R Addons optional; preserve machine balance and recipes.
+
+See [integration details and validation](docs/jei-jade-21.1.74.md).
+
+---
+
 # 21.1.73
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

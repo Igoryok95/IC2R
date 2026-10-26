@@ -1408,5 +1408,17 @@
   "container.ic2.item_buffer_2": "Компактный предметный буфер",
   "block.ic2.steel_hopper": "Стальная воронка",
   "ic2.tooltip.steel_hopper.rate": "Перенос: %s предметов/с",
-  "ic2.tooltip.steel_hopper.redstone": "Блокируется сигналом редстоуна"
+  "ic2.tooltip.steel_hopper.redstone": "Блокируется сигналом редстоуна",
+  "ic2.gui.warmup.percent": "%s%%",
+  "jade.ic2.energy": "Энергия: %s / %s EU",
+  "jade.ic2.tier": "Энергоуровень: %s",
+  "jade.ic2.flow": "Получено: %s EU/т | Передано: %s EU/т",
+  "jade.ic2.rated_output": "Номинальный выход: %s EU/т",
+  "jade.ic2.heat": "Нагрев: %s%%",
+  "jade.ic2.progress": "Прогресс: %s%%",
+  "jade.ic2.reactor_heat": "Нагрев реактора: %s / %s",
+  "jade.ic2.status": "Состояние: %s",
+  "jade.ic2.running": "Работает",
+  "jade.ic2.idle": "Ожидание",
+  "config.jade.plugin_ic2.machine_status": "Состояние машин IC2R"
 }

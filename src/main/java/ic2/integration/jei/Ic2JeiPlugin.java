@@ -11,6 +11,7 @@ import ic2.core.block.machine.tileentity.TileEntityCanner;
 import ic2.core.fluid.Ic2FluidStack;
 import ic2.core.gui.RecipeButton;
 import ic2.core.gui.dynamic.DynamicContainer;
+import ic2.core.gui.dynamic.MachineTransferSlots;
 import ic2.core.item.armor.jetpack.JetpackAttachmentRecipe;
 import ic2.core.recipe.AdvRecipe;
 import ic2.core.recipe.v2.RecipeHolder;
@@ -29,6 +30,7 @@ import ic2.integration.jei.recipe.machine.CannerEmptyLiquidRecipeWrapper;
 import ic2.integration.jei.recipe.machine.CannerEnrichCategory;
 import ic2.integration.jei.recipe.machine.CannerEnrichRecipeWrapper;
 import ic2.integration.jei.recipe.machine.DynamicCategory;
+import ic2.integration.jei.recipe.machine.IJeiRecipeWrapper;
 import ic2.integration.jei.recipe.machine.IORecipeWrapper;
 import ic2.integration.jei.recipe.machine.MetalFormerCategory;
 import java.util.ArrayList;
@@ -242,6 +244,16 @@ public class Ic2JeiPlugin implements IModPlugin {
   public void onRuntimeAvailable(@NotNull IJeiRuntime jeiRuntime) {
     IRecipesGui recipesGui = jeiRuntime.getRecipesGui();
     Map<String, RecipeType<?>> aliases = this.createRecipeButtonAliases();
+    jeiRuntime
+        .getRecipeManager()
+        .createRecipeCategoryLookup()
+        .get()
+        .forEach(
+            category -> {
+              RecipeType<?> type = category.getRecipeType();
+              aliases.putIfAbsent(type.getUid().toString(), type);
+              aliases.putIfAbsent(type.getUid().getPath(), type);
+            });
 
     RecipeButton.jeiRecipeListOpener =
         categories ->
@@ -335,6 +347,7 @@ public class Ic2JeiPlugin implements IModPlugin {
     if (key == null || key.isEmpty()) {
       return null;
     }
+    key = key.trim();
 
     RecipeType<?> direct = aliases.get(key);
     if (direct != null) {
@@ -362,6 +375,72 @@ public class Ic2JeiPlugin implements IModPlugin {
   }
 
   public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+    registration.addRecipeTransferHandler(
+        new IOTransferInfo<>(
+            DynamicContainer.class,
+            Ic2ScreenHandlers.DYNAMIC_BE,
+            this.CANNER_BOTTLE,
+            List.of(),
+            List.of(),
+            0,
+            0));
+    var smelting =
+        new IOTransferInfo<>(
+            DynamicContainer.class,
+            Ic2ScreenHandlers.DYNAMIC_BE,
+            RecipeTypes.SMELTING,
+            List.of(),
+            List.of(),
+            0,
+            0);
+    var transferHelper = registration.getTransferHelper();
+    var basicSmelting = transferHelper.createUnregisteredRecipeTransferHandler(smelting);
+    registration.addRecipeTransferHandler(
+        new IRecipeTransferHandler<
+            AbstractContainerMenu,
+            net.minecraft.world.item.crafting.RecipeHolder<
+                net.minecraft.world.item.crafting.SmeltingRecipe>>() {
+          @Override
+          public Class<? extends AbstractContainerMenu> getContainerClass() {
+            return basicSmelting.getContainerClass();
+          }
+
+          @Override
+          public Optional<MenuType<AbstractContainerMenu>> getMenuType() {
+            return basicSmelting.getMenuType();
+          }
+
+          @Override
+          public RecipeType<
+                  net.minecraft.world.item.crafting.RecipeHolder<
+                      net.minecraft.world.item.crafting.SmeltingRecipe>>
+              getRecipeType() {
+            return RecipeTypes.SMELTING;
+          }
+
+          @Override
+          public IRecipeTransferError transferRecipe(
+              AbstractContainerMenu menu,
+              net.minecraft.world.item.crafting.RecipeHolder<
+                      net.minecraft.world.item.crafting.SmeltingRecipe>
+                  recipe,
+              IRecipeSlotsView slots,
+              Player player,
+              boolean maxTransfer,
+              boolean doTransfer) {
+            // Vanilla JEI lists fuel as another INPUT. Native electric machines need only the ore.
+            var inputs = slots.getSlotViews(mezz.jei.api.recipe.RecipeIngredientRole.INPUT);
+            if (inputs.isEmpty()) return transferHelper.createInternalError();
+            return basicSmelting.transferRecipe(
+                menu,
+                recipe,
+                transferHelper.createRecipeSlotsView(List.of(inputs.getFirst())),
+                player,
+                maxTransfer,
+                doTransfer);
+          }
+        },
+        RecipeTypes.SMELTING);
     // Industrial workbench: 3x3 grid + 2x9 buffer + forge-hammer / wire-cutter dedicated rows.
     registration.addRecipeTransferHandler(new IndustrialWorkbenchTransferInfo());
     // Batch crafter: recipe slots are inputs only (JEI maps by index to recipe INPUT views).
@@ -461,17 +540,28 @@ public class Ic2JeiPlugin implements IModPlugin {
             11,
             36));
 
+    for (var type :
+        List.of(this.METAL_FORMER_EXTRUDING, this.METAL_FORMER_ROLLING, this.METAL_FORMER_CUTTING))
+      registration.addRecipeTransferHandler(
+          new IOTransferInfo<>(
+              DynamicContainer.class,
+              Ic2ScreenHandlers.DYNAMIC_BE,
+              type,
+              List.of(),
+              List.of(),
+              0,
+              0));
+
     registration.addRecipeTransferHandler(
         new IOTransferInfo<>(
             ContainerCanner.class,
             Ic2ScreenHandlers.CANNER,
             this.CANNER_BOTTLE,
-            List.of(37, 43),
+            List.of(43, 37),
             List.of(38),
             0,
             36));
 
-    IRecipeTransferHandlerHelper transferHelper = registration.getTransferHelper();
     registration.addRecipeTransferHandler(
         new EnrichLiquidTransferHandler(this.CANNER_ENRICH, transferHelper), this.CANNER_ENRICH);
     registration.addRecipeTransferHandler(
@@ -784,17 +874,34 @@ public class Ic2JeiPlugin implements IModPlugin {
 
     @Override
     public boolean canHandle(@NotNull AbstractContainerMenu container, @NotNull R recipe) {
-      return true;
+      if (container instanceof DynamicContainer<?>
+          && recipe instanceof IJeiRecipeWrapper wrapper
+          && wrapper.getInputs().size() > MachineTransferSlots.inputs(container).size())
+        return false;
+      if (this.recipeType.equals(RecipeTypes.SMELTING)
+          && container instanceof ic2.core.ContainerBase<?> menu
+          && !(menu.base instanceof ic2.core.block.machine.tileentity.TileEntityIronFurnace
+              || menu.base instanceof ic2.core.block.machine.tileentity.TileEntityElectricFurnace
+              || menu.base instanceof ic2.core.block.machine.tileentity.TileEntityInduction))
+        return false;
+      return !(container instanceof DynamicContainer<?>)
+          || !MachineTransferSlots.inputs(container).isEmpty();
     }
 
     @Override
     public @NotNull List<Slot> getRecipeSlots(
         @NotNull AbstractContainerMenu container, @NotNull R recipe) {
-      List<Slot> slots = new ArrayList<>(this.inputSlots.size() + this.outputSlots.size());
-      for (int idx : this.inputSlots) {
-        slots.add(container.getSlot(idx));
+      if (container instanceof DynamicContainer<?>) {
+        var inputs = MachineTransferSlots.inputs(container);
+        if (this.recipeType.equals(RecipeTypes.SMELTING) && inputs.size() > 1)
+          return List.of(
+              inputs.stream()
+                  .min(java.util.Comparator.comparingInt(slot -> slot.getItem().getCount()))
+                  .orElseThrow());
+        return inputs;
       }
-      for (int idx : this.outputSlots) {
+      List<Slot> slots = new ArrayList<>(this.inputSlots.size());
+      for (int idx : this.inputSlots) {
         slots.add(container.getSlot(idx));
       }
       return slots;
@@ -803,6 +910,8 @@ public class Ic2JeiPlugin implements IModPlugin {
     @Override
     public @NotNull List<Slot> getInventorySlots(
         @NotNull AbstractContainerMenu container, @NotNull R recipe) {
+      if (container instanceof DynamicContainer<?>)
+        return MachineTransferSlots.inventory(container);
       List<Slot> slots = new ArrayList<>(this.inventoryCount);
       for (int i = this.inventoryStart; i < this.inventoryStart + this.inventoryCount; i++) {
         slots.add(container.getSlot(i));

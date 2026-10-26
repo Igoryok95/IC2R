@@ -5,8 +5,28 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.73-blue" alt="Version 21.1.73">
+<img src="https://img.shields.io/badge/Version-21.1.74-blue" alt="Version 21.1.74">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.74 — JEI and Jade
+
+Optional **Jade** support displays server-owned EU buffers, energy tiers, measured
+network flow, storage output, processing progress, machine heat and reactor readings.
+Colored gauges use readable labels and exact grouped energy values. Native fluids
+and inventories continue to use Jade's own capability displays.
+
+**JEI** resolves actual recipe inputs and player inventory slots instead of assuming
+that every dynamic menu has the same layout. This fixes the repeated transfer errors
+and stutter in Addons machines. Service capsules, batteries, upgrades and outputs
+are excluded from recipe inputs. All three Metal Former modes, both solid-canning
+machines and native furnace ingredient transfer are covered; electric furnaces do
+not require the decorative fuel shown in JEI's vanilla recipe layout.
+
+The Induction Furnace and Addons Advanced Machines display warm-up percentages to
+two decimal places. Install **IC2R Addons 1.4.4** alongside this core for the complete
+addon JEI/Jade update. JEI, Jade and Addons remain optional.
+
+See [integration details and validation](docs/jei-jade-21.1.74.md).
 
 ## Version 21.1.73 — Energy storage and charging fixes
 

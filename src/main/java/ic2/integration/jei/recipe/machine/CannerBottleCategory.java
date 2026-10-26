@@ -38,6 +38,8 @@ public class CannerBottleCategory extends IORecipeCategory<CannerBottleRecipeWra
         this.elements,
         this.inputSlots,
         this.outputSlots);
+    // The recipe wrapper orders empty container first and filling material second.
+    if (this.inputSlots.size() == 2) java.util.Collections.swap(this.inputSlots, 0, 1);
 
     int minX = 1000, minY = 1000, maxX = -1000, maxY = -1000;
     for (Tuple.T2<IDrawable, SlotPosition> element : this.elements) {

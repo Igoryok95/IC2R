@@ -1,6 +1,7 @@
 package ic2.integration.jei.recipe.machine;
 
 import ic2.core.block.invslot.InvSlot;
+import ic2.core.block.invslot.InvSlotProcessable;
 import ic2.core.block.machine.tileentity.TileEntityStandardMachine;
 import ic2.core.block.tileentity.Ic2TileEntity;
 import ic2.core.block.tileentity.Ic2TileEntityBlock;
@@ -13,7 +14,6 @@ import ic2.core.util.Tuple;
 import ic2.integration.jeirei.SlotPosition;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
@@ -166,15 +166,13 @@ public class DynamicCategory extends IORecipeCategory<IORecipeWrapper> {
             elements.add(new Tuple.T2<>(drawable, pos));
             int extraX = (node.style.width() - 16) / 2;
             int extraY = (node.style.height() - 16) / 2;
-            String slotName = node.name.toLowerCase(Locale.ENGLISH);
-            if (!slotName.contains("input") && !slotName.equals("cutter_input_slot")) {
-              if (slotName.contains("output")) {
-                outputSlots.add(new SlotPosition(pos, extraX, extraY));
-              }
-              break;
-            }
-
-            inputSlots.add(new SlotPosition(pos, extraX, extraY));
+            var inventorySlot =
+                ((TileEntityInventory) block.getDummyTe()).getInventorySlot(node.name);
+            if (inventorySlot instanceof InvSlotProcessable<?, ?, ?>
+                || node.name.equals("canInput"))
+              inputSlots.add(new SlotPosition(pos, extraX, extraY));
+            else if (node.name.equals("output"))
+              outputSlots.add(new SlotPosition(pos, extraX, extraY));
             break;
           }
         case slotgrid:
@@ -202,14 +200,15 @@ public class DynamicCategory extends IORecipeCategory<IORecipeWrapper> {
                       node.style.v(),
                       node.style.width(),
                       node.style.height());
-              boolean isInput = node.name.toLowerCase().contains("input");
-              boolean isOutput = node.name.toLowerCase().contains("output");
+              boolean isInput =
+                  slot instanceof InvSlotProcessable<?, ?, ?> || node.name.equals("canInput");
+              boolean isOutput = node.name.equals("output");
               int extraX = (node.style.width() - 16) / 2;
               int extraY = (node.style.height() - 16) / 2;
 
               for (int i = 0; i < dim.cols(); i++) {
                 for (int j = 0; j < dim.rows(); j++) {
-                  if (i * dim.rows() + j > size) {
+                  if (i * dim.rows() + j >= size) {
                     continue label99;
                   }
 

@@ -13,6 +13,13 @@ description='''
 ${mod_description}
 '''
 
+[[dependencies.ic2]]
+modId="jade"
+type="optional"
+versionRange="[15.10.6,16)"
+ordering="AFTER"
+side="BOTH"
+
 [[mixin]]
 config="ic2.mixins.json"
 [[mixins]]

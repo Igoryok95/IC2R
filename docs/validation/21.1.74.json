@@ -1,0 +1,89 @@
+{
+  "version": "21.1.74",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.234+",
+  "java": 21,
+  "artifact": {
+    "file": "ic2-neoforge-21.1.74.jar",
+    "bytes": 8364143
+  },
+  "junit": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0
+  },
+  "game_tests": {
+    "passed": 491,
+    "standalone": true,
+    "without_jei_or_jade": true
+  },
+  "real_client": {
+    "ic2r": "21.1.74",
+    "addons": "1.4.4",
+    "neoforge": "21.1.264",
+    "jei": "19.64.0.455",
+    "jade": "15.10.6",
+    "isolated_world": "RestorationSmoke",
+    "menu_category_combinations": 25,
+    "recipe_layout_transfer_simulations": 962,
+    "actual_transfer_per_combination": true,
+    "passes": [
+      {
+        "log": "C:/GIT/IC2R-Addons/build/integrations-1.4.4-client.log",
+        "menus": 24,
+        "recipes": 956
+      },
+      {
+        "log": "C:/GIT/IC2R-Addons/build/integrations-1.4.4-extra-client.log",
+        "start_index": 24,
+        "additional_menus": 1,
+        "recipes": 6
+      }
+    ],
+    "all_eight_advanced_machines": true,
+    "molecular_transformer": true,
+    "kit_assembler": true,
+    "original_repeated_jei_exception_absent": true,
+    "max_warmup_text_fits": true,
+    "no_optional_mods": {
+      "log": "C:/GIT/IC2R-Addons/build/integrations-1.4.4-absent-client.log",
+      "marker": "INTEGRATION_ABSENT_SMOKE_PASS",
+      "core_and_addon_guis": 2
+    },
+    "jade_visual_check": {
+      "views": 7,
+      "log": "C:/GIT/IC2R-Addons/build/integrations-1.4.4-jade-client.log",
+      "start_index": 25,
+      "marker": "INTEGRATION_SMOKE_PASS",
+      "scope": "BatBox, MFSU, Induction Furnace, Advanced and Quantum solar panels, Rotary Macerator, idle Molecular Transformer"
+    },
+    "recycler_count_check": {
+      "log": "C:/GIT/IC2R-Addons/build/integrations-1.4.4-recycler-count.log",
+      "start_index": 18,
+      "end_index": 19,
+      "scrap_items_in_real_input": 9,
+      "marker": "INTEGRATION_SMOKE_RANGE_PASS"
+    }
+  },
+  "localization": {
+    "en_us_keys": 1422,
+    "ru_ru_keys": 1422,
+    "missing_ru_keys": 0,
+    "replacement_characters": 0
+  },
+  "scope": {
+    "recipes_changed": false,
+    "capacities_changed": false,
+    "processing_speed_changed": false,
+    "energy_balance_changed": false,
+    "jei_optional": true,
+    "jade_optional": true,
+    "addon_optional_for_core": true
+  },
+  "deployment": {
+    "client_updated": false,
+    "zip_updated": false,
+    "production_server_updated": false,
+    "status": "not requested for this integration update"
+  }
+}

@@ -169,7 +169,10 @@ public class TileEntityInduction extends TileEntityElectricMachine
   }
 
   public String getHeat() {
-    return this.heat * 100 / 10000 + "%";
+    return net.minecraft.network.chat.Component.translatable(
+            "ic2.gui.warmup.percent",
+            ic2.integration.jade.MachineStatusData.percent(this.heat / 100.0))
+        .getString();
   }
 
   public int gaugeProgressScaled(int i) {

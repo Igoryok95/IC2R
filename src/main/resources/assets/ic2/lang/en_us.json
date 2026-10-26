@@ -1408,5 +1408,17 @@
   "container.ic2.item_buffer_2": "Compact Item Buffer",
   "block.ic2.steel_hopper": "Steel Hopper",
   "ic2.tooltip.steel_hopper.rate": "Transfer: %s items/s",
-  "ic2.tooltip.steel_hopper.redstone": "Disabled by a redstone signal"
+  "ic2.tooltip.steel_hopper.redstone": "Disabled by a redstone signal",
+  "ic2.gui.warmup.percent": "%s%%",
+  "jade.ic2.energy": "Energy: %s / %s EU",
+  "jade.ic2.tier": "Energy tier: %s",
+  "jade.ic2.flow": "Received: %s EU/t | Sent: %s EU/t",
+  "jade.ic2.rated_output": "Rated output: %s EU/t",
+  "jade.ic2.heat": "Heat: %s%%",
+  "jade.ic2.progress": "Progress: %s%%",
+  "jade.ic2.reactor_heat": "Reactor heat: %s / %s",
+  "jade.ic2.status": "Status: %s",
+  "jade.ic2.running": "Running",
+  "jade.ic2.idle": "Idle",
+  "config.jade.plugin_ic2.machine_status": "IC2R machine status"
 }
