@@ -30,6 +30,9 @@ public class SoundClient extends Sound {
   private Item sourceItem;
   private boolean isStarted = false;
   private int playGraceTicks = 0;
+  private long playbackGeneration;
+  private boolean playbackPending;
+  private Runnable finishListener;
 
   protected SoundClient() {}
 
@@ -74,8 +77,12 @@ public class SoundClient extends Sound {
     loopRequested = true;
     super.play();
     this.isStarted = true;
+    long generation = ++this.playbackGeneration;
+    this.playbackPending = true;
     DeferredSoundOps.run(
         () -> {
+          if (generation != this.playbackGeneration || !this.isStarted) return;
+          this.playbackPending = false;
           if (this.repeatInstance != null) {
             if (this.shouldKeepCurrentInstance(this.repeatInstance)) {
               return;
@@ -115,7 +122,9 @@ public class SoundClient extends Sound {
    * (streamed sounds may report inactive while buffering). Never leave untracked orphans.
    */
   private boolean shouldKeepCurrentInstance(SoundInstance instance) {
-    if (instance == null) {
+    if (instance == null
+        || this.isInstanceCancelled(instance)
+        || !this.startedSoundList.contains(instance)) {
       return false;
     }
 
@@ -131,10 +140,15 @@ public class SoundClient extends Sound {
     loopRequested = false;
     super.playOnce();
     this.isStarted = true;
+    long generation = ++this.playbackGeneration;
+    this.playbackPending = true;
     DeferredSoundOps.run(
         () -> {
+          if (generation != this.playbackGeneration || !this.isStarted) return;
+          this.playbackPending = false;
+          this.stopAllStarted();
+          this.playGraceTicks = 0;
           if (this.onceInstance != null) {
-            this.stopInstance(this.onceInstance);
             this.onceInstance =
                 new PositionedSoundInstance(
                     this.soundEvent, this.soundCategory, this.volume, this.pitch, this.pos);
@@ -143,6 +157,9 @@ public class SoundClient extends Sound {
           }
 
           if (this.entityTrackingInstance != null) {
+            this.entityTrackingInstance =
+                new EntityTrackingSoundInstance(
+                    this.soundEvent, this.soundCategory, this.volume, this.pitch, this.entity);
             this.entityTrackingInstance.playOnce();
             this.startedSoundList.add(this.entityTrackingInstance);
           }
@@ -151,16 +168,24 @@ public class SoundClient extends Sound {
 
   @Override
   public void stop() {
+    this.finishListener = null;
+    if (!this.isStarted && !this.playbackPending && this.startedSoundList.isEmpty()) return;
     loopRequested = false;
     super.stop();
     this.isStarted = false;
     this.playGraceTicks = 0;
+    this.playbackGeneration++;
+    this.playbackPending = false;
+    // A decoded buffer may finish loading after SoundEngine.stop(). Tickable cancellation
+    // keeps that late source stopped until vanilla releases its channel.
+    for (SoundInstance instance : this.startedSoundList) this.cancelInstance(instance);
     DeferredSoundOps.run(this::stopAllStarted);
   }
 
   private void stopAllStarted() {
     for (SoundInstance instance : this.startedSoundList) {
       if (instance != null) {
+        this.cancelInstance(instance);
         this.vanillaManager.stop(instance);
       }
     }
@@ -172,17 +197,31 @@ public class SoundClient extends Sound {
 
   private void stopInstance(SoundInstance instance) {
     if (instance != null) {
+      this.cancelInstance(instance);
       this.vanillaManager.stop(instance);
       this.startedSoundList.remove(instance);
     }
   }
 
+  private void cancelInstance(SoundInstance instance) {
+    if (instance instanceof PositionedSoundInstance positioned) positioned.cancel();
+    else if (instance instanceof EntityTrackingSoundInstance tracking) tracking.cancel();
+  }
+
   private boolean isPlayingSound(SoundInstance instance) {
-    return instance != null && this.vanillaManager.isActive(instance);
+    return instance != null
+        && !this.isInstanceCancelled(instance)
+        && this.vanillaManager.isActive(instance);
+  }
+
+  private boolean isInstanceCancelled(SoundInstance instance) {
+    return instance instanceof net.minecraft.client.resources.sounds.TickableSoundInstance tickable
+        && tickable.isStopped();
   }
 
   @Override
   public boolean isPlaying() {
+    if (!this.isStarted) return false;
     if (this.isPlayingSound(this.onceInstance)
         || this.isPlayingSound(this.repeatInstance)
         || this.isPlayingSound(this.entityTrackingInstance)) {
@@ -190,19 +229,7 @@ public class SoundClient extends Sound {
     }
 
     // Treat grace-window instances as playing so callers do not spam play() and spawn orphans.
-    return this.isStarted && this.playGraceTicks > 0 && !this.startedSoundList.isEmpty();
-  }
-
-  private void addOnFinishListener(ListenableSoundInstance instance, Runnable then) {
-    if (instance != null) {
-      instance.addOnFinishListener(then);
-    }
-  }
-
-  private void onFinishSound(ListenableSoundInstance instance, Runnable then) {
-    if (instance != null) {
-      instance.onFinish(then);
-    }
+    return this.playbackPending || this.playGraceTicks > 0 && !this.startedSoundList.isEmpty();
   }
 
   private void checkSoundFinished(SoundInstance instance) {
@@ -220,8 +247,9 @@ public class SoundClient extends Sound {
     }
 
     boolean looping =
-        instance instanceof RepeatablePositionedSoundInstance
-            || instance instanceof EntityTrackingSoundInstance;
+        this.loopRequested
+            && (instance instanceof RepeatablePositionedSoundInstance
+                || instance instanceof EntityTrackingSoundInstance);
     if (looping && this.isStarted) {
       // Engine dropped the loop while we still want it — clear tracking so play() can restart.
       // Do not run finish listeners (those are for intentional start→loop transitions).
@@ -229,22 +257,28 @@ public class SoundClient extends Sound {
       return;
     }
 
-    listenableSoundInstance.finish();
     this.startedSoundList.remove(instance);
+    listenableSoundInstance.finish();
+    Runnable callback = this.finishListener;
+    this.finishListener = null;
+    if (callback != null) callback.run();
   }
 
   @Override
   public void addOnFinishListener(Runnable then) {
-    this.addOnFinishListener(this.onceInstance, then);
-    this.addOnFinishListener(this.repeatInstance, then);
-    this.addOnFinishListener(this.entityTrackingInstance, then);
+    Runnable previous = this.finishListener;
+    this.finishListener =
+        previous == null
+            ? then
+            : () -> {
+              previous.run();
+              then.run();
+            };
   }
 
   @Override
   public void onFinish(Runnable then) {
-    this.onFinishSound(this.onceInstance, then);
-    this.onFinishSound(this.repeatInstance, then);
-    this.onFinishSound(this.entityTrackingInstance, then);
+    this.finishListener = then;
   }
 
   public void resumeAfterMute() {
@@ -271,7 +305,7 @@ public class SoundClient extends Sound {
           && !this.isPlayingSound(this.repeatInstance)
           && !this.isPlayingSound(this.entityTrackingInstance)
           && this.playGraceTicks <= 0) {
-        this.isStarted = false;
+        if (!this.playbackPending) this.isStarted = false;
       }
     }
   }

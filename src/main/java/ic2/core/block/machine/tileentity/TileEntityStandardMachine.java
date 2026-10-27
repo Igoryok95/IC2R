@@ -129,14 +129,16 @@ public abstract class TileEntityStandardMachine<RI, RO, I> extends TileEntityEle
   protected void updateEntityServer() {
     super.updateEntityServer();
     boolean needsInvUpdate = false;
-    MachineRecipeResult<RI, RO, I> result;
-    if (this.recipeResult == null) {
-      this.recipeResult = this.getRecipeResult();
-    } else if ((result = this.processInput()) == null
-        || !isSameRecipeInput(result.recipe().getInput(), this.recipeResult.recipe().getInput())) {
-      this.recipeResult = this.getRecipeResult();
+    // Revalidate the whole operation, including output space and fluid containers/tanks.
+    // An unchanged input alone does not mean a previously cached recipe can still run.
+    MachineRecipeResult<RI, RO, I> result = this.getRecipeResult();
+    if (this.recipeResult != null
+        && (result == null
+            || !isSameRecipeInput(
+                result.recipe().getInput(), this.recipeResult.recipe().getInput()))) {
       this.progress = 0;
     }
+    this.recipeResult = result;
 
     if (this.canOperate()) {
       if (!this.getActive()) {

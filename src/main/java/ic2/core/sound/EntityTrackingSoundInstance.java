@@ -42,7 +42,16 @@ public class EntityTrackingSoundInstance extends EntityBoundSoundInstance
   }
 
   public void playOnce() {
-    DeferredSoundOps.run(() -> this.entity.playSound(this.soundEvent, this.volume, this.pitch));
+    this.looping = false;
+    DeferredSoundOps.run(
+        () -> {
+          if (!this.isStopped()) this.vanillaManager.play(this);
+        });
+  }
+
+  public void cancel() {
+    this.stop();
+    this.clearOnFinishListener();
   }
 
   @Override
@@ -52,11 +61,12 @@ public class EntityTrackingSoundInstance extends EntityBoundSoundInstance
 
   @Override
   public void addOnFinishListener(Runnable then) {
+    Runnable previous = this.onFinish;
     this.onFinish =
-        this.onFinish == null
+        previous == null
             ? then
             : () -> {
-              this.onFinish.run();
+              previous.run();
               then.run();
             };
   }
@@ -73,8 +83,8 @@ public class EntityTrackingSoundInstance extends EntityBoundSoundInstance
 
   @Override
   public void finish() {
-    if (this.onFinish != null) {
-      this.onFinish.run();
-    }
+    Runnable callback = this.onFinish;
+    this.onFinish = null;
+    if (!this.isStopped() && callback != null) callback.run();
   }
 }

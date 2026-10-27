@@ -1,0 +1,20 @@
+{
+  "version": "21.1.80",
+  "unit_tests": 29,
+  "unit_failures": 0,
+  "combined_required_server_tests": 580,
+  "combined_required_server_failures": 0,
+  "combined_addons_version": "1.4.6",
+  "client_neoforge": "21.1.264",
+  "client_marker": "IC2R_MACHINE_SOUND_CLIENT_PASS",
+  "paired_client_machines": 14,
+  "standalone_client_machines": 6,
+  "client_checks": [
+    "Cancel queued playback before flush and while audio buffers load",
+    "Completion listeners run once without recursion; cancellation clears callbacks",
+    "Remove the canner container immediately after startup",
+    "Processing, blocked outputs and warmup-only standby",
+    "Power loss and restoration with partial furnace progress",
+    "Remove machines and inspect actual SoundEngine registrations for orphan loops"
+  ]
+}

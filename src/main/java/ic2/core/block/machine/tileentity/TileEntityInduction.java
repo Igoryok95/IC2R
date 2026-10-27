@@ -160,6 +160,9 @@ public class TileEntityInduction extends TileEntityElectricMachine
     if (newActive && canOperate) {
       this.progress = (short) (this.progress + this.heat / 30);
       this.energy.useEnergy(15.0);
+      // A power outage preserves partial progress but shuts down the sound/active state.
+      // Resuming that partial operation must reactivate it as well.
+      this.activate(false);
     }
 
     needsInvUpdate |= this.upgradeSlot.tickNoMark();

@@ -75,6 +75,11 @@ neoForge {
         client {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            if (providers.gradleProperty('machineSoundSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
+                systemProperty 'ic2.machineSoundSmoke', 'true'
+                programArguments.addAll '--quickPlaySingleplayer', 'SteelHopperSmoke'
+            }
             if (providers.gradleProperty('xpSmoke').isPresent()) {
                 gameDirectory = layout.projectDirectory.dir('run/xp-client')
                 systemProperty 'ic2.furnaceXpSmoke', 'true'
@@ -144,6 +149,7 @@ configurations {
 }
 
 dependencies {
+    if (providers.gradleProperty('addonsJar').isPresent()) runtimeOnly files(providers.gradleProperty('addonsJar').get())
     compileOnly 'maven.modrinth:jade:15.10.6+neoforge'
     if (providers.gradleProperty('withJade').isPresent()) runtimeOnly 'maven.modrinth:jade:15.10.6+neoforge'
     if (providers.gradleProperty('mekanismModsDir').isPresent()) {

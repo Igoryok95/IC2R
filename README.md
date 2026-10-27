@@ -5,8 +5,17 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.79-blue" alt="Version 21.1.79">
+<img src="https://img.shields.io/badge/Version-21.1.80-blue" alt="Version 21.1.80">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.80 — Interrupted machine sounds
+
+Removing a canner's container during filling now cancels both pending and already
+started operating sounds. The shared machine sound lifecycle also cancels late
+buffered playback and stale start-to-loop callbacks. Block removal stops owned
+sources. Standard machines recheck output space and fluid containers while working,
+and the Induction Furnace restores its active sound after a power interruption.
+See [the fixes and validation](docs/machine-sounds-21.1.80.md).
 
 ## Version 21.1.79 — Fluid-pipe frame and item fixes
 

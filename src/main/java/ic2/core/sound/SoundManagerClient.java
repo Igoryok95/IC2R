@@ -151,6 +151,7 @@ public class SoundManagerClient extends SoundManager {
   @Override
   public void stopAll() {
     super.stopAll();
+    this.objectToSoundMap.values().forEach(list -> list.forEach(SoundClient::stop));
     DeferredSoundOps.run(() -> SideProxyClient.mc.getSoundManager().stop());
   }
 
@@ -191,8 +192,17 @@ public class SoundManagerClient extends SoundManager {
 
   public void tick() {
     super.tick();
-    this.objectToSoundMap.forEach(
-        (object, soundClientList) -> soundClientList.forEach(SoundClient::tick));
+    this.objectToSoundMap
+        .entrySet()
+        .removeIf(
+            entry -> {
+              if (entry.getKey().get() == null) {
+                entry.getValue().forEach(SoundClient::stop);
+                return true;
+              }
+              entry.getValue().forEach(SoundClient::tick);
+              return false;
+            });
   }
 
   public void resumeMutedLoops() {
