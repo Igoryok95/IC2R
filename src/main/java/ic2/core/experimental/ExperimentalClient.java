@@ -57,7 +57,8 @@ public final class ExperimentalClient {
         ExperimentalPipes.PUMP_LV,
         ExperimentalPipes.PUMP_MV);
     event.register(
-        (stack, tint) -> ((ExperimentalPipeBlock) ((BlockItem) stack.getItem()).getBlock()).color,
+        (stack, tint) ->
+            0xFF000000 | ((ExperimentalPipeBlock) ((BlockItem) stack.getItem()).getBlock()).color,
         ExperimentalPipes.BLOCKS.values().stream()
             .map(net.minecraft.world.level.block.Block::asItem)
             .toArray(net.minecraft.world.item.Item[]::new));

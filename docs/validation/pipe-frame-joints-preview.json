@@ -16,5 +16,11 @@
     "Close views against a contrasting background",
     "Same-camera block-selection outline comparison"
   ],
-  "publication": "Awaiting visual review; no release or production installation"
+  "publication": "Awaiting visual review; no release or production installation",
+  "item_client_marker": "IC2R_PIPE_ITEM_CLIENT_PASS",
+  "item_checks": [
+    "All eight registered pipe item tints have alpha 255 and unchanged material RGB",
+    "Every item retains frame and glazing render passes",
+    "Actual native inventory and bronze/steel first-person views inspected"
+  ]
 }

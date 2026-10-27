@@ -33,6 +33,21 @@ A same-camera comparison also distinguishes Minecraft's normal black selection
 outline from a texture gap. The outline disappears when the HUD/selection rendering
 is hidden; it is not removed by this change.
 
+## Inventory and held items
+
+The pipe item-color callback returned only RGB, leaving its ARGB alpha at zero.
+NeoForge's item renderer reads that alpha, making the tinted metal frame invisible
+in the inventory and in the player's hand. The item callback now returns opaque
+ARGB while preserving the original bronze/steel RGB values for all eight variants.
+Block colors, model dimensions and glass transparency are unchanged by this fix.
+
+A focused client pass checks the registered item-color callback for all eight pipe
+variants, including opaque alpha and unchanged bronze/steel RGB. Native inventory
+icons and bronze/steel first-person views are visually inspected; both frame and
+glazing render passes are present.
+
+![Bronze pipe held in first person](images/pipe-frame-joints-preview/item-hand.png)
+
 ## Validation
 
 - The build passes **29 JUnit tests**. All 256 connection models retain complete
