@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-27",
+  "ic2r": "21.1.80",
+  "addons": "1.4.6",
+  "client": "updated",
+  "zip": "Z:\\1_Exchange\\Minecraft-1.21.1-NeoForge-client-2026-10-22.zip",
+  "zip_status": "updated in place",
+  "server_mods": "/opt/mcsmanager/daemon/data/InstanceData/c3e3b15cb846447792d43dacb70b6e79/mods",
+  "server_status": "updated and left stopped as requested",
+  "installed_jars": [
+    "ic2-neoforge-21.1.80.jar",
+    "ic2r-addons-neoforge-1.21.1-1.4.6.jar"
+  ],
+  "older_jar_versions": "removed from client, ZIP and server",
+  "backups_created": false,
+  "hashes_checked": false
+}
