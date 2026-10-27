@@ -122,6 +122,16 @@ public final class PipeClientSmoke {
                     pipe.visuals.amount(mc.level.getGameTime()) - pipe.tank.getCapacity() * 3 / 5)
                 > 1)
           throw new IllegalStateException("Pipe contents did not reach client at " + pos);
+        var model = mc.getBlockRenderer().getBlockModel(pipe.getBlockState());
+        var layers =
+            model.getRenderTypes(
+                pipe.getBlockState(),
+                net.minecraft.util.RandomSource.create(0),
+                net.neoforged.neoforge.client.model.data.ModelData.EMPTY);
+        if (!layers.contains(net.minecraft.client.renderer.RenderType.solid())
+            || !layers.contains(net.minecraft.client.renderer.RenderType.translucent()))
+          throw new IllegalStateException(
+              "Pipe frame and glass must use separate render layers at " + pos);
       }
       if (!(mc.level.getBlockEntity(FLOW) instanceof ExperimentalFluidPipe pipe)
           || pipe.visuals.offset(Direction.EAST, mc.level.getGameTime() + 1).lengthSqr() == 0)
@@ -129,7 +139,18 @@ public final class PipeClientSmoke {
       capture(mc, "glass-pipes-overview.png");
       mc.options.fov().set(30);
       server.execute(
-          () -> server.getPlayerList().getPlayer(id).connection.teleport(14.2, 129, -5.2, 26, 28));
+          () -> {
+            var player = server.getPlayerList().getPlayer(id);
+            for (int x = 10; x <= 16; x++)
+              for (int y = 128; y <= 133; y++)
+                player
+                    .serverLevel()
+                    .setBlockAndUpdate(
+                        new BlockPos(x, y, -1),
+                        ((x + y) % 2 == 0 ? Blocks.WHITE_CONCRETE : Blocks.BLACK_CONCRETE)
+                            .defaultBlockState());
+            player.connection.teleport(14.2, 129, -5.2, 26, 28);
+          });
     }
     if (phase == 140) {
       capture(mc, "glass-pipes-bronze-close.png");
@@ -156,8 +177,30 @@ public final class PipeClientSmoke {
           throw new IllegalStateException("Empty pipe still renders liquid at " + pos);
       }
       capture(mc, "glass-pipes-empty.png");
+      server.execute(
+          () -> server.getPlayerList().getPlayer(id).connection.teleport(10.8, 130, -5.8, -28, 35));
     }
-    if (phase == 250) {
+    if (phase == 270) capture(mc, "glass-pipes-joints-reverse.png");
+    if (phase == 290) {
+      mc.options.hideGui = false;
+      server.execute(
+          () ->
+              server
+                  .getPlayerList()
+                  .getPlayer(id)
+                  .connection
+                  .teleport(14.2, 129, -5.2, 32.2F, 20.13F));
+    }
+    if (phase == 330) {
+      if (!(mc.hitResult instanceof net.minecraft.world.phys.BlockHitResult hit)
+          || !hit.getBlockPos().equals(ELBOW))
+        throw new IllegalStateException(
+            "Outline comparison must target the elbow block: " + mc.hitResult);
+      capture(mc, "glass-pipes-joints-outline.png");
+      mc.options.hideGui = true;
+    }
+    if (phase == 340) capture(mc, "glass-pipes-joints-no-outline.png");
+    if (phase == 360) {
       mc.options.hideGui = false;
       mc.options.fov().set(70);
       LoggerFactory.getLogger("IC2R-Glass-Pipes")

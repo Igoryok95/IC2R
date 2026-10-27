@@ -7,6 +7,39 @@ import json
 DIRECTIONS = [('down', (0,-1,0)), ('up', (0,1,0)), ('north', (0,0,-1)), ('south', (0,0,1)), ('west', (-1,0,0)), ('east', (1,0,0))]
 SIZES = [('tiny',4), ('small',6), ('medium',8), ('large',10)]
 
+def native_uv(lo, hi, direction):
+    if direction == 'down': return [lo[0],16-hi[2],hi[0],16-lo[2]]
+    if direction == 'up': return [lo[0],lo[2],hi[0],hi[2]]
+    if direction == 'north': return [16-hi[0],16-hi[1],16-lo[0],16-lo[1]]
+    if direction == 'south': return [lo[0],16-hi[1],hi[0],16-lo[1]]
+    if direction == 'west': return [lo[2],16-hi[1],hi[2],16-lo[1]]
+    return [16-hi[2],16-hi[1],16-lo[2],16-lo[1]]
+
+def conforming_faces(elements):
+    """Split shared edges at every structural vertex, preserving the original texture mapping."""
+    cuts=[sorted({element[bound][axis] for element in elements for bound in ('from','to')}) for axis in range(3)]
+    result=[]
+    for element in elements:
+        lo,hi=element['from'],element['to']
+        direction,face=next(iter(element['faces'].items()))
+        step=dict(DIRECTIONS)[direction]
+        axis=next(i for i,n in enumerate(step) if n);u=(axis+1)%3;v=(axis+2)%3
+        us=[n for n in cuts[u] if lo[u]<=n<=hi[u]]
+        vs=[n for n in cuts[v] if lo[v]<=n<=hi[v]]
+        original_uv=native_uv(lo,hi,direction)
+        for x0,x1 in zip(us,us[1:]):
+            for y0,y1 in zip(vs,vs[1:]):
+                start=lo.copy();end=hi.copy()
+                start[u]=x0;end[u]=x1;start[v]=y0;end[v]=y1
+                piece=json.loads(json.dumps(element));piece['from']=start;piece['to']=end
+                if face['texture']=='#metal':
+                    uv=native_uv(start,end,direction)
+                    piece['faces'][direction]['uv']=[
+                        round((value-original_uv[i%2])/(original_uv[i%2+2]-original_uv[i%2])*16,8)
+                        for i,value in enumerate(uv)]
+                result.append(piece)
+    return result
+
 def write(root, name, data):
     path=root/name;path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(data,separators=(',',':'))+'\n',encoding='utf-8')
@@ -33,7 +66,9 @@ def shell(width, mask, variant="light"):
     for (i,plane),cells in surfaces.items():
         _,step=DIRECTIONS[i];axis=next(j for j,v in enumerate(step) if v);u=(axis+1)%3;v=(axis+2)%3
         for x,y in cells:
-            offsets = list(product(range(-2,3),repeat=2)) if variant=='heavy' else [(-1,0),(1,0),(0,-1),(0,1)]
+            # Include diagonals: a concave elbow corner must remain a full metal pixel.
+            border=2 if variant=='heavy' else 1
+            offsets=list(product(range(-border,border+1),repeat=2))
             if all((x+dx,y+dy) in cells for dx,dy in offsets):
                 p=[0,0,0];p[axis]=plane-(step[axis]>0);p[u]=x;p[v]=y
                 collar = variant=='collars' and any(p[j] in (a,b-1) for j in range(3) if any(mask & (1<<n) and step2[j] for n,(_,step2) in enumerate(DIRECTIONS)))
@@ -49,7 +84,7 @@ def shell(width, mask, variant="light"):
             if material=='glass' and full(q): continue
             axis=next(j for j,v in enumerate(step) if v);u=(axis+1)%3;v=(axis+2)%3
             faces[(i,p[axis]+(step[axis]>0),material)].add((p[u],p[v]))
-    elements=[]
+    elements=[];highlights=[]
     for (i,plane,material),cells in sorted(faces.items()):
         direction,step=DIRECTIONS[i];axis=next(j for j,v in enumerate(step) if v);u=(axis+1)%3;v=(axis+2)%3
         while cells:
@@ -68,18 +103,27 @@ def shell(width, mask, variant="light"):
             if material=='glass':element['shade']=False
             elements.append(element)
             if material=='glass' and w>=2 and h>=2:
-                # A native vanilla three-pixel diagonal at 32px density. Its dimensions
-                # never follow the aspect ratio of the merged window or elbow patch.
+                # Keep only the three painted pixels of the vanilla diagonal. A full
+                # translucent 3x3 decal can leave a dark rectangular sorting/mipmap halo.
                 marks=[(x+.25,y+.25)]
                 if w>=7 and h>=5:marks.append((x+w-1.75,y+h-1.75))
                 for mx,my in marks:
-                    glint_lo=lo.copy();glint_hi=hi.copy()
-                    glint_lo[axis]=glint_hi[axis]=plane+step[axis]*.01
-                    glint_lo[u]=mx;glint_hi[u]=mx+1.5;glint_lo[v]=my;glint_hi[v]=my+1.5
-                    glint={'texture':'#shine','uv':[2,2,5,5],
-                           'neoforge_data':{'color':'a6ffffff','ambient_occlusion':False}}
-                    elements.append({'from':glint_lo,'to':glint_hi,'shade':False,'faces':{direction:glint}})
-    return {'parent':'minecraft:block/block','render_type':'minecraft:translucent','textures':{'metal':'ic2:block/experimental/pipe_side','glass':'minecraft:block/white_stained_glass','shine':'minecraft:block/glass','particle':'ic2:block/experimental/pipe_side'},'elements':elements}
+                    for px,py in ((0,2),(1,1),(2,0)):
+                        glint_lo=lo.copy();glint_hi=hi.copy()
+                        glint_lo[axis]=glint_hi[axis]=plane+step[axis]*.01
+                        glint_lo[u]=mx+px*.5;glint_hi[u]=glint_lo[u]+.5
+                        glint_lo[v]=my+py*.5;glint_hi[v]=glint_lo[v]+.5
+                        glint={'texture':'#shine','uv':[0,0,1,1],
+                               'neoforge_data':{'color':'ffe4f2f9','ambient_occlusion':False}}
+                        highlights.append({'from':glint_lo,'to':glint_hi,'shade':False,'faces':{direction:glint}})
+    elements=conforming_faces(elements)
+    textures={'metal':'ic2:block/experimental/pipe_side','glass':'minecraft:block/white_stained_glass','shine':'minecraft:block/white_stained_glass','particle':'ic2:block/experimental/pipe_side'}
+    frame=[e for e in elements if next(iter(e['faces'].values()))['texture']=='#metal']+highlights
+    glazing=[e for e in elements if next(iter(e['faces'].values()))['texture']=='#glass']
+    return {'parent':'minecraft:block/block','loader':'neoforge:composite','textures':textures,
+            'children':{'frame':{'parent':'minecraft:block/block','render_type':'minecraft:solid','textures':textures,'elements':frame},
+                        'glazing':{'parent':'minecraft:block/block','render_type':'minecraft:translucent','textures':textures,'elements':glazing}},
+            'item_render_order':['frame','glazing']}
 
 def generate(root):
     for size,width in SIZES:

@@ -1,0 +1,20 @@
+{
+  "version": "21.1.79 preview",
+  "unit_tests": 29,
+  "unit_failures": 0,
+  "connection_models": 256,
+  "model_checks": [
+    "Complete concave frame pixel on all elbow orientations",
+    "No unmatched structural vertices along shared edges",
+    "Opaque frame and reflection pixels separated from translucent glazing",
+    "Highlight geometry contains only individual half-unit pixels"
+  ],
+  "client_marker": "IC2R_GLASS_PIPE_CLIENT_PASS",
+  "client_checks": [
+    "Actual baked models contain solid and translucent render layers",
+    "Eight pipe variants with real water/lava and synchronized flow",
+    "Close views against a contrasting background",
+    "Same-camera block-selection outline comparison"
+  ],
+  "publication": "Awaiting visual review; no release or production installation"
+}
