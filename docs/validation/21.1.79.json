@@ -1,5 +1,5 @@
 {
-  "version": "21.1.79 preview",
+  "version": "21.1.79",
   "unit_tests": 29,
   "unit_failures": 0,
   "connection_models": 256,
@@ -16,7 +16,7 @@
     "Close views against a contrasting background",
     "Same-camera block-selection outline comparison"
   ],
-  "publication": "Awaiting visual review; no release or production installation",
+  "publication": "User-approved release; no production installation in this operation",
   "item_client_marker": "IC2R_PIPE_ITEM_CLIENT_PASS",
   "item_checks": [
     "All eight registered pipe item tints have alpha 255 and unchanged material RGB",

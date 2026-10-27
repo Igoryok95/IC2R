@@ -5,8 +5,22 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.78-blue" alt="Version 21.1.78">
+<img src="https://img.shields.io/badge/Version-21.1.79-blue" alt="Version 21.1.79">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.79 — Fluid-pipe frame and item fixes
+
+Pipe elbows retain the complete metal corner, and adjacent frame faces share
+matching edge vertices. Opaque frames render separately from translucent glazing.
+Glass highlights draw only their three reflection pixels, removing the dark
+rectangular background left by the former decal.
+
+Bronze and steel pipe items now keep their metal frame in the inventory and in
+the player's hand. All eight variants use opaque item tints with their original
+material colors. Glass tint, 32px highlight density, recipes and fluid behavior
+are preserved. See [details and in-game screenshots](docs/fluid-pipe-visuals-21.1.79.md).
+
+![Corrected pipe frame and glass highlights, captured in Minecraft](docs/images/fluid-pipes-21.1.79/water.png)
 
 ## Version 21.1.78 — Readable fluid-pipe glass
 

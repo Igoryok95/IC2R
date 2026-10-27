@@ -1,5 +1,8 @@
 # Readable fluid-pipe glass — 21.1.78
 
+For subsequent frame, highlight and item-rendering corrections, see
+[21.1.79](fluid-pipe-visuals-21.1.79.md).
+
 ## Cause and change
 
 The glass generator assigned a full 0..16 texture rectangle to every greedy-meshed

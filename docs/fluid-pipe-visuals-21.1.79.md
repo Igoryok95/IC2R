@@ -1,7 +1,6 @@
-# Pipe-frame joint correction preview
+# Fluid-pipe frame and item fixes — 21.1.79
 
-Status: unreleased visual review for 21.1.79. The approved glass tint and fixed-size
-vanilla highlights from 21.1.78 are preserved.
+The glass tint and 32px highlight density from 21.1.78 are preserved.
 
 ## Problems and changes
 
@@ -26,7 +25,7 @@ same coordinates. Metal UVs are interpolated from each original face, preserving
 its appearance without restarting the texture on every subdivision. Glass retains
 its position-derived UVs; highlights keep their original size.
 
-The changes affect generated client models only. Pipe IDs, collision shape, recipes,
+The changes affect client rendering only. Pipe IDs, collision shape, recipes,
 saved contents, pump covers, transfer rates and localization keys are unchanged.
 
 A same-camera comparison also distinguishes Minecraft's normal black selection
@@ -46,7 +45,7 @@ variants, including opaque alpha and unchanged bronze/steel RGB. Native inventor
 icons and bronze/steel first-person views are visually inspected; both frame and
 glazing render passes are present.
 
-![Bronze pipe held in first person](images/pipe-frame-joints-preview/item-hand.png)
+![Bronze pipe held in first person](images/fluid-pipes-21.1.79/item-hand.png)
 
 ## Validation
 
@@ -60,10 +59,10 @@ glazing render passes are present.
 - A same-camera pair confirms that the normal selection outline disappears when
   selection rendering is hidden. The frame remains complete in both captures.
 - No production client, ZIP or server files were changed. See the
-  [validation receipt](validation/pipe-frame-joints-preview.json).
+  [validation receipt](validation/21.1.79.json).
 
-![Corrected frame and highlights with water](images/pipe-frame-joints-preview/water.png)
+![Corrected frame and highlights with water](images/fluid-pipes-21.1.79/water.png)
 
-![Same camera without the selection outline](images/pipe-frame-joints-preview/no-outline.png)
+![Same camera without the selection outline](images/fluid-pipes-21.1.79/no-outline.png)
 
-![Same camera with Minecraft's normal selection outline](images/pipe-frame-joints-preview/outline.png)
+![Same camera with Minecraft's normal selection outline](images/fluid-pipes-21.1.79/outline.png)
