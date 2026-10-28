@@ -42,6 +42,7 @@ public class TileEntityElectricHeatGenerator extends TileEntityHeatSourceInvento
 
   @Override
   protected void updateEntityServer() {
+    this.newActive = false;
     super.updateEntityServer();
     if (this.getActive() != this.newActive) {
       this.setActive(this.newActive);

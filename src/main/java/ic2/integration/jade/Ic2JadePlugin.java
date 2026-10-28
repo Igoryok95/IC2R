@@ -62,6 +62,12 @@ public final class Ic2JadePlugin implements IWailaPlugin {
                 "jade.ic2.flow",
                 number(data.getDouble("input")),
                 number(data.getDouble("output"))));
+      if (data.contains("heatOutput"))
+        tooltip.add(
+            Component.translatable(
+                "jade.ic2.heat_output",
+                number(data.getInt("heatOutput")),
+                number(data.getInt("maxHeatOutput"))));
       if (data.contains("ratedOutput"))
         tooltip.add(
             Component.translatable("jade.ic2.rated_output", number(data.getDouble("ratedOutput"))));

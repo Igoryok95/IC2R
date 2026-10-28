@@ -1,0 +1,83 @@
+{
+  "ic2:matter_generator": [
+    "jei.ic2.alias.matter_generator.previous",
+    "jei.ic2.alias.matter_generator.experimental"
+  ],
+  "ic2:solar_helmet": [
+    "jei.ic2.alias.solar_helmet.previous"
+  ],
+  "ic2:static_boots": [
+    "jei.ic2.alias.static_boots.previous"
+  ],
+  "ic2:containment_box": [
+    "jei.ic2.alias.containment_box.previous"
+  ],
+  "ic2:iodine_tablet": [
+    "jei.ic2.alias.iodine_tablet.previous",
+    "jei.ic2.alias.iodine_tablet.experimental"
+  ],
+  "ic2:mfsu_upgrade_kit": [
+    "jei.ic2.alias.mfsu_upgrade_kit.previous"
+  ],
+  "ic2:remote": [
+    "jei.ic2.alias.remote.previous"
+  ],
+  "ic2:pump_lv": [
+    "jei.ic2.alias.pump_lv.previous"
+  ],
+  "ic2:pump_mv": [
+    "jei.ic2.alias.pump_mv.previous"
+  ],
+  "ic2:bronze_pipe_tiny": [
+    "jei.ic2.alias.bronze_pipe_tiny.previous"
+  ],
+  "ic2:bronze_pipe_small": [
+    "jei.ic2.alias.bronze_pipe_small.previous"
+  ],
+  "ic2:bronze_pipe_medium": [
+    "jei.ic2.alias.bronze_pipe_medium.previous"
+  ],
+  "ic2:bronze_pipe_large": [
+    "jei.ic2.alias.bronze_pipe_large.previous"
+  ],
+  "ic2:steel_pipe_tiny": [
+    "jei.ic2.alias.steel_pipe_tiny.previous"
+  ],
+  "ic2:steel_pipe_small": [
+    "jei.ic2.alias.steel_pipe_small.previous"
+  ],
+  "ic2:steel_pipe_medium": [
+    "jei.ic2.alias.steel_pipe_medium.previous"
+  ],
+  "ic2:steel_pipe_large": [
+    "jei.ic2.alias.steel_pipe_large.previous"
+  ],
+  "ic2:compressor": [
+    "jei.ic2.alias.compressor.experimental"
+  ],
+  "ic2:batbox": [
+    "jei.ic2.alias.batbox.short",
+    "jei.ic2.alias.batbox.joined"
+  ],
+  "ic2:crop_harvester": [
+    "jei.ic2.alias.crop_harvester.classic"
+  ],
+  "ic2:crop_analyzer": [
+    "jei.ic2.alias.crop_analyzer.classic"
+  ],
+  "ic2:frequency_transmitter": [
+    "jei.ic2.alias.frequency_transmitter.classic"
+  ],
+  "ic2:trade_o_mat": [
+    "jei.ic2.alias.trade_o_mat.classic"
+  ],
+  "ic2:energy_o_mat": [
+    "jei.ic2.alias.energy_o_mat.classic"
+  ],
+  "ic2:luminator": [
+    "jei.ic2.alias.luminator.classic"
+  ],
+  "ic2:chainsaw": [
+    "jei.ic2.alias.chainsaw.classic"
+  ]
+}

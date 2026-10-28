@@ -54,6 +54,7 @@ import mezz.jei.api.recipe.transfer.IRecipeTransferError;
 import mezz.jei.api.recipe.transfer.IRecipeTransferHandler;
 import mezz.jei.api.recipe.transfer.IRecipeTransferHandlerHelper;
 import mezz.jei.api.recipe.transfer.IRecipeTransferInfo;
+import mezz.jei.api.registration.IIngredientAliasRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -165,6 +166,11 @@ public class Ic2JeiPlugin implements IModPlugin {
     return IC2.getIdentifier("plugin");
   }
 
+  @Override
+  public void registerIngredientAliases(IIngredientAliasRegistration registration) {
+    IngredientSearchAliases.register(registration);
+  }
+
   public void registerCategories(IRecipeCategoryRegistration registration) {
     IGuiHelper guiHelper = registration.getJeiHelpers().getGuiHelper();
     registration.addRecipeCategories(
@@ -242,6 +248,7 @@ public class Ic2JeiPlugin implements IModPlugin {
 
   @Override
   public void onRuntimeAvailable(@NotNull IJeiRuntime jeiRuntime) {
+    if (Boolean.getBoolean("ic2.heatAndNamesSmoke")) HeatAndNamesClientSmoke.start(jeiRuntime);
     IRecipesGui recipesGui = jeiRuntime.getRecipesGui();
     Map<String, RecipeType<?>> aliases = this.createRecipeButtonAliases();
     jeiRuntime

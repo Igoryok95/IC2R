@@ -76,6 +76,11 @@ neoForge {
         client {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            if (providers.gradleProperty('heatAndNamesSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
+                systemProperty 'ic2.heatAndNamesSmoke', 'true'
+                programArguments.addAll '--quickPlaySingleplayer', 'SteelHopperSmoke'
+            }
             if (providers.gradleProperty('chainsawSoundSmoke').isPresent()) {
                 gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
                 systemProperty 'ic2.chainsawSoundSmoke', 'true'

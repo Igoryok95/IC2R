@@ -67,6 +67,30 @@ class RussianLocalizationTest {
     return result;
   }
 
+  @Test
+  void familiarNamesAndLocalizedSearchAliasesStayConsistent() throws IOException {
+    var russian = readLocale("ru_ru");
+    var english = readLocale("en_us");
+    assertEquals("Генератор материи", russian.get("block.ic2.matter_generator").getAsString());
+    assertEquals(
+        russian.get("block.ic2.matter_generator"), russian.get("container.ic2.matter_generator"));
+    assertEquals(russian.get("block.ic2.batbox"), russian.get("container.ic2.batbox"));
+    assertEquals("Компрессор", russian.get("block.ic2.compressor").getAsString());
+    try (var stream = getClass().getResourceAsStream("/assets/ic2/search_aliases.json")) {
+      assertNotNull(stream);
+      var aliases =
+          JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+              .getAsJsonObject();
+      for (var entry : aliases.entrySet()) {
+        assertTrue(entry.getKey().startsWith("ic2:"));
+        for (var key : entry.getValue().getAsJsonArray()) {
+          assertTrue(russian.has(key.getAsString()), "Russian alias " + key);
+          assertTrue(english.has(key.getAsString()), "English alias " + key);
+        }
+      }
+    }
+  }
+
   private static JsonObject readLocale(String name) throws IOException {
     String path = "assets/ic2/lang/" + name + ".json";
     try (InputStream stream =

@@ -14,6 +14,8 @@ public abstract class TileEntityHeatSourceInventory extends TileEntityInventory
   @GuiSynced protected int transmitHeat;
   @GuiSynced protected int maxHeatEmitpeerTick;
   protected int HeatBuffer;
+  private long heatStatisticsTick = Long.MIN_VALUE;
+  private int heatTransferredThisTick;
 
   public TileEntityHeatSourceInventory(
       BlockEntityType<? extends TileEntityHeatSourceInventory> type,
@@ -24,6 +26,7 @@ public abstract class TileEntityHeatSourceInventory extends TileEntityInventory
 
   @Override
   protected void updateEntityServer() {
+    this.updateHeatStatistics();
     super.updateEntityServer();
     int amount = this.getMaxHeatEmittedPerTick() - this.HeatBuffer;
     if (amount > 0) {
@@ -48,18 +51,18 @@ public abstract class TileEntityHeatSourceInventory extends TileEntityInventory
 
   @Override
   public int drawHeat(Direction side, int request, boolean simulate) {
-    if (this.facingMatchesDirection(side)) {
+    if (request > 0 && this.facingMatchesDirection(side)) {
       int heatBuffer = this.getHeatBuffer();
       if (heatBuffer >= request) {
         if (!simulate) {
           this.setHeatBuffer(heatBuffer - request);
-          this.transmitHeat = request;
+          this.recordHeatTransfer(request);
         }
 
         return request;
       } else {
         if (!simulate) {
-          this.transmitHeat = heatBuffer;
+          this.recordHeatTransfer(heatBuffer);
           this.setHeatBuffer(0);
         }
 
@@ -116,7 +119,23 @@ public abstract class TileEntityHeatSourceInventory extends TileEntityInventory
   }
 
   public int gettransmitHeat() {
+    this.updateHeatStatistics();
     return this.transmitHeat;
+  }
+
+  private void recordHeatTransfer(int amount) {
+    this.updateHeatStatistics();
+    this.heatTransferredThisTick += amount;
+  }
+
+  /** Publish the last completed tick, regardless of the source/consumer tick order. */
+  private void updateHeatStatistics() {
+    if (this.level == null || this.level.isClientSide) return;
+    long tick = this.level.getGameTime();
+    if (tick == this.heatStatisticsTick) return;
+    this.transmitHeat = this.heatStatisticsTick == tick - 1 ? this.heatTransferredThisTick : 0;
+    this.heatTransferredThisTick = 0;
+    this.heatStatisticsTick = tick;
   }
 
   public String getOutput() {

@@ -10,6 +10,7 @@ import ic2.core.block.machine.tileentity.TileEntityStandardMachine;
 import ic2.core.block.reactor.tileentity.TileEntityNuclearReactorElectric;
 import ic2.core.block.reactor.tileentity.TileEntityReactorChamberElectric;
 import ic2.core.block.tileentity.Ic2TileEntity;
+import ic2.core.block.tileentity.TileEntityHeatSourceInventory;
 import ic2.core.block.wiring.tileentity.TileEntityElectricBlock;
 import java.util.Locale;
 import net.minecraft.core.Direction;
@@ -43,6 +44,10 @@ public final class MachineStatusData {
       }
     }
     if (tile.getBlockType().canActive()) data.putBoolean("active", tile.getActive());
+    if (tile instanceof TileEntityHeatSourceInventory heater) {
+      data.putInt("heatOutput", heater.gettransmitHeat());
+      data.putInt("maxHeatOutput", heater.getMaxHeatEmittedPerTick());
+    }
     if (tile instanceof TileEntityElectricBlock storage)
       data.putDouble("ratedOutput", storage.getOutputEnergyUnitsPerTick());
     if (tile instanceof TileEntityStandardMachine<?, ?, ?> machine)
