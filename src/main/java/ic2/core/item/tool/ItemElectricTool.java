@@ -211,36 +211,24 @@ public abstract class ItemElectricTool extends DiggerItem
       if (isEquipped) {
         boolean hasPower = ElectricItem.manager.canUse(itemstack, 1.0);
 
-        if (!this.wasEquipped) {
-          if (hasPower) {
-            this.initSound((LivingEntity) entity, itemstack);
-            if (this.idleSound != null) {
-              this.idleSound.play();
-            }
-
-            if (this.startSound != null) {
-              this.startSound.playOnce();
-            }
-          }
-        } else if (this.idleSound != null) {
-          if (hasPower && !this.idleSound.isPlaying()) {
+        if (!hasPower) {
+          this.stopHeldSounds((LivingEntity) entity, true);
+        } else if (this.idleSound == null && this.startSound == null) {
+          this.initSound((LivingEntity) entity, itemstack);
+          if (this.idleSound != null) {
             this.idleSound.play();
-          } else if (!hasPower) {
-            if (this.stopSound != null) {
-              this.stopSound.playOnce();
-            }
-
-            this.clearSound((LivingEntity) entity);
           }
+
+          if (this.startSound != null) {
+            this.startSound.playOnce();
+          }
+        } else if (this.idleSound != null && !this.idleSound.isPlaying()) {
+          this.idleSound.play();
         }
       } else if (this.idleSound != null && entity instanceof LivingEntity theEntity) {
         ItemStack stack = theEntity.getItemBySlot(EquipmentSlot.MAINHAND);
         if (stack.getItem() != this || stack == itemstack) {
-          if (this.stopSound != null) {
-            this.stopSound.playOnce();
-          }
-
-          this.clearSound(theEntity);
+          this.stopHeldSounds(theEntity, true);
         }
       }
 
@@ -286,8 +274,24 @@ public abstract class ItemElectricTool extends DiggerItem
     }
   }
 
+  public void stopHeldSounds(LivingEntity entity, boolean playStopSound) {
+    // Detach the shutdown tail before clearing the loops: removeSound cancels pending playback.
+    Sound ending = this.stopSound;
+    this.stopSound = null;
+    this.clearSound(entity);
+    this.wasEquipped = false;
+    if (ending != null) {
+      if (playStopSound) {
+        ending.onFinish(() -> IC2.soundManager.removeSound(entity, ending));
+        ending.playOnce();
+      } else {
+        IC2.soundManager.removeSound(entity, ending);
+      }
+    }
+  }
+
   public boolean onDroppedByPlayer(ItemStack stack, Player player) {
-    this.clearSound(player);
+    if (IC2.sideProxy.isRendering()) this.stopHeldSounds(player, true);
     return true;
   }
 

@@ -8,6 +8,14 @@ and experience rewards for processed ore in iron, electric and induction furnace
 <img src="https://img.shields.io/badge/Version-21.1.80-blue" alt="Version 21.1.80">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
+## Unreleased — Chainsaw shutdown audio
+
+The native and Addons Advanced Chainsaw play their shutdown sound once when put
+away, dropped, removed from the inventory or discharged. Idle loops stop immediately;
+the shutdown sound finishes before its controller is released. Re-equipping or
+recharging restarts idle playback without duplicate loops. See
+[the shared fix and client validation](docs/chainsaw-sounds.md).
+
 ## Version 21.1.80 — Interrupted machine sounds
 
 Removing a canner's container during filling now cancels both pending and already

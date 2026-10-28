@@ -3,9 +3,11 @@ package ic2.forge;
 import com.mojang.blaze3d.shaders.FogShape;
 import ic2.core.event.EventHandlerClient;
 import ic2.core.event.TickHandler;
+import ic2.core.item.tool.ItemElectricTool;
 import ic2.core.proxy.SideProxyClient;
 import ic2.core.sound.DeferredSoundOps;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -24,6 +26,9 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
 
 public final class ClientEventHandlerForge {
+  private LocalPlayer toolSoundPlayer;
+  private ItemElectricTool heldElectricTool;
+
   @SubscribeEvent
   public void onClientTickPre(ClientTickEvent.Pre event) {
     TickHandler.onClientTick();
@@ -31,6 +36,17 @@ public final class ClientEventHandlerForge {
 
   @SubscribeEvent
   public void onClientTickPost(ClientTickEvent.Post event) {
+    LocalPlayer player = SideProxyClient.mc.player;
+    ItemElectricTool current =
+        player != null && player.getMainHandItem().getItem() instanceof ItemElectricTool tool
+            ? tool
+            : null;
+    if (heldElectricTool != null && (toolSoundPlayer != player || heldElectricTool != current)) {
+      // A dropped/transferred stack no longer receives inventoryTick to stop its sounds.
+      heldElectricTool.stopHeldSounds(toolSoundPlayer, toolSoundPlayer == player);
+    }
+    toolSoundPlayer = player;
+    heldElectricTool = current;
     DeferredSoundOps.flush();
   }
 
