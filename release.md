@@ -1,3 +1,22 @@
+# 21.1.81
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Replace the Nano Saber's active-state component instead of mutating shared NBT.
+  Actual equipped damage and attack speed now follow activation and deactivation
+  without moving the item. Preserve the existing combat values, energy costs and
+  charge thresholds; verify real zombie attacks and low-charge recovery.
+- Play a chainsaw's shutdown sound once while stopping its idle loop immediately.
+  Cover native and Addons saws, hotbar changes, dropping, inventory removal,
+  discharge/recharge and spare stacks. Release completed shutdown controllers.
+- Expose the native drill's unchanged water/air compensation for Addons 1.4.7.
+  IC2R has no dependency on Addons.
+
+See [combat-state validation](docs/tool-state-21.1.81.md) and
+[chainsaw audio validation](docs/chainsaw-sounds.md).
+
+---
+
 # 21.1.75
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

@@ -31,6 +31,7 @@ base {
 }
 
 tasks.named('jar', Jar) {
+    includeEmptyDirs = false
     manifest.attributes(
             'Implementation-Version': project.version,
             'Implementation-Vendor': 'Igoryok95 IC2R fork',

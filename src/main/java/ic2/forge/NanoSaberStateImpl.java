@@ -4,6 +4,7 @@ import ic2.api.item.INanoSaberState;
 import ic2.core.util.StackUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.CustomData;
 
 final class NanoSaberStateImpl implements INanoSaberState {
   private static final String NBT_ACTIVE = "active";
@@ -23,7 +24,10 @@ final class NanoSaberStateImpl implements INanoSaberState {
 
   @Override
   public void setActive(boolean active) {
-    StackUtil.getOrCreateNbtData(this.stack).putBoolean(NBT_ACTIVE, active);
+    CustomData.update(
+        net.minecraft.core.component.DataComponents.CUSTOM_DATA,
+        this.stack,
+        tag -> tag.putBoolean(NBT_ACTIVE, active));
   }
 
   @Override

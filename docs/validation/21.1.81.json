@@ -1,0 +1,27 @@
+{
+  "version": "21.1.81",
+  "build_neoforge": "21.1.234",
+  "unit_tests": 29,
+  "unit_failures": 0,
+  "combined_addons_version": "1.4.7",
+  "combined_neoforge": "21.1.264",
+  "combined_required_server_tests": 584,
+  "combined_required_server_failures": 0,
+  "nano_saber_checks": [
+    "Independent activation/deactivation snapshots and unchanged energy",
+    "Preserve unrelated attribute components and tooltip settings",
+    "Real equipped damage 5 -> 21 -> 5 without changing the held stack",
+    "Real equipped attack speed 1 -> 4 -> 1",
+    "A charged active hit kills an ordinary unequipped zombie",
+    "An inactive hit leaves an ordinary zombie with about 15.08 health",
+    "399 EU, exactly 400 EU, depletion, recharge and reactivation"
+  ],
+  "native_environment_rules_changed": false,
+  "chainsaw_audio_validation": {
+    "marker": "IC2R_CHAINSAW_SOUND_CLIENT_PASS",
+    "tested_saws": 2,
+    "source_commit": "d384f808",
+    "paired_addons_version": "1.4.6",
+    "sound_implementation_unchanged_since_pass": true
+  }
+}

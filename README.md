@@ -5,16 +5,26 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.80-blue" alt="Version 21.1.80">
+<img src="https://img.shields.io/badge/Version-21.1.81-blue" alt="Version 21.1.81">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
 
-## Unreleased — Chainsaw shutdown audio
+## Version 21.1.81 — Tool state and sound fixes
+
+Switching the Nano Saber on or off updates the player's real combat attributes
+without changing hotbar slots. Its state uses independent custom-data components,
+so equipment snapshots retain the previous state. Existing inactive/active damage,
+attack speed, energy costs and charge thresholds are preserved. Regression tests
+exercise actual zombie attacks, deactivation and the 399/400 EU boundary.
+
+The native drill's existing water/air compensation is exposed to Addons **1.4.7**,
+which applies the same rules to its mining tools. IC2R works independently of Addons.
+See [combat-state fixes and validation](docs/tool-state-21.1.81.md).
 
 The native and Addons Advanced Chainsaw play their shutdown sound once when put
 away, dropped, removed from the inventory or discharged. Idle loops stop immediately;
 the shutdown sound finishes before its controller is released. Re-equipping or
 recharging restarts idle playback without duplicate loops. See
-[the shared fix and client validation](docs/chainsaw-sounds.md).
+[the shared sound fix and client validation](docs/chainsaw-sounds.md).
 
 ## Version 21.1.80 — Interrupted machine sounds
 

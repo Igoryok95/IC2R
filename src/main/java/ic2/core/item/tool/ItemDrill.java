@@ -74,21 +74,26 @@ public class ItemDrill extends ItemElectricTool implements IMiningDrill, IHitSou
       return speed;
     }
 
+    return speed * getEnvironmentSpeedMultiplier(stack) * this.extraSpeedMultiplier;
+  }
+
+  public static float getEnvironmentSpeedMultiplier(ItemStack stack) {
+    float multiplier = 1;
     Player player = getPlayerHoldingItem(stack);
     if (player != null) {
       // 1.21: EnchantmentHelper.hasAquaAffinity is gone; aqua affinity now raises the
       // SUBMERGED_MINING_SPEED attribute from its default 0.2 up to 1.0.
       if (player.isEyeInFluid(FluidTags.WATER)
           && player.getAttributeValue(Attributes.SUBMERGED_MINING_SPEED) < 1.0) {
-        speed *= 3.0F;
+        multiplier *= 3.0F;
       }
 
       if (!player.onGround()) {
-        speed *= 3.0F;
+        multiplier *= 3.0F;
       }
     }
 
-    return speed * this.extraSpeedMultiplier;
+    return multiplier;
   }
 
   @Override
