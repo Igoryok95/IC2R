@@ -5,8 +5,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.81-blue" alt="Version 21.1.81">
+<img src="https://img.shields.io/badge/Version-21.1.82-blue" alt="Version 21.1.82">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.82 — Continuous machine startup audio
+
+Electric and Induction Furnaces keep startup and working audio in one streaming
+source. The decoded recordings join without waiting for a completed startup
+channel and a newly scheduled loop. Original recordings, volume and machine
+behavior are preserved. Cancellation still stops startup/operation and releases
+the streams. See [audio transition and validation](docs/machine-audio-transition-21.1.82.md).
 
 ## Version 21.1.81 — Tool state and sound fixes
 

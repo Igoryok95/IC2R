@@ -10,7 +10,7 @@ import net.minecraft.sounds.SoundSource;
 public class PositionedSoundInstance extends SimpleSoundInstance
     implements ListenableSoundInstance, TickableSoundInstance {
   private Runnable onFinish = null;
-  private boolean cancelled;
+  private volatile boolean cancelled;
 
   public PositionedSoundInstance(
       SoundEvent sound, SoundSource category, float volume, float pitch, BlockPos pos) {

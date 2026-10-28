@@ -3,6 +3,10 @@ package ic2.core.sound;
 public class Sound {
   public void play() {}
 
+  public void playWithIntro(net.minecraft.sounds.SoundEvent intro) {
+    play();
+  }
+
   public void stop() {}
 
   public void playOnce() {}

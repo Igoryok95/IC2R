@@ -1,3 +1,21 @@
+# 21.1.82
+
+Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.
+
+- Keep machine startup and working-loop recordings on one streaming audio source.
+  This removes the silent handoff between a completed startup sound and a separately
+  scheduled loop, including Electric and Induction Furnaces.
+- Join decoded PCM without inserting a silent boundary buffer. Keep original sound
+  assets, volume, processing and energy behavior.
+- Preserve cancellation during startup and asynchronous loading, output blockage,
+  power loss, restart and machine removal. Close owned startup/loop streams.
+- Retain all 21.1.81 fixes for Nano Saber combat state, chainsaw shutdown audio and
+  the shared drill environment API used by Addons 1.4.7.
+
+See [audio transition and validation](docs/machine-audio-transition-21.1.82.md).
+
+---
+
 # 21.1.81
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

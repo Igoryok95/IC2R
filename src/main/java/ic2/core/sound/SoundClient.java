@@ -33,6 +33,7 @@ public class SoundClient extends Sound {
   private long playbackGeneration;
   private boolean playbackPending;
   private Runnable finishListener;
+  private SoundEvent nextIntro;
 
   protected SoundClient() {}
 
@@ -73,7 +74,16 @@ public class SoundClient extends Sound {
   }
 
   @Override
+  public void playWithIntro(SoundEvent intro) {
+    this.stop();
+    this.nextIntro = intro;
+    this.play();
+  }
+
+  @Override
   public void play() {
+    SoundEvent intro = this.nextIntro;
+    this.nextIntro = null;
     loopRequested = true;
     super.play();
     this.isStarted = true;
@@ -90,8 +100,16 @@ public class SoundClient extends Sound {
 
             this.stopAllStarted();
             this.repeatInstance =
-                new RepeatablePositionedSoundInstance(
-                    this.soundEvent, this.soundCategory, this.volume, this.pitch, this.pos);
+                intro == null
+                    ? new RepeatablePositionedSoundInstance(
+                        this.soundEvent, this.soundCategory, this.volume, this.pitch, this.pos)
+                    : new IntroLoopSoundInstance(
+                        intro,
+                        this.soundEvent,
+                        this.soundCategory,
+                        this.volume,
+                        this.pitch,
+                        this.pos);
             this.vanillaManager.play(this.repeatInstance);
             this.startedSoundList.add(this.repeatInstance);
             this.playGraceTicks = PLAY_GRACE_TICKS;
@@ -137,6 +155,7 @@ public class SoundClient extends Sound {
 
   @Override
   public void playOnce() {
+    this.nextIntro = null;
     loopRequested = false;
     super.playOnce();
     this.isStarted = true;
@@ -168,6 +187,7 @@ public class SoundClient extends Sound {
 
   @Override
   public void stop() {
+    this.nextIntro = null;
     this.finishListener = null;
     if (!this.isStarted && !this.playbackPending && this.startedSoundList.isEmpty()) return;
     loopRequested = false;

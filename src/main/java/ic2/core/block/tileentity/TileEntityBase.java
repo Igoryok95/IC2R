@@ -190,6 +190,12 @@ public class TileEntityBase extends TileEntityInventory {
     if (this.isRemoved() || !this.shouldSoundActive()) return;
     if (this.stopSound != null) this.stopSound.stop();
     if (this.interruptSound != null) this.interruptSound.stop();
+    if (this.startSound != null && this.loopingSound != null) {
+      this.stopStartSound();
+      this.loopingSound.playWithIntro(this.getStartSoundEvent());
+      if (playSubSound && this.subLoopingSound != null) this.subLoopingSound.play();
+      return;
+    }
     if (this.startSound != null) {
       if (this.loopingSound != null) {
         this.startSound.onFinish(() -> this.playLoopingSound(playSubSound));

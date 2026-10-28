@@ -1,0 +1,24 @@
+{
+  "version": "21.1.82",
+  "build_neoforge": "21.1.234",
+  "unit_tests": 33,
+  "unit_failures": 0,
+  "new_pcm_stream_tests": 4,
+  "paired_addons": "1.4.7",
+  "combined_neoforge": "21.1.264",
+  "combined_required_server_tests": 584,
+  "combined_required_server_failures": 0,
+  "client_neoforge": "21.1.264",
+  "client_transition_marker": "IC2R_GAPLESS_MACHINE_SOUND_PASS",
+  "client_ownership_marker": "IC2R_MACHINE_SOUND_CLIENT_PASS",
+  "same_source_startup_transitions": 2,
+  "client_machines": 14,
+  "original_audio_assets_changed": false,
+  "client_checks": [
+    "Electric and Induction Furnace startup and loop retain the same actual streaming source",
+    "No additional channel-start event at the startup/loop boundary",
+    "Queued and buffering cancellation and input removal immediately after startup",
+    "Normal processing, blocked output, power loss and restoration",
+    "Block removal leaves no operating sources"
+  ]
+}

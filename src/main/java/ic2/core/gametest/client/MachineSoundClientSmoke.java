@@ -18,6 +18,7 @@ import ic2.core.fluid.Ic2FluidStack;
 import ic2.core.ref.Ic2SoundEvents;
 import ic2.core.sound.DeferredSoundOps;
 import ic2.core.sound.Ic2AudioSettings;
+import ic2.core.sound.IntroLoopSoundInstance;
 import ic2.core.sound.PositionedSoundInstance;
 import ic2.core.sound.RepeatablePositionedSoundInstance;
 import ic2.core.sound.Sound;
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
@@ -41,6 +44,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.sound.PlayStreamingSourceEvent;
 import org.slf4j.LoggerFactory;
 
 /** One opt-in real audio-engine pass, with Addons included when supplied on the runtime path. */
@@ -52,6 +56,21 @@ public final class MachineSoundClientSmoke {
   private static final BlockPos PROBE = new BlockPos(0, 128, 60);
   private static int ticks;
   private static int callbacks;
+  private static final Map<BlockPos, List<SoundInstance>> STREAMS = new ConcurrentHashMap<>();
+  private static final Map<BlockPos, SoundInstance> STARTUP_SOURCES = new java.util.HashMap<>();
+  private static final Map<BlockPos, Integer> STARTUP_COUNTS = new java.util.HashMap<>();
+
+  @SubscribeEvent
+  public static void streamStarted(PlayStreamingSourceEvent event) {
+    if (!Boolean.getBoolean("ic2.machineSoundSmoke")
+        || !(event.getSound() instanceof IntroLoopSoundInstance)) return;
+    var sound = event.getSound();
+    STREAMS
+        .computeIfAbsent(
+            BlockPos.containing(sound.getX(), sound.getY(), sound.getZ()),
+            ignored -> new CopyOnWriteArrayList<>())
+        .add(sound);
+  }
 
   @SubscribeEvent
   public static void tick(ClientTickEvent.Post event) throws ReflectiveOperationException {
@@ -175,8 +194,35 @@ public final class MachineSoundClientSmoke {
       check(mc, false, "input removed immediately after startup");
       change(mc, MachineSoundClientSmoke::addInput);
     }
+    if (phase == 140) {
+      for (var pos : MACHINES) {
+        var machine = (TileEntityBase) mc.level.getBlockEntity(pos);
+        if (machine.getStartSoundEvent() == null || machine.getLoopingSoundEvent() == null)
+          continue;
+        var sources = STREAMS.get(pos);
+        require(
+            sources != null && !sources.isEmpty(),
+            "startup did not create a combined audio source at " + pos);
+        STARTUP_SOURCES.put(pos, sources.getLast());
+        STARTUP_COUNTS.put(pos, sources.size());
+      }
+      require(
+          STARTUP_SOURCES.size() == 2, "expected electric and induction furnace startup sources");
+    }
     if (phase == 200) {
       check(mc, true, "normal processing after quick interruption");
+      for (var entry : STARTUP_SOURCES.entrySet()) {
+        var sources = STREAMS.get(entry.getKey());
+        require(
+            sources.size() == STARTUP_COUNTS.get(entry.getKey())
+                && sources.getLast() == entry.getValue()
+                && mc.getSoundManager().isActive(entry.getValue()),
+            "startup-to-loop transition replaced or stopped the source at " + entry.getKey());
+      }
+      LoggerFactory.getLogger("IC2R-Machine-Sound")
+          .info(
+              "IC2R_GAPLESS_MACHINE_SOUND_PASS: {} furnaces kept one actual streaming source through startup and the working loop",
+              STARTUP_SOURCES.size());
       change(mc, machine -> outputs(machine, true));
     }
     if (phase == 245) {
