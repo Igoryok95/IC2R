@@ -31,3 +31,5 @@ side="BOTH"
 config="ic2.mixins.json"
 [[mixins]]
 config="ic2.villages.mixins.json"
+[[mixins]]
+config="ic2.flight.mixins.json"

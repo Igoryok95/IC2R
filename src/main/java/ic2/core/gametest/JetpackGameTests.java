@@ -30,6 +30,42 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @GameTestHolder("ic2")
 @PrefixGameTestTemplate(false)
 public class JetpackGameTests {
+  @GameTest(template = "gametest/empty3x3x3")
+  public static void poweredThrustClearsOnlyTheVanillaFloatingWatchdog(GameTestHelper helper) {
+    var player = helper.makeMockServerPlayerInLevel();
+    player.setGameMode(GameType.SURVIVAL);
+    player.setOnGround(false);
+    var watchdog = (ic2.mixin.ServerGamePacketListenerAccessor) player.connection;
+    var stack = ElectricItemManager.getCharged(Ic2Items.JETPACK_ELECTRIC, 1000);
+    var jetpack = (IJetpack) stack.getItem();
+    boolean flightAllowed = helper.getLevel().getServer().isFlightAllowed();
+    for (int i = 0; i < 100; i++) {
+      watchdog.ic2$setFloatingTicks(79);
+      watchdog.ic2$setClientFloating(true);
+      helper.assertTrue(
+          JetpackLogic.useJetpack(player, true, jetpack, stack),
+          "charged hover remains legitimate");
+      helper.assertTrue(
+          watchdog.ic2$getFloatingTicks() == 0 && !watchdog.ic2$isClientFloating(),
+          "successful server-owned thrust resets the floating watchdog");
+    }
+    helper.assertTrue(
+        !player.getAbilities().mayfly
+            && !player.getAbilities().flying
+            && helper.getLevel().getServer().isFlightAllowed() == flightAllowed,
+        "jetpack thrust does not grant creative flight or change the server setting");
+    var empty = new ItemStack(Ic2Items.JETPACK_ELECTRIC);
+    watchdog.ic2$setFloatingTicks(79);
+    watchdog.ic2$setClientFloating(true);
+    helper.assertFalse(
+        JetpackLogic.useJetpack(player, true, jetpack, empty),
+        "empty jetpack cannot authorize flight");
+    helper.assertTrue(
+        watchdog.ic2$getFloatingTicks() == 79 && watchdog.ic2$isClientFloating(),
+        "unpowered flight keeps the normal watchdog");
+    helper.succeed();
+  }
+
   private static final String EMPTY = "gametest/empty3x3x3";
 
   private static final double MAX_CHARGE = 30000.0;

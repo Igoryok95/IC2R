@@ -5,8 +5,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.87-blue" alt="Version 21.1.87">
+<img src="https://img.shields.io/badge/Version-21.1.88-blue" alt="Version 21.1.88">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.88 — Jetpack flight on survival servers
+
+Successful server-side jetpack thrust clears the vanilla floating watchdog.
+Powered hovering works with `allow-flight=false` without granting creative-flight
+abilities or changing the server setting. Empty or inactive jetpacks keep the
+normal movement checks. This shared path also covers compatible Addons jetpacks.
+See [flight behavior and validation](docs/jetpack-flight-21.1.88.md).
 
 ## Version 21.1.87 — Air Compressor GUI cleanup
 

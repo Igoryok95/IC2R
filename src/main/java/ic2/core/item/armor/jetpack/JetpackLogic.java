@@ -5,7 +5,9 @@ import ic2.core.item.armor.ItemArmorJetpack;
 import ic2.core.ref.Ic2SoundEvents;
 import ic2.core.sound.Sound;
 import ic2.core.util.StackUtil;
+import ic2.mixin.ServerGamePacketListenerAccessor;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
@@ -107,6 +109,11 @@ public class JetpackLogic {
 
     player.fallDistance = 0.0F;
     player.resetFallDistance();
+    if (player instanceof ServerPlayer serverPlayer && serverPlayer.connection != null) {
+      var connection = (ServerGamePacketListenerAccessor) serverPlayer.connection;
+      connection.ic2$setFloatingTicks(0);
+      connection.ic2$setClientFloating(false);
+    }
     return true;
   }
 
