@@ -1,0 +1,1879 @@
+{
+  "source": "IndustrialCraft 2 Experimental 2.8.222-ex112, default modern assets",
+  "source_archive": "industrialcraft-2-2.8.222-ex112.jar",
+  "method": "Original PNG bytes copied unchanged; no resampling or image generation",
+  "replacements": [
+    {
+      "file": "block/bronze_tank_cap.png",
+      "source": "assets/ic2/textures/blocks/bronze_tank_cap.png"
+    },
+    {
+      "file": "block/bronze_tank_side.png",
+      "source": "assets/ic2/textures/blocks/bronze_tank_side.png"
+    },
+    {
+      "file": "block/explosive/nuke_bottom.png",
+      "source": "assets/ic2/textures/blocks/explosive/nuke_bottom.png"
+    },
+    {
+      "file": "block/explosive/nuke_sides.png",
+      "source": "assets/ic2/textures/blocks/explosive/nuke_sides.png"
+    },
+    {
+      "file": "block/explosive/nuke_top.png",
+      "source": "assets/ic2/textures/blocks/explosive/nuke_top.png"
+    },
+    {
+      "file": "block/generator/electric/creative_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/creative_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/creative_generator_side.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/creative_generator_side.png"
+    },
+    {
+      "file": "block/generator/electric/creative_generator_side_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/creative_generator_side_active.png"
+    },
+    {
+      "file": "block/generator/electric/creative_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/creative_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/generator_front_active.png"
+    },
+    {
+      "file": "block/generator/electric/generator_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/generator_leftrightback.png"
+    },
+    {
+      "file": "block/generator/electric/generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/geo_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/geo_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/geo_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/geo_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/geo_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/geo_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/electric/geo_generator_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/geo_generator_leftrightback.png"
+    },
+    {
+      "file": "block/generator/electric/geo_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/geo_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_back.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/electric/kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/rt_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/rt_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/rt_generator_sides.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/rt_generator_sides.png"
+    },
+    {
+      "file": "block/generator/electric/rt_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/rt_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/rt_generator_top_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/rt_generator_top_active.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_back.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_leftright_active.png"
+    },
+    {
+      "file": "block/generator/electric/semifluid_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/semifluid_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/solar_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/solar_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/solar_generator_sides.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/solar_generator_sides.png"
+    },
+    {
+      "file": "block/generator/electric/solar_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/solar_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_back.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/electric/stirling_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/stirling_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_back.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_left.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_left.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_right.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_right.png"
+    },
+    {
+      "file": "block/generator/electric/water_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/water_generator_top.png"
+    },
+    {
+      "file": "block/generator/electric/wind_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/wind_generator_back.png"
+    },
+    {
+      "file": "block/generator/electric/wind_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/wind_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/electric/wind_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/wind_generator_front.png"
+    },
+    {
+      "file": "block/generator/electric/wind_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/wind_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/electric/wind_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/electric/wind_generator_top.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_back.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_front.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_leftright_active.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_top.png"
+    },
+    {
+      "file": "block/generator/heat/electric_heat_generator_top_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/electric_heat_generator_top_active.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_back.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_front.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_leftright_active.png"
+    },
+    {
+      "file": "block/generator/heat/fluid_heat_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/fluid_heat_generator_top.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_back.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_front.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_top.png"
+    },
+    {
+      "file": "block/generator/heat/rt_heat_generator_top_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/rt_heat_generator_top_active.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_back.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_front.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_front_active.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_left.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_left.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_left_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_left_active.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_right.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_right.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_right_active.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_right_active.png"
+    },
+    {
+      "file": "block/generator/heat/solid_heat_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/heat/solid_heat_generator_top.png"
+    },
+    {
+      "file": "block/generator/kinetic/electric_kinetic_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/electric_kinetic_generator_back.png"
+    },
+    {
+      "file": "block/generator/kinetic/electric_kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/electric_kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/kinetic/electric_kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/electric_kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/kinetic/electric_kinetic_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/electric_kinetic_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/kinetic/electric_kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/electric_kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/kinetic/manual_kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/manual_kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/kinetic/manual_kinetic_generator_sides.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/manual_kinetic_generator_sides.png"
+    },
+    {
+      "file": "block/generator/kinetic/manual_kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/manual_kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_back.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_back_active.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_left_active.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_left_active.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_right_active.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_right_active.png"
+    },
+    {
+      "file": "block/generator/kinetic/steam_kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/steam_kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/kinetic/stirling_kinetic_generator_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/stirling_kinetic_generator_bottomtop.png"
+    },
+    {
+      "file": "block/generator/kinetic/stirling_kinetic_generator_bottomtop_active.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/stirling_kinetic_generator_bottomtop_active.png"
+    },
+    {
+      "file": "block/generator/kinetic/stirling_kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/stirling_kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/kinetic/stirling_kinetic_generator_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/stirling_kinetic_generator_leftrightback.png"
+    },
+    {
+      "file": "block/generator/kinetic/stirling_kinetic_generator_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/stirling_kinetic_generator_leftrightback_active.png"
+    },
+    {
+      "file": "block/generator/kinetic/water_kinetic_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/water_kinetic_generator_back.png"
+    },
+    {
+      "file": "block/generator/kinetic/water_kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/water_kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/kinetic/water_kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/water_kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/kinetic/water_kinetic_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/water_kinetic_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/kinetic/water_kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/water_kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/kinetic/wind_kinetic_generator_back.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/wind_kinetic_generator_back.png"
+    },
+    {
+      "file": "block/generator/kinetic/wind_kinetic_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/wind_kinetic_generator_bottom.png"
+    },
+    {
+      "file": "block/generator/kinetic/wind_kinetic_generator_front.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/wind_kinetic_generator_front.png"
+    },
+    {
+      "file": "block/generator/kinetic/wind_kinetic_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/wind_kinetic_generator_leftright.png"
+    },
+    {
+      "file": "block/generator/kinetic/wind_kinetic_generator_top.png",
+      "source": "assets/ic2/textures/blocks/generator/kinetic/wind_kinetic_generator_top.png"
+    },
+    {
+      "file": "block/generator/reactor/nuclear_reactor_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/nuclear_reactor_bottom.png"
+    },
+    {
+      "file": "block/generator/reactor/nuclear_reactor_front_active.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/nuclear_reactor_front_active.png"
+    },
+    {
+      "file": "block/generator/reactor/nuclear_reactor_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/nuclear_reactor_leftrightback_active.png"
+    },
+    {
+      "file": "block/generator/reactor/nuclear_reactor_sides.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/nuclear_reactor_sides.png"
+    },
+    {
+      "file": "block/generator/reactor/nuclear_reactor_top.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/nuclear_reactor_top.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_access_hatch.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_access_hatch.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_chamber_bottom.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_chamber_bottom.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_chamber_sides.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_chamber_sides.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_chamber_top.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_chamber_top.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_fluid_port.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_fluid_port.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_redstone_port.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_redstone_port.png"
+    },
+    {
+      "file": "block/generator/reactor/reactor_vessel.png",
+      "source": "assets/ic2/textures/blocks/generator/reactor/reactor_vessel.png"
+    },
+    {
+      "file": "block/machine/chunk_loader_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/chunk_loader_bottom.png"
+    },
+    {
+      "file": "block/machine/chunk_loader_side.png",
+      "source": "assets/ic2/textures/blocks/machine/chunk_loader_side.png"
+    },
+    {
+      "file": "block/machine/chunk_loader_side_active.png",
+      "source": "assets/ic2/textures/blocks/machine/chunk_loader_side_active.png"
+    },
+    {
+      "file": "block/machine/chunk_loader_top.png",
+      "source": "assets/ic2/textures/blocks/machine/chunk_loader_top.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_back_active.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_frontback.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_frontback.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_left_active.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_right_active.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_top.png"
+    },
+    {
+      "file": "block/machine/fluid/condenser_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/condenser_top_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_back.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_back.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_front.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_front.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_leftright_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_bottler_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_bottler_top.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_bottomtop.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_bottomtop_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_bottomtop_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_front.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_front.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_leftrightback.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_distributor_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_distributor_leftrightback_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_back.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_back.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_back_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_bottomtop.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_front.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_front.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_left_active.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/fluid_regulator_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/fluid_regulator_right_active.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_back.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_back.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_front.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_front.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_left_active.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_right_active.png"
+    },
+    {
+      "file": "block/machine/fluid/liquid_heat_exchanger_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/liquid_heat_exchanger_top.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_back.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_back.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_front.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_front.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_leftright_active.png"
+    },
+    {
+      "file": "block/machine/fluid/pump_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/pump_top.png"
+    },
+    {
+      "file": "block/machine/fluid/solar_distiller_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/solar_distiller_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/solar_distiller_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/solar_distiller_sides.png"
+    },
+    {
+      "file": "block/machine/fluid/solar_distiller_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/solar_distiller_top.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_back_active.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_front_active.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_frontback.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_frontback.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_left_active.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_leftright.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_right_active.png"
+    },
+    {
+      "file": "block/machine/fluid/steam_generator_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/steam_generator_top.png"
+    },
+    {
+      "file": "block/machine/fluid/tank_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/tank_bottom.png"
+    },
+    {
+      "file": "block/machine/fluid/tank_side.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/tank_side.png"
+    },
+    {
+      "file": "block/machine/fluid/tank_top.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/tank_top.png"
+    },
+    {
+      "file": "block/machine/fluid/weighted_fluid_distributor_in.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/weighted_fluid_distributor_in.png"
+    },
+    {
+      "file": "block/machine/fluid/weighted_fluid_distributor_out.png",
+      "source": "assets/ic2/textures/blocks/machine/fluid/weighted_fluid_distributor_out.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_back.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_back.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_bottom.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_front.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_front.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_left.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_left.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_right.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_right.png"
+    },
+    {
+      "file": "block/machine/misc/industrial_workbench_top.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/industrial_workbench_top.png"
+    },
+    {
+      "file": "block/machine/misc/item_buffer_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/item_buffer_bottomtop.png"
+    },
+    {
+      "file": "block/machine/misc/item_buffer_frontback.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/item_buffer_frontback.png"
+    },
+    {
+      "file": "block/machine/misc/item_buffer_left.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/item_buffer_left.png"
+    },
+    {
+      "file": "block/machine/misc/item_buffer_right.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/item_buffer_right.png"
+    },
+    {
+      "file": "block/machine/misc/magnetizer_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/magnetizer_bottomtop.png"
+    },
+    {
+      "file": "block/machine/misc/magnetizer_front.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/magnetizer_front.png"
+    },
+    {
+      "file": "block/machine/misc/magnetizer_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/magnetizer_leftrightback.png"
+    },
+    {
+      "file": "block/machine/misc/rci_lzh_back.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_lzh_back.png"
+    },
+    {
+      "file": "block/machine/misc/rci_lzh_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_lzh_sides.png"
+    },
+    {
+      "file": "block/machine/misc/rci_lzh_sides_active.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_lzh_sides_active.png"
+    },
+    {
+      "file": "block/machine/misc/rci_rsh_back.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_rsh_back.png"
+    },
+    {
+      "file": "block/machine/misc/rci_rsh_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_rsh_sides.png"
+    },
+    {
+      "file": "block/machine/misc/rci_rsh_sides_active.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/rci_rsh_sides_active.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_back.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_back.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_bottom.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_front.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_front.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_left.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_left.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_right.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_right.png"
+    },
+    {
+      "file": "block/machine/misc/sorting_machine_top.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/sorting_machine_top.png"
+    },
+    {
+      "file": "block/machine/misc/teleporter_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/teleporter_bottom.png"
+    },
+    {
+      "file": "block/machine/misc/teleporter_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/teleporter_sides.png"
+    },
+    {
+      "file": "block/machine/misc/teleporter_sides_active.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/teleporter_sides_active.png"
+    },
+    {
+      "file": "block/machine/misc/teleporter_top.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/teleporter_top.png"
+    },
+    {
+      "file": "block/machine/misc/teleporter_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/teleporter_top_active.png"
+    },
+    {
+      "file": "block/machine/misc/terraformer_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/terraformer_bottom.png"
+    },
+    {
+      "file": "block/machine/misc/terraformer_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/terraformer_sides.png"
+    },
+    {
+      "file": "block/machine/misc/terraformer_sides_active.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/terraformer_sides_active.png"
+    },
+    {
+      "file": "block/machine/misc/terraformer_top.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/terraformer_top.png"
+    },
+    {
+      "file": "block/machine/misc/tesla_coil_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/tesla_coil_bottomtop.png"
+    },
+    {
+      "file": "block/machine/misc/tesla_coil_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/tesla_coil_sides.png"
+    },
+    {
+      "file": "block/machine/misc/weighted_item_distributor_in.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/weighted_item_distributor_in.png"
+    },
+    {
+      "file": "block/machine/misc/weighted_item_distributor_out.png",
+      "source": "assets/ic2/textures/blocks/machine/misc/weighted_item_distributor_out.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_top.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/blast_furnace_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/blast_furnace_top_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_bottomtop.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/block_cutter_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/block_cutter_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_top.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/centrifuge_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/centrifuge_top_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_back_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/fermenter_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/fermenter_top.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_bottomtop.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/induction_furnace_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/induction_furnace_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_top.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/metal_former_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/metal_former_top_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_back.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_front.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_left.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_left.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_left_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_right.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_right.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_right_active.png"
+    },
+    {
+      "file": "block/machine/processing/advanced/ore_washing_plant_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/advanced/ore_washing_plant_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_back.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_left_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_right_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/canner_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/canner_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/compressor_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/compressor_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/compressor_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/compressor_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/compressor_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/compressor_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/compressor_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/compressor_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/basic/compressor_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/compressor_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/electric_furnace_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/electric_furnace_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/electric_furnace_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/electric_furnace_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/electric_furnace_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/electric_furnace_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/electric_furnace_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/electric_furnace_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/basic/electric_furnace_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/electric_furnace_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_back.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_back.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_leftright.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_leftright_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/extractor_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/extractor_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/macerator_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/macerator_top_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_top.png"
+    },
+    {
+      "file": "block/machine/processing/basic/recycler_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/recycler_top_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/solid_canner_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/solid_canner_bottom.png"
+    },
+    {
+      "file": "block/machine/processing/basic/solid_canner_front.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/solid_canner_front.png"
+    },
+    {
+      "file": "block/machine/processing/basic/solid_canner_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/solid_canner_front_active.png"
+    },
+    {
+      "file": "block/machine/processing/basic/solid_canner_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/solid_canner_leftrightback.png"
+    },
+    {
+      "file": "block/machine/processing/basic/solid_canner_top.png",
+      "source": "assets/ic2/textures/blocks/machine/processing/basic/solid_canner_top.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_back_active.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_bottom.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_bottom_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_bottom_active.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_front_active.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_frontback.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_frontback.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_leftright.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_leftright_active.png"
+    },
+    {
+      "file": "block/machine/resource/advanced_miner_top.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/advanced_miner_top.png"
+    },
+    {
+      "file": "block/machine/resource/crop_harvester_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/crop_harvester_bottom.png"
+    },
+    {
+      "file": "block/machine/resource/crop_harvester_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/crop_harvester_sides.png"
+    },
+    {
+      "file": "block/machine/resource/crop_harvester_top.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/crop_harvester_top.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_back_active.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_bottom.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_front_active.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_leftright_active.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_sides.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_sides.png"
+    },
+    {
+      "file": "block/machine/resource/cropmatron_top.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/cropmatron_top.png"
+    },
+    {
+      "file": "block/machine/resource/miner_back.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_back.png"
+    },
+    {
+      "file": "block/machine/resource/miner_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_back_active.png"
+    },
+    {
+      "file": "block/machine/resource/miner_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_bottom.png"
+    },
+    {
+      "file": "block/machine/resource/miner_bottom_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_bottom_active.png"
+    },
+    {
+      "file": "block/machine/resource/miner_front.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_front.png"
+    },
+    {
+      "file": "block/machine/resource/miner_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_front_active.png"
+    },
+    {
+      "file": "block/machine/resource/miner_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_leftright.png"
+    },
+    {
+      "file": "block/machine/resource/miner_leftright_active.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_leftright_active.png"
+    },
+    {
+      "file": "block/machine/resource/miner_top.png",
+      "source": "assets/ic2/textures/blocks/machine/resource/miner_top.png"
+    },
+    {
+      "file": "block/machine/uu/matter_generator_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/matter_generator_bottom.png"
+    },
+    {
+      "file": "block/machine/uu/matter_generator_front.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/matter_generator_front.png"
+    },
+    {
+      "file": "block/machine/uu/matter_generator_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/matter_generator_front_active.png"
+    },
+    {
+      "file": "block/machine/uu/matter_generator_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/matter_generator_leftrightback.png"
+    },
+    {
+      "file": "block/machine/uu/matter_generator_top.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/matter_generator_top.png"
+    },
+    {
+      "file": "block/machine/uu/pattern_storage_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/pattern_storage_bottom.png"
+    },
+    {
+      "file": "block/machine/uu/pattern_storage_frontback.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/pattern_storage_frontback.png"
+    },
+    {
+      "file": "block/machine/uu/pattern_storage_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/pattern_storage_leftright.png"
+    },
+    {
+      "file": "block/machine/uu/pattern_storage_top.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/pattern_storage_top.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_back.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_back.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_back_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_back_active.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_bottom.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_front.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_front.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_front_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_front_active.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_left.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_left.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_left_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_left_active.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_right.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_right.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_right_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_right_active.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_top.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_top.png"
+    },
+    {
+      "file": "block/machine/uu/replicator_top_active.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/replicator_top_active.png"
+    },
+    {
+      "file": "block/machine/uu/scanner_back.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/scanner_back.png"
+    },
+    {
+      "file": "block/machine/uu/scanner_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/scanner_bottom.png"
+    },
+    {
+      "file": "block/machine/uu/scanner_front.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/scanner_front.png"
+    },
+    {
+      "file": "block/machine/uu/scanner_leftright.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/scanner_leftright.png"
+    },
+    {
+      "file": "block/machine/uu/scanner_top.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/scanner_top.png"
+    },
+    {
+      "file": "block/machine/uu/uu_assembly_bench_bottom.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/uu_assembly_bench_bottom.png"
+    },
+    {
+      "file": "block/machine/uu/uu_assembly_bench_side.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/uu_assembly_bench_side.png"
+    },
+    {
+      "file": "block/machine/uu/uu_assembly_bench_top.png",
+      "source": "assets/ic2/textures/blocks/machine/uu/uu_assembly_bench_top.png"
+    },
+    {
+      "file": "block/personal/energy_o_mat_bottom.png",
+      "source": "assets/ic2/textures/blocks/personal/energy_o_mat_bottom.png"
+    },
+    {
+      "file": "block/personal/energy_o_mat_front.png",
+      "source": "assets/ic2/textures/blocks/personal/energy_o_mat_front.png"
+    },
+    {
+      "file": "block/personal/energy_o_mat_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/personal/energy_o_mat_leftrightback.png"
+    },
+    {
+      "file": "block/personal/energy_o_mat_top.png",
+      "source": "assets/ic2/textures/blocks/personal/energy_o_mat_top.png"
+    },
+    {
+      "file": "block/personal/personal_chest_case_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/personal/personal_chest_case_bottomtop.png"
+    },
+    {
+      "file": "block/personal/personal_chest_case_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/personal/personal_chest_case_leftrightback.png"
+    },
+    {
+      "file": "block/personal/trade_o_mat_bottom.png",
+      "source": "assets/ic2/textures/blocks/personal/trade_o_mat_bottom.png"
+    },
+    {
+      "file": "block/personal/trade_o_mat_front.png",
+      "source": "assets/ic2/textures/blocks/personal/trade_o_mat_front.png"
+    },
+    {
+      "file": "block/personal/trade_o_mat_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/personal/trade_o_mat_leftrightback.png"
+    },
+    {
+      "file": "block/personal/trade_o_mat_top.png",
+      "source": "assets/ic2/textures/blocks/personal/trade_o_mat_top.png"
+    },
+    {
+      "file": "block/personal/trading_terminal_bottom.png",
+      "source": "assets/ic2/textures/blocks/personal/trading_terminal_bottom.png"
+    },
+    {
+      "file": "block/personal/trading_terminal_front.png",
+      "source": "assets/ic2/textures/blocks/personal/trading_terminal_front.png"
+    },
+    {
+      "file": "block/personal/trading_terminal_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/personal/trading_terminal_leftrightback.png"
+    },
+    {
+      "file": "block/personal/trading_terminal_top.png",
+      "source": "assets/ic2/textures/blocks/personal/trading_terminal_top.png"
+    },
+    {
+      "file": "block/personal/wireless_trade_o_mat_side.png",
+      "source": "assets/ic2/textures/blocks/personal/wireless_trade_o_mat_side.png"
+    },
+    {
+      "file": "block/resource/advanced_machine.png",
+      "source": "assets/ic2/textures/blocks/resource/advanced_machine.png"
+    },
+    {
+      "file": "block/resource/machine.png",
+      "source": "assets/ic2/textures/blocks/resource/machine.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_batbox_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_batbox_back.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_batbox_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_batbox_bottom.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_batbox_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_batbox_front.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_batbox_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_batbox_top.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_batbox_top_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_batbox_top_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_back.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_bottom.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_front.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_leftright.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_leftright.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_top.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_cesu_top_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_cesu_top_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_back.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_back_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_back_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_bottom.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_front.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_leftright.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_leftright.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_top.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfe_top_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfe_top_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_back_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_back_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_bottom.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_front.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_front_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_front_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_left_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_left_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_leftrightback.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_right_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_right_active.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_top.png"
+    },
+    {
+      "file": "block/wiring/chargepad/chargepad_mfsu_top_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/chargepad/chargepad_mfsu_top_active.png"
+    },
+    {
+      "file": "block/wiring/storage/batbox_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/batbox_back.png"
+    },
+    {
+      "file": "block/wiring/storage/batbox_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/batbox_bottom.png"
+    },
+    {
+      "file": "block/wiring/storage/batbox_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/batbox_front.png"
+    },
+    {
+      "file": "block/wiring/storage/batbox_leftright.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/batbox_leftright.png"
+    },
+    {
+      "file": "block/wiring/storage/batbox_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/batbox_top.png"
+    },
+    {
+      "file": "block/wiring/storage/cesu_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/cesu_back.png"
+    },
+    {
+      "file": "block/wiring/storage/cesu_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/cesu_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/storage/cesu_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/cesu_front.png"
+    },
+    {
+      "file": "block/wiring/storage/cesu_leftright.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/cesu_leftright.png"
+    },
+    {
+      "file": "block/wiring/storage/electrolyzer_bottom.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/electrolyzer_bottom.png"
+    },
+    {
+      "file": "block/wiring/storage/electrolyzer_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/electrolyzer_leftrightback_active.png"
+    },
+    {
+      "file": "block/wiring/storage/electrolyzer_sides.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/electrolyzer_sides.png"
+    },
+    {
+      "file": "block/wiring/storage/electrolyzer_sides_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/electrolyzer_sides_active.png"
+    },
+    {
+      "file": "block/wiring/storage/electrolyzer_top.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/electrolyzer_top.png"
+    },
+    {
+      "file": "block/wiring/storage/mfe_back.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfe_back.png"
+    },
+    {
+      "file": "block/wiring/storage/mfe_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfe_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/storage/mfe_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfe_front.png"
+    },
+    {
+      "file": "block/wiring/storage/mfe_leftright.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfe_leftright.png"
+    },
+    {
+      "file": "block/wiring/storage/mfsu_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfsu_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/storage/mfsu_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfsu_front.png"
+    },
+    {
+      "file": "block/wiring/storage/mfsu_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/wiring/storage/mfsu_leftrightback.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_bottomtop_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_bottomtop_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_front.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_front_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_front_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_leftrightback.png"
+    },
+    {
+      "file": "block/wiring/transformer/ev_transformer_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/ev_transformer_leftrightback_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_bottomtop_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_bottomtop_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_front.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_front_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_front_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_leftrightback.png"
+    },
+    {
+      "file": "block/wiring/transformer/hv_transformer_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/hv_transformer_leftrightback_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/lv_transformer_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/lv_transformer_front.png"
+    },
+    {
+      "file": "block/wiring/transformer/lv_transformer_front_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/lv_transformer_front_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_bottomtop.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_bottomtop.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_bottomtop_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_bottomtop_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_front.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_front.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_front_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_front_active.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_leftrightback.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_leftrightback.png"
+    },
+    {
+      "file": "block/wiring/transformer/mv_transformer_leftrightback_active.png",
+      "source": "assets/ic2/textures/blocks/wiring/transformer/mv_transformer_leftrightback_active.png"
+    }
+  ]
+}

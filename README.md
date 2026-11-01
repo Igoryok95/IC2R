@@ -5,8 +5,21 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.83-blue" alt="Version 21.1.83">
+<img src="https://img.shields.io/badge/Version-21.1.84-blue" alt="Version 21.1.84">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.84 — Original Experimental machine textures
+
+Machine blocks use 468 original 32x32 PNGs from IC2 Experimental 2.8.222-ex112.
+This restores the modern machine, generator, reactor, storage and transformer
+artwork alongside Addons' original Advanced Machines textures. PNG bytes are
+copied unchanged; textures that were already 16x16 in that original pack remain
+at their native resolution. The Macerator also uses its original side and bottom.
+
+The Scanner title and result caption occupy separate centered header areas in
+English and Russian, keeping both inside the existing GUI frame. Slots and
+machine behavior are unchanged. See [details and validation](docs/experimental-machine-textures-21.1.84.md)
+and the [complete replacement list](docs/texture-replacements-21.1.84.txt).
 
 ## Version 21.1.83 — Heat readings and familiar Russian names
 

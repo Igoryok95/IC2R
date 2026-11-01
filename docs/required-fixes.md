@@ -2,7 +2,7 @@
 
 ## Scanner GUI heading alignment
 
-Status: reported, not implemented.
+Status: fixed in 21.1.84.
 
 The Russian Scanner screen has an inconsistent header layout: the main title
 and the result-area caption do not have clearly separated bounds, and the
@@ -20,4 +20,7 @@ Required outcome:
 - Check English and Russian at supported GUI scales.
 - Preserve slot positions, scanner behavior and the existing localization keys.
 
-Only this issue has been recorded; the GUI and textures have not been changed.
+The Scanner now gives the title and result caption independent centered columns.
+Their centers are at x=57 and x=134 respectively, inside the existing 176-pixel
+screen. Slots, actions and localization keys are preserved. Validation is recorded
+in [the 21.1.84 notes](experimental-machine-textures-21.1.84.md).

@@ -45,9 +45,14 @@ public class GuiScanner extends Ic2Gui<ContainerScanner> {
   }
 
   @Override
+  protected void drawTitle(GuiGraphics guiGraphics) {
+    this.drawXCenteredString(guiGraphics, 57, 6, this.title, 4210752, false);
+    this.drawXCenteredString(guiGraphics, 134, 6, this.info[5], 4210752, false);
+  }
+
+  @Override
   protected void drawForegroundLayer(GuiGraphics guiGraphics, int mouseX, int mouseY) {
     super.drawForegroundLayer(guiGraphics, mouseX, mouseY);
-    this.drawString(guiGraphics, 123, 6, this.info[5].getString() + ":", 4210752);
     TileEntityScanner te = this.menu.base;
     switch (te.getState()) {
       case IDLE:

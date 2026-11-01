@@ -161,6 +161,10 @@ public abstract class Ic2Gui<T extends ContainerBase<? extends Container>>
         this.imageHeight,
         256,
         256);
+    this.drawTitle(guiGraphics);
+  }
+
+  protected void drawTitle(GuiGraphics guiGraphics) {
     this.drawXCenteredString(guiGraphics, this.imageWidth / 2, 6, this.title, 4210752, false);
   }
 
