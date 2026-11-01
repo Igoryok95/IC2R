@@ -31,6 +31,48 @@ public final class ExperimentalGameTests {
   private static final String EMPTY = "gametest/empty3x3x3";
 
   @GameTest(template = EMPTY)
+  public static void fluidPipesUsePickaxeAndDrillMiningSpeeds(GameTestHelper h) {
+    var pos = new BlockPos(1, 1, 1);
+    var player = h.makeMockServerPlayerInLevel();
+    player.setNoGravity(true);
+    var absolute = h.absolutePos(pos);
+    player.teleportTo(absolute.getX() + .5, absolute.getY(), absolute.getZ() + .5);
+    player.setOnGround(true);
+    for (var entry : ExperimentalPipes.BLOCKS.entrySet()) {
+      var block = entry.getValue();
+      h.setBlock(pos, block);
+      var state = h.getBlockState(pos);
+      h.assertTrue(
+          state.is(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE),
+          "pipe pickaxe tag: " + entry.getKey());
+      player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+      float hand = player.getDigSpeed(state, absolute);
+      var pickaxe = new ItemStack(Items.DIAMOND_PICKAXE);
+      player.setItemInHand(InteractionHand.MAIN_HAND, pickaxe);
+      float pickaxeSpeed = player.getDigSpeed(state, absolute);
+      var drill = ic2.core.item.ElectricItemManager.getCharged(Ic2Items.DIAMOND_DRILL, 10000);
+      player.setItemInHand(InteractionHand.MAIN_HAND, drill);
+      double charge = ElectricItem.manager.getCharge(drill);
+      float drillSpeed = player.getDigSpeed(state, absolute);
+      h.assertTrue(
+          pickaxeSpeed == 8 && drillSpeed == 16 && hand == 1,
+          "real mining rates for " + entry.getKey());
+      h.assertTrue(
+          ElectricItem.manager.getCharge(drill) == charge, "speed inspection spends no EU");
+      h.assertTrue(
+          new ItemStack(Ic2Items.DIAMOND_DRILL).getDestroySpeed(state) == 1,
+          "empty drill keeps native fallback");
+      var drops =
+          net.minecraft.world.level.block.Block.getDrops(
+              state, h.getLevel(), absolute, h.getBlockEntity(pos), player, drill);
+      h.assertTrue(
+          drops.stream().anyMatch(stack -> stack.is(block.asItem()) && stack.getCount() == 1),
+          "pipe retains its normal drop: " + entry.getKey());
+    }
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY)
   public static void stickyDynamiteStaysAtImpactAndFallsWhenSupportBreaks(GameTestHelper h) {
     var block = new BlockPos(1, 1, 1);
     h.setBlock(block, net.minecraft.world.level.block.Blocks.STONE);
