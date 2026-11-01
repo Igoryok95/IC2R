@@ -1450,5 +1450,20 @@
   "jei.ic2.alias.energy_o_mat.classic": "Energy-O-Mat",
   "jei.ic2.alias.luminator.classic": "Luminator",
   "jei.ic2.alias.chainsaw.classic": "Chainsaw",
-  "jade.ic2.heat_output": "Heat output: %s / %s hU/t"
+  "jade.ic2.heat_output": "Heat output: %s / %s hU/t",
+  "block.ic2.air_compressor": "Air Compressor",
+  "container.ic2.air_compressor": "Air Compressor",
+  "ic2.air_compressor.gui.consumption": "Consumption: %s EU/t",
+  "ic2.air_compressor.gui.production": "Production: %s mB/t",
+  "ic2.air_compressor.gui.delivery": "Delivery: %s mB/t",
+  "ic2.air_compressor.gui.receiver": "%s mB",
+  "ic2.air_compressor.status.disabled": "Compression disabled",
+  "ic2.air_compressor.status.full": "Receiver full",
+  "ic2.air_compressor.status.running": "Compressing air",
+  "ic2.air_compressor.status.energy": "Waiting for energy",
+  "jei.ic2.air_compressor": "Compresses ambient air without capsules. Base rate: 2 EU/t and 1000 mB per 300 ticks (600 EU per 1000 mB). The 16000 mB receiver supplies adjacent machines and fluid pipes automatically, up to 32 mB/t in total. A full receiver stops compression without idle EU use. The GUI distinguishes production from actual delivery; readings average the previous second. Supports Overclocker, Transformer, Energy Storage upgrades. The local switch does not emit redstone.",
+  "ic2.air_compressor.gui.enable": "Enable air compression",
+  "ic2.air_compressor.gui.disable": "Disable air compression",
+  "jade.ic2.air_receiver": "Receiver: %s / %s mB",
+  "config.jade.plugin_ic2.air_receiver_cleanup": "Air Compressor receiver display"
 }

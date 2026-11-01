@@ -1450,5 +1450,20 @@
   "jei.ic2.alias.energy_o_mat.classic": "Торговая станция энергии",
   "jei.ic2.alias.luminator.classic": "Светильник",
   "jei.ic2.alias.chainsaw.classic": "Цепная пила",
-  "jade.ic2.heat_output": "Теплопередача: %s / %s hU/т"
+  "jade.ic2.heat_output": "Теплопередача: %s / %s hU/т",
+  "block.ic2.air_compressor": "Воздушный компрессор",
+  "container.ic2.air_compressor": "Воздушный компрессор",
+  "ic2.air_compressor.gui.consumption": "Расход: %s EU/т",
+  "ic2.air_compressor.gui.production": "Выпуск: %s мБ/т",
+  "ic2.air_compressor.gui.delivery": "Подача: %s мБ/т",
+  "ic2.air_compressor.gui.receiver": "%s мБ",
+  "ic2.air_compressor.status.disabled": "Сжатие воздуха выключено",
+  "ic2.air_compressor.status.full": "Ресивер заполнен",
+  "ic2.air_compressor.status.running": "Сжатие воздуха",
+  "ic2.air_compressor.status.energy": "Ожидание энергии",
+  "jei.ic2.air_compressor": "Сжимает окружающий воздух без капсул. Базовая производительность: 2 EU/т и 1000 мБ за 300 тактов (600 EU на 1000 мБ). Ресивер на 16000 мБ автоматически подаёт воздух в соседние машины и жидкостные трубы, суммарно до 32 мБ/т. При заполнении сжатие останавливается без расхода EU в простое. В GUI производство отделено от фактической подачи; показания усредняются за предыдущую секунду. Поддерживает ускорители, трансформаторы, энергохранители. Внутренний переключатель не излучает редстоун.",
+  "ic2.air_compressor.gui.enable": "Включить сжатие воздуха",
+  "ic2.air_compressor.gui.disable": "Выключить сжатие воздуха",
+  "jade.ic2.air_receiver": "Ресивер: %s / %s мБ",
+  "config.jade.plugin_ic2.air_receiver_cleanup": "Ресивер воздушного компрессора"
 }

@@ -24,6 +24,32 @@ public final class Ic2JadePlugin implements IWailaPlugin {
   @Override
   public void registerClient(IWailaClientRegistration registration) {
     registration.registerBlockComponent(PROVIDER, Ic2TileEntityBlock.class);
+    registration.registerBlockComponent(new AirReceiverCleanup(), Ic2TileEntityBlock.class);
+  }
+
+  private static final class AirReceiverCleanup implements IComponentProvider<BlockAccessor> {
+    @Override
+    public boolean isRequired() {
+      return true;
+    }
+
+    @Override
+    public ResourceLocation getUid() {
+      return IC2.getIdentifier("air_receiver_cleanup");
+    }
+
+    @Override
+    public int getDefaultPriority() {
+      return 10000;
+    }
+
+    @Override
+    public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+      if (config.get(PROVIDER)
+          && accessor.getServerData().getCompound("ic2_status").contains("air")) {
+        tooltip.remove(JadeIds.UNIVERSAL_FLUID_STORAGE);
+      }
+    }
   }
 
   public static final class Provider
@@ -104,6 +130,25 @@ public final class Ic2JadePlugin implements IWailaPlugin {
                 "jade.ic2.status",
                 Component.translatable(
                     data.getBoolean("active") ? "jade.ic2.running" : "jade.ic2.idle")));
+      if (data.contains("air")) {
+        bar(
+            tooltip,
+            data.getDouble("air") / Math.max(1, data.getDouble("airCapacity")),
+            Component.translatable(
+                "jade.ic2.air_receiver",
+                number(data.getInt("air")),
+                number(data.getInt("airCapacity"))),
+            0xFF4C9EBA);
+        tooltip.add(
+            Component.translatable(
+                "ic2.air_compressor.gui.consumption", number(data.getDouble("airConsumption"))));
+        tooltip.add(
+            Component.translatable(
+                "ic2.air_compressor.gui.production", number(data.getDouble("airProduction"))));
+        tooltip.add(
+            Component.translatable(
+                "ic2.air_compressor.gui.delivery", number(data.getDouble("airDelivery"))));
+      }
     }
 
     private static void bar(ITooltip tooltip, double ratio, Component text, int color) {

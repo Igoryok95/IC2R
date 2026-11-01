@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gui width="212" height="190">
+    <text y="6" align="center" maxwidth="176">%name%</text>
+    <energygauge x="13" y="33"/>
+    <slot name="discharge" x="8" y="55"/>
+    <slotgrid name="upgrade" x="188" y="43" cols="1" rows="4"/>
+    <button x="187" y="18" width="20" height="20" event="0"></button>
+    <text x="38" y="27" maxwidth="140">{ic2.air_compressor.gui.consumption,%base.getConsumptionText()%}</text>
+    <text x="38" y="39" maxwidth="140">{ic2.air_compressor.gui.production,%base.getProductionText()%}</text>
+    <text x="38" y="51" maxwidth="140">{ic2.air_compressor.gui.delivery,%base.getDeliveredText()%}</text>
+    <fluidtank name="receiver" x="38" y="65" width="136" height="18" type="horizontal"/>
+    <text x="106" y="70" center="x" color="0xFFFFFF" maxwidth="130">{ic2.air_compressor.gui.receiver,%base.getReceiverText()%}</text>
+    <text x="8" y="88" maxwidth="176">%base.getStatusText()%</text>
+    <playerInventory x="25" y="109"/>
+</gui>

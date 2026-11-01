@@ -501,6 +501,8 @@ public final class Ic2Items {
           new ItemBlockIc2(Ic2Blocks.CHUNK_LOADER, new Properties().rarity(Rarity.UNCOMMON)));
   public static final Item CANNER =
       register("canner", new ItemBlockIc2(Ic2Blocks.CANNER, new Properties()));
+  public static final Item AIR_COMPRESSOR =
+      register("air_compressor", new ItemBlockIc2(Ic2Blocks.AIR_COMPRESSOR, new Properties()));
   public static final Item COMPRESSOR =
       register("compressor", new ItemBlockIc2(Ic2Blocks.COMPRESSOR, new Properties()));
   public static final Item ELECTRIC_FURNACE =
@@ -1549,6 +1551,7 @@ public final class Ic2Items {
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> CENTRIFUGE);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> CHUNK_LOADER);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> COMPRESSOR);
+    addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> AIR_COMPRESSOR);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> CONDENSER);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> COKE_KILN);
     addToCreativeTab(Ic2ItemGroupType.MACHINES, () -> COKE_KILN_HATCH);

@@ -42,6 +42,11 @@ public class TankGauge extends GuiElement<TankGauge> {
     return new TankGauge(gui, x, y, width, height, tank, TankGauge.TankGuiStyle.Plain);
   }
 
+  public static TankGauge createHorizontal(
+      Ic2Gui<?> gui, int x, int y, int width, int height, Ic2FluidTank tank) {
+    return new TankGauge(gui, x, y, width, height, tank, TankGuiStyle.Horizontal);
+  }
+
   public static TankGauge createBorderless(
       Ic2Gui<?> gui, int x, int y, Ic2FluidTank tank, boolean mirrored) {
     return new TankGauge(
@@ -56,6 +61,18 @@ public class TankGauge extends GuiElement<TankGauge> {
 
   @Override
   public void drawBackground(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+    if (style == TankGuiStyle.Horizontal) {
+      gui.drawColoredRect(guiGraphics.pose(), x, y, width, height, 0xFF373737);
+      gui.drawColoredRect(guiGraphics.pose(), x + 1, y + 1, width - 1, height - 1, 0xFFFFFFFF);
+      gui.drawColoredRect(guiGraphics.pose(), x + 1, y + 1, width - 2, height - 2, 0xFF172227);
+      int filled =
+          (int)
+              ((width - 4)
+                  * Math.clamp(
+                      (double) tank.getFluidAmount() / Math.max(1, tank.getCapacity()), 0, 1));
+      gui.drawColoredRect(guiGraphics.pose(), x + 2, y + 2, filled, height - 4, 0xFF4C9EBA);
+      return;
+    }
     bindCommonTexture();
     Ic2FluidStack fs = this.tank.getFluidStack();
     if (fs != null && !fs.isEmpty()) {
@@ -154,7 +171,8 @@ public class TankGauge extends GuiElement<TankGauge> {
     Normal(true, true, false),
     Borderless(false, true, false),
     BorderlessMirrored(false, true, true),
-    Plain(false, false, false);
+    Plain(false, false, false),
+    Horizontal(false, false, false);
 
     public final boolean withBorder;
     public final boolean withGauge;

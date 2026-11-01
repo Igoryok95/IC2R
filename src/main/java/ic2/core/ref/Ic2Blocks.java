@@ -28,6 +28,7 @@ import ic2.core.block.kineticgenerator.tileentity.TileEntityWaterKineticGenerato
 import ic2.core.block.kineticgenerator.tileentity.TileEntityWindKineticGenerator;
 import ic2.core.block.machine.MiningPipeBlock;
 import ic2.core.block.machine.tileentity.TileEntityAdvMiner;
+import ic2.core.block.machine.tileentity.TileEntityAirCompressor;
 import ic2.core.block.machine.tileentity.TileEntityBatchCrafter;
 import ic2.core.block.machine.tileentity.TileEntityBetterItemBuffer;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
@@ -1088,6 +1089,20 @@ public final class Ic2Blocks {
                   .requiresCorrectToolForDrops()
                   .sound(SoundType.METAL),
               TileEntityCanner.class,
+              true,
+              Ic2TileEntityBlock.DefaultDrop.Machine,
+              Util.horizontalFacings,
+              true));
+  public static final Ic2TileEntityBlock AIR_COMPRESSOR =
+      register(
+          "air_compressor",
+          Ic2TileEntityBlock.create(
+              Properties.of()
+                  .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                  .strength(2.0F, 10.0F)
+                  .requiresCorrectToolForDrops()
+                  .sound(SoundType.METAL),
+              TileEntityAirCompressor.class,
               true,
               Ic2TileEntityBlock.DefaultDrop.Machine,
               Util.horizontalFacings,

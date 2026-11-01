@@ -580,6 +580,8 @@ public class Ic2JeiPlugin implements IModPlugin {
   }
 
   public void registerRecipes(@NotNull IRecipeRegistration registration) {
+    registration.addItemStackInfo(
+        new ItemStack(Ic2Blocks.AIR_COMPRESSOR), Component.translatable("jei.ic2.air_compressor"));
     RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
     BiConsumer<
             RecipeType<IORecipeWrapper>,

@@ -3,6 +3,7 @@ package ic2.integration.jade;
 import ic2.api.energy.EnergyNet;
 import ic2.api.reactor.IReactor;
 import ic2.core.block.comp.Energy;
+import ic2.core.block.machine.tileentity.TileEntityAirCompressor;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
 import ic2.core.block.machine.tileentity.TileEntityCentrifuge;
 import ic2.core.block.machine.tileentity.TileEntityInduction;
@@ -65,6 +66,14 @@ public final class MachineStatusData {
       data.putDouble("reactorHeat", reactor.getHeat());
       data.putDouble("reactorMaxHeat", reactor.getMaxHeat());
       data.putDouble("reactorOutput", reactor.getReactorEUEnergyOutput());
+    }
+    if (tile instanceof TileEntityAirCompressor compressor) {
+      data.putInt("air", compressor.receiver.getFluidAmount());
+      data.putInt("airCapacity", compressor.receiver.getCapacity());
+      data.putDouble("airProduction", compressor.production);
+      data.putDouble("airDelivery", compressor.delivered);
+      data.putDouble("airConsumption", compressor.consumption);
+      data.putBoolean("airEnabled", compressor.enabled);
     }
     return data;
   }

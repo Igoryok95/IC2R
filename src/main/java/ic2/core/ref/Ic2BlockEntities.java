@@ -22,6 +22,7 @@ import ic2.core.block.kineticgenerator.tileentity.TileEntityStirlingKineticGener
 import ic2.core.block.kineticgenerator.tileentity.TileEntityWaterKineticGenerator;
 import ic2.core.block.kineticgenerator.tileentity.TileEntityWindKineticGenerator;
 import ic2.core.block.machine.tileentity.TileEntityAdvMiner;
+import ic2.core.block.machine.tileentity.TileEntityAirCompressor;
 import ic2.core.block.machine.tileentity.TileEntityBatchCrafter;
 import ic2.core.block.machine.tileentity.TileEntityBetterItemBuffer;
 import ic2.core.block.machine.tileentity.TileEntityBlastFurnace;
@@ -343,6 +344,8 @@ public final class Ic2BlockEntities {
       register("canner", TileEntityCanner::new, Ic2Blocks.CANNER);
   public static final BlockEntityType<TileEntityCrop> CREEPER_WEED_CROP =
       register("creeper_weed_crop", TileEntityCrop::new, Ic2Blocks.CREEPER_WEED_CROP);
+  public static final BlockEntityType<TileEntityAirCompressor> AIR_COMPRESSOR =
+      register("air_compressor", TileEntityAirCompressor::new, Ic2Blocks.AIR_COMPRESSOR);
   public static final BlockEntityType<TileEntityCompressor> COMPRESSOR =
       register("compressor", TileEntityCompressor::new, Ic2Blocks.COMPRESSOR);
   public static final BlockEntityType<TileEntityCrop> DIAREED_CROP =

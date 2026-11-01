@@ -303,7 +303,8 @@ public class GuiParser {
         throw new SAXException("Invalid type: " + typeName);
       }
 
-      if (this.type == GuiParser.FluidTankNode.TankType.PLAIN) {
+      if (this.type == GuiParser.FluidTankNode.TankType.PLAIN
+          || this.type == GuiParser.FluidTankNode.TankType.HORIZONTAL) {
         this.width = XmlUtil.getIntAttr(attributes, "width");
         this.height = XmlUtil.getIntAttr(attributes, "height");
       } else {
@@ -325,7 +326,8 @@ public class GuiParser {
     public enum TankType {
       NORMAL,
       PLAIN,
-      BORDERLESS;
+      BORDERLESS,
+      HORIZONTAL;
 
       public static GuiParser.FluidTankNode.TankType get(String name) {
         for (GuiParser.FluidTankNode.TankType type : values()) {

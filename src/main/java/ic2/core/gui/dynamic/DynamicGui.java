@@ -7,7 +7,9 @@ import ic2.core.block.comp.Energy;
 import ic2.core.block.comp.Fluids;
 import ic2.core.block.invslot.InvSlot;
 import ic2.core.block.machine.IWarmupControl;
+import ic2.core.block.machine.tileentity.TileEntityAirCompressor;
 import ic2.core.block.tileentity.Ic2TileEntity;
+import ic2.core.gui.AirCompressorButton;
 import ic2.core.gui.Button;
 import ic2.core.gui.CustomButton;
 import ic2.core.gui.EnergyGauge;
@@ -70,13 +72,23 @@ public class DynamicGui<T extends Container> extends GuiDefaultBackground<Dynami
             switch (node.type) {
               case VANILLA:
                 button =
-                    new VanillaButton(
-                        this,
-                        node.x,
-                        node.y,
-                        node.width,
-                        node.height,
-                        this.createEventSender(node.eventID, node.eventName));
+                    this.menu.base instanceof TileEntityAirCompressor compressor
+                            && node.eventID == 0
+                        ? new AirCompressorButton(
+                            this,
+                            node.x,
+                            node.y,
+                            node.width,
+                            node.height,
+                            this.createEventSender(node.eventID, node.eventName),
+                            compressor)
+                        : new VanillaButton(
+                            this,
+                            node.x,
+                            node.y,
+                            node.width,
+                            node.height,
+                            this.createEventSender(node.eventID, node.eventName));
               case CUSTOM:
               default:
                 break;
@@ -326,6 +338,14 @@ public class DynamicGui<T extends Container> extends GuiDefaultBackground<Dynami
                 switch (node.type) {
                   case NORMAL ->
                       TankGauge.createNormal(this, node.x, node.y, fluids.getFluidTank(node.name));
+                  case HORIZONTAL ->
+                      TankGauge.createHorizontal(
+                          this,
+                          node.x,
+                          node.y,
+                          node.width,
+                          node.height,
+                          fluids.getFluidTank(node.name));
                   case PLAIN ->
                       TankGauge.createPlain(
                           this,

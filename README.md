@@ -5,8 +5,20 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.85-blue" alt="Version 21.1.85">
+<img src="https://img.shields.io/badge/Version-21.1.86-blue" alt="Version 21.1.86">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.86 — Air Compressor
+
+A dedicated **Air Compressor** supplies compressed air directly to Blast Furnaces
+and fluid pipes. Its 16,000 mB receiver produces 3.33 mB/t at 2 EU/t, matching the
+ordinary Compressor's EU cost per capsule. A full receiver stops compression
+without idle energy use. The horizontal native IC2R GUI separates consumption,
+production and delivery, with native upgrades and a local on/off switch.
+
+Original 32x32 Compressor artwork is retained, with a round dial and live needle.
+English/Russian GUI, Jade readings and JEI information are included. See
+[recipe, operation and validation](docs/air-compressor-21.1.86.md).
 
 ## Version 21.1.85 — Fluid-pipe mining tools
 
