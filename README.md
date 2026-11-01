@@ -5,8 +5,14 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.86-blue" alt="Version 21.1.86">
+<img src="https://img.shields.io/badge/Version-21.1.87-blue" alt="Version 21.1.87">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.87 — Air Compressor GUI cleanup
+
+The Air Compressor no longer displays the redundant status line below its
+receiver. The GUI remains 212x190, with all other widgets and inventory slots
+in their existing positions. Compression, controls and Jade readings are unchanged.
 
 ## Version 21.1.86 — Air Compressor
 

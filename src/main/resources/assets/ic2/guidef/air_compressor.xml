@@ -10,6 +10,5 @@
     <text x="38" y="51" maxwidth="140">{ic2.air_compressor.gui.delivery,%base.getDeliveredText()%}</text>
     <fluidtank name="receiver" x="38" y="65" width="136" height="18" type="horizontal"/>
     <text x="106" y="70" center="x" color="0xFFFFFF" maxwidth="130">{ic2.air_compressor.gui.receiver,%base.getReceiverText()%}</text>
-    <text x="8" y="88" maxwidth="176">%base.getStatusText()%</text>
     <playerInventory x="25" y="109"/>
 </gui>

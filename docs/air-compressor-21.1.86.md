@@ -1,5 +1,9 @@
 # Air Compressor in 21.1.86
 
+In 21.1.87, the redundant status label below the receiver is removed in every
+operating state. The GUI remains 212x190 and all other element coordinates are
+preserved; production, delivery, inventory, controls and Jade are unchanged.
+
 The ordinary Compressor produces air capsules, making a direct Blast Furnace
 installation depend on repeated capsule handling. The separate Air Compressor
 produces the same compressed-air fluid in a built-in 16,000 mB receiver. It supplies
