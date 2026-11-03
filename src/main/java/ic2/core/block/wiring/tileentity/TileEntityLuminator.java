@@ -63,17 +63,17 @@ public class TileEntityLuminator extends Ic2TileEntity {
   private static Map<Direction, List<AABB>> getAabbMap() {
     Map<Direction, List<AABB>> ret = new EnumMap<>(Direction.class);
 
-    for (Direction side : Direction.values()) {
-      int dx = side.getStepX();
-      int dy = side.getStepY();
-      int dz = side.getStepZ();
-      double xS = (double) (dx + 1) / 2 * 0.9375;
-      double yS = (double) (dy + 1) / 2 * 0.9375;
-      double zS = (double) (dz + 1) / 2 * 0.9375;
-      double xE = 0.0625 + (double) (dx + 2) / 2 * 0.9375;
-      double yE = 0.0625 + (double) (dy + 2) / 2 * 0.9375;
-      double zE = 0.0625 + (double) (dz + 2) / 2 * 0.9375;
-      ret.put(side.getOpposite(), List.of(new AABB(xS, yS, zS, xE, yE, zE)));
+    for (Direction facing : Direction.values()) {
+      int dx = facing.getStepX();
+      int dy = facing.getStepY();
+      int dz = facing.getStepZ();
+      double xS = dx < 0 ? 15.0 / 16 : 0;
+      double yS = dy < 0 ? 15.0 / 16 : 0;
+      double zS = dz < 0 ? 15.0 / 16 : 0;
+      double xE = dx > 0 ? 1.0 / 16 : 1;
+      double yE = dy > 0 ? 1.0 / 16 : 1;
+      double zE = dz > 0 ? 1.0 / 16 : 1;
+      ret.put(facing, List.of(new AABB(xS, yS, zS, xE, yE, zE)));
     }
 
     return ret;

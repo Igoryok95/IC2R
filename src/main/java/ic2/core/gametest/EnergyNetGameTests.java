@@ -617,8 +617,6 @@ public class EnergyNetGameTests {
   }
 
   // the luminator lights on redstone + EU and goes dark once the redstone signal is gone
-  // (the ACTIVE block state and thus the light level only sync on the client, so assert the tile
-  // state)
   @GameTest(template = EMPTY)
   public static void luminatorLightsOnRedstoneAndCurrent(GameTestHelper helper) {
     helper.setBlock(new BlockPos(1, 2, 1), Ic2Blocks.BATBOX);
@@ -639,6 +637,18 @@ public class EnergyNetGameTests {
         40,
         () -> {
           helper.assertTrue(luminator.getActive(), "luminator with redstone and EU should be lit");
+          var lampPos = helper.absolutePos(new BlockPos(1, 1, 1));
+          var level = helper.getLevel();
+          helper.assertTrue(
+              level.getBlockState(lampPos).getLightEmission(level, lampPos) == 15,
+              "powered luminator emits Minecraft's maximum light level");
+          helper.assertTrue(
+              level.getBrightness(net.minecraft.world.level.LightLayer.BLOCK, lampPos) == 15,
+              "the light engine receives level 15 at the lamp");
+          helper.assertTrue(
+              level.getBrightness(net.minecraft.world.level.LightLayer.BLOCK, lampPos.below())
+                  == 14,
+              "ceiling lamp light reaches the adjacent air block");
           helper.assertTrue(
               batbox.energy.getEnergy() < 400.0, "luminator should draw EU from the batbox");
         });
@@ -647,6 +657,11 @@ public class EnergyNetGameTests {
         80,
         () -> {
           helper.assertFalse(luminator.getActive(), "luminator without redstone must go dark");
+          var lampPos = helper.absolutePos(new BlockPos(1, 1, 1));
+          helper.assertTrue(
+              helper.getLevel().getBlockState(lampPos).getLightEmission(helper.getLevel(), lampPos)
+                  == 0,
+              "unpowered luminator stops emitting light");
           helper.succeed();
         });
   }

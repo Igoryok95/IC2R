@@ -75,6 +75,11 @@ neoForge {
     runs {
         client {
             client()
+            if (providers.gradleProperty('luminatorShapeSmoke').isPresent()) {
+                gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
+                systemProperty 'ic2.luminatorShapeSmoke', 'true'
+                programArguments.addAll '--quickPlaySingleplayer', 'SteelHopperSmoke', '--width', '1280', '--height', '960'
+            }
             if (providers.gradleProperty('airCompressorSmoke').isPresent()) {
                 gameDirectory = layout.projectDirectory.dir('run/steel-hopper-client')
                 systemProperty 'ic2.airCompressorSmoke', 'true'
