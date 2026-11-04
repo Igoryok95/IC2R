@@ -5,8 +5,16 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.91-blue" alt="Version 21.1.91">
+<img src="https://img.shields.io/badge/Version-21.1.92-blue" alt="Version 21.1.92">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.92 — Stable jetpack hover selection
+
+Landing no longer clears the selected hover mode. The pack stays idle on the ground
+until jumping, then resumes powered hover in the air. Holding jump and the mode key
+switches hover once; releasing and pressing the combination again switches it back,
+without cooldown-driven chat spam. The shared fix covers native, attached and
+compatible Addons jetpacks. See [cause and validation](docs/jetpack-hover-21.1.92.md).
 
 ## Version 21.1.91 — One worker per village workstation
 

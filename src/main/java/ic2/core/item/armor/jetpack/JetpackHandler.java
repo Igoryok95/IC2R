@@ -49,6 +49,7 @@ public class JetpackHandler implements IBackupElectricItemManager {
     if (hasJetpack(stack)) {
       JetpackLogic.onArmorTick(player.level(), player, stack, getJetpack(stack));
     } else {
+      JetpackLogic.clearHoverToggle(player);
       // Only the local client player owns the jetpack loop sound.
       JetpackLogic.stopJetpackSound(player);
     }
