@@ -5,8 +5,17 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.90-blue" alt="Version 21.1.90">
+<img src="https://img.shields.io/badge/Version-21.1.91-blue" alt="Version 21.1.91">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.91 — One worker per village workstation
+
+Restored professions now use the vanilla capacity and access range: one worker
+per job block. Their former two-worker capacity could attract competing residents
+to the same workstation. Saved IC2 job reservations migrate once while preserving
+occupied places; vanilla job records and profession assignments are not rewritten.
+Village workshop weights remain 2/2/2/2/1/1, alongside all original vanilla entries.
+See [cause, migration and validation](docs/village-jobs-21.1.91.md).
 
 ## Version 21.1.90 — Stable electric armor protection
 

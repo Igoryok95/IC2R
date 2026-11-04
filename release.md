@@ -1,3 +1,18 @@
+# 21.1.91
+
+- Match vanilla workstation capacity and valid range: one worker and one-block reach.
+- Remove the extra reservation per IC2 work block that allowed competing workers.
+- Migrate saved IC2 POI reservations from capacity two to one exactly once,
+  preserving occupied reservations and leaving vanilla POI records unchanged.
+- Preserve the approved 2/2/2/2/1/1 workshop weights, original village entries,
+  existing villager data and trade definitions.
+- Validate real POI claims/releases, vanilla profession boundaries and legacy/new
+  reservation round trips alongside all 512 required GameTests and 34 unit tests.
+
+See [cause and validation](docs/village-jobs-21.1.91.md).
+
+---
+
 # 21.1.90
 
 - Give charged Nano/Quantum protection a separate modifier ID for each armor slot.

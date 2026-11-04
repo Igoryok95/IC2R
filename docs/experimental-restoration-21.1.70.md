@@ -73,6 +73,11 @@ remain functional without Addons. The generator is reproducible with
 `python tools/generate_village_workshops.py <minecraft-1.21.1.jar>`; see
 [weights and placement](village-workshop-generation.json).
 
+As of 21.1.91, each IC2 workstation supports one worker with the vanilla one-block
+access range. The earlier two-worker reservation capacity was incorrect. Existing
+IC2 POI records migrate their capacity once; vanilla job records are unaffected.
+See [workstation correction and validation](village-jobs-21.1.91.md).
+
 The IC2 brewing barrel remains its own 32-litre fermentation block; a vanilla
 barrel remains ordinary item storage and the fisherman's workstation. Its crafting
 recipe changes from vertical **plank / rubber log / plank** to vertical

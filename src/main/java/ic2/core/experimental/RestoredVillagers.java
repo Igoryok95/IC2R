@@ -53,8 +53,8 @@ public final class RestoredVillagers {
             () ->
                 new PoiType(
                     ImmutableSet.copyOf(block.get().getStateDefinition().getPossibleStates()),
-                    2,
-                    2));
+                    1,
+                    1));
     ALL.put(
         name,
         PROFESSIONS.register(

@@ -8,9 +8,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.village.poi.PoiRecord;
+import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.phys.AABB;
@@ -49,6 +55,120 @@ public final class VillageGenerationGameTests {
           pool.size() == vanillaWeights[i] + 10,
           "repeated initialization does not duplicate workshops");
     }
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY, batch = "village_generation")
+  public static void workshopsOfferOneJobPerBlockAndKeepVanillaJobs(GameTestHelper h) {
+    var pois = h.getLevel().getPoiManager();
+    var pos = h.absolutePos(new BlockPos(3, 1, 3));
+    Block[] workstations = {
+      Ic2Blocks.IRON_FURNACE,
+      Ic2Blocks.CROPMATRON,
+      ExperimentalBrewing.BARREL,
+      Ic2Blocks.ITNT,
+      Ic2Blocks.NUCLEAR_REACTOR,
+      Ic2Blocks.INDUSTRIAL_WORKBENCH,
+      Blocks.COMPOSTER,
+      Blocks.BLAST_FURNACE,
+      Blocks.BARREL,
+      Blocks.BREWING_STAND,
+      Blocks.SMITHING_TABLE
+    };
+    for (Block block : workstations) {
+      var type = PoiTypes.forState(block.defaultBlockState()).orElseThrow();
+      h.assertTrue(type.value().maxTickets() == 1, "one worker per job block: " + block);
+      h.assertTrue(type.value().validRange() == 1, "native job reach range: " + block);
+      pois.add(pos, type);
+      h.assertTrue(
+          pois.take(
+                  holder -> holder.equals(type),
+                  (holder, candidate) -> candidate.equals(pos),
+                  pos,
+                  1)
+              .isPresent(),
+          "first worker can reserve " + block);
+      h.assertTrue(
+          pois.take(
+                  holder -> holder.equals(type),
+                  (holder, candidate) -> candidate.equals(pos),
+                  pos,
+                  1)
+              .isEmpty(),
+          "second worker cannot reserve the same " + block);
+      h.assertTrue(pois.release(pos), "the worker can release " + block);
+      h.assertTrue(pois.getFreeTickets(pos) == 1, "release restores one vacancy");
+      pois.remove(pos);
+    }
+    for (var entry : RestoredVillagers.ALL.entrySet()) {
+      var own =
+          h.getLevel()
+              .registryAccess()
+              .registryOrThrow(Registries.POINT_OF_INTEREST_TYPE)
+              .getHolder(ResourceLocation.fromNamespaceAndPath("ic2", entry.getKey()))
+              .orElseThrow();
+      h.assertTrue(
+          entry.getValue().get().heldJobSite().test(own), "profession recognizes its own job");
+      for (Block block :
+          List.of(
+              Blocks.COMPOSTER,
+              Blocks.BLAST_FURNACE,
+              Blocks.BARREL,
+              Blocks.BREWING_STAND,
+              Blocks.SMITHING_TABLE))
+        h.assertFalse(
+            entry
+                .getValue()
+                .get()
+                .heldJobSite()
+                .test(PoiTypes.forState(block.defaultBlockState()).orElseThrow()),
+            "IC2 professions cannot claim vanilla job blocks");
+    }
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY, batch = "village_generation")
+  public static void savedIc2JobCapacityMigratesOnceWithoutChangingVanillaRecords(
+      GameTestHelper h) {
+    var ops = RegistryOps.create(NbtOps.INSTANCE, h.getLevel().registryAccess());
+    var codec = PoiRecord.codec(() -> {});
+    for (var role : RestoredVillagers.ALL.keySet()) {
+      var type =
+          h.getLevel()
+              .registryAccess()
+              .registryOrThrow(Registries.POINT_OF_INTEREST_TYPE)
+              .getHolder(ResourceLocation.fromNamespaceAndPath("ic2", role))
+              .orElseThrow();
+      for (int free = 0; free <= 2; free++) {
+        var record = new PoiRecord(BlockPos.ZERO, type, () -> {});
+        CompoundTag legacy = ((CompoundTag) codec.encodeStart(ops, record).getOrThrow()).copy();
+        legacy.remove(VillagePoiCapacity.CAPACITY_KEY);
+        legacy.putInt("free_tickets", free);
+        PoiRecord migrated = codec.parse(ops, legacy).getOrThrow();
+        int expected = Math.max(0, free - 1);
+        h.assertTrue(
+            migrated.getFreeTickets() == expected, "legacy occupied reservations survive " + role);
+        CompoundTag saved = (CompoundTag) codec.encodeStart(ops, migrated).getOrThrow();
+        h.assertTrue(
+            saved.getInt(VillagePoiCapacity.CAPACITY_KEY) == 1,
+            "capacity marker is saved for IC2 only");
+        h.assertTrue(
+            codec.parse(ops, saved).getOrThrow().getFreeTickets() == expected,
+            "reloading must not apply the capacity reduction twice");
+      }
+    }
+    var vanilla =
+        new PoiRecord(
+            BlockPos.ZERO,
+            PoiTypes.forState(Blocks.COMPOSTER.defaultBlockState()).orElseThrow(),
+            () -> {});
+    CompoundTag saved = (CompoundTag) codec.encodeStart(ops, vanilla).getOrThrow();
+    h.assertFalse(
+        saved.contains(VillagePoiCapacity.CAPACITY_KEY),
+        "vanilla records keep their native format");
+    h.assertTrue(
+        codec.parse(ops, saved).getOrThrow().getFreeTickets() == 1,
+        "vanilla vacancies remain unchanged");
     h.succeed();
   }
 
