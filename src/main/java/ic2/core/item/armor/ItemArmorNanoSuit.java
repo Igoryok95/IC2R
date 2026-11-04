@@ -28,6 +28,11 @@ import org.jetbrains.annotations.NotNull;
 public class ItemArmorNanoSuit extends ItemArmorElectric implements IItemHudProvider {
   public static final int[] CHARGED_PROTECTION = new int[] {3, 6, 8, 3};
 
+  @Override
+  public int getChargedArmorProtection() {
+    return CHARGED_PROTECTION[getEquipmentSlot().getIndex()];
+  }
+
   public ItemArmorNanoSuit(
       Holder<ArmorMaterial> material, EquipmentSlot slot, Properties settings) {
     super(material, slot, settings, 1000000.0, 1600.0, 3);

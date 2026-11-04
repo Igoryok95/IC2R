@@ -44,6 +44,12 @@ import org.jetbrains.annotations.NotNull;
 public class ItemArmorQuantumSuit extends ItemArmorElectric
     implements IJetpack, IHazmatLike, IItemHudProvider {
   public static final int[] CHARGED_PROTECTION = new int[] {3, 6, 8, 3};
+
+  @Override
+  public int getChargedArmorProtection() {
+    return CHARGED_PROTECTION[getEquipmentSlot().getIndex()];
+  }
+
   protected static final Map<Holder<MobEffect>, Integer> potionRemovalCost =
       new IdentityHashMap<>();
   private static boolean potionRemovalCostInit = false;

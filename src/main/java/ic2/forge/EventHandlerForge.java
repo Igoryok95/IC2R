@@ -10,8 +10,6 @@ import ic2.core.IC2;
 import ic2.core.event.EventHandler;
 import ic2.core.event.TickHandler;
 import ic2.core.item.armor.ItemArmorElectric;
-import ic2.core.item.armor.ItemArmorNanoSuit;
-import ic2.core.item.armor.ItemArmorQuantumSuit;
 import ic2.core.item.armor.jetpack.JetpackHandler;
 import ic2.core.item.tool.AbstractItemNanoSaber;
 import ic2.core.util.LogCategory;
@@ -266,8 +264,6 @@ public final class EventHandlerForge {
       ResourceLocation.fromNamespaceAndPath("ic2", "nano_saber_damage");
   private static final ResourceLocation NANO_SABER_SPEED =
       ResourceLocation.fromNamespaceAndPath("ic2", "nano_saber_speed");
-  private static final ResourceLocation CHARGED_ARMOR =
-      ResourceLocation.fromNamespaceAndPath("ic2", "charged_armor");
 
   // Dynamic per-stack attribute modifiers (1.21 replacement for the removed Forge
   // getAttributeModifiers hook).
@@ -293,20 +289,17 @@ public final class EventHandlerForge {
           new AttributeModifier(NANO_SABER_SPEED, speed, AttributeModifier.Operation.ADD_VALUE),
           EquipmentSlotGroup.MAINHAND);
     } else if (item instanceof ItemArmorElectric electric) {
-      int[] protection =
-          item instanceof ItemArmorNanoSuit
-              ? ItemArmorNanoSuit.CHARGED_PROTECTION
-              : item instanceof ItemArmorQuantumSuit
-                  ? ItemArmorQuantumSuit.CHARGED_PROTECTION
-                  : null;
-      if (protection != null
+      int protection = electric.getChargedArmorProtection();
+      if (protection > 0
           && ElectricItem.manager.getCharge(stack) >= electric.getEnergyPerDamage()) {
         EquipmentSlot slot = electric.getEquipmentSlot();
         event.removeAllModifiersFor(Attributes.ARMOR);
         event.addModifier(
             Attributes.ARMOR,
             new AttributeModifier(
-                CHARGED_ARMOR, protection[slot.getIndex()], AttributeModifier.Operation.ADD_VALUE),
+                ResourceLocation.fromNamespaceAndPath("ic2", "charged_armor/" + slot.getName()),
+                protection,
+                AttributeModifier.Operation.ADD_VALUE),
             EquipmentSlotGroup.bySlot(slot));
       }
     }

@@ -1,3 +1,17 @@
+# 21.1.90
+
+- Give charged Nano/Quantum protection a separate modifier ID for each armor slot.
+  A charge update or removal can no longer overwrite the protection of other pieces.
+- Keep the existing 3/8/6/3 armor points, charge thresholds and EU absorption costs.
+  Full charged suits consistently supply 20 points to the HUD and vanilla combat.
+- Expose the same charged-protection hook for compatible addon chestplates.
+- Cover real equipment transitions, mixed suits, depletion/recharge and actual
+  damage with standalone IC2R regression tests.
+
+See [cause and validation](docs/electric-armor-protection-21.1.90.md).
+
+---
+
 # 21.1.82
 
 Minecraft 1.21.1 / NeoForge 21.1.234+ / Java 21.

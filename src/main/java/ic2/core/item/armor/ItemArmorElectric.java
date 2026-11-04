@@ -97,6 +97,11 @@ public abstract class ItemArmorElectric extends ItemArmorIC2 implements IElectri
 
   public abstract double getDamageAbsorptionRatio();
 
+  /** Vanilla armor points supplied by this piece while it can pay for protection. */
+  public int getChargedArmorProtection() {
+    return 0;
+  }
+
   protected double getBaseAbsorptionRatio() {
     return switch (this.getEquipmentSlot()) {
       case HEAD -> 0.15;
