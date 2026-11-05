@@ -1,18 +1,21 @@
 package ic2.core.experimental;
 
-import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.Map;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
-/** Original passive equalization and capacity/rate profiles; pump covers pull 640/2560 mB/s. */
+/** Receiver-directed transport with original capacity/rate profiles and pump-cover extraction. */
 public final class ExperimentalFluidPipe extends BlockEntity {
   public final FluidTank tank;
   public final byte[] pumps = new byte[6];
@@ -23,9 +26,10 @@ public final class ExperimentalFluidPipe extends BlockEntity {
   private boolean renderDirty;
   private long lastRenderUpdate = -5;
 
-  private record Outlet(IFluidHandler handler, Direction side) {}
-
-  private record Neighbor(ExperimentalFluidPipe pipe, Direction side) {}
+  FluidPipeNetwork network;
+  int outputCursor;
+  private final Map<Direction, BlockCapabilityCache<IFluidHandler, Direction>> neighborHandlers =
+      new EnumMap<>(Direction.class);
 
   public ExperimentalFluidPipe(BlockPos pos, BlockState state) {
     super(ExperimentalPipes.TYPE, pos, state);
@@ -48,6 +52,50 @@ public final class ExperimentalFluidPipe extends BlockEntity {
     super.onLoad();
     if (level != null && level.isClientSide)
       visuals.receive(tank.getFluid(), displayFlow, level.getGameTime(), tank.getCapacity());
+    else connectionsChanged();
+  }
+
+  @Override
+  public void onChunkUnloaded() {
+    connectionsChanged();
+    neighborHandlers.clear();
+    super.onChunkUnloaded();
+  }
+
+  @Override
+  public void setRemoved() {
+    connectionsChanged();
+    neighborHandlers.clear();
+    super.setRemoved();
+  }
+
+  public void connectionsChanged() {
+    if (level == null || level.isClientSide) return;
+    if (network != null) network.invalidate();
+    for (var side : Direction.values()) {
+      var pos = worldPosition.relative(side);
+      if (level.hasChunkAt(pos)
+          && level.getBlockEntity(pos) instanceof ExperimentalFluidPipe pipe
+          && pipe.network != null) pipe.network.invalidate();
+    }
+  }
+
+  IFluidHandler neighborHandler(Direction side) {
+    if (!(level instanceof ServerLevel world) || !enabled(side)) return null;
+    return neighborHandlers
+        .computeIfAbsent(
+            side,
+            direction ->
+                BlockCapabilityCache.create(
+                    Capabilities.FluidHandler.BLOCK,
+                    world,
+                    worldPosition.relative(direction),
+                    direction.getOpposite(),
+                    () -> !isRemoved(),
+                    () -> {
+                      if (network != null) network.clearRoutes();
+                    }))
+        .getCapability();
   }
 
   public IFluidHandler handler(Direction side) {
@@ -109,57 +157,18 @@ public final class ExperimentalFluidPipe extends BlockEntity {
   }
 
   private void moveFluid() {
-    var outputs = new ArrayList<Outlet>();
-    var neighbors = new ArrayList<Neighbor>();
-    long total = tank.getFluidAmount();
     for (var side : Direction.values()) {
-      if (!enabled(side) || !level.hasChunkAt(worldPosition.relative(side))) continue;
-      var handler =
-          level.getCapability(
-              Capabilities.FluidHandler.BLOCK, worldPosition.relative(side), side.getOpposite());
+      if (!enabled(side) || pumps[side.ordinal()] == 0) continue;
+      var handler = neighborHandler(side);
       if (handler == null) continue;
-      if (pumps[side.ordinal()] != 0) {
-        recordFlow(side, -transfer(handler, tank, pumps[side.ordinal()] == 1 ? 32 : 128));
-        continue;
-      }
-      if (tank.isEmpty()) continue;
-      if (level.getBlockEntity(worldPosition.relative(side))
-          instanceof ExperimentalFluidPipe pipe) {
-        if (pipe.enabled(side.getOpposite())
-            && pipe.pumps[side.getOpposite().ordinal()] == 0
-            && (pipe.tank.isEmpty()
-                || FluidStack.isSameFluidSameComponents(pipe.tank.getFluid(), tank.getFluid()))
-            && pipe.tank.getFluidAmount() <= tank.getFluidAmount()) {
-          neighbors.add(new Neighbor(pipe, side));
-          total += pipe.tank.getFluidAmount();
-        }
-      } else if (handler.fill(tank.getFluid(), IFluidHandler.FluidAction.SIMULATE) > 0)
-        outputs.add(new Outlet(handler, side));
+      recordFlow(side, -transfer(handler, tank, pumps[side.ordinal()] == 1 ? 32 : 128));
     }
     if (tank.isEmpty()) return;
-    total = tank.getFluidAmount();
-    for (var neighbor : neighbors) total += neighbor.pipe.tank.getFluidAmount();
-    int share = (int) (total / (neighbors.size() + 1));
-    for (var neighbor : neighbors) {
-      int sent =
-          transfer(
-              tank, neighbor.pipe.tank, Math.max(0, share - neighbor.pipe.tank.getFluidAmount()));
-      recordFlow(neighbor.side, sent);
-      neighbor.pipe.recordFlow(neighbor.side.getOpposite(), -sent);
-    }
-    int budget =
-        Math.min(
-            tank.getFluidAmount(), ((ExperimentalPipeBlock) getBlockState().getBlock()).rate / 20);
-    int left = outputs.size();
-    for (var output : outputs) {
-      int sent = transfer(tank, output.handler, (budget + left - 1) / left);
-      recordFlow(output.side, sent);
-      budget -= sent;
-      left--;
-    }
+    if (network == null || !network.valid()) FluidPipeNetwork.build(this);
+    network.move(this);
   }
 
-  private void recordFlow(Direction side, int amount) {
+  void recordFlow(Direction side, int amount) {
     pendingFlow[side.ordinal()] += amount;
   }
 
@@ -220,5 +229,6 @@ public final class ExperimentalFluidPipe extends BlockEntity {
     byte[] saved = nbt.getByteArray("pumps");
     for (int i = 0; i < Math.min(saved.length, 6); i++)
       pumps[i] = (byte) Math.clamp(saved[i], 0, 2);
+    connectionsChanged();
   }
 }

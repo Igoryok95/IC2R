@@ -56,6 +56,7 @@ public final class ExperimentalPipes {
             if (pipe.pumps[context.getClickedFace().ordinal()] != 0) return InteractionResult.FAIL;
             if (!level.isClientSide) {
               pipe.pumps[context.getClickedFace().ordinal()] = (byte) tier;
+              pipe.connectionsChanged();
               pipe.setChanged();
               level.invalidateCapabilities(pos);
               level.sendBlockUpdated(pos, pipe.getBlockState(), pipe.getBlockState(), 3);

@@ -5,8 +5,17 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.92-blue" alt="Version 21.1.92">
+<img src="https://img.shields.io/badge/Version-21.1.93-blue" alt="Version 21.1.93">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.93 — Fluid delivery without trapped remnants
+
+Pipes route their contents toward accepting machines, including individual 1 mB
+batches and fluid already stored in older lines. Integer averaging no longer
+traps matter in a staircase of partially filled pipes. Equal routes rotate their
+priority; full receivers and closed connections preserve buffered contents.
+Original capacities, pump rates and per-profile output budgets are retained.
+See [routing, compatibility and validation](docs/fluid-pipe-routing-21.1.93.md).
 
 ## Version 21.1.92 — Stable jetpack hover selection
 

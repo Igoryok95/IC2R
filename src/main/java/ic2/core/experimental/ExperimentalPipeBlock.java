@@ -68,6 +68,10 @@ public final class ExperimentalPipeBlock extends Block implements EntityBlock {
     for (Direction direction : Direction.values()) {
       boolean connected = own == null || own.enabled(direction);
       BlockPos neighbor = pos.relative(direction);
+      if (level instanceof Level world && !world.hasChunkAt(neighbor)) {
+        state = state.setValue(CONNECTIONS[direction.ordinal()], false);
+        continue;
+      }
       connected &=
           level.getBlockState(neighbor).getBlock() instanceof ExperimentalPipeBlock
               || level instanceof Level world
@@ -94,6 +98,7 @@ public final class ExperimentalPipeBlock extends Block implements EntityBlock {
       LevelAccessor level,
       BlockPos pos,
       BlockPos otherPos) {
+    if (level.getBlockEntity(pos) instanceof ExperimentalFluidPipe pipe) pipe.connectionsChanged();
     return connections(state, level, pos);
   }
 
@@ -146,6 +151,7 @@ public final class ExperimentalPipeBlock extends Block implements EntityBlock {
         level.destroyBlock(pos, true, player);
         return ItemInteractionResult.SUCCESS;
       } else pipe.disabled ^= 1 << side;
+      pipe.connectionsChanged();
       pipe.setChanged();
       level.invalidateCapabilities(pos);
       level.setBlockAndUpdate(pos, connections(state, level, pos));
