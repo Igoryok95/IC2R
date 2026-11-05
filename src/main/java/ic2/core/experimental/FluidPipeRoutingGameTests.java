@@ -1,14 +1,19 @@
 package ic2.core.experimental;
 
+import ic2.core.block.comp.Energy;
+import ic2.core.block.machine.tileentity.TileEntityMatter;
 import ic2.core.block.machine.tileentity.TileEntityReplicator;
+import ic2.core.fluid.Ic2FluidStack;
 import ic2.core.ref.Ic2Blocks;
 import ic2.core.ref.Ic2Fluids;
+import ic2.core.ref.Ic2Items;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -21,6 +26,84 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 public final class FluidPipeRoutingGameTests {
   private static final String EMPTY = "gametest/empty64x8x32";
   private static final IFluidHandler.FluidAction EXECUTE = IFluidHandler.FluidAction.EXECUTE;
+
+  @GameTest(template = EMPTY)
+  public static void matterGeneratorRejectsExternalBackflowOnEveryFace(GameTestHelper h) {
+    var pos = new BlockPos(2, 2, 2);
+    h.setBlock(pos, Ic2Blocks.MATTER_GENERATOR);
+    TileEntityMatter generator = h.getBlockEntity(pos);
+    generator.fluidTank.fillMbUnchecked(
+        Ic2FluidStack.create(Ic2Fluids.UU_MATTER.still(), 17), false);
+    for (var side : Direction.values()) {
+      var handler =
+          h.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, h.absolutePos(pos), side);
+      h.assertTrue(handler != null, "the output tank remains available on every face");
+      h.assertTrue(
+          handler.fill(matter(1), IFluidHandler.FluidAction.SIMULATE) == 0
+              && handler.fill(matter(1), EXECUTE) == 0,
+          "the generator must not accept external matter: " + side);
+      h.assertTrue(
+          handler.drain(1, IFluidHandler.FluidAction.SIMULATE).getAmount() == 1,
+          "the generator still exposes produced matter for extraction: " + side);
+    }
+    h.assertTrue(
+        generator.fluidTank.getFluidAmount() == 17, "probing ports preserves stored matter");
+    h.succeed();
+  }
+
+  @GameTest(template = EMPTY, timeoutTicks = 260)
+  public static void multipleGeneratorsWithEjectorsFeedRaisedReplicatorWithoutBackflow(
+      GameTestHelper h) {
+    var pipes = line(h, "bronze_pipe_small", 32, 8);
+    for (int y = 2; y <= 5; y++) pipes.add(pipe(h, "bronze_pipe_small", new BlockPos(1, y, 8)));
+    h.setBlock(new BlockPos(1, 6, 8), Ic2Blocks.REPLICATOR);
+    TileEntityReplicator receiver = h.getBlockEntity(new BlockPos(1, 6, 8));
+    var generators = new ArrayList<TileEntityMatter>();
+    int total = 0;
+    for (int i = 0; i < 8; i++) {
+      var pos = new BlockPos(12 + i, 2, 8);
+      h.setBlock(pos, Ic2Blocks.MATTER_GENERATOR);
+      TileEntityMatter generator = h.getBlockEntity(pos);
+      generator.fluidTank.fillMbUnchecked(
+          Ic2FluidStack.create(Ic2Fluids.UU_MATTER.still(), 100 + i), false);
+      generator.upgradeSlot.put(0, new ItemStack(Ic2Items.FLUID_EJECTOR_UPGRADE));
+      var energy = generator.getComponent(Energy.class);
+      energy.forceAddEnergy(energy.getCapacity());
+      total += 101 + i;
+      generators.add(generator);
+    }
+    int[] savedRemnants = {108, 55, 5, 1, 9, 8, 7, 6, 2, 1};
+    for (int i = 0; i < savedRemnants.length; i++) {
+      pipes.get(i + 10).tank.fill(matter(savedRemnants[i]), EXECUTE);
+      total += savedRemnants[i];
+    }
+    int expected = total;
+    h.runAtTickTime(
+        80,
+        () ->
+            h.assertTrue(
+                receiver.fluidTank.getFluidAmount() > 0,
+                "real ejectors deliver matter to the raised receiver instead of returning it to generators"));
+    h.runAtTickTime(
+        200,
+        () -> {
+          int sourceMatter =
+              generators.stream().mapToInt(generator -> generator.fluidTank.getFluidAmount()).sum();
+          h.assertTrue(
+              receiver.fluidTank.getFluidAmount() == expected
+                  && stored(pipes) == 0
+                  && sourceMatter == 0,
+              "all produced matter and saved pipe remnants reach the receiver exactly once; receiver="
+                  + receiver.fluidTank.getFluidAmount()
+                  + ", pipes="
+                  + stored(pipes)
+                  + ", sources="
+                  + sourceMatter
+                  + ", expected="
+                  + expected);
+          h.succeed();
+        });
+  }
 
   @GameTest(template = EMPTY)
   public static void singleMillibucketTraversesEveryPipeProfileToARealReplicator(GameTestHelper h) {

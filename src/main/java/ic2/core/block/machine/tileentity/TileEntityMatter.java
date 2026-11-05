@@ -86,7 +86,12 @@ public class TileEntityMatter extends TileEntityElectricMachine
     this.redstone.subscribe(newLevel -> this.energy.setEnabled(newLevel == 0));
     this.fluids = this.addComponent(new Fluids(this));
     this.fluidTank =
-        this.fluids.addTank("fluidTank", 8000, Fluids.fluidPredicate(Ic2Fluids.UU_MATTER.still()));
+        this.fluids.addTank(
+            "fluidTank",
+            8000,
+            InvSlot.Access.O,
+            InvSlot.InvSide.ANY,
+            Fluids.fluidPredicate(Ic2Fluids.UU_MATTER.still()));
     this.comparator.setUpdate(
         () -> {
           int count = calcRedstoneFromInvSlots(this.amplifierSlot);
