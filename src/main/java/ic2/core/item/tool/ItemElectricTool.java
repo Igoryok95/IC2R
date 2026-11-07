@@ -16,8 +16,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
@@ -38,6 +40,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.neoforge.common.ItemAbilities;
 
 public abstract class ItemElectricTool extends DiggerItem
     implements IElectricItem, INetworkItemEventListener, IItemHudInfo {
@@ -123,6 +127,31 @@ public abstract class ItemElectricTool extends DiggerItem
   public InteractionResult useOn(UseOnContext context) {
     ElectricItem.manager.use(context.getItemInHand(), 0.0, context.getPlayer());
     return super.useOn(context);
+  }
+
+  protected InteractionResult flattenPath(UseOnContext context, double energyCost) {
+    ItemStack stack = context.getItemInHand();
+    Player player = context.getPlayer();
+    Level level = context.getLevel();
+    BlockPos pos = context.getClickedPos();
+    if (context.getClickedFace() == Direction.DOWN
+        || !level.getBlockState(pos.above()).isAir()
+        || player != null
+            && (IC2.keyboard.isModeSwitchKeyDown(player) || IC2.keyboard.isAltKeyDown(player))
+        || !ElectricItem.manager.canUse(stack, energyCost)) return InteractionResult.PASS;
+
+    BlockState flattened =
+        level.getBlockState(pos).getToolModifiedState(context, ItemAbilities.SHOVEL_FLATTEN, false);
+    if (flattened == null) return InteractionResult.PASS;
+    if (!level.isClientSide && !this.consumeEnergy(stack, energyCost, player))
+      return InteractionResult.PASS;
+
+    level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+    if (!level.isClientSide) {
+      level.setBlock(pos, flattened, 11);
+      level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, flattened));
+    }
+    return InteractionResult.sidedSuccess(level.isClientSide);
   }
 
   public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {

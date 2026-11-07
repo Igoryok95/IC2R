@@ -12,13 +12,17 @@ import ic2.core.util.StackUtil;
 import ic2.core.util.Util;
 import java.util.Collections;
 import java.util.List;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -29,7 +33,9 @@ import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -38,6 +44,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEvent.Context;
 import net.neoforged.neoforge.common.IShearable;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,6 +64,45 @@ public class ItemElectricToolChainsaw extends ItemElectricTool
 
   private boolean isShearMode(ItemStack stack) {
     return !StackUtil.getOrCreateNbtData(stack).getBoolean("disableShear");
+  }
+
+  @Override
+  public InteractionResult useOn(UseOnContext context) {
+    super.useOn(context);
+    ItemStack stack = context.getItemInHand();
+    Player player = context.getPlayer();
+    if (!this.canUse(stack)
+        || player != null && IC2.keyboard.isModeSwitchKeyDown(player)
+        || player != null
+            && context.getHand() == InteractionHand.MAIN_HAND
+            && player.getOffhandItem().is(Items.SHIELD)
+            && !player.isSecondaryUseActive()) {
+      return InteractionResult.PASS;
+    }
+
+    Level level = context.getLevel();
+    BlockPos pos = context.getClickedPos();
+    BlockState stripped =
+        level.getBlockState(pos).getToolModifiedState(context, ItemAbilities.AXE_STRIP, false);
+    if (stripped == null) return InteractionResult.PASS;
+    if (!level.isClientSide && !this.consumeEnergy(stack, this.operationEnergyCost, player))
+      return InteractionResult.PASS;
+
+    level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+    if (!level.isClientSide) {
+      if (player instanceof ServerPlayer serverPlayer)
+        CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
+      level.setBlock(pos, stripped, 11);
+      level.gameEvent(GameEvent.BLOCK_CHANGE, pos, Context.of(player, stripped));
+    }
+    return InteractionResult.sidedSuccess(level.isClientSide);
+  }
+
+  @Override
+  public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+    return itemAbility == ItemAbilities.AXE_STRIP
+        || itemAbility == ItemAbilities.AXE_DIG
+        || super.canPerformAction(stack, itemAbility);
   }
 
   @Override

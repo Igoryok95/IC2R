@@ -1,9 +1,12 @@
-# 21.1.94
+# 21.1.95
 
-- Make the Matter Generator's external fluid connections output-only on all six faces.
-- Prevent pipes from returning matter to generators instead of delivering it to a Replicator.
-- Keep existing stored matter, capacity, generation costs, ejectors, pump extraction and cell filling.
-- Add a regression test with eight real generators, fluid-ejector upgrades, saved pipe remnants
-  and a raised Replicator, running through normal server ticks.
+- Restore axe-style right-click wood stripping for the Electric Chainsaw and the
+  inherited Advanced Chainsaw in IC2R Addons, for 100 EU per successful action.
+- Preserve native stripping mappings, log orientation, tool events, mode shortcuts
+  and offhand/shield behavior. Rejected actions do not spend operation energy.
+- Let Mining, Diamond and Iridium Drills create dirt paths using their normal
+  operation cost: 50 / 80 / 800 EU. Follow native shovel clearance and face rules.
+- Provide the shared path action used by Advanced Drills in IC2R Addons 1.4.13.
 
-See [cause, compatibility and validation](docs/matter-generator-backflow-21.1.94.md).
+See [chainsaw behavior](docs/chainsaw-stripping.md) and
+[drill paths and compatibility](docs/drill-paths-21.1.95.md).

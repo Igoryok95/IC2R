@@ -13,15 +13,19 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 public class ItemDrill extends ItemElectricTool implements IMiningDrill, IHitSoundOverride {
   private final float extraSpeedMultiplier;
@@ -43,6 +47,19 @@ public class ItemDrill extends ItemElectricTool implements IMiningDrill, IHitSou
     this.transferLimit = transferLimit;
     this.tier = tier;
     this.extraSpeedMultiplier = miningSpeed / material.getSpeed();
+  }
+
+  @Override
+  public InteractionResult useOn(UseOnContext context) {
+    super.useOn(context);
+    return this.flattenPath(context, this.operationEnergyCost);
+  }
+
+  @Override
+  public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+    return itemAbility == ItemAbilities.SHOVEL_FLATTEN
+        || itemAbility == ItemAbilities.SHOVEL_DIG
+        || super.canPerformAction(stack, itemAbility);
   }
 
   private static Player getPlayerHoldingItem(ItemStack stack) {

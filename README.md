@@ -5,8 +5,24 @@ and experience rewards for processed ore in iron, electric and induction furnace
 
 <img src="https://img.shields.io/badge/Minecraft-1.21.1-brightgreen" alt="Minecraft 1.21.1">
 <img src="https://img.shields.io/badge/NeoForge-21.1.234%2B-orange" alt="NeoForge 21.1.234 or newer">
-<img src="https://img.shields.io/badge/Version-21.1.94-blue" alt="Version 21.1.94">
+<img src="https://img.shields.io/badge/Version-21.1.95-blue" alt="Version 21.1.95">
 <img src="https://img.shields.io/badge/License-AGPL--3.0-blue" alt="License AGPL-3.0">
+
+## Version 21.1.95 — Chainsaw stripping and drill paths
+
+Right-clicking a strippable log, wood block, nether stem or bamboo block with a
+charged chainsaw removes its bark for 100 EU. Native NeoForge stripping mappings
+and block properties are preserved, including log orientation. The same shared
+implementation applies to IC2R Addons' Advanced Chainsaw.
+
+Mode-switch shortcuts and shield use take priority. Empty tools, already stripped
+wood and cancelled tool actions do not spend energy. See
+[behavior and regression coverage](docs/chainsaw-stripping.md).
+
+Mining, Diamond and Iridium Drills can create dirt paths with a right click, using
+their normal operation cost (50 / 80 / 800 EU). Native shovel rules apply: the
+space above must be air and the bottom face cannot be used. Tool-mode shortcuts
+take priority. See [drill paths and Addons compatibility](docs/drill-paths-21.1.95.md).
 
 ## Version 21.1.94 — Matter Generator output without backflow
 
