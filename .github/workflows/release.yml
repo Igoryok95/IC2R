@@ -39,7 +39,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build and release mod JAR
-        run: ./gradlew --no-daemon --stacktrace -Pmod_version="${RELEASE_VERSION}" jar publishMavenJavaPublicationToGithubPackagesRepository
+        run: ./gradlew --no-daemon --stacktrace -Pneo_version=21.1.264 -Pmod_version="${RELEASE_VERSION}" jar publishMavenJavaPublicationToGithubPackagesRepository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_VERSION: ${{ github.event.release.tag_name || github.ref_name }}
